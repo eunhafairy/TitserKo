@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/customborder"
+    tools:context=".tk_register">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create a Profile"
+        android:fontFamily="@font/finger_paint"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your name"
+        android:fontFamily="@font/robotothin"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your birthday"
+        android:fontFamily="@font/robotothin"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="250dp"
+        android:inputType="date"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:layout_marginBottom="20dp"
+        />
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <Button
+            android:id="@+id/btn_confirmProfile"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="Confirm"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+        />
+        <Button
+            android:id="@+id/btn_cancelProfile"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           />
+
+    </LinearLayout>
+
+</LinearLayout>
