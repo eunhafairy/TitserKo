@@ -6,10 +6,11 @@ public class UserModel {
     private String name;
     private String date;
 
-    public UserModel(int id, String name, String date) {
+    public UserModel(int id, String name, String date ) {
         this.id = id;
         this.name = name;
         this.date = date;
+
     }
 
     public int getId() {
@@ -35,4 +36,5 @@ public class UserModel {
     public void setDate(String date) {
         this.date = date;
     }
+
 }

@@ -1,13 +1,21 @@
 <resources>
     <string name="app_name">TitserKo</string>
 
-    <string-array name="names">
+    <string-array name="desc">
         <item>name1</item>
         <item>name2</item>
         <item>name3</item>
         <item>name4</item>
         <item>name5</item>
         <item>name6</item>
+    </string-array>
 
+    <string-array name="Sample_Names">
+        <item>Name 1</item>
+        <item>Name 2</item>
+        <item>Name 3</item>
+        <item>Name 4</item>
+        <item>Name 5</item>
+        <item>Name 6</item>
     </string-array>
 </resources>

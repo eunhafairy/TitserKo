@@ -1,0 +1,249 @@
+{
+"lesson_arr" : [
+
+    {
+        "lesson_id" : "00001",
+        "lesson_name" : "Lesson 1",
+        "lesson_name_translate" : "Aralin 1",
+        "parts" : [
+           
+                    {
+                        "description" : "This is a sample description",
+                        "image_src" : "img.png",
+                        "audio_src" : "audio.mp3"    
+
+                    },
+
+                    {
+                        "description" : "This is a sample description",
+                        "image_src" : "img.png",
+                        "audio_src" : "audio.mp3"    
+
+                    },
+
+                    {
+                        "description" : "This is a sample description",
+                        "image_src" : "img.png",
+                        "audio_src" : "audio.mp3"    
+
+                    }
+
+
+                ]
+    },
+    {
+        "lesson_id" : "00002",
+        "lesson_name" : "Lesson 2",
+        "lesson_name_translate" : "Aralin 2",
+        "parts" : [
+           
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"    
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"    
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"    
+
+            }
+
+
+        ]
+    },
+    {
+        "lesson_id" : "00003",
+        "lesson_name" : "Lesson 3",
+        "lesson_name_translate" : "Aralin 3",
+        "parts" : [
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            }
+
+
+        ]
+    },
+    {
+        "lesson_id" : "00004",
+        "lesson_name" : "Lesson 4",
+        "lesson_name_translate" : "Aralin 4",
+        "parts" : [
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            }
+
+
+        ]
+    }
+,
+    {
+        "lesson_id" : "00005",
+        "lesson_name" : "Lesson 5",
+        "lesson_name_translate" : "Aralin 5",
+        "parts" : [
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            }
+
+
+        ]
+    },
+    {
+        "lesson_id" : "00006",
+        "lesson_name" : "Lesson 6",
+        "lesson_name_translate" : "Aralin 6",
+        "parts" : [
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            }
+
+
+        ]
+    },
+    {
+        "lesson_id" : "00007",
+        "lesson_name" : "Lesson 7",
+        "lesson_name_translate" : "Aralin 7",
+        "parts" : [
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            }
+
+
+        ]
+    },
+    {
+        "lesson_id" : "00008",
+        "lesson_name" : "Lesson 8",
+        "lesson_name_translate" : "Aralin 8",
+        "parts" : [
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "null",
+                "audio_src" : "audio.mp3"
+
+            },
+
+            {
+                "description" : "This is a sample description",
+                "image_src" : "img.png",
+                "audio_src" : "audio.mp3"
+
+            }
+
+
+        ]
+    }
+
+
+]
+
+}

@@ -59,6 +59,7 @@
         android:inputType="date"
         android:layout_height="35dp"
         android:layout_gravity="center"
+        android:editable="false"
         android:background="@color/white"
         android:layout_marginBottom="20dp"
         />
@@ -72,9 +73,7 @@
         <Button
             android:id="@+id/btn_confirmProfile"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
             android:text="Confirm"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
@@ -83,6 +82,8 @@
             android:id="@+id/btn_cancelProfile"
             android:layout_weight="1"
             android:text="Cancel"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            />

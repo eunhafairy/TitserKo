@@ -2,17 +2,24 @@ package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class tk_register extends AppCompatActivity {
 
+
+    //var declaration
     Button btn_confirmProfile, btn_cancelProfile;
     EditText et_name, et_date;
+    DatePickerDialog datePickerDialog;
+    Context c = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +32,27 @@ public class tk_register extends AppCompatActivity {
 
     private void init(){
 
-        //edit text
+        //edit texts
         et_name = findViewById(R.id.et_name);
         et_date = findViewById(R.id.et_date);
 
-        //button
+        //set date picker from et_date
+        datePickerDialog = new DatePickerDialog(c, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                et_date.setText((month+1)+"/"+(dayOfMonth)+"/"+(year));
+            }
+        },1990,1,1);
+
+        et_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.show();
+            }
+        });
+
+
+        //buttons
         btn_confirmProfile = findViewById(R.id.btn_confirmProfile);
         btn_cancelProfile = findViewById(R.id.btn_cancelProfile);
 
@@ -51,7 +74,16 @@ public class tk_register extends AppCompatActivity {
 
                 DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
                 boolean success = dbHelper.addOne(userModel);
-                Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
+                if(success){
+                    Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(tk_register.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Toast.makeText(tk_register.this, "Something went wrong. Make sure you choose a unique name.", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
