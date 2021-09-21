@@ -93,7 +93,14 @@ public class landing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //go to study
+                Intent intent = new Intent(landing.this, LessonProper.class);
+                intent.putExtra("lessonName", lessonName);
+                intent.putExtra("lessonTranslated", lessonNameTranslated);
+                intent.putExtra("lessonId", lessonId);
+                startActivity(intent);
+                finish();
             }
+
         });
 
         //quiz

@@ -1,26 +1,52 @@
 package com.bsit3omagitech.titserko;
 
+
 import android.content.ContentValues;
 import android.database.SQLException;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.nfc.Tag;
+import android.util.Log;
 import android.widget.Toast;
-
+import android.content.Context;
 import androidx.annotation.Nullable;
-
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import android.content.Context;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
+
+    //user table
     public static final String USER_TABLE = "USER_TABLE";
     public static final String COLUMN_USER_NAME = "USER_NAME";
     public static final String COLUMN_USER_BDAY = "USER_BDAY";
     public static final String COLUMN_ID = "COLUMN_ID";
 
-    public static final int DB_VERSION = 7;
+    //lesson table
+    public static final String LESSON_TABLE = "LESSON_TABLE";
+    public static final String LESSON_ID = "LESSON_ID";
+    public static final String LESSON_NAME = "LESSON_NAME";
+
+    //user-lesson-record
+    public static final String LESSON_PROGRESS_TABLE = "LESSON_PROGRESS_TABLE";
+    public static final String LP_ID = "LP_ID";
+    public static final String LP_USER_ID = "COLUMN_ID"; //FOREGIN KEY
+    public static final String LP_LESSON_ID = "LESSON_ID"; //FOREGIN KEY
+    public static final String LP_QUIZ_HIGHSCORE = "LP_QUIZ_HIGHSCORE"; //RECORD OF USER'S HIGH SCORE IN QUIZ IN THAT LESSON, INT
+    public static final String LP_LESSON_PROGRESS = "LP_LESSON_PROGRESS"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
+
+
+
+    public static final int DB_VERSION = 11;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
@@ -32,13 +58,67 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String createTableStatement = "CREATE TABLE " + USER_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USER_NAME + " TEXT, " + COLUMN_USER_BDAY + " DATE)";
+        int i = 0;
+        //FOR USER TABLE
+        String createTableStatement = "CREATE TABLE "
+                + USER_TABLE + " ("
+                + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COLUMN_USER_NAME + " TEXT, "
+                + COLUMN_USER_BDAY + " DATE)";
 
         try {
             db.execSQL(createTableStatement);
-            Toast.makeText(context, "Table Created", Toast.LENGTH_LONG).show();
+            i++;
         } catch (SQLException e) {
-            Toast.makeText(context, "Walang na create", Toast.LENGTH_SHORT).show();
+
+            e.printStackTrace();
+        }
+
+        //FOR LESSON TABLE
+        String createLessonTableStatement = "CREATE TABLE "
+                + LESSON_TABLE + " ("
+                + LESSON_ID + " STRING PRIMARY KEY, "
+                + LESSON_NAME + " TEXT)";
+
+        try {
+            db.execSQL(createLessonTableStatement);
+            i++;
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        //FOR USER-LESSON-PROGRESS
+
+        String createProgressTableStatement = "CREATE TABLE "
+                + LESSON_PROGRESS_TABLE + " ("
+                + LP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + LP_USER_ID + " INTEGER, "
+                + LP_LESSON_ID + " INTEGER, "
+                + LP_QUIZ_HIGHSCORE + " INTEGER, "
+                + LP_LESSON_PROGRESS + " INTEGER)";
+
+        try {
+            db.execSQL(createProgressTableStatement);
+            i++;
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        if(i>=3) Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
+
+        //insert values from JSON to LESSON_TABLE
+        try{
+            loadLessonsFromJSON(db);
+            Log.d("Tag","Successfully inserted!");
+        }
+        catch (IOException e){
+
+            e.printStackTrace();
+        }
+        catch (JSONException e){
+
             e.printStackTrace();
         }
 
@@ -47,18 +127,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean addOne(UserModel userModel){
+    public boolean addOne(UserModel userModel) {
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         //check if same name
         SQLiteDatabase dbRead = this.getReadableDatabase();
-        String checkUsername = "SELECT "+ COLUMN_USER_NAME+" FROM "+ USER_TABLE;
+        String checkUsername = "SELECT " + COLUMN_USER_NAME + " FROM " + USER_TABLE;
         Cursor cursor = dbRead.rawQuery(checkUsername, null);
         if (cursor.moveToFirst()) {
             do {
-                if(cursor.getString(0).equals(userModel.getName())){
-                 return false;
+                if (cursor.getString(0).equals(userModel.getName())) {
+                    return false;
                 }
             } while (cursor.moveToNext());
         }
@@ -66,18 +147,32 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_USER_NAME, userModel.getName());
         cv.put(COLUMN_USER_BDAY, userModel.getDate());
 
-
-
         long insert = db.insert(USER_TABLE, null, cv);
 
-        if(insert == -1){
+        if (insert == -1) {
             return false;
 
-        }else{
+        } else {
+
+  /*
+            //check if create new records for lesson record
+            SQLiteDatabase usernameRead = this.getReadableDatabase();
+            String userIDQuery = "SELECT "+ COLUMN_ID + " FROM "+ USER_TABLE + " WHERE "+ COLUMN_USER_NAME + " = " + userModel.getName();
+            Cursor cursor1 = dbRead.rawQuery(checkUsername, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    if(cursor.getString(0).equals(userModel.getName())){
+                        return false;
+                    }
+                } while (cursor.moveToNext());
+            }
+
+            final String _LESSON_ID = "lesson_id";
+*/
             return true;
+
+
         }
-
-
     }
 
     //function to select all usernames and store it in List
@@ -109,15 +204,77 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //drop table
 
         final String DROP_USER_TABLE  = "DROP TABLE IF EXISTS "+ USER_TABLE;
+        final String DROP_LESSON_TABLE  = "DROP TABLE IF EXISTS "+ LESSON_TABLE;
+        final String DROP_LESSON_PROGRESS_TABLE  = "DROP TABLE IF EXISTS "+ LESSON_PROGRESS_TABLE;
         try{
 
             db.execSQL(DROP_USER_TABLE);
+            db.execSQL(DROP_LESSON_TABLE);
+            db.execSQL(DROP_LESSON_PROGRESS_TABLE);
             Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
             onCreate(db);
+
         }
         catch (SQLException e) {
             Toast.makeText(context, "Walang na create", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
+
+    private void loadLessonsFromJSON(SQLiteDatabase db) throws IOException, JSONException {
+
+        //name of key in JSON
+        final String _LESSON_ID = "lesson_id";
+        final String _LESSON_NAME = "lesson_name";
+
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONArray m_jArry = obj.getJSONArray("lesson_arr");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+
+                String name, id;
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                id = jo_inside.getString(_LESSON_ID);
+                name = jo_inside.getString(_LESSON_NAME);
+
+
+
+                ContentValues cv = new ContentValues();
+                cv.put(LESSON_NAME, name);
+                cv.put(LESSON_ID, id);
+
+                db.insert(LESSON_TABLE, null, cv);
+
+            }
+        }
+        catch (JSONException e){
+
+         e.printStackTrace();
+
+        }
+
+
+
+    }
+
+
+    //get the JSON file of lessons
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = context.getAssets().open("lessons.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+
 }

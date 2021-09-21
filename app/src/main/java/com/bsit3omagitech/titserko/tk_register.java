@@ -20,14 +20,16 @@ public class tk_register extends AppCompatActivity {
     EditText et_name, et_date;
     DatePickerDialog datePickerDialog;
     Context c = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tk_register);
 
 
-        //intialize variables
+        //intialize variables and registering listeners
         init();
+        reg();
     }
 
     private void init(){
@@ -35,8 +37,15 @@ public class tk_register extends AppCompatActivity {
         //edit texts
         et_name = findViewById(R.id.et_name);
         et_date = findViewById(R.id.et_date);
+        //buttons
+        btn_confirmProfile = findViewById(R.id.btn_confirmProfile);
+        btn_cancelProfile = findViewById(R.id.btn_cancelProfile);
 
-        //set date picker from et_date
+    }
+
+    private void reg(){
+
+        //for date picker
         datePickerDialog = new DatePickerDialog(c, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -52,18 +61,15 @@ public class tk_register extends AppCompatActivity {
         });
 
 
-        //buttons
-        btn_confirmProfile = findViewById(R.id.btn_confirmProfile);
-        btn_cancelProfile = findViewById(R.id.btn_cancelProfile);
-
+        //for registering new profile
         btn_confirmProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //create profile
                 UserModel userModel;
                 try {
-                   userModel = new UserModel(-1, et_name.getText().toString(), et_date.getText().toString());
-                   Toast.makeText(tk_register.this, "Customer name: "+ userModel.getName(), Toast.LENGTH_SHORT).show();
+                    userModel = new UserModel(-1, et_name.getText().toString(), et_date.getText().toString());
+                    Toast.makeText(tk_register.this, "Customer name: "+ userModel.getName(), Toast.LENGTH_SHORT).show();
 
                 }
                 catch (Exception e){
@@ -87,6 +93,8 @@ public class tk_register extends AppCompatActivity {
             }
         });
 
+
+        //cancel button
         btn_cancelProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +104,7 @@ public class tk_register extends AppCompatActivity {
                 finish();
             }
         });
+
 
     }
 }

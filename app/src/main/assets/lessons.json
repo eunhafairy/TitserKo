@@ -8,24 +8,25 @@
         "parts" : [
            
                     {
-                        "description" : "This is a sample description",
+                        "description" : "Ang wikang Ingles ay may limang patinig. Ang mga patinig na ito ay A, E, I, O, at U.",
                         "image_src" : "img.png",
-                        "audio_src" : "audio.mp3"    
+                        "audio_src" : "audio.mp3",
+                        "flag" : false
 
                     },
 
                     {
-                        "description" : "This is a sample description",
+                        "description" : "This is a sample description2  of Lesson 1 ",
                         "image_src" : "img.png",
-                        "audio_src" : "audio.mp3"    
-
+                        "audio_src" : "audio.mp3",
+                        "flag" : false
                     },
 
                     {
-                        "description" : "This is a sample description",
+                        "description" : "This is a sample description3  of Lesson 1",
                         "image_src" : "img.png",
-                        "audio_src" : "audio.mp3"    
-
+                        "audio_src" : "audio.mp3",
+                        "flag" : false
                     }
 
 
@@ -38,24 +39,24 @@
         "parts" : [
            
             {
-                "description" : "This is a sample description",
+                "description" : "This is a sample description1  of Lesson 2",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"    
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
-                "description" : "This is a sample description",
+                "description" : "This is a sample description2  of Lesson 2",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"    
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
-                "description" : "This is a sample description",
+                "description" : "This is a sample description3  of Lesson 2",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"    
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
@@ -68,24 +69,24 @@
         "parts" : [
 
             {
-                "description" : "This is a sample description",
+                "description" : "This is a sample description1 of  of Lesson 3",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
-                "description" : "This is a sample description",
+                "description" : "This is a sample description2  of Lesson 3",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
-                "description" : "This is a sample description",
+                "description" : "This is a sample description3 of Lesson 3",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
@@ -100,22 +101,22 @@
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
@@ -131,22 +132,22 @@
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
@@ -161,22 +162,22 @@
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
@@ -191,22 +192,22 @@
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
@@ -221,22 +222,22 @@
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "null",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             },
 
             {
                 "description" : "This is a sample description",
                 "image_src" : "img.png",
-                "audio_src" : "audio.mp3"
-
+                "audio_src" : "audio.mp3",
+                "flag" : false
             }
 
 
