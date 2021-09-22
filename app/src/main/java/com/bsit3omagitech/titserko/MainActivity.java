@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         loadSpinnerData();
         iv_study = (ImageView) findViewById(R.id.iv_study);
         ll_landing = (LinearLayout) findViewById(R.id.ll_landing);
+        ll_landing.setVisibility(View.VISIBLE);
         ll_profile = (LinearLayout) findViewById(R.id.ll_profile);
+        ll_profile.setVisibility(View.GONE);
         tv_createProfile = (TextView) findViewById(R.id.tv_createProfile);
         btn_confirm = (Button) findViewById(R.id.btn_confirm);
 

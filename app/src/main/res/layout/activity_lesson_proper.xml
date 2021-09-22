@@ -55,29 +55,38 @@
             android:paddingRight="10dp">
 
             <LinearLayout
+                android:id="@+id/ll_parent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-            <TextView
-                android:id="@+id/tv_lp_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_weight="3"
-                android:fontFamily="@font/finger_paint"
-                android:text="This is a samnple lesson this is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lesson"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_lp_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/finger_paint"
+                    android:text="This is a samnple lesson this is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lesson"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/iv_imageView"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                />
+                <ImageView
+                    android:id="@+id/iv_imageView"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    />
+                <LinearLayout
+                    android:id="@+id/ll_btnParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
 
 
 
@@ -93,6 +102,7 @@
     android:text="Finish"
     android:layout_weight="1"
     android:padding="2dp"
+
     android:layout_marginBottom="5dp"
     android:visibility="gone"
     />

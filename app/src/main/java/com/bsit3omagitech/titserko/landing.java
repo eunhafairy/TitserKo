@@ -27,7 +27,7 @@ public class landing extends AppCompatActivity {
     ImageView iv_back;
     TextView tv_landingTitle, tv_landingTitleTranslation;
     Context c = this;
-    String lessonName, lessonNameTranslated, lessonId;
+    String lessonName, lessonNameTranslated, lessonId, username;
     List<String> lessonTranslated;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,7 @@ public class landing extends AppCompatActivity {
         lessonName = intent.getStringExtra("lesson");
         lessonNameTranslated = intent.getStringExtra("lessonTranslated");
         lessonId = intent.getStringExtra("lessonId");
+        username = intent.getStringExtra("username");
         tv_landingTitle.setText(lessonName);
         tv_landingTitleTranslation.setText(lessonNameTranslated);
         //parse json object
@@ -82,8 +83,9 @@ public class landing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(c, TkDashboardActivity.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
+
 
             }
         });
@@ -97,8 +99,9 @@ public class landing extends AppCompatActivity {
                 intent.putExtra("lessonName", lessonName);
                 intent.putExtra("lessonTranslated", lessonNameTranslated);
                 intent.putExtra("lessonId", lessonId);
+                intent.putExtra("username", username);
                 startActivity(intent);
-                finish();
+
             }
 
         });

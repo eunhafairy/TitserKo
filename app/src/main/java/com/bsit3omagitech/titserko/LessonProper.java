@@ -3,11 +3,15 @@ package com.bsit3omagitech.titserko;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -22,10 +26,11 @@ import java.util.ArrayList;
 
 public class LessonProper extends AppCompatActivity {
 
+    LinearLayout ll_parent;
     Button btn_lp_finish;
     TextView tv_lp_description;
-    ImageView btn_lp_previous, btn_lp_next;
-    String lessonName, lessonId, lessonTranslated;
+    ImageView btn_lp_previous, btn_lp_next, picture;
+    String lessonName, lessonId, lessonTranslated, username;
     JSONObject targetLessonObject;
     JSONArray partsArray;
     String TAG = "debug";
@@ -49,18 +54,24 @@ public class LessonProper extends AppCompatActivity {
         //initialize textview
         tv_lp_description = (TextView) findViewById(R.id.tv_lp_description);
 
-        //initialize nav
+        //initialize nav and image view
         btn_lp_previous = (ImageView) findViewById(R.id.btn_lp_previous);
         btn_lp_next = (ImageView) findViewById(R.id.btn_lp_next);
+        picture = (ImageView) findViewById(R.id.iv_imageView);
 
         btn_lp_previous.setVisibility(View.INVISIBLE);
         btn_lp_next.setClickable(true);
+
+        //initialize scrollview
+        ll_parent = (LinearLayout) findViewById(R.id.ll_btnParent);
+
 
         //Intent
         Intent intent = getIntent();
         lessonName = intent.getStringExtra("lessonName");
         lessonId = intent.getStringExtra("lessonId");
         lessonTranslated = intent.getStringExtra("lessonTranslated");
+        username = intent.getStringExtra("username");
         //locate the JSON Object of selected lesson
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
@@ -79,7 +90,8 @@ public class LessonProper extends AppCompatActivity {
 
 
             }
-            //get the parts array
+
+         //get the parts array
          partsArray = targetLessonObject.getJSONArray("parts");
         } catch (JSONException e) {
             e.printStackTrace();
@@ -90,7 +102,7 @@ public class LessonProper extends AppCompatActivity {
 
             tv_lp_description.setText(partsArray.getJSONObject(index).getString("description"));
 
-            //flag it for progress
+        //flag it for progress
 
         //  partsArray.getJSONObject(index).put("flag", true);
           Log.d(TAG ,partsArray.getJSONObject(index).toString());
@@ -100,7 +112,16 @@ public class LessonProper extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Log.d("Index: ",index + "");
+        //first choices
+        try{
+            generateChoices(partsArray);
+
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+        }
+
 
     }
     private void reg() {
@@ -137,10 +158,18 @@ public class LessonProper extends AppCompatActivity {
 
 
                 }
+                try{
+                    generateChoices(partsArray);
+
+                }
+                catch (JSONException e){
+
+                    e.printStackTrace();
+                }
 
 
 
-                Log.d("Index: ",index + "");
+
 
             }
         });
@@ -181,7 +210,15 @@ public class LessonProper extends AppCompatActivity {
 
                 }
 
-                Log.d("Index: ",index + "");
+                try{
+                    generateChoices(partsArray);
+
+                }
+                catch (JSONException e){
+
+                    e.printStackTrace();
+                }
+
 
             }
 
@@ -196,6 +233,7 @@ public class LessonProper extends AppCompatActivity {
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("lessonTranslated", lessonTranslated);
+                intent.putExtra("username", username);
                 startActivity(intent);
             }
         });
@@ -216,6 +254,61 @@ public class LessonProper extends AppCompatActivity {
             return null;
         }
         return json;
+    }
+
+    private void generateChoices(JSONArray choicesArray) throws JSONException{
+
+        ll_parent.removeAllViews();
+
+        try{
+
+            choicesArray = partsArray.getJSONObject(index).getJSONArray("choices");
+            int choiceCount = choicesArray.length();
+
+            //audio for instruction
+            //name of file
+            String instruction_url = partsArray.getJSONObject(index).getString("instruction_audio");
+            Log.d(TAG, instruction_url);
+            Uri instruction_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + instruction_url);
+            MediaPlayer instruction_mp = MediaPlayer.create(this, instruction_uri);
+            tv_lp_description.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    instruction_mp.start();
+                }
+            });
+
+            //show image of part
+            String image_url = partsArray.getJSONObject(index).getString("image_src");
+            Uri image_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + image_url);
+            picture.setImageURI(image_uri);
+
+            //generate button choices
+            for(int i = 0; i < choiceCount; i++){
+
+                //name of file
+                String url = choicesArray.getJSONObject(i).getString("audio_src"); ;
+
+                Uri uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + url);
+                MediaPlayer mp = MediaPlayer.create(this, uri);
+                Button btn_choice = new Button(this);
+                btn_choice.setText(choicesArray.getJSONObject(i).getString("label"));
+                btn_choice.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mp.start();
+                    }
+                });
+                ll_parent.addView(btn_choice);
+
+            }
+
+        }catch(JSONException e){
+
+            e.printStackTrace();
+        }
+
+
     }
 
 

@@ -93,6 +93,7 @@ public class TkDashboardActivity extends AppCompatActivity {
                 i.putExtra("lesson", lesson);
                 i.putExtra("lessonTranslated", _lessonTranslated);
                 i.putExtra("lessonId", _lessonId);
+                i.putExtra("username", name);
                 startActivity(i);
 
             }

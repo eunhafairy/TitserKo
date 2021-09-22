@@ -3,65 +3,128 @@
 
     {
         "lesson_id" : "00001",
-        "lesson_name" : "Lesson 1",
-        "lesson_name_translate" : "Aralin 1",
+        "lesson_name" : "Basic",
+        "lesson_name_translate" : "Pangunahing Pagaaral",
         "parts" : [
            
                     {
-                        "description" : "Ang wikang Ingles ay may limang patinig. Ang mga patinig na ito ay A, E, I, O, at U.",
-                        "image_src" : "img.png",
-                        "audio_src" : "audio.mp3",
+                        "description" : "Kumusta!",
+                        "choices" : [
+                            {
+                                "label": "Hello",
+                                "audio_src" : "lesson1_p1_c1"
+
+                            },
+
+                            {
+                                "label": "Hello",
+                                "audio_src" : "lesson1_p1_c2"
+
+                            }
+                        ],
+                        "image_src" : "lesson1_p1",
+                        "instruction_audio" : "lesson1_p1_i",
                         "flag" : false
 
                     },
 
+            {
+                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
+                "choices" : [
                     {
-                        "description" : "This is a sample description2  of Lesson 1 ",
-                        "image_src" : "img.png",
-                        "audio_src" : "audio.mp3",
-                        "flag" : false
-                    },
+                        "label": "Let's study the English language!",
+                        "audio_src" : "lesson1_p2_c1"
 
-                    {
-                        "description" : "This is a sample description3  of Lesson 1",
-                        "image_src" : "img.png",
-                        "audio_src" : "audio.mp3",
-                        "flag" : false
                     }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ang ingles ng kumusta ay \"Hello\"",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p3_i",
+                "flag" : false
+            }
 
 
                 ]
     },
+
     {
         "lesson_id" : "00002",
         "lesson_name" : "Lesson 2",
         "lesson_name_translate" : "Aralin 2",
         "parts" : [
-           
+
             {
-                "description" : "This is a sample description1  of Lesson 2",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c1"
+
+                    },
+
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c2"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
                 "flag" : false
+
             },
 
             {
-                "description" : "This is a sample description2  of Lesson 2",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
+                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
+                "choices" : [
+                    {
+                        "label": "Let's study the English language!",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
                 "flag" : false
+
             },
 
             {
-                "description" : "This is a sample description3  of Lesson 2",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
+                "description" : "Ang ingles ng kumusta ay \"Hello\"",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
                 "flag" : false
             }
 
 
         ]
     },
+
     {
         "lesson_id" : "00003",
         "lesson_name" : "Lesson 3",
@@ -69,180 +132,61 @@
         "parts" : [
 
             {
-                "description" : "This is a sample description1 of  of Lesson 3",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c1"
+
+                    },
+
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c2"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
                 "flag" : false
+
             },
 
             {
-                "description" : "This is a sample description2  of Lesson 3",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
+                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
+                "choices" : [
+                    {
+                        "label": "Let's study the English language!",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
                 "flag" : false
+
             },
 
             {
-                "description" : "This is a sample description3 of Lesson 3",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            }
+                "description" : "Ang ingles ng kumusta ay \"Hello\"",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "lesson1_p1_c1"
 
+                    }
 
-        ]
-    },
-    {
-        "lesson_id" : "00004",
-        "lesson_name" : "Lesson 4",
-        "lesson_name_translate" : "Aralin 4",
-        "parts" : [
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            }
-
-
-        ]
-    }
-,
-    {
-        "lesson_id" : "00005",
-        "lesson_name" : "Lesson 5",
-        "lesson_name_translate" : "Aralin 5",
-        "parts" : [
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            }
-
-
-        ]
-    },
-    {
-        "lesson_id" : "00006",
-        "lesson_name" : "Lesson 6",
-        "lesson_name_translate" : "Aralin 6",
-        "parts" : [
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            }
-
-
-        ]
-    },
-    {
-        "lesson_id" : "00007",
-        "lesson_name" : "Lesson 7",
-        "lesson_name_translate" : "Aralin 7",
-        "parts" : [
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            }
-
-
-        ]
-    },
-    {
-        "lesson_id" : "00008",
-        "lesson_name" : "Lesson 8",
-        "lesson_name_translate" : "Aralin 8",
-        "parts" : [
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "null",
-                "audio_src" : "audio.mp3",
-                "flag" : false
-            },
-
-            {
-                "description" : "This is a sample description",
-                "image_src" : "img.png",
-                "audio_src" : "audio.mp3",
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
                 "flag" : false
             }
 
 
         ]
     }
+
 
 
 ]
