@@ -60,7 +60,38 @@
             }
 
 
-                ]
+                ],
+        "quiz" : [
+
+            {
+                "question" : "Try question1",
+                "instruction_audio" : "quiz1_p1_i",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "quiz1_p1_question_audio",
+                "choices" : [
+                    {
+                        "label": "Answer 1",
+                        "audio_src" : "quiz1_p1_c1"
+
+                    },
+                    {
+                        "label": "Answer 2",
+                        "audio_src" : "quiz1_p1_c3"
+
+                    },
+                    {
+                        "label": "Answer 3",
+                        "audio_src" : "quiz1_p1_c2"
+
+                    }
+
+
+                 ],
+                "correct_answer" : "Answer 1"
+            }
+
+        ]
     },
 
     {

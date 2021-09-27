@@ -62,7 +62,7 @@ public class LessonProper extends AppCompatActivity {
         btn_lp_previous.setVisibility(View.INVISIBLE);
         btn_lp_next.setClickable(true);
 
-        //initialize scrollview
+        //initialize linearlayout
         ll_parent = (LinearLayout) findViewById(R.id.ll_btnParent);
 
 
@@ -102,10 +102,6 @@ public class LessonProper extends AppCompatActivity {
 
             tv_lp_description.setText(partsArray.getJSONObject(index).getString("description"));
 
-        //flag it for progress
-
-        //  partsArray.getJSONObject(index).put("flag", true);
-          Log.d(TAG ,partsArray.getJSONObject(index).toString());
 
         }
         catch (JSONException e){
