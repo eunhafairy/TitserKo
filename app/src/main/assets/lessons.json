@@ -77,18 +77,72 @@
                     },
                     {
                         "label": "Answer 2",
-                        "audio_src" : "quiz1_p1_c3"
+                        "audio_src" : "quiz1_p1_c2"
 
                     },
                     {
                         "label": "Answer 3",
-                        "audio_src" : "quiz1_p1_c2"
+                        "audio_src" : "quiz1_p1_c3"
 
                     }
 
 
                  ],
                 "correct_answer" : "Answer 1"
+            },
+            {
+                "question" : "Try question2",
+                "instruction_audio" : "quiz1_p2_i",
+                "img_src" : "quiz1_img_p2",
+                "type" : "visual",
+                "question_audio" :  "quiz1_p2_question_audio",
+                "choices" : [
+                    {
+                        "label": "Answer 1",
+                        "audio_src" : "quiz1_p2_c1"
+
+                    },
+                    {
+                        "label": "Answer 2",
+                        "audio_src" : "quiz1_p2_c2"
+
+                    },
+                    {
+                        "label": "Answer 3",
+                        "audio_src" : "quiz1_p2_c3"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Answer 2"
+            },
+            {
+                "question" : "Try question3",
+                "instruction_audio" : "quiz1_p3_i",
+                "img_src" : "quiz1_img_p3",
+                "type" : "audio",
+                "question_audio" :  "quiz1_p3_question_audio",
+                "choices" : [
+                    {
+                        "label": "Answer 1",
+                        "audio_src" : "quiz1_p3_c1"
+
+                    },
+                    {
+                        "label": "Answer 2",
+                        "audio_src" : "quiz1_p3_c2"
+
+                    },
+                    {
+                        "label": "Answer 3",
+                        "audio_src" : "quiz1_p3_c3"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Answer 3"
             }
 
         ]

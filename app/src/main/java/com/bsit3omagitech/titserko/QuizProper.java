@@ -26,7 +26,7 @@ import java.io.InputStream;
 
 public class QuizProper extends AppCompatActivity {
 
-    int index;
+    int index, score;
     String lessonName, lessonId, lessonTranslated, username, selectedAnswer, TAG = "debug";
     ImageView iv_qp;
     TextView tv_qp_description;
@@ -35,6 +35,7 @@ public class QuizProper extends AppCompatActivity {
     ImageView picture;
     JSONObject targetLessonObject;
     JSONArray quizArray;
+    Context c;
     boolean toggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class QuizProper extends AppCompatActivity {
     }
 
     private void init() {
+
+        c = this;
 
         //select toggle
         toggle = false;
@@ -65,8 +68,9 @@ public class QuizProper extends AppCompatActivity {
         //ImageView
         iv_qp = (ImageView) findViewById(R.id.iv_qp);
 
-        //index
+        //index and score
         index = 0;
+        score = 0;
 
         //Intents
         Intent intent = getIntent();
@@ -126,77 +130,122 @@ public class QuizProper extends AppCompatActivity {
         btn_lp_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String correctAnswer = "";
-                Button _confirmButton = (Button) v;
-               //get the correct answer from JSON
-                try{
-                    correctAnswer = quizArray.getJSONObject(index).getString("correct_answer");
-                }
-                catch (JSONException e){
-                    e.printStackTrace();
 
-                }
+                //if text is confirm, check the answer, else go to the next part
+                if(btn_lp_confirm.getText().equals("Confirm")){
 
-                //check if selected answer is correct
-                if(selectedAnswer.equals(correctAnswer)){
-
-                    //get the toggled button and change colour
-                    Button _toggled = (Button) v;
-                    int ctr = ll_btnParent.getChildCount();
-                    for(int i = 0; i < ctr; i++){
-
-                        if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
-                            _toggled = (Button) ll_btnParent.getChildAt(i);
-                        }
-                        else{
-
-                            ll_btnParent.getChildAt(i).setAlpha(0.5f);
-                        }
+                    String correctAnswer = "";
+                    Button _confirmButton = (Button) v;
+                    //get the correct answer from JSON
+                    try{
+                        correctAnswer = quizArray.getJSONObject(index).getString("correct_answer");
+                    }
+                    catch (JSONException e){
+                        e.printStackTrace();
 
                     }
 
+                    //check if selected answer is correct
+                    if(selectedAnswer.equals(correctAnswer)){
 
-                    _toggled.setBackgroundResource(R.drawable.button_correct); //change colour
-                    _confirmButton.setText("Next"); //change confirm text to next
+                        //get the toggled button and change colour
+                        Button _toggled = (Button) v;
+                        int ctr = ll_btnParent.getChildCount();
+                        for(int i = 0; i < ctr; i++){
 
-
-                }
-                else{
-
-                    //get the toggled button and change colour
-                    Button _toggled = (Button) v;
-                    int ctr = ll_btnParent.getChildCount();
-                    for(int i = 0; i < ctr; i++){
-
-
-                        if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
-                            _toggled = (Button) ll_btnParent.getChildAt(i);
-                        }
-                        else{
-                            if(((Button)ll_btnParent.getChildAt(i)).getText().equals(correctAnswer)){
-                                 ll_btnParent.getChildAt(i).setBackgroundResource(R.drawable.button_correct);
-                                 ((Button) ll_btnParent.getChildAt(i)).setTextColor(Color.RED);
-                                 ll_btnParent.getChildAt(i).setAlpha(0.8f);
+                            if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
+                                _toggled = (Button) ll_btnParent.getChildAt(i);
                             }
                             else{
 
                                 ll_btnParent.getChildAt(i).setAlpha(0.5f);
                             }
 
+                        }
 
+
+                        _toggled.setBackgroundResource(R.drawable.button_correct); //change colour
+                        if(isLast(index, quizArray)){
+
+                            _confirmButton.setText("Proceed"); //change confirm text to next
+                        }
+                        else{
+                            _confirmButton.setText("Next"); //change confirm text to next
+
+                        }
+
+                        score++;
+
+
+                    }
+                    else{
+
+                        //get the toggled button and change colour
+                        Button _toggled = (Button) v;
+                        int ctr = ll_btnParent.getChildCount();
+                        for(int i = 0; i < ctr; i++){
+
+
+                            if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
+                                _toggled = (Button) ll_btnParent.getChildAt(i);
+                            }
+                            else{
+                                if(((Button)ll_btnParent.getChildAt(i)).getText().equals(correctAnswer)){
+                                    ll_btnParent.getChildAt(i).setBackgroundResource(R.drawable.button_correct);
+                                    ((Button) ll_btnParent.getChildAt(i)).setTextColor(Color.RED);
+                                    ll_btnParent.getChildAt(i).setAlpha(0.8f);
+                                }
+                                else{
+
+                                    ll_btnParent.getChildAt(i).setAlpha(0.5f);
+                                }
+
+
+                            }
+
+                        }
+
+
+                        _toggled.setBackgroundResource(R.drawable.button_incorrect); //change colour
+                        _confirmButton.setText("Next"); //change confirm text to next
+
+
+
+
+                    }
+
+
+                }
+
+                //go to the next part
+                else if (btn_lp_confirm.getText().equals("Next")){
+                    if(!isLast(index, quizArray)){
+
+                        index++;
+                        try{
+                            generateChoices(quizArray);
+                        }
+                        catch(JSONException e){
+
+                            e.printStackTrace();
                         }
 
                     }
 
 
-                    _toggled.setBackgroundResource(R.drawable.button_incorrect); //change colour
-                    _confirmButton.setText("Next"); //change confirm text to next
-
-
-
-
                 }
-
+                //go to score page
+                else{
+                    //go to score activity
+                    Intent i = new Intent(c, Score.class);
+                    i.putExtra("Score", score);
+                    i.putExtra("TotalScore", quizArray.length());
+                    i.putExtra("lesson", lessonName);
+                    i.putExtra("lessonId", lessonId);
+                    i.putExtra("lessonTranslated", lessonTranslated);
+                    i.putExtra("username", username);
+                    startActivity(i);
+                }
 
             }
         });
@@ -360,4 +409,20 @@ public class QuizProper extends AppCompatActivity {
         }
         return doesExist;
     }
+
+    public boolean isLast(int index, JSONArray json){
+
+        if((index+1) < json.length())
+        {
+            return false;
+
+        }
+        else{
+            return true;
+
+        }
+
+
+    }
+
 }
