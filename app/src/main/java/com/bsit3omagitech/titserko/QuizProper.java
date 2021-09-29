@@ -207,7 +207,18 @@ public class QuizProper extends AppCompatActivity {
 
 
                         _toggled.setBackgroundResource(R.drawable.button_incorrect); //change colour
-                        _confirmButton.setText("Next"); //change confirm text to next
+
+
+                        if(isLast(index, quizArray)){
+
+                            _confirmButton.setText("Proceed"); //change confirm text to next
+                        }
+                        else{
+                            _confirmButton.setText("Next"); //change confirm text to next
+
+                        }
+
+
 
 
 
@@ -255,6 +266,8 @@ public class QuizProper extends AppCompatActivity {
 
     private void generateChoices(JSONArray choicesArray) throws JSONException{
 
+
+        tv_qp_description.setText(quizArray.getJSONObject(index).getString("question"));
         ll_btnParent.removeAllViews();
         btn_lp_confirm.setText("Confirm");
         btn_lp_confirm.setAlpha(0.5f);
@@ -270,7 +283,9 @@ public class QuizProper extends AppCompatActivity {
 
             String instruction_url = quizArray.getJSONObject(index).getString("instruction_audio");    //name of file from JSON
             Uri instruction_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + instruction_url);  //uri of file
-            if(!checkURIResource(this,instruction_uri)) instruction_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
+            Log.d(TAG, "URI before checking: " + instruction_uri);
+            //if(!checkURIResource(this,instruction_uri)) instruction_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
+            Log.d(TAG, "URI after checking: " + instruction_uri);
             MediaPlayer instruction_mp = MediaPlayer.create(this, instruction_uri);
 
             tv_qp_description.setOnClickListener(new View.OnClickListener() {
@@ -289,7 +304,7 @@ public class QuizProper extends AppCompatActivity {
                     iv_qp.setOnClickListener(null);
                     String image_url = quizArray.getJSONObject(index).getString("img_src");
                     Uri image_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + image_url);
-                    if(!checkURIResource(this,image_uri)) image_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/drawable/default_img"); // check if null, if null set default img
+             // if(!checkURIResource(this,image_uri)) image_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/drawable/default_img"); // check if null, if null set default img
                     iv_qp.setImageURI(image_uri);
                     break;
 
@@ -297,7 +312,7 @@ public class QuizProper extends AppCompatActivity {
 
                     String audio_url = quizArray.getJSONObject(index).getString("question_audio");
                     Uri audio_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + audio_url);  //uri of file
-                    if(!checkURIResource(this,audio_uri)) audio_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
+                //  if(checkURIResource(this,audio_uri)) audio_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
                     MediaPlayer question_mp = MediaPlayer.create(this, audio_uri);
                     Log.d(TAG, "audio uri: " + audio_uri);
                     //set desfault image for audio
@@ -322,7 +337,7 @@ public class QuizProper extends AppCompatActivity {
                 String url = choicesArray.getJSONObject(i).getString("audio_src"); ;
 
                 Uri uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + url);
-                if(!checkURIResource(this,uri)) uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
+   //    if(!checkURIResource(this,uri)) uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
                 MediaPlayer mp = MediaPlayer.create(this, uri);
 
                 Button btn_choice = new Button(this);

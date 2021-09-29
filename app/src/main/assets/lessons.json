@@ -12,13 +12,7 @@
                         "choices" : [
                             {
                                 "label": "Hello",
-                                "audio_src" : "lesson1_p1_c1"
-
-                            },
-
-                            {
-                                "label": "Hello",
-                                "audio_src" : "lesson1_p1_c2"
+                                "audio_src" : "hello"
 
                             }
                         ],
@@ -49,7 +43,7 @@
                 "choices" : [
                     {
                         "label": "Hello",
-                        "audio_src" : "lesson1_p1_c1"
+                        "audio_src" : "hello"
 
                     }
 
@@ -57,221 +51,207 @@
                 "image_src" : "lesson1_p1",
                 "instruction_audio" : "lesson1_p3_i",
                 "flag" : false
+            },
+            {
+                "description" : "Magandang umaga.",
+                "choices" : [
+                    {
+                        "label": "Good morning!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "magandang_umaga",
+                "flag" : false
+            },
+            {
+                "description" : "Ang english ng magandang umaga ay \"Good morning!\".",
+                "choices" : [
+                    {
+                        "label": "Good morning!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
             }
+
+
 
 
                 ],
         "quiz" : [
 
             {
-                "question" : "Try question1",
-                "instruction_audio" : "quiz1_p1_i",
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "quiz1_img_p1",
                 "type" : "audio",
-                "question_audio" :  "quiz1_p1_question_audio",
+                "question_audio" :  "kumusta",
                 "choices" : [
                     {
-                        "label": "Answer 1",
-                        "audio_src" : "quiz1_p1_c1"
+                        "label": "Hello",
+                        "audio_src" : "hello"
 
                     },
                     {
-                        "label": "Answer 2",
-                        "audio_src" : "quiz1_p1_c2"
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
 
                     },
                     {
-                        "label": "Answer 3",
-                        "audio_src" : "quiz1_p1_c3"
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
 
                     }
 
 
                  ],
-                "correct_answer" : "Answer 1"
+                "correct_answer" : "Hello"
             },
             {
-                "question" : "Try question2",
-                "instruction_audio" : "quiz1_p2_i",
-                "img_src" : "quiz1_img_p2",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
                 "type" : "visual",
-                "question_audio" :  "quiz1_p2_question_audio",
+                "question_audio" :  "hello",
                 "choices" : [
                     {
-                        "label": "Answer 1",
-                        "audio_src" : "quiz1_p2_c1"
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
 
                     },
                     {
-                        "label": "Answer 2",
-                        "audio_src" : "quiz1_p2_c2"
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
 
                     },
                     {
-                        "label": "Answer 3",
-                        "audio_src" : "quiz1_p2_c3"
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
 
                     }
 
 
                 ],
-                "correct_answer" : "Answer 2"
+                "correct_answer" : "Kumusta"
             },
             {
-                "question" : "Try question3",
-                "instruction_audio" : "quiz1_p3_i",
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "quiz1_img_p3",
                 "type" : "audio",
-                "question_audio" :  "quiz1_p3_question_audio",
+                "question_audio" :  "good_bye",
                 "choices" : [
                     {
-                        "label": "Answer 1",
-                        "audio_src" : "quiz1_p3_c1"
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
 
                     },
                     {
-                        "label": "Answer 2",
-                        "audio_src" : "quiz1_p3_c2"
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
 
                     },
                     {
-                        "label": "Answer 3",
-                        "audio_src" : "quiz1_p3_c3"
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
 
                     }
 
 
                 ],
-                "correct_answer" : "Answer 3"
+                "correct_answer" : "Hanggang sa muli"
             }
-
-        ]
-    },
-
-    {
-        "lesson_id" : "00002",
-        "lesson_name" : "Lesson 2",
-        "lesson_name_translate" : "Aralin 2",
-        "parts" : [
-
-            {
-                "description" : "Kumusta!",
-                "choices" : [
-                    {
-                        "label": "Hello",
-                        "audio_src" : "lesson1_p1_c1"
-
-                    },
-
-                    {
-                        "label": "Hello",
-                        "audio_src" : "lesson1_p1_c2"
-
-                    }
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p1_i",
-                "flag" : false
-
-            },
-
-            {
-                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
-                "choices" : [
-                    {
-                        "label": "Let's study the English language!",
-                        "audio_src" : "lesson1_p2_c1"
-
-                    }
-
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p2_i",
-                "flag" : false
-
-            },
-
-            {
-                "description" : "Ang ingles ng kumusta ay \"Hello\"",
-                "choices" : [
-                    {
-                        "label": "Hello",
-                        "audio_src" : "lesson1_p1_c1"
-
-                    }
-
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p2_i",
-                "flag" : false
-            }
-
-
-        ]
-    },
-
-    {
-        "lesson_id" : "00003",
-        "lesson_name" : "Lesson 3",
-        "lesson_name_translate" : "Aralin 3",
-        "parts" : [
-
-            {
-                "description" : "Kumusta!",
-                "choices" : [
-                    {
-                        "label": "Hello",
-                        "audio_src" : "lesson1_p1_c1"
-
-                    },
-
-                    {
-                        "label": "Hello",
-                        "audio_src" : "lesson1_p1_c2"
-
-                    }
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p1_i",
-                "flag" : false
-
-            },
-
-            {
-                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
-                "choices" : [
-                    {
-                        "label": "Let's study the English language!",
-                        "audio_src" : "lesson1_p2_c1"
-
-                    }
-
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p2_i",
-                "flag" : false
-
-            },
-
-            {
-                "description" : "Ang ingles ng kumusta ay \"Hello\"",
-                "choices" : [
-                    {
-                        "label": "Hello",
-                        "audio_src" : "lesson1_p1_c1"
-
-                    }
-
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p2_i",
-                "flag" : false
-            }
-
 
         ]
     }
-
 
 
 ]
