@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -28,7 +30,10 @@ public class landing extends AppCompatActivity {
     TextView tv_landingTitle, tv_landingTitleTranslation;
     Context c = this;
     String lessonName, lessonNameTranslated, lessonId, username;
+    DataBaseHelper db;
+    ProgressBar lessonProgressBar, quizProgressBar;
     List<String> lessonTranslated;
+    float maxLesson;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +46,15 @@ public class landing extends AppCompatActivity {
 
     private void init(){
 
+        maxLesson = 0;
+
         btn_landing_study = (Button) findViewById(R.id.btn_landing_study);
         btn_landing_quiz = (Button) findViewById(R.id.btn_landing_quiz);
         iv_back = (ImageView) findViewById(R.id.iv_back);
         tv_landingTitle = (TextView) findViewById(R.id.tv_landingTitle);
         tv_landingTitleTranslation = (TextView) findViewById(R.id.tv_landingTitleTranslation);
+
+
 
         Intent intent = getIntent();
         lessonName = intent.getStringExtra("lesson");
@@ -54,25 +63,45 @@ public class landing extends AppCompatActivity {
         username = intent.getStringExtra("username");
         tv_landingTitle.setText(lessonName);
         tv_landingTitleTranslation.setText(lessonNameTranslated);
+
+        //database
+        db = new DataBaseHelper(getApplicationContext());
+        db.createLessonProgressEntry(username,lessonId);
+
+
+
+
         //parse json object
         //try json object
-        /*
+
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
-            lessonTranslated = new ArrayList<String>();
+            JSONObject targetLesson;
             for (int i = 0; i < m_jArry.length(); i++) {
-                JSONObject jo_inside = m_jArry.getJSONObject(i);
-                String _lessonName = jo_inside.getString("lesson_name_translate");
 
-                //add
-                lessonTranslated.add(_lessonName);
+                if(m_jArry.getJSONObject(i).getString("lesson_id").equals(lessonId)) {
+                maxLesson = m_jArry.getJSONObject(i).getJSONArray("parts").length();
+                break;
+                }
             }
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        */
 
+
+
+        //for lesson progress
+        lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
+        quizProgressBar = (ProgressBar) findViewById(R.id.quizProgressBar);
+        float currentProgress = db.getLessonProgress(username, lessonId);
+        Log.d("percentage", currentProgress + " is current progress");
+        Log.d("percentage", maxLesson + " is max");
+        float c = ((currentProgress+1)/maxLesson) * 100f;
+        Log.d("percentage",  c + " is percent");
+        lessonProgressBar.setProgress((int) c);
 
     }
 
@@ -136,4 +165,6 @@ public class landing extends AppCompatActivity {
         }
         return json;
     }
+
+
 }

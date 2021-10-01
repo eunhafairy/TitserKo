@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.MediaCasException;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -291,7 +292,9 @@ public class QuizProper extends AppCompatActivity {
             tv_qp_description.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    instruction_mp.start();
+
+
+
                 }
             });
 

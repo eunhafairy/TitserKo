@@ -251,6 +251,257 @@
             }
 
         ]
+    },
+    {
+        "lesson_id" : "00002",
+        "lesson_name" : "Basic 2",
+        "lesson_name_translate" : "Pangunahing Pagaaral",
+        "parts" : [
+
+            {
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
+                "choices" : [
+                    {
+                        "label": "Let's study the English language!",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ang ingles ng kumusta ay \"Hello\"",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p3_i",
+                "flag" : false
+            },
+            {
+                "description" : "Magandang umaga.",
+                "choices" : [
+                    {
+                        "label": "Good morning!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "magandang_umaga",
+                "flag" : false
+            },
+            {
+                "description" : "Ang english ng magandang umaga ay \"Good morning!\".",
+                "choices" : [
+                    {
+                        "label": "Good morning!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            }
+
+
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p3",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            }
+
+        ]
     }
 
 

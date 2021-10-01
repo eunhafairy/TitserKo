@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 
 public class LessonProper extends AppCompatActivity {
 
+    DataBaseHelper db;
     LinearLayout ll_parent;
     Button btn_lp_finish;
     TextView tv_lp_description;
@@ -33,8 +35,10 @@ public class LessonProper extends AppCompatActivity {
     String lessonName, lessonId, lessonTranslated, username;
     JSONObject targetLessonObject;
     JSONArray partsArray;
+    ProgressBar lessonProgress;
     String TAG = "debug";
     int index;
+    float progress, maxIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +52,14 @@ public class LessonProper extends AppCompatActivity {
     private void init(){
 
         index = 0;
+
         //initalialize button
         btn_lp_finish = (Button) findViewById(R.id.btn_lp_finish);
         btn_lp_finish.setVisibility(View.GONE);
         //initialize textview
         tv_lp_description = (TextView) findViewById(R.id.tv_lp_description);
-
+        lessonProgress = (ProgressBar) findViewById(R.id.lessonProgress);
+        lessonProgress.setProgress(index);
         //initialize nav and image view
         btn_lp_previous = (ImageView) findViewById(R.id.btn_lp_previous);
         btn_lp_next = (ImageView) findViewById(R.id.btn_lp_next);
@@ -72,6 +78,11 @@ public class LessonProper extends AppCompatActivity {
         lessonId = intent.getStringExtra("lessonId");
         lessonTranslated = intent.getStringExtra("lessonTranslated");
         username = intent.getStringExtra("username");
+
+        //run the update query at the start to track progress
+        db = new DataBaseHelper(getApplicationContext());
+        db.updateLessonProgress(index, username, lessonId);
+
         //locate the JSON Object of selected lesson
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
@@ -93,6 +104,7 @@ public class LessonProper extends AppCompatActivity {
 
          //get the parts array
          partsArray = targetLessonObject.getJSONArray("parts");
+         maxIndex = partsArray.length();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -118,6 +130,10 @@ public class LessonProper extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+        //progress bar
+        progress = (float) (index/(maxIndex-1)) * 100;
+        lessonProgress.setProgress((int)progress);
 
     }
     private void reg() {
@@ -163,8 +179,9 @@ public class LessonProper extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
-
+                db.updateLessonProgress(index, username, lessonId);
+                progress = (float) (index/(maxIndex-1)) * 100;
+                lessonProgress.setProgress((int)progress);
 
 
             }
@@ -215,7 +232,9 @@ public class LessonProper extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
+                db.updateLessonProgress(index, username, lessonId);
+                progress = (float) (index/(maxIndex-1)) * 100;
+                lessonProgress.setProgress((int)progress);
             }
 
 
