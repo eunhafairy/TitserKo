@@ -33,7 +33,7 @@ public class landing extends AppCompatActivity {
     DataBaseHelper db;
     ProgressBar lessonProgressBar, quizProgressBar;
     List<String> lessonTranslated;
-    float maxLesson;
+    float maxLesson, maxScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +82,7 @@ public class landing extends AppCompatActivity {
 
                 if(m_jArry.getJSONObject(i).getString("lesson_id").equals(lessonId)) {
                 maxLesson = m_jArry.getJSONObject(i).getJSONArray("parts").length();
+                maxScore = m_jArry.getJSONObject(i).getJSONArray("quiz").length();
                 break;
                 }
             }
@@ -94,15 +95,16 @@ public class landing extends AppCompatActivity {
 
 
         //for lesson progress
-        lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
-        quizProgressBar = (ProgressBar) findViewById(R.id.quizProgressBar);
-        float currentProgress = db.getLessonProgress(username, lessonId);
-        Log.d("percentage", currentProgress + " is current progress");
-        Log.d("percentage", maxLesson + " is max");
-        float c = ((currentProgress+1)/maxLesson) * 100f;
-        Log.d("percentage",  c + " is percent");
-        lessonProgressBar.setProgress((int) c);
+       lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
+       float currentProgress = db.getLessonProgress(username, lessonId);
+       float c = (currentProgress/(maxLesson-1)) * 100f;
+       Log.d(" percentage",  "Current Progress: "+currentProgress + ", Max Lesson: " +maxLesson + ", Percent: " + c);
+       lessonProgressBar.setProgress((int) c);
 
+       quizProgressBar = (ProgressBar) findViewById(R.id.quizProgressBar);
+       float currentQuizProgress = db.getQuizProgress(username, lessonId);
+       float d = (currentQuizProgress/(maxScore-1)) * 100f;
+       quizProgressBar.setProgress((int) d);
     }
 
     private void reg(){

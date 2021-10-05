@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -27,6 +28,8 @@ import java.io.InputStream;
 
 public class QuizProper extends AppCompatActivity {
 
+
+    DataBaseHelper db;
     int index, score;
     String lessonName, lessonId, lessonTranslated, username, selectedAnswer, TAG = "debug";
     ImageView iv_qp;
@@ -37,6 +40,8 @@ public class QuizProper extends AppCompatActivity {
     JSONObject targetLessonObject;
     JSONArray quizArray;
     Context c;
+    ProgressBar quizProgress;
+    float progress, maxScore;
     boolean toggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,7 @@ public class QuizProper extends AppCompatActivity {
     private void init() {
 
         c = this;
+        maxScore = 0;
 
         //select toggle
         toggle = false;
@@ -72,6 +78,9 @@ public class QuizProper extends AppCompatActivity {
         //index and score
         index = 0;
         score = 0;
+
+        //progressbar
+        quizProgress = (ProgressBar) findViewById(R.id.quizProgress);
 
         //Intents
         Intent intent = getIntent();
@@ -94,6 +103,7 @@ public class QuizProper extends AppCompatActivity {
 
                 if( jo_inside.getString("lesson_id").equals(lessonId) ){
                     targetLessonObject = jo_inside;
+                    maxScore = m_jArry.getJSONObject(i).getJSONArray("quiz").length();
                     break;
                 }
 
@@ -123,6 +133,11 @@ public class QuizProper extends AppCompatActivity {
 
             e.printStackTrace();
         }
+
+
+        //progress
+        progress = (index/(maxScore-1)) * 100;
+        quizProgress.setProgress((int)progress);
 
     }
 
@@ -161,7 +176,7 @@ public class QuizProper extends AppCompatActivity {
 
                                 ll_btnParent.getChildAt(i).setAlpha(0.5f);
                             }
-
+                            ll_btnParent.getChildAt(i).setClickable(false);
                         }
 
 
@@ -186,6 +201,7 @@ public class QuizProper extends AppCompatActivity {
                         int ctr = ll_btnParent.getChildCount();
                         for(int i = 0; i < ctr; i++){
 
+                            ll_btnParent.getChildAt(i).setClickable(false);
 
                             if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
                                 _toggled = (Button) ll_btnParent.getChildAt(i);
@@ -236,18 +252,27 @@ public class QuizProper extends AppCompatActivity {
                         index++;
                         try{
                             generateChoices(quizArray);
+
                         }
                         catch(JSONException e){
 
                             e.printStackTrace();
                         }
 
+                        progress = (float) (index/(maxScore-1)) * 100;
+                        quizProgress.setProgress((int) progress);
                     }
 
 
                 }
                 //go to score page
                 else{
+
+                    //save user highscore
+                    //run the update query at the start to track progress
+                    db = new DataBaseHelper(getApplicationContext());
+                    db.saveHighscore(username, lessonId, score);
+
                     //go to score activity
                     Intent i = new Intent(c, Score.class);
                     i.putExtra("Score", score);
