@@ -59,60 +59,76 @@
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
         android:src="@mipmap/ic_launcher"/>
-    <LinearLayout
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/darkGreen"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:text="Study Progress" />
+        android:layout_height="100dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical">
 
-        <ProgressBar
-            android:id="@+id/lessonProgressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="wrap_content"
-            android:progressDrawable="@drawable/custom_progressbar"
-            android:layout_height="20dp"
-            android:progress="@integer/material_motion_duration_long_1"
-            android:layout_weight="2"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/darkGreen"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Study Progress" />
 
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="@color/darkGreen"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:text="Quiz Highscore" />
-
-        <ProgressBar
-            android:id="@+id/quizProgressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:progressDrawable="@drawable/custom_progressbar"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:progress="@integer/material_motion_duration_long_1"
-            android:layout_weight="2"/>
+                <ProgressBar
+                    android:id="@+id/lessonProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:progressDrawable="@drawable/custom_progressbar"
+                    android:layout_height="20dp"
+                    android:progress="@integer/material_motion_duration_long_1"
+                    android:layout_weight="2"/>
 
 
-    </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/darkGreen"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="Quiz Highscore" />
+
+                <ProgressBar
+                    android:id="@+id/quizProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/custom_progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:progress="@integer/material_motion_duration_long_1"
+                    android:layout_weight="2"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
     <Button
         android:id="@+id/btn_landing_study"

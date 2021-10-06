@@ -254,8 +254,8 @@
     },
     {
         "lesson_id" : "00002",
-        "lesson_name" : "Basic 2",
-        "lesson_name_translate" : "Pangunahing Pagaaral",
+        "lesson_name" : "Introduction",
+        "lesson_name_translate" : "Pagpapakilala",
         "parts" : [
 
             {
@@ -274,10 +274,10 @@
             },
 
             {
-                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
+                "description" : "Ako si Anna.",
                 "choices" : [
                     {
-                        "label": "Let's study the English language!",
+                        "label": "I am Anna.",
                         "audio_src" : "lesson1_p2_c1"
 
                     }
@@ -290,10 +290,10 @@
             },
 
             {
-                "description" : "Ang ingles ng kumusta ay \"Hello\"",
+                "description" : "Ano ang pangalan mo?",
                 "choices" : [
                     {
-                        "label": "Hello",
+                        "label": "What is your name?",
                         "audio_src" : "hello"
 
                     }
@@ -304,10 +304,10 @@
                 "flag" : false
             },
             {
-                "description" : "Magandang umaga.",
+                "description" : "Ang pangalan ko ay Juan.",
                 "choices" : [
                     {
-                        "label": "Good morning!",
+                        "label": "My name is Juan.",
                         "audio_src" : "good_morning"
 
                     }
@@ -318,10 +318,442 @@
                 "flag" : false
             },
             {
-                "description" : "Ang english ng magandang umaga ay \"Good morning!\".",
+                "description" : "Ilang taon ka na?",
                 "choices" : [
                     {
-                        "label": "Good morning!",
+                        "label": "How old are you?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ako ay pitong taong gulang.",
+                "choices" : [
+                    {
+                        "label": "I am seven years old.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Saan ka nakatira?",
+                "choices" : [
+                    {
+                        "label": "Where do you live?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Nakatira ako sa Bulacan.",
+                "choices" : [
+                    {
+                        "label": "I live in Bulacan.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Kailan ang kaarawan mo?",
+                "choices" : [
+                    {
+                        "label": "When is your birthday?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang kaarawan ko ay tuwing December 25, 2010.",
+                "choices" : [
+                    {
+                        "label": "My birthday is December 25, 2010.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Kinagagalak kong makilala ka.",
+                "choices" : [
+                    {
+                        "label": "Nice to meet you!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Hanggang sa muli!",
+                "choices" : [
+                    {
+                        "label": "See you again!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Paalam.",
+                "choices" : [
+                    {
+                        "label": "Good bye.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            }
+
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p3",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            }
+
+        ]
+    },
+    {
+        "lesson_id" : "00003",
+        "lesson_name" : "Animals",
+        "lesson_name_translate" : "Mga Hayop",
+        "parts" : [
+
+            {
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Pag-aralan natin ang mga hayop at alaga",
+                "choices" : [
+                    {
+                        "label": "Let's study about animals and pets",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ang Langgam!",
+                "choices" : [
+                    {
+                        "label": "The Ant",
+                        "audio_src" : "hello"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p3_i",
+                "flag" : false
+            },
+            {
+                "description" : "Ang langgam ay maliit.",
+                "choices" : [
+                    {
+                        "label": "The ant is small.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "magandang_umaga",
+                "flag" : false
+            },
+            {
+                "description" : "Ibon",
+                "choices" : [
+                    {
+                        "label": "Bird",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang ibon ay maganda.",
+                "choices" : [
+                    {
+                        "label": "The bird is beautiful.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Pusa",
+                "choices" : [
+                    {
+                        "label": "Cat",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang pusa ay mataba.",
+                "choices" : [
+                    {
+                        "label": "The cat is fat.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Aso",
+                "choices" : [
+                    {
+                        "label": "Dog",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang aso ko ay cute.",
+                "choices" : [
+                    {
+                        "label": "My dog is cute.",
                         "audio_src" : "good_morning"
 
                     }
@@ -502,8 +934,1125 @@
             }
 
         ]
-    }
+    },
+    {
+        "lesson_id" : "00004",
+        "lesson_name" : "Fruits and vegetables",
+        "lesson_name_translate" : "Prutas at gulay",
+        "parts" : [
 
+            {
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Pag-aralan natin ang mga prutas at gulay.",
+                "choices" : [
+                    {
+                        "label": "Let's study about fruits and vegetables.",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Alam mo ba ang kantang \"Bahay Kubo?\"",
+                "choices" : [
+                    {
+                        "label": "Do you know the song \"Bahay Kubo?\"",
+                        "audio_src" : "hello"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p3_i",
+                "flag" : false
+            },
+            {
+                "description" : "Mansanas",
+                "choices" : [
+                    {
+                        "label": "Apple",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "magandang_umaga",
+                "flag" : false
+            },
+            {
+                "description" : "Ang mansanas ay masustansya.",
+                "choices" : [
+                    {
+                        "label": "The apple is healthy.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Banana",
+                "choices" : [
+                    {
+                        "label": "Saging",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang saging ay kulay dilaw.",
+                "choices" : [
+                    {
+                        "label": "The banana is yellow in colour.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Talong.",
+                "choices" : [
+                    {
+                        "label": "Eggplant",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang talong ay kulay ube.",
+                "choices" : [
+                    {
+                        "label": "The eggplant is violet in colour.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ubas",
+                "choices" : [
+                    {
+                        "label": "Grapes.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang ubas ay matamis!",
+                "choices" : [
+                    {
+                        "label": "The grapes is sweet!",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            }
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p3",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            }
+
+        ]
+    },
+    {
+        "lesson_id" : "00005",
+        "lesson_name" : "Favourite",
+        "lesson_name_translate" : "Paborito",
+        "parts" : [
+
+            {
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ano ang paborito mong prutas?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite fruit?",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ang paborito kong prutas ay mansanas.",
+                "choices" : [
+                    {
+                        "label": "My favourite fruit is apple.",
+                        "audio_src" : "hello"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p3_i",
+                "flag" : false
+            },
+            {
+                "description" : "Ano ang paborito mong gulay?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite vegetable?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "magandang_umaga",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong gulay ay repolyo.",
+                "choices" : [
+                    {
+                        "label": "My favourite vegetable is cabbage.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ano ang paborito mong kulay?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite colour?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong kulay ay asul.",
+                "choices" : [
+                    {
+                        "label": "My favourite colour is blue.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong kulay ay pula.",
+                "choices" : [
+                    {
+                        "label": "My favourite colour is red.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ano ang paborito mong alaga?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite pet?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong alaga ay aso.",
+                "choices" : [
+                    {
+                        "label": "My favourite pet is a dog.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong alaga ay pusa.",
+                "choices" : [
+                    {
+                        "label": "My favourite pet is a cat.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Mahilig ka ba sa mansanas?",
+                "choices" : [
+                    {
+                        "label": "Do you like apples?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Oo, mahilig ako sa mansanas.",
+                "choices" : [
+                    {
+                        "label": "Yes, I like apples.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Mahilig ka ba sa gulay?",
+                "choices" : [
+                    {
+                        "label": "Do you like vegetables?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Oo, mahilig ako sa ang mga gulay.",
+                "choices" : [
+                    {
+                        "label": "Yes, I like vegetables.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            }
+
+
+
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p3",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            }
+
+        ]
+    },
+
+    {
+        "lesson_id" : "00006",
+        "lesson_name" : "Demonstrative",
+        "lesson_name_translate" : "Panuro",
+        "parts" : [
+
+            {
+                "description" : "Kumusta!",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    }
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p1_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ano ang paborito mong prutas?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite fruit?",
+                        "audio_src" : "lesson1_p2_c1"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p2_i",
+                "flag" : false
+
+            },
+
+            {
+                "description" : "Ang paborito kong prutas ay mansanas.",
+                "choices" : [
+                    {
+                        "label": "My favourite fruit is apple.",
+                        "audio_src" : "hello"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "lesson1_p3_i",
+                "flag" : false
+            },
+            {
+                "description" : "Ano ang paborito mong gulay?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite vegetable?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "magandang_umaga",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong gulay ay repolyo.",
+                "choices" : [
+                    {
+                        "label": "My favourite vegetable is cabbage.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ano ang paborito mong kulay?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite colour?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong kulay ay asul.",
+                "choices" : [
+                    {
+                        "label": "My favourite colour is blue.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong kulay ay pula.",
+                "choices" : [
+                    {
+                        "label": "My favourite colour is red.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ano ang paborito mong alaga?",
+                "choices" : [
+                    {
+                        "label": "What is your favourite pet?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong alaga ay aso.",
+                "choices" : [
+                    {
+                        "label": "My favourite pet is a dog.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Ang paborito kong alaga ay pusa.",
+                "choices" : [
+                    {
+                        "label": "My favourite pet is a cat.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Mahilig ka ba sa mansanas?",
+                "choices" : [
+                    {
+                        "label": "Do you like apples?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Oo, mahilig ako sa mansanas.",
+                "choices" : [
+                    {
+                        "label": "Yes, I like apples.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Mahilig ka ba sa gulay?",
+                "choices" : [
+                    {
+                        "label": "Do you like vegetables?",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            },
+            {
+                "description" : "Oo, mahilig ako sa ang mga gulay.",
+                "choices" : [
+                    {
+                        "label": "Yes, I like vegetables.",
+                        "audio_src" : "good_morning"
+
+                    }
+
+                ],
+                "image_src" : "lesson1_p1",
+                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "flag" : false
+            }
+
+
+
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "hello",
+                "type" : "audio",
+                "question_audio" :  "kumusta",
+                "choices" : [
+                    {
+                        "label": "Hello",
+                        "audio_src" : "hello"
+
+                    },
+                    {
+                        "label": "Goodbye",
+                        "audio_src" : "good_bye"
+
+                    },
+                    {
+                        "label": "Good morning",
+                        "audio_src" : "good_morning"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hello"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "img_hello",
+                "type" : "visual",
+                "question_audio" :  "hello",
+                "choices" : [
+                    {
+                        "label": "Hanggang sa muli!",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    },
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang Umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kumusta"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p3",
+                "type" : "audio",
+                "question_audio" :  "good_bye",
+                "choices" : [
+                    {
+                        "label": "Kumusta",
+                        "audio_src" : "kumusta"
+
+                    },
+                    {
+                        "label": "Magandang umaga",
+                        "audio_src" : "magandang_umaga"
+
+                    },
+                    {
+                        "label": "Hanggang sa muli",
+                        "audio_src" : "hanggang_sa_muli"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Hanggang sa muli"
+            }
+
+        ]
+    }
 
 ]
 

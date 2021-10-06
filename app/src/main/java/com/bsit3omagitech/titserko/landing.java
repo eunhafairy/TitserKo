@@ -1,6 +1,7 @@
 package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -34,6 +35,7 @@ public class landing extends AppCompatActivity {
     ProgressBar lessonProgressBar, quizProgressBar;
     List<String> lessonTranslated;
     float maxLesson, maxScore;
+    SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +107,26 @@ public class landing extends AppCompatActivity {
        float currentQuizProgress = db.getQuizProgress(username, lessonId);
        float d = (currentQuizProgress/(maxScore-1)) * 100f;
        quizProgressBar.setProgress((int) d);
+
+        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                float currentProgress = db.getLessonProgress(username, lessonId);
+                float c = (currentProgress/(maxLesson-1)) * 100f;
+                Log.d(" percentage",  "Current Progress: "+currentProgress + ", Max Lesson: " +maxLesson + ", Percent: " + c);
+                lessonProgressBar.setProgress((int) c);
+
+                float currentQuizProgress = db.getQuizProgress(username, lessonId);
+                float d = (currentQuizProgress/(maxScore-1)) * 100f;
+                quizProgressBar.setProgress((int) d);
+                swipeRefreshLayout.setRefreshing(false);
+
+            }
+        });
+
+
     }
 
     private void reg(){

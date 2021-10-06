@@ -40,8 +40,10 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
        //for lesson titles
+
         holder.myText1.setText(data1.get(position));
         int _star = stars.get(position);
+
         switch(_star){
             case 0:
                 holder.iv_star.setImageResource(R.drawable.star0);
@@ -50,14 +52,33 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
                 holder.iv_star.setImageResource(R.drawable.star1);
                 break;
             case 2:
-            holder.iv_star.setImageResource(R.drawable.star2);
+                holder.iv_star.setImageResource(R.drawable.star2);
                 break;
             case 3:
                 holder.iv_star.setImageResource(R.drawable.star3);
                 break;
 
         }
-        //create a function that will allocate stars per lesson here
+
+        if(position!=0){
+
+            if(stars.get(position-1) > 0){
+                //lock this
+                holder.itemView.setClickable(true);
+                holder.itemView.setAlpha(1f);
+            }
+            else{
+                holder.itemView.setClickable(false);
+                holder.itemView.setAlpha(0.5f);
+
+            }
+
+
+
+
+        }
+
+
 
 
     }
@@ -76,6 +97,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
             super(itemView);
             myText1 = itemView.findViewById(R.id.row_lesson_name);
             iv_star = itemView.findViewById(R.id.iv_star);
+
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -94,5 +117,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     public void setIndividualScreenListener(OnIndividualScreen listenerGalingSaIndividualScreen) {
         listenerIndividual = listenerGalingSaIndividualScreen;
     }
+
+
 
 }

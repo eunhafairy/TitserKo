@@ -49,7 +49,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String LP_LESSON_MAX = "LP_LESSON_MAX"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
 
 
-    public static final int DB_VERSION = 27;
+    public static final int DB_VERSION = 29;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
