@@ -244,6 +244,7 @@ public class LessonProper extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //finish and return to landing page
+                db.refreshAllStars(username);
                 Intent intent = new Intent(LessonProper.this, landing.class);
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);

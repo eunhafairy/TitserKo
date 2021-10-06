@@ -81,6 +81,7 @@ public class tk_register extends AppCompatActivity {
                 DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
                 boolean success = dbHelper.addOne(userModel);
                 if(success){
+                    dbHelper.createAllLessonProgress(et_name.getText().toString());
                     Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(tk_register.this, MainActivity.class);
                     startActivity(intent);

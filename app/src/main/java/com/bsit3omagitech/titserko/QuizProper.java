@@ -272,7 +272,7 @@ public class QuizProper extends AppCompatActivity {
                     //run the update query at the start to track progress
                     db = new DataBaseHelper(getApplicationContext());
                     db.saveHighscore(username, lessonId, score);
-
+                    db.refreshAllStars(username);
                     //go to score activity
                     Intent i = new Intent(c, Score.class);
                     i.putExtra("Score", score);

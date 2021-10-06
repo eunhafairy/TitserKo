@@ -3,6 +3,7 @@ package com.bsit3omagitech.titserko;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,8 +28,9 @@ public class TkDashboardActivity extends AppCompatActivity {
     String name;
     RecyclerView myRv;
     List<String> lessonList, lessonTranslated, lessonId;
-
-
+    List<Integer> stars;
+    DataBaseHelper db;
+    SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,7 @@ public class TkDashboardActivity extends AppCompatActivity {
 
         //initialize
         init();
+
     }
 
 
@@ -55,8 +58,88 @@ public class TkDashboardActivity extends AppCompatActivity {
         db_tv_name.setText(name);
 
 
+        //get star array
+        db = new DataBaseHelper(this);
+        stars = db.getStars();
 
-        //try json object
+        getLessonList();
+
+        myAdapter adapter = new myAdapter(this, lessonList, stars);
+        myRv.setAdapter(adapter);
+        myRv.setLayoutManager(new LinearLayoutManager(this));
+
+
+        adapter.setIndividualScreenListener(new myAdapter.OnIndividualScreen() {
+            @Override
+            public void convertViewOnIndividualScreen(int position) {
+                String lesson = lessonList.get(position);
+                String _lessonTranslated = lessonTranslated.get(position);
+                String _lessonId = lessonId.get(position);
+                Intent i = new Intent(TkDashboardActivity.this, landing.class);
+                i.putExtra("lesson", lesson);
+                i.putExtra("lessonTranslated", _lessonTranslated);
+                i.putExtra("lessonId", _lessonId);
+                i.putExtra("username", name);
+                startActivity(i);
+
+            }
+        });
+
+        db.refreshAllStars(name);
+
+        swipeRefreshLayout = findViewById(R.id.swiperefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                lessonList.clear();
+                getLessonList();
+                stars.clear();
+                stars = db.getStars();
+                myAdapter adapter = new myAdapter(TkDashboardActivity.this, lessonList, stars);
+                myRv.setAdapter(adapter);
+                db.refreshAllStars(name);
+                adapter.setIndividualScreenListener(new myAdapter.OnIndividualScreen() {
+                    @Override
+                    public void convertViewOnIndividualScreen(int position) {
+                        String lesson = lessonList.get(position);
+                        String _lessonTranslated = lessonTranslated.get(position);
+                        String _lessonId = lessonId.get(position);
+                        Intent i = new Intent(TkDashboardActivity.this, landing.class);
+                        i.putExtra("lesson", lesson);
+                        i.putExtra("lessonTranslated", _lessonTranslated);
+                        i.putExtra("lessonId", _lessonId);
+                        i.putExtra("username", name);
+                        startActivity(i);
+
+                    }
+                });
+                swipeRefreshLayout.setRefreshing(false);
+
+            }
+        });
+    }
+
+    public String loadJSONFromAsset() {
+        String json = null;
+        try {
+            InputStream is = getAssets().open("lessons.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+    public void getLessonList(){
+
+
+        //get lesson list
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
@@ -78,43 +161,6 @@ public class TkDashboardActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        myAdapter adapter = new myAdapter(this, lessonList);
-        myRv.setAdapter(adapter);
-        myRv.setLayoutManager(new LinearLayoutManager(this));
 
-
-        adapter.setIndividualScreenListener(new myAdapter.OnIndividualScreen() {
-            @Override
-            public void convertViewOnIndividualScreen(int position) {
-                String lesson = lessonList.get(position);
-                String _lessonTranslated = lessonTranslated.get(position);
-                String _lessonId = lessonId.get(position);
-                Intent i = new Intent(TkDashboardActivity.this, landing.class);
-                i.putExtra("lesson", lesson);
-                i.putExtra("lessonTranslated", _lessonTranslated);
-                i.putExtra("lessonId", _lessonId);
-                i.putExtra("username", name);
-                startActivity(i);
-
-            }
-        });
-
-
-    }
-
-    public String loadJSONFromAsset() {
-        String json = null;
-        try {
-            InputStream is = getAssets().open("lessons.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
     }
 }

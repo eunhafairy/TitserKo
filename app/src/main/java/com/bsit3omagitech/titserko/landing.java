@@ -72,7 +72,6 @@ public class landing extends AppCompatActivity {
 
 
         //parse json object
-        //try json object
 
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
@@ -95,6 +94,7 @@ public class landing extends AppCompatActivity {
 
 
         //for lesson progress
+       db.refreshAllStars(username);
        lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
        float currentProgress = db.getLessonProgress(username, lessonId);
        float c = (currentProgress/(maxLesson-1)) * 100f;
@@ -113,6 +113,7 @@ public class landing extends AppCompatActivity {
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                db.refreshAllStars(username);
                 Intent intent = new Intent(c, TkDashboardActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);

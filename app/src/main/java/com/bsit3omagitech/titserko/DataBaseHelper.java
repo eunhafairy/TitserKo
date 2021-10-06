@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import android.content.Context;
 
@@ -44,9 +45,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String LP_LESSON_ID = "LESSON_ID"; //FOREGIN KEY
     public static final String LP_QUIZ_HIGHSCORE = "LP_QUIZ_HIGHSCORE"; //RECORD OF USER'S HIGH SCORE IN QUIZ IN THAT LESSON, INT
     public static final String LP_LESSON_PROGRESS = "LP_LESSON_PROGRESS"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
+    public static final String LP_LESSON_STARS = "LP_LESSON_STAR"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
+    public static final String LP_LESSON_MAX = "LP_LESSON_MAX"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
 
 
-    public static final int DB_VERSION = 12;
+    public static final int DB_VERSION = 27;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
@@ -89,14 +92,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         //FOR USER-LESSON-PROGRESS
-
         String createProgressTableStatement = "CREATE TABLE "
                 + LESSON_PROGRESS_TABLE + " ("
                 + LP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + LP_USER_NAME + " TEXT, "
                 + LP_LESSON_ID + " TEXT, "
                 + LP_QUIZ_HIGHSCORE + " INTEGER, "
-                + LP_LESSON_PROGRESS + " INTEGER)";
+                + LP_LESSON_PROGRESS + " INTEGER, "
+                + LP_LESSON_MAX + " INTEGER, "
+                + LP_LESSON_STARS + " INTEGER)";
 
         try {
             db.execSQL(createProgressTableStatement);
@@ -106,12 +110,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }
 
-        if (i >= 3) Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
+        if (i >= 3){
+         Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
 
+        }
+        Log.d("what is i", "i is: "+i);
+        Log.d("progress", createProgressTableStatement);
         //insert values from JSON to LESSON_TABLE
         try {
             loadLessonsFromJSON(db);
-            Log.d("Tag", "Successfully inserted!");
+          Log.d("Tag", "Successfully inserted!");
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -272,6 +280,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             cv.put(LP_LESSON_ID, lessonID);
             cv.put(LP_QUIZ_HIGHSCORE, 0);
             cv.put(LP_LESSON_PROGRESS, 0);
+            cv.put(LP_LESSON_STARS, 0);
+            cv.put(LP_LESSON_MAX, getMaxIndex(lessonID));
 
             long insert = db.insert(LESSON_PROGRESS_TABLE, null, cv);
 
@@ -289,6 +299,66 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public int getMaxScore(String lessonId){
+        int score = 0;
+
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONArray m_jArry = obj.getJSONArray("lesson_arr");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+
+                String id;
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                id = jo_inside.getString("lesson_id");
+                if(id.equals(lessonId))
+                {
+
+                    score = jo_inside.getJSONArray("quiz").length();
+                    break;
+                }
+
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+
+        return score-1;
+    }
+
+    public int getMaxIndex(String lessonId){
+        int index = 0;
+
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONArray m_jArry = obj.getJSONArray("lesson_arr");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+
+                String id;
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                id = jo_inside.getString("lesson_id");
+                if(id.equals(lessonId))
+                {
+
+                    index = jo_inside.getJSONArray("parts").length();
+                    break;
+                }
+
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+
+     return index-1;
+    }
+
     public int getQuizProgress(String username,String lessonId){
 
         int i = 0;
@@ -303,6 +373,48 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return i;
 
     }
+
+    //create all lesson progress at user registration
+    public void createAllLessonProgress(String username){
+
+
+        List<String> lessonIds = getAllLessonId();
+        // LOOP INSERT INTO
+
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        int ctr = lessonIds.size();
+        for(int i = 0; i < ctr; i++){
+            ContentValues cv = new ContentValues();
+            cv.put(LP_USER_NAME, username);
+            cv.put(LP_LESSON_ID, lessonIds.get(i));
+            cv.put(LP_LESSON_PROGRESS, 0);
+            cv.put(LP_QUIZ_HIGHSCORE, 0);
+            cv.put(LP_LESSON_STARS, 0);
+            cv.put(LP_LESSON_MAX, getMaxIndex(lessonIds.get(i)));
+
+            db1.insert(LESSON_PROGRESS_TABLE, null, cv);
+        }
+
+
+    }
+
+    public List<Integer> getStars(){
+        List<Integer> stars = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_STARS + " FROM "
+                + LESSON_PROGRESS_TABLE;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                stars.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+
+        return stars;
+    }
+
+
 
     public int getLessonProgress(String username,String lessonId){
 
@@ -351,7 +463,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                     + " WHERE " + LP_ID + " = " + lessonProgressID;
 
             SQLiteDatabase db1 = this.getWritableDatabase();
-            db.execSQL(updateQuery);
+            db1.execSQL(updateQuery);
 
         }
 
@@ -406,8 +518,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
                 ContentValues cv = new ContentValues();
-                cv.put(LESSON_NAME, name);
                 cv.put(LESSON_ID, id);
+                cv.put(LESSON_NAME, name);
+
 
                 db.insert(LESSON_TABLE, null, cv);
 
@@ -420,6 +533,121 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
 
+
+    }
+
+    public void refreshAllStars(String username){
+
+        //lessons have stars for progress
+        //zero stars means it isnt touched
+        //one star means the lesson progress is finished
+        //two stars if the quiz have passing score
+        //three stars if the quiz is perfected
+
+        //select all lesson progress with the current user
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_ID + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        //store all LP_ID to a list of array for ease of access first
+        List<Integer> lessonProgress_ID = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+               //first, check if lesson is finished for one star
+                lessonProgress_ID.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+
+        //check now for individual entries
+        for(int i = 0; i < lessonProgress_ID.size(); i++){
+            ContentValues _cv = getInformation(lessonProgress_ID.get(i));
+            int _progress = (int) _cv.get("progress");
+            int _highscore = (int) _cv.get("highscore");
+            String _lesson = (String)_cv.get("lesson");
+
+
+            int currentStar = 0;
+            int half = _highscore/2;
+            //check for progress first and flag for accomplishments
+
+            if(_progress >= getMaxIndex(_lesson))
+                {
+
+                    currentStar++;
+
+                }
+
+
+                if(half >= (getMaxScore(_lesson)/2)){
+
+                    currentStar++;
+
+                }
+
+                if(_highscore >= getMaxScore(_lesson)){
+
+                    currentStar++;
+                }
+
+                updateStar(lessonProgress_ID.get(i), currentStar);
+
+
+            }
+
+        }
+
+
+    public void updateStar(int lessonprogress_ID, int currentStar){
+
+        String updateQuery = "UPDATE " + LESSON_PROGRESS_TABLE
+                + " SET " + LP_LESSON_STARS + " = " + currentStar
+                + " WHERE " + LP_ID + " = " + lessonprogress_ID;
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        db1.execSQL(updateQuery);
+
+    }
+
+    public ContentValues getInformation(int lessonProgress_ID){
+
+      ContentValues cv = new ContentValues();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_STARS + ", "+LP_LESSON_PROGRESS+", "
+                +LP_QUIZ_HIGHSCORE+", "+LP_LESSON_ID+" FROM "
+                + LESSON_PROGRESS_TABLE + " WHERE "
+                + LP_ID + " = " + lessonProgress_ID;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                //first, check if lesson is finished for one star
+                cv.put("stars",cursor.getInt(0));
+                cv.put("progress",cursor.getInt(1));
+                cv.put("highscore",cursor.getInt(2));
+                cv.put("lesson", cursor.getString(3));
+            } while (cursor.moveToNext());
+        }
+
+        return cv;
+    }
+
+    public List<String> getAllLessonId(){
+
+        List<String> lessonIds = new ArrayList<>();
+
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONArray m_jArry = obj.getJSONArray("lesson_arr");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                lessonIds.add(jo_inside.getString("lesson_id"));
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+        return lessonIds;
 
     }
 
