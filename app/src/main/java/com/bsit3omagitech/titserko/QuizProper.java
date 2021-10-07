@@ -282,6 +282,7 @@ public class QuizProper extends AppCompatActivity {
                     i.putExtra("lessonTranslated", lessonTranslated);
                     i.putExtra("username", username);
                     startActivity(i);
+                    finish();
                 }
 
             }

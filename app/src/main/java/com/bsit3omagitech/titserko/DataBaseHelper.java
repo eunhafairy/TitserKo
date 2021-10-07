@@ -7,6 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.util.Log;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_USER_NAME = "USER_NAME";
     public static final String COLUMN_USER_BDAY = "USER_BDAY";
     public static final String COLUMN_ID = "COLUMN_ID";
+    public static final String COLUMN_ACHIEVEMENT_ID = "COLUMN_ACHIEVEMENT_ID";
 
     //lesson table
     public static final String LESSON_TABLE = "LESSON_TABLE";
@@ -48,8 +50,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String LP_LESSON_STARS = "LP_LESSON_STAR"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
     public static final String LP_LESSON_MAX = "LP_LESSON_MAX"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
 
+    //user-achievement_record
+    public static final String ACHIEVEMENT_TABLE = "achievements";
+    public static final String ACHIEVEMENT_PRIMARY = "achievements_primary"; //AUTO
+    public static final String ACHIEVEMENT_ID = "achievements_ID"; //ID FROM JSON
+    public static final String ACHIEVEMENT_USER = "achievements_user"; //user
+    public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
 
-    public static final int DB_VERSION = 29;
+
+
+
+
+
+
+    public static final int DB_VERSION = 37;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
@@ -67,6 +81,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + USER_TABLE + " ("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_USER_NAME + " TEXT, "
+                + COLUMN_ACHIEVEMENT_ID + " TEXT, "
                 + COLUMN_USER_BDAY + " DATE)";
 
         try {
@@ -110,7 +125,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }
 
-        if (i >= 3){
+        //FOR USER-LESSON-PROGRESS
+        String createAchievementTableStatement = "CREATE TABLE "
+                + ACHIEVEMENT_TABLE + " ("
+                + ACHIEVEMENT_PRIMARY + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + ACHIEVEMENT_ID + " TEXT, "
+                + ACHIEVEMENT_USER + " TEXT, "
+                + ACHIEVEMENT_FLAG + " BOOLEAN)";
+
+        try {
+            db.execSQL(createAchievementTableStatement);
+            i++;
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+
+        if (i >= 4){
          Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
 
         }
@@ -151,7 +183,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         cv.put(COLUMN_USER_NAME, userModel.getName());
         cv.put(COLUMN_USER_BDAY, userModel.getDate());
-
+        cv.put(COLUMN_ACHIEVEMENT_ID, "A00001");
         long insert = db.insert(USER_TABLE, null, cv);
 
         if (insert == -1) {
@@ -159,25 +191,50 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         } else {
 
-  /*
-            //check if create new records for lesson record
-            SQLiteDatabase usernameRead = this.getReadableDatabase();
-            String userIDQuery = "SELECT "+ COLUMN_ID + " FROM "+ USER_TABLE + " WHERE "+ COLUMN_USER_NAME + " = " + userModel.getName();
-            Cursor cursor1 = dbRead.rawQuery(checkUsername, null);
-            if (cursor.moveToFirst()) {
-                do {
-                    if(cursor.getString(0).equals(userModel.getName())){
-                        return false;
-                    }
-                } while (cursor.moveToNext());
-            }
-
-            final String _LESSON_ID = "lesson_id";
-*/
             return true;
 
 
         }
+    }
+
+    public Uri getUserBadge(String username){
+
+
+
+        String imageurl = "", achieve_id = "";
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + COLUMN_ACHIEVEMENT_ID + " FROM " + USER_TABLE+ " WHERE "+COLUMN_USER_NAME + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                achieve_id = cursor.getString(0);
+            } while (cursor.moveToNext());
+        }
+
+
+        //--------------PARSE THROUGH JSON
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset("achievements.json"));
+            JSONArray m_jArry = obj.getJSONArray("achievements");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                String _id = jo_inside.getString("achieve_id");
+                if(_id.equals(achieve_id)){
+                    imageurl = jo_inside.getString("achieve_img");
+                    break;
+                }
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+        Log.d("DEBB", "achieve_id is: " + achieve_id + "image url is: " + imageurl);
+
+        Uri imageUri =Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imageurl);
+        return imageUri;
     }
 
 
@@ -303,7 +360,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         int score = 0;
 
         try{
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONObject obj = new JSONObject(loadJSONFromAsset("lessons.json"));
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
 
             for (int i = 0; i < m_jArry.length(); i++) {
@@ -333,7 +390,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         int index = 0;
 
         try{
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONObject obj = new JSONObject(loadJSONFromAsset("lessons.json"));
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
 
             for (int i = 0; i < m_jArry.length(); i++) {
@@ -398,12 +455,70 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void createAllAchievements(String username){
+
+        List<String> achievementIds = getAllAchievementId();
+        SQLiteDatabase db = this.getWritableDatabase();
+        //---------------LOOP INSERT INTO STATEMENT-----------------------
+        int ctr = achievementIds.size();
+        for(int i = 0; i < ctr; i++){
+            ContentValues cv = new ContentValues();
+            cv.put(ACHIEVEMENT_USER, username);
+            cv.put(ACHIEVEMENT_ID, achievementIds.get(i));
+            cv.put(ACHIEVEMENT_FLAG, Boolean.FALSE);
+            db.insert(ACHIEVEMENT_TABLE, null, cv);
+        }
+
+
+
+
+    }
+
+    public List<String> getAllAchievementId(){
+        List<String> achievementId = new ArrayList<>();
+
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset("achievements.json"));
+            JSONArray m_jArry = obj.getJSONArray("achievements");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                achievementId.add(jo_inside.getString("achieve_id"));
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+        return achievementId;
+
+    }
+
     public List<Integer> getStars(){
         List<Integer> stars = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT " + LP_LESSON_STARS + " FROM "
                 + LESSON_PROGRESS_TABLE;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                stars.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+
+        return stars;
+    }
+
+    public List<Integer> getUserStars(String username){
+        List<Integer> stars = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_STARS + " FROM "
+                + LESSON_PROGRESS_TABLE +
+                " WHERE " +
+                LP_USER_NAME + " = '" + username + "'";
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -470,8 +585,36 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void updateBadge(String username, String achievementId){
 
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updateQuery = "UPDATE " + USER_TABLE
+                + " SET " + COLUMN_ACHIEVEMENT_ID + " = '" + achievementId+"'"
+                + " WHERE " + COLUMN_USER_NAME + " = '" + username+"'";
+        db.execSQL(updateQuery);
 
+    }
+
+    public boolean isEquipped(String username, String achievementId){
+
+        boolean isEquipped = false;
+       //get the achievement id in user table
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + COLUMN_ACHIEVEMENT_ID + " FROM " + USER_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                String _id =  cursor.getString(0);
+                if(_id.equals(achievementId)){
+                    isEquipped =true;
+                    break;
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        return isEquipped;
+    }
 
 
 
@@ -483,11 +626,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         final String DROP_USER_TABLE  = "DROP TABLE IF EXISTS "+ USER_TABLE;
         final String DROP_LESSON_TABLE  = "DROP TABLE IF EXISTS "+ LESSON_TABLE;
         final String DROP_LESSON_PROGRESS_TABLE  = "DROP TABLE IF EXISTS "+ LESSON_PROGRESS_TABLE;
+        final String DROP_ACHIEVEMENT_TABLE  = "DROP TABLE IF EXISTS "+ ACHIEVEMENT_TABLE;
         try{
 
             db.execSQL(DROP_USER_TABLE);
             db.execSQL(DROP_LESSON_TABLE);
             db.execSQL(DROP_LESSON_PROGRESS_TABLE);
+            db.execSQL(DROP_ACHIEVEMENT_TABLE);
             Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
             onCreate(db);
 
@@ -505,7 +650,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         final String _LESSON_NAME = "lesson_name";
 
         try{
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONObject obj = new JSONObject(loadJSONFromAsset("lessons.json"));
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
 
             for (int i = 0; i < m_jArry.length(); i++) {
@@ -634,7 +779,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         List<String> lessonIds = new ArrayList<>();
 
         try{
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONObject obj = new JSONObject(loadJSONFromAsset("lessons.json"));
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
 
             for (int i = 0; i < m_jArry.length(); i++) {
@@ -653,10 +798,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     //get the JSON file of lessons
-    public String loadJSONFromAsset() {
+    public String loadJSONFromAsset(String name) {
         String json = null;
         try {
-            InputStream is = context.getAssets().open("lessons.json");
+            InputStream is = context.getAssets().open(name);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

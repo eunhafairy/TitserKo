@@ -19,6 +19,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     List<Integer> stars;
     Context context;
     OnIndividualScreen listenerIndividual;
+
     public myAdapter(Context ct, List<String> s1, List<Integer> star){
         context = ct;
         data1 = s1;

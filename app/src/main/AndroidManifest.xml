@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TitserKo">
-        <activity android:name=".Score"></activity>
+        <activity
+            android:name=".tk_achievements"
+            android:exported="true" />
+        <activity
+            android:name=".tk_profile"
+            android:exported="true" />
+        <activity android:name=".Score" />
         <activity android:name=".QuizProper" />
         <activity android:name=".LessonProper" />
         <activity android:name=".landing" />

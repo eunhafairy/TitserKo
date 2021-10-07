@@ -64,6 +64,7 @@ public class Score extends AppCompatActivity {
                 intent.putExtra("lessonTranslated", lessonTranslated);
                 intent.putExtra("username", username);
                 startActivity(intent);
+                finish();
             }
         });
 
