@@ -26,15 +26,18 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
     List<String> title, imagePath, achievementId;
     String username;
     Context context;
+    List<Boolean> isUnlocked;
     DataBaseHelper db;
+    AchievementAdapter.OnIndividualDialog listenerIndividual;
 
-    public AchievementAdapter(Context ct, List<String> titles, List<String> imagePaths, List<String> achievementIds, String name){
+    public AchievementAdapter(Context ct, List<String> titles, List<String> imagePaths, List<String> achievementIds, String name, List<Boolean> isUnlock){
 
         context = ct;
         title = titles;
         imagePath = imagePaths;
         achievementId = achievementIds;
         username = name;
+        isUnlocked = isUnlock;
         db = new DataBaseHelper(context);
     }
 
@@ -64,7 +67,7 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
 
             holder.btn_achieve.setText("OFF");
             holder.btn_achieve.setClickable(false);
-            holder.btn_achieve.setAlpha(0.8f);
+            holder.btn_achieve.setAlpha(0.5f);
 
         }
         else{
@@ -96,6 +99,17 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
             });
         }
 
+        if(!isUnlocked.get(holder.getAdapterPosition())){
+
+            holder.itemView.setAlpha(0.5f);
+            holder.btn_achieve.setClickable(false);
+
+        }
+        else{
+            holder.itemView.setAlpha(1);
+            holder.btn_achieve.setClickable(true);
+        }
+
     }
 
     @Override
@@ -116,6 +130,22 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
             iv_achieve_img = itemView.findViewById(R.id.iv_achieveRow);
             btn_achieve = itemView.findViewById(R.id.btn_achieve);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    listenerIndividual.convertViewOnIndividualScreen(position);
+                }
+            });
+
         }
+    }
+
+    public interface OnIndividualDialog{
+        void convertViewOnIndividualScreen(int position);
+
+    }
+    public void setIndividualScreenListener(AchievementAdapter.OnIndividualDialog listenerGalingSaIndividualScreen) {
+        listenerIndividual = listenerGalingSaIndividualScreen;
     }
 }

@@ -58,6 +58,7 @@ public class Score extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 db.refreshAllStars(username);
+                db.refreshAchievements(username);
                 Intent intent = new Intent(c, TkDashboardActivity.class);
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);

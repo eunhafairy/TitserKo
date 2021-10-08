@@ -4,9 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,15 +30,18 @@ public class tk_achievements extends AppCompatActivity {
 
     String name;
     RecyclerView achieveRv;
-    List<String> titles, imagePaths, achievementIds;
+    List<String> titles, imagePaths, achievementIds, desc;
+    List<Boolean> unlocked;
     Context c;
+    DataBaseHelper db;
+    Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tk_achievements);
 
     init();
-    reg();
+
 
     }
 
@@ -39,23 +51,64 @@ public class tk_achievements extends AppCompatActivity {
         name = intent.getStringExtra("username");
 
         // --------------------------------------------- INITIALIZE ----------------------------------------------
+
+
         achieveRv = findViewById(R.id.rv_achieve);
         c = this;
+        dialog = new Dialog(c);
         titles = new ArrayList<>();
         imagePaths = new ArrayList<>();
         achievementIds = new ArrayList<>();
+        desc = new ArrayList<>();
+        unlocked = new ArrayList<>();
+        db = new DataBaseHelper(this);
+        db.refreshAchievements(name);
         getAchievementList();
         //-------------------------------------------GET DATA FROM JSON AND DATABASE---------------------------------
-        AchievementAdapter adapter = new AchievementAdapter(this, titles, imagePaths, achievementIds, name);
+        AchievementAdapter adapter = new AchievementAdapter(this, titles, imagePaths, achievementIds, name, unlocked);
         achieveRv.setAdapter(adapter);
         achieveRv.setLayoutManager(new LinearLayoutManager(this));
 
+        adapter.setIndividualScreenListener(new AchievementAdapter.OnIndividualDialog() {
+            @Override
+            public void convertViewOnIndividualScreen(int position) {
+
+                openDialog(position);
+            }
+        });
+
+
 
     }
-    private void reg(){
 
+    //-----------------------------------------OPEN CUSTOM DIALOG--------------------------------------
+    private void openDialog(int pos){
+
+        dialog.setContentView(R.layout.achievement_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView tv_title_achieve_dialog = dialog.findViewById(R.id.tv_title_achieve_dialog);
+        TextView tv_desc_achieve_dialog = dialog.findViewById(R.id.tv_desc_achieve_dialog);
+        Button btn_confirm_achieve_dialog = dialog.findViewById(R.id.btn_confirm_achieve_dialog);
+        ImageView iv_achieve_dialog = dialog.findViewById(R.id.iv_achieve_dialog);
+
+        tv_title_achieve_dialog.setText(titles.get(pos));
+        tv_desc_achieve_dialog.setText(desc.get(pos));
+
+        Uri imageUri =Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePaths.get(pos));
+        iv_achieve_dialog.setImageURI(imageUri);
+
+        btn_confirm_achieve_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
 
     }
+
+
 
     // ----------------------------------------------- FOR DATA LIST OF RECYCLER VIEW ------------------------------------------
     public void getAchievementList(){
@@ -71,15 +124,24 @@ public class tk_achievements extends AppCompatActivity {
                 String title = jo_inside.getString("achieve_name");
                 String path =  jo_inside.getString("achieve_img");
                 String id =  jo_inside.getString("achieve_id");
-
+                String description = jo_inside.getString("achieve_desc");
                 //add to lists
                 titles.add(title);
                 imagePaths.add(path);
                 achievementIds.add(id);
+                desc.add(description);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        //database
+        for(int x = 0; x < achievementIds.size(); x++){
+
+            unlocked.add(db.isUnlocked(achievementIds.get(x), name));
+
+        }
+
 
     }
 
@@ -110,4 +172,6 @@ public class tk_achievements extends AppCompatActivity {
         finish();
 
     }
+
+
 }

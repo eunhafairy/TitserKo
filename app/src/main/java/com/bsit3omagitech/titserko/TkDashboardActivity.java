@@ -83,9 +83,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         // ------------------------------------------ DATABASE AND RECYCLER VIEW FUNCTIONS ------------------------------------------
 
         stars = db.getUserStars(name);
-
         getLessonList();
-
         myAdapter adapter = new myAdapter(this, lessonList, stars);
         myRv.setAdapter(adapter);
         myRv.setLayoutManager(new LinearLayoutManager(this));
@@ -107,6 +105,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
             }
         });
         db.refreshAllStars(name);
+        db.refreshAchievements(name);
 
         // ----------------------------------------- FOR SWIPE REFRESH -----------------------------------------
 
@@ -123,6 +122,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 stars.clear();
                 stars = db.getUserStars(name);
                 db.refreshAllStars(name);
+                db.refreshAchievements(name);
                 myAdapter adapter = new myAdapter(TkDashboardActivity.this, lessonList, stars);
                 myRv.setAdapter(adapter);
 

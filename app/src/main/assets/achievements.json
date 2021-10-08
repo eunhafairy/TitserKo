@@ -3,6 +3,14 @@
 "achievements" : [
 
     {
+        "achieve_id" : "A00000",
+        "achieve_name" : "Student",
+        "achieve_desc" : "You are now beginning your journey. Study hard!",
+        "achieve_desc_tagalog" : "Sinumulan mo na ang iyong paglalakbay. Mag-aral ng mabuti!",
+        "achieve_img" : "badge_00001"
+
+    },
+    {
         "achieve_id" : "A00001",
         "achieve_name" : "First Steps!",
         "achieve_desc" : "Start your first lesson.",
@@ -61,19 +69,14 @@
 
     }
     ,
-
-
     {
         "achieve_id" : "A00007",
-        "achieve_name" : "Master",
-        "achieve_desc" : "Get 100% progress on all lessons.",
-        "achieve_desc_tagalog" : "Makakuha ng 100% kaunlaran sa lahat ng mga aralin.",
-        "achieve_img" : "badge_00001"
+        "achieve_name" : "EZ!",
+        "achieve_desc" : "Get 100% progress and a perfect score on \"Basics\" lesson",
+        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Favourite.\"",
+        "achieve_img" : "badge_00002"
 
-    }
-
-    ,
-
+    },
     {
         "achieve_id" : "A00008",
         "achieve_name" : "My Favourite!",
@@ -83,12 +86,13 @@
 
     }
     ,
+
     {
-        "achieve_id" : "A00009",
-        "achieve_name" : "EZ!",
-        "achieve_desc" : "Get 100% progress and a perfect score on \"Basics\" lesson",
-        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Favourite.\"",
-        "achieve_img" : "badge_00002"
+        "achieve_id" : "A10000",
+        "achieve_name" : "Master",
+        "achieve_desc" : "Get 100% progress on all lessons.",
+        "achieve_desc_tagalog" : "Makakuha ng 100% kaunlaran sa lahat ng mga aralin.",
+        "achieve_img" : "badge_00001"
 
     }
 

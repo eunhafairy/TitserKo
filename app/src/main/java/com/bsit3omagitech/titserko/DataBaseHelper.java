@@ -63,7 +63,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public static final int DB_VERSION = 37;
+    public static final int DB_VERSION = 38;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
@@ -462,10 +462,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //---------------LOOP INSERT INTO STATEMENT-----------------------
         int ctr = achievementIds.size();
         for(int i = 0; i < ctr; i++){
+
             ContentValues cv = new ContentValues();
             cv.put(ACHIEVEMENT_USER, username);
             cv.put(ACHIEVEMENT_ID, achievementIds.get(i));
-            cv.put(ACHIEVEMENT_FLAG, Boolean.FALSE);
+            if(i == 0){
+                cv.put(ACHIEVEMENT_FLAG, 1);
+
+            }
+            else{
+                cv.put(ACHIEVEMENT_FLAG, 0);
+            }
             db.insert(ACHIEVEMENT_TABLE, null, cv);
         }
 
@@ -619,6 +626,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //drop table
@@ -681,6 +689,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Boolean isUnlocked(String id, String username){
+
+        boolean isUnlock = false;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + ACHIEVEMENT_FLAG + " FROM " + ACHIEVEMENT_TABLE+ " WHERE " + ACHIEVEMENT_USER + " = '" + username + "' AND "+ ACHIEVEMENT_ID + " = '" + id + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                boolean flag = cursor.getInt(0) > 0 ;
+                if(flag){
+                    isUnlock = true;
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        return isUnlock;
+    }
+
     public void refreshAllStars(String username){
 
         //lessons have stars for progress
@@ -741,7 +769,159 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         }
 
+    public void refreshAchievements(String username){
 
+
+        //---------------- FOR ACHIEVEMENT A00001---------------------
+            /**
+             *          "achieve_id" : "A00001"
+             *         "achieve_name" : "First Steps!",
+             *         "achieve_desc" : "Start your first lesson.",
+             *
+             **/
+        int a = getLessonStar(username, "00001");
+        if(a > 0){
+            updateAchievement(username, "A00001");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00002---------------------
+        /**
+         *         "achieve_id" : "A00002",
+         *         "achieve_name" : "Born A Star I",
+         *         "achieve_desc" : "Acquire a total of three stars.",
+         *
+         **/
+        a = getUserTotalStars(username);
+        if(a >=3 ){
+            updateAchievement(username, "A00002");
+
+        }
+
+        //---------------- FOR ACHIEVEMENT A00003---------------------
+        /**
+         *          "achieve_id" : "A00003",
+         *         "achieve_name" : "Born A Star II",
+         *         "achieve_desc" : "Acquire a total of ten stars.",
+         *
+         **/
+
+        a = getUserTotalStars(username);
+        if(a >=10){
+            updateAchievement(username, "A00003");
+
+        }
+
+        //---------------- FOR ACHIEVEMENT A00004---------------------
+        /**
+         *         "achieve_id" : "A00004",
+         *         "achieve_name" : "Born A Star III",
+         *         "achieve_desc" : "Acquire a total of twenty stars.",
+         *
+         **/
+
+        a = getUserTotalStars(username);
+        if(a >= 20){
+            updateAchievement(username, "A00004");
+
+        }
+
+        //---------------- FOR ACHIEVEMENT A00005---------------------
+        /**
+         *          "achieve_id" : "A00005",
+         *         "achieve_name" : "Ace!",
+         *         "achieve_desc" : "Get a perfect score on a quiz.",
+         *
+         **/
+        a = perfectScoreCounter(username);
+        if(a > 0){
+            updateAchievement(username, "A00005");
+        }
+
+
+        //---------------- FOR ACHIEVEMENT A00006---------------------
+        /**
+         *          "achieve_id" : "A00006",
+         *         "achieve_name" : "Fly high!",
+         *         "achieve_desc" : "Get three perfect score on quizzes.",
+         *
+         **/
+        a = perfectScoreCounter(username);
+        if(a >= 3){
+            updateAchievement(username, "A00006");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00007---------------------
+        /**
+         *           "achieve_id" : "A00007",
+         *         "achieve_name" : "EZ!",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Basics\" lesson",
+         *
+         **/
+        a = getLessonStar(username, "00001");
+        if(a >= 3){
+            updateAchievement(username, "A00007");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00008---------------------
+        /**
+         *         "achieve_id" : "A00008",
+         *         "achieve_name" : "My Favourite!",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Favourite\" lesson",
+         *
+         **/
+
+        a = getLessonStar(username, "00005");
+        if(a >= 3){
+            updateAchievement(username, "A00008");
+        }
+
+        //---------------- FOR ACHIEVEMENT A10000---------------------
+        /**
+         *         "achieve_id" : "A10000",
+         *         "achieve_name" : "Master",
+         *         "achieve_desc" : "Get 100% progress on all lessons.",
+         *
+         **/
+
+        a = getUserTotalStars(username);
+        int b = getAllLessonId().size();
+
+        if(a >= (b*3)){
+            updateAchievement(username, "A10000");
+        }
+
+    }
+
+    public void updateAchievement(String username, String achievementID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updateQuery = "UPDATE " + ACHIEVEMENT_TABLE
+                + " SET " + ACHIEVEMENT_FLAG + " = 1"
+                + " WHERE " + ACHIEVEMENT_USER + " = '" + username+"' AND "+
+                ACHIEVEMENT_ID + " = '" + achievementID+"'";
+        db.execSQL(updateQuery);
+
+
+    }
+
+    public int getUserTotalStars(String username){
+
+        int totalStars = 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_STARS + " FROM "
+                + LESSON_PROGRESS_TABLE +
+                " WHERE " +
+                LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                totalStars+= cursor.getInt(0);
+            } while (cursor.moveToNext());
+        }
+
+        return totalStars;
+    }
     public void updateStar(int lessonprogress_ID, int currentStar){
 
         String updateQuery = "UPDATE " + LESSON_PROGRESS_TABLE
@@ -749,6 +929,47 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + " WHERE " + LP_ID + " = " + lessonprogress_ID;
         SQLiteDatabase db1 = this.getWritableDatabase();
         db1.execSQL(updateQuery);
+
+    }
+
+    public int perfectScoreCounter(String username){
+
+        int ctr = 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_QUIZ_HIGHSCORE + ", "+ LP_LESSON_ID +
+                " FROM "
+                + LESSON_PROGRESS_TABLE +
+                " WHERE " +
+                LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                int maxScore = getMaxScore(cursor.getString(1));
+                if(cursor.getInt(0) >= maxScore){
+                    ctr++;
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        return ctr;
+    }
+
+
+
+    public int getLessonStar(String username, String lessonId){
+
+        int i = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_STARS + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "' AND " + LP_LESSON_ID + " = '" + lessonId  + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                i =  cursor.getInt(0);
+            } while (cursor.moveToNext());
+        }
+        return i;
 
     }
 
