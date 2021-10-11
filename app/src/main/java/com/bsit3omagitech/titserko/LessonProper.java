@@ -200,7 +200,7 @@ public class LessonProper extends AppCompatActivity {
                 else{
                     index--;
                     btn_lp_previous.setVisibility(View.VISIBLE);
-                    btn_lp_finish.setVisibility(View.VISIBLE);
+                    btn_lp_finish.setVisibility(View.INVISIBLE);
                     btn_lp_next.setVisibility(View.VISIBLE);
 
                     //hide previous button if index is 0

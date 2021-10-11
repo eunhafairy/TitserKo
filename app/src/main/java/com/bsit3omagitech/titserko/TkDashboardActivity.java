@@ -279,6 +279,13 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 finish();
                 break;
 
+            case R.id.nav_stats:
+                Intent i3 = new Intent(this, tk_statistics.class);
+                i3.putExtra("username", name);
+                startActivity(i3);
+                finish();
+                break;
+
 
         }
     drawerLayout.closeDrawer(GravityCompat.START);

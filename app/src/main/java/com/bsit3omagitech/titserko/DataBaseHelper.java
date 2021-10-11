@@ -49,7 +49,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String LP_LESSON_PROGRESS = "LP_LESSON_PROGRESS"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
     public static final String LP_LESSON_STARS = "LP_LESSON_STAR"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
     public static final String LP_LESSON_MAX = "LP_LESSON_MAX"; //RECORD OF USER'S PROGRESS IN PERCENTAGE, INT
-
+    public static final String LP_QUIZ_LOWSWCORE= "LP_QUIZ_LOWSWCORE";
+    public static final String LP_QUIZ_TAKEN = "LP_QUIZ_TAKEN";
     //user-achievement_record
     public static final String ACHIEVEMENT_TABLE = "achievements";
     public static final String ACHIEVEMENT_PRIMARY = "achievements_primary"; //AUTO
@@ -63,7 +64,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public static final int DB_VERSION = 38;
+    public static final int DB_VERSION = 39;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
@@ -115,6 +116,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + LP_QUIZ_HIGHSCORE + " INTEGER, "
                 + LP_LESSON_PROGRESS + " INTEGER, "
                 + LP_LESSON_MAX + " INTEGER, "
+                + LP_QUIZ_LOWSWCORE + " INTEGER, "
+                + LP_QUIZ_TAKEN + " INTEGER, "
                 + LP_LESSON_STARS + " INTEGER)";
 
         try {
@@ -195,6 +198,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
         }
+    }
+
+    public int getTotalUserBadge(String username){
+        int badge = 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + ACHIEVEMENT_FLAG + " FROM " + ACHIEVEMENT_TABLE+ " WHERE "+ACHIEVEMENT_USER + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                boolean flag = cursor.getInt(0) > 0;
+                if(flag){
+                    badge++;
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+        return badge;
+
     }
 
     public Uri getUserBadge(String username){
@@ -279,9 +302,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public void saveHighscore(String userName, String lessonId, int score){
 
-        int lp_id = 0, currentHighscore = 0;
+        int lp_id = 0, currentHighscore = 0, currentLowscore = 0, ctr = 0;
 
-        String selectQuery = "SELECT " + LP_ID + ", "+ LP_QUIZ_HIGHSCORE +" FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + userName + "' AND " + LP_LESSON_ID + " = '" + lessonId + "'";
+        String selectQuery = "SELECT " + LP_ID + ", "+ LP_QUIZ_HIGHSCORE +", "+LP_QUIZ_LOWSWCORE+ ", "+LP_QUIZ_TAKEN+" FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + userName + "' AND " + LP_LESSON_ID + " = '" + lessonId + "'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -289,8 +312,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             do {
                 lp_id =  cursor.getInt(0);
                 currentHighscore = cursor.getInt(1);
+                currentLowscore = cursor.getInt(2);
+                ctr = cursor.getInt(3);
             } while (cursor.moveToNext());
         }
+
 
         if(score > currentHighscore){
 
@@ -304,6 +330,37 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
         }
+
+        if(ctr == 0){
+
+            //update the lowscore regardless
+            String updateQuery = "UPDATE " + LESSON_PROGRESS_TABLE
+                    + " SET " + LP_QUIZ_LOWSWCORE + " = " + score
+                    + " WHERE " + LP_ID + " = '" + lp_id + "'";
+
+            SQLiteDatabase db1 = this.getWritableDatabase();
+            db1.execSQL(updateQuery);
+
+        }
+        else if(score < currentLowscore){
+            //update the lowscore
+            String updateQuery = "UPDATE " + LESSON_PROGRESS_TABLE
+                    + " SET " + LP_QUIZ_LOWSWCORE + " = " + score
+                    + " WHERE " + LP_ID + " = '" + lp_id + "'";
+
+            SQLiteDatabase db1 = this.getWritableDatabase();
+            db1.execSQL(updateQuery);
+
+
+        }
+
+        ctr++;
+        String updateQuery = "UPDATE " + LESSON_PROGRESS_TABLE
+                + " SET " + LP_QUIZ_TAKEN + " = " + ctr
+                + " WHERE " + LP_ID + " = '" + lp_id + "'";
+
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        db1.execSQL(updateQuery);
 
     }
 
@@ -338,6 +395,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             cv.put(LP_QUIZ_HIGHSCORE, 0);
             cv.put(LP_LESSON_PROGRESS, 0);
             cv.put(LP_LESSON_STARS, 0);
+            cv.put(LP_QUIZ_LOWSWCORE, 0);
+            cv.put(LP_QUIZ_TAKEN, 0);
             cv.put(LP_LESSON_MAX, getMaxIndex(lessonID));
 
             long insert = db.insert(LESSON_PROGRESS_TABLE, null, cv);
@@ -447,8 +506,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             cv.put(LP_LESSON_PROGRESS, 0);
             cv.put(LP_QUIZ_HIGHSCORE, 0);
             cv.put(LP_LESSON_STARS, 0);
+            cv.put(LP_QUIZ_TAKEN, 0);
+            cv.put(LP_QUIZ_LOWSWCORE, 0);
             cv.put(LP_LESSON_MAX, getMaxIndex(lessonIds.get(i)));
-
             db1.insert(LESSON_PROGRESS_TABLE, null, cv);
         }
 
@@ -550,6 +610,67 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
             return i;
+
+    }
+
+    //------------------- METHODS FOR LIST RETURNS
+    public List<Integer> getAllLessonProgress(String username){
+
+        List<Integer> i = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_PROGRESS + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                i.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+        return i;
+
+    }
+
+    public List<Integer> getAllQuizHighscore(String username){
+
+        List<Integer> i = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_QUIZ_HIGHSCORE + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                i.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+        return i;
+
+    }
+
+    public List<Integer> getAllQuizLowscore(String username){
+
+        List<Integer> i = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_QUIZ_LOWSWCORE + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                i.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+        return i;
+
+    }
+
+    public List<Integer> getAllQuizTaken(String username){
+
+        List<Integer> i = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_QUIZ_TAKEN + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                i.add(cursor.getInt(0));
+            } while (cursor.moveToNext());
+        }
+        return i;
 
     }
 
@@ -993,6 +1114,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         return cv;
+    }
+
+    public int getLessonFinished(String username){
+
+        int ctr = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_PROGRESS + ", "+LP_LESSON_MAX
+                +" FROM "
+                + LESSON_PROGRESS_TABLE + " WHERE "
+                + LP_USER_NAME + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                if(cursor.getInt(0) >= cursor.getInt(1)){
+                    ctr++;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        return ctr;
     }
 
     public List<String> getAllLessonId(){

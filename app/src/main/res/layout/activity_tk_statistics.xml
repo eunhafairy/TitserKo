@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".tk_statistics">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:background="@color/darkGreen"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/iv_stat_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/back_btn"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="left"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_landingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:fontFamily="@font/roboto_blk"
+                android:textStyle="bold"
+                android:text="Statistics" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_weight="7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/pb_stat_overall"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:progressDrawable="@drawable/custom_progressbar"
+            android:layout_height="20dp"
+            android:progress="@integer/material_motion_duration_long_1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:fontFamily="@font/roboto_blk"
+                android:textColor="@color/darkGreen"
+
+                android:text="Overall Progress"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/darkGreen"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_gravity="left"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/darkGreen"
+                android:layout_weight="1"
+                android:text="Overall Lesson Progress"/>
+
+                <TextView
+                    android:id="@+id/tv_stat_overall_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/darkGreen"
+                    android:text="10%"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/darkGreen"
+                    android:layout_weight="1"
+                    android:text="Total Badges"/>
+
+                <TextView
+                    android:id="@+id/tv_stat_overall_badges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/darkGreen"
+                    android:text="3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/darkGreen"
+                    android:layout_weight="1"
+                    android:text="Total Stars"/>
+
+                <TextView
+                    android:id="@+id/tv_stat_overall_stars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/darkGreen"
+                    android:text="5"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/darkGreen"
+                    android:layout_weight="1"
+                    android:text="Lessons Finished"/>
+
+                <TextView
+                    android:id="@+id/tv_stat_overall_finished"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/darkGreen"
+                    android:text="5"/>
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

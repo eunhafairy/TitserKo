@@ -937,8 +937,8 @@
     },
     {
         "lesson_id" : "00004",
-        "lesson_name" : "Fruits and vegetables",
-        "lesson_name_translate" : "Prutas at gulay",
+        "lesson_name" : "Fruits",
+        "lesson_name_translate" : "Mga Prutas",
         "parts" : [
 
             {
