@@ -42,7 +42,7 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.My
         //set values
 
         holder.stat_row_title.setText(titles.get(position));
-        holder.stat_row_study_progress.setText(studyProgress.get(position) + "");
+        holder.stat_row_study_progress.setText(studyProgress.get(position) + "%");
         holder.stat_row_highscore.setText(quizHighscore.get(position) + "");
         holder.stat_row_lowscore.setText(quizLowscore.get(position) + "");
         holder.stat_row_quiz_taken.setText(quizTaken.get(position) + "");

@@ -101,12 +101,12 @@ public class landing extends AppCompatActivity {
        lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
        float currentProgress = db.getLessonProgress(username, lessonId);
        float c = (currentProgress/(maxLesson-1)) * 100f;
-       Log.d(" percentage",  "Current Progress: "+currentProgress + ", Max Lesson: " +maxLesson + ", Percent: " + c);
+       //Log.d(" percentage",  "Current Progress: "+currentProgress + ", Max Lesson: " +maxLesson + ", Percent: " + c);
        lessonProgressBar.setProgress((int) c);
 
        quizProgressBar = (ProgressBar) findViewById(R.id.quizProgressBar);
        float currentQuizProgress = db.getQuizProgress(username, lessonId);
-       float d = (currentQuizProgress/(maxScore-1)) * 100f;
+       float d = (currentQuizProgress/(maxScore)) * 100f;
        quizProgressBar.setProgress((int) d);
 
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);

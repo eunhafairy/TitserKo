@@ -15,7 +15,10 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import android.content.Context;
@@ -442,7 +445,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         }
 
-        return score-1;
+        return score;
     }
 
     public int getMaxIndex(String lessonId){
@@ -617,12 +620,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public List<Integer> getAllLessonProgress(String username){
 
         List<Integer> i = new ArrayList<>();
+        float a, b, c;
         SQLiteDatabase db = this.getReadableDatabase();
-        String selectQuery = "SELECT " + LP_LESSON_PROGRESS + " FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
+        String selectQuery = "SELECT " + LP_LESSON_PROGRESS + ", "+LP_LESSON_MAX+" FROM " + LESSON_PROGRESS_TABLE + " WHERE " + LP_USER_NAME + " = '" + username + "'";
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                i.add(cursor.getInt(0));
+                a = (float) cursor.getInt(0);
+                b = (float) cursor.getInt(1);
+                c = (a / b) * 100;
+                i.add((int)c);
             } while (cursor.moveToNext());
         }
         return i;
@@ -861,22 +868,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
             int currentStar = 0;
-            int half = _highscore/2;
             //check for progress first and flag for accomplishments
 
             if(_progress >= getMaxIndex(_lesson))
                 {
-
+                    Log.d("half", "flagg1!");
                     currentStar++;
 
                 }
 
 
-                if(half >= (getMaxScore(_lesson)/2)){
+                if(_highscore >= (getMaxScore(_lesson)/2)){
 
                     currentStar++;
-
+                    Log.d("half", "flagg2!");
                 }
+
 
                 if(_highscore >= getMaxScore(_lesson)){
 
@@ -889,6 +896,41 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             }
 
         }
+
+   public Date getUserBirthday(String username){
+
+
+     String dt = "";
+       SQLiteDatabase db = this.getReadableDatabase();
+       String selectQuery = "SELECT " + COLUMN_USER_BDAY + " FROM " + USER_TABLE + " WHERE " + COLUMN_USER_NAME + " = '" + username + "'";
+       Cursor cursor = db.rawQuery(selectQuery, null);
+
+       if (cursor.moveToFirst()) {
+           do {
+               Log.d("bday", "cursor.getString: "+cursor.getString(0));
+
+
+                   dt = (cursor.getString(0));
+
+
+
+           } while (cursor.moveToNext());
+       }
+       SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+       Date date = null;
+       try {
+           date  = format.parse(dt);
+
+       } catch (ParseException e) {
+           e.printStackTrace();
+       }
+
+
+
+       return date;
+
+   }
+
 
     public void refreshAchievements(String username){
 
