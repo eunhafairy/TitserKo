@@ -89,7 +89,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -147,7 +147,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -165,6 +165,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
                 android:gravity="right"
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto_light"
@@ -172,6 +173,66 @@
                 android:text="March 06, 1999"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_blk"
+            android:textColor="@color/darkGreen"
+            android:text="Badges"/>
+
+
+
+
+<!--
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_profile_badges"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_row"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical"/>
+-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_row"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <org.apmem.tools.layouts.FlowLayout
+                        android:id="@+id/fl_profile"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        >
+
+
+
+
+                    </org.apmem.tools.layouts.FlowLayout>
+
+                </ScrollView>
+
+
+            </LinearLayout>
+
+
+
+
+
 
 
 

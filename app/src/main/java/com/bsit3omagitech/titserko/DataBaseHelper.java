@@ -223,6 +223,59 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public List<String> getProfileBadges(String username){
+
+        List<String> imagePaths = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + ACHIEVEMENT_ID + ", "+ ACHIEVEMENT_FLAG + " FROM " + ACHIEVEMENT_TABLE+ " WHERE "+ACHIEVEMENT_USER + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                boolean flag = cursor.getInt(1) > 0;
+
+                if(flag){
+
+                    String achieve_id = cursor.getString(0), imageurl = "";
+
+
+                    try{
+                        JSONObject obj = new JSONObject(loadJSONFromAsset("achievements.json"));
+                        JSONArray m_jArry = obj.getJSONArray("achievements");
+
+                        for (int i = 0; i < m_jArry.length(); i++) {
+                            JSONObject jo_inside = m_jArry.getJSONObject(i);
+                            String _id = jo_inside.getString("achieve_id");
+                            if(_id.equals(achieve_id)){
+                                imageurl = jo_inside.getString("achieve_img");
+                                break;
+                            }
+                        }
+                    }
+                    catch (JSONException e){
+
+                        e.printStackTrace();
+
+                    }
+
+
+                   imagePaths.add(imageurl);
+
+                }
+                else{
+                    imagePaths.add("lockedbadge");
+
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+
+
+        return imagePaths;
+
+    }
+
     public Uri getUserBadge(String username){
 
 
@@ -257,7 +310,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             e.printStackTrace();
 
         }
-        Log.d("DEBB", "achieve_id is: " + achieve_id + "image url is: " + imageurl);
 
         Uri imageUri =Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imageurl);
         return imageUri;
