@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/customborder"
+    android:padding="40dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/ll_landing"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:paddingBottom="50dp"
+        android:visibility="gone">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,7 +26,7 @@
             android:textSize="50sp"
             android:textColor="@color/white"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="200dp"
+
             />
         <ImageView
             android:id="@+id/iv_study"
@@ -42,34 +44,49 @@
         android:gravity="center"
         android:id="@+id/ll_profile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:paddingBottom="40dp"
+        android:visibility="visible">
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choose a profile"
+            android:layout_gravity="center"
             android:fontFamily="@font/finger_paint"
-            android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="30sp"
+            android:text="Choose a profile"
             android:textColor="@color/white"
-            android:layout_marginTop="50dp"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"
+
             />
-        <Spinner
-            android:id="@+id/spnr_profile"
-            android:background="@drawable/spinner_bg"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="8dp"
-            />
-        <Button
-            android:id="@+id/btn_confirm"
-            android:text="Confirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+
+            <Spinner
+                android:id="@+id/spnr_profile"
+                android:background="@drawable/spinner_bg"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_confirm"
+                android:text="Ok"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/main_okay_btn"
+                android:textColor="@color/darkGreen"
+                android:textSize="25sp"
+                android:fontFamily="@font/finger_paint"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                              />
+
+
+
 
         <TextView
             android:id="@+id/tv_createProfile"
@@ -79,7 +96,7 @@
             android:layout_gravity="center"
             android:textColor="@color/white"
             android:fontFamily="@font/robotothin"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:textSize="15sp"
             />
     </LinearLayout>

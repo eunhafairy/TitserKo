@@ -35,6 +35,7 @@ public class tk_achievements extends AppCompatActivity {
     Context c;
     DataBaseHelper db;
     Dialog dialog;
+    ImageView iv_achieve_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class tk_achievements extends AppCompatActivity {
 
         // --------------------------------------------- INITIALIZE ----------------------------------------------
 
-
+        iv_achieve_back = findViewById(R.id.iv_achieve_back);
         achieveRv = findViewById(R.id.rv_achieve);
         c = this;
         dialog = new Dialog(c);
@@ -74,6 +75,18 @@ public class tk_achievements extends AppCompatActivity {
             public void convertViewOnIndividualScreen(int position) {
 
                 openDialog(position);
+            }
+        });
+
+
+        //-------------------------------------------BACK BUTTON---------------------------------
+        iv_achieve_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(tk_achievements.this, TkDashboardActivity.class);
+                intent.putExtra("username", name);
+                startActivity(intent);
+                finish();
             }
         });
 

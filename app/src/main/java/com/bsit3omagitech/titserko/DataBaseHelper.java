@@ -189,7 +189,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         cv.put(COLUMN_USER_NAME, userModel.getName());
         cv.put(COLUMN_USER_BDAY, userModel.getDate());
-        cv.put(COLUMN_ACHIEVEMENT_ID, "A00001");
+        cv.put(COLUMN_ACHIEVEMENT_ID, "A00000");
         long insert = db.insert(USER_TABLE, null, cv);
 
         if (insert == -1) {

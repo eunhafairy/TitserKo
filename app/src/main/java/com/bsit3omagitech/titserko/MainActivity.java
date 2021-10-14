@@ -128,4 +128,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    public void onBackPressed() {
+
+        System.exit(0);
+        finish();
+
+    }
+
+
 }

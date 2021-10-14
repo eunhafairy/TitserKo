@@ -5,24 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
- android:background="@color/lightBrown"
+ android:background="@color/white"
+
+
     tools:context=".Score">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:orientation="vertical"
-        android:layout_weight="9">
+        android:padding="20dp"
+        android:layout_weight="7">
         <TextView
             android:id="@+id/score_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_gravity="center"
             android:textSize="40sp"
-            android:fontFamily="@font/finger_paint"
+            android:fontFamily="@font/roboto_blk"
             android:textColor="@color/darkGreen"
             android:layout_marginTop="30dp"
-            android:text="Lesson 1 Quiz"
+            android:text="Introduction Quiz"
             />
         <TextView
             android:id="@+id/score_tv_score"
@@ -36,23 +40,43 @@
             />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="5dp"
-        >
-
-        <Button
-            android:id="@+id/score_btn"
+    <!--
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="20dp"
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:layout_weight="10">
 
-            android:layout_gravity="center"
-            android:text="Back to menu" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@drawable/rounded_row"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
+
+
+
+
+
+        </LinearLayout>
+
+    -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/score_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Back to menu" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>

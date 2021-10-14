@@ -2,6 +2,7 @@ package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -25,6 +26,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class QuizProper extends AppCompatActivity {
 
@@ -41,6 +45,7 @@ public class QuizProper extends AppCompatActivity {
     JSONArray quizArray;
     Context c;
     ProgressBar quizProgress;
+    List<String> userAnswer;
     float progress, maxScore;
     boolean toggle;
     @Override
@@ -91,7 +96,7 @@ public class QuizProper extends AppCompatActivity {
 
         //selected answer
         selectedAnswer = "";
-
+        userAnswer = new ArrayList<String>();
         //get JSON Object of selected Quiz
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
@@ -111,7 +116,8 @@ public class QuizProper extends AppCompatActivity {
             }
 
         //get the parts array
-        quizArray = targetLessonObject.getJSONArray("quiz");
+        quizArray =  shuffleJsonArray(targetLessonObject.getJSONArray("quiz"));
+
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -150,6 +156,7 @@ public class QuizProper extends AppCompatActivity {
                 //if text is confirm, check the answer, else go to the next part
                 if(btn_lp_confirm.getText().equals("Confirm")){
 
+                    userAnswer.add(selectedAnswer);
                     String correctAnswer = "";
                     Button _confirmButton = (Button) v;
                     //get the correct answer from JSON
@@ -281,6 +288,8 @@ public class QuizProper extends AppCompatActivity {
                     i.putExtra("lessonId", lessonId);
                     i.putExtra("lessonTranslated", lessonTranslated);
                     i.putExtra("username", username);
+                    i.putExtra("quizArr", quizArray.toString());
+                    i.putStringArrayListExtra("selectedAnswers", (ArrayList<String>) userAnswer);
                     startActivity(i);
                     finish();
                 }
@@ -467,6 +476,23 @@ public class QuizProper extends AppCompatActivity {
         }
 
 
+    }
+
+    //--------------------SHUFFLE QUIZ ARRAY-----------------------
+
+    public static JSONArray shuffleJsonArray (JSONArray array) throws JSONException {
+        // Implementing Fisher–Yates shuffle
+        Random rnd = new Random();
+        rnd.setSeed(System.currentTimeMillis());
+        for (int i = array.length() - 1; i >= 0; i--)
+        {
+            int j = rnd.nextInt(i + 1);
+            // Simple swap
+            Object object = array.get(j);
+            array.put(j, array.get(i));
+            array.put(i, object);
+        }
+        return array;
     }
 
 }

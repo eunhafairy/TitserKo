@@ -43,6 +43,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
        //for lesson titles
 
         holder.myText1.setText(data1.get(position));
+
         int _star = stars.get(position);
 
         switch(_star){

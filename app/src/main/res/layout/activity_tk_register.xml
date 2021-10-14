@@ -38,7 +38,10 @@
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:background="@color/white"
+        android:inputType="text"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/white"
         />
 
     <TextView
@@ -46,6 +49,8 @@
         android:layout_height="wrap_content"
         android:text="Enter your birthday"
         android:fontFamily="@font/robotothin"
+
+
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="20sp"
@@ -59,8 +64,10 @@
         android:inputType="date"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:editable="false"
-        android:background="@color/white"
+        android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/white"
+        android:focusable="false"
+
         android:layout_marginBottom="20dp"
         />
     <LinearLayout
@@ -70,19 +77,23 @@
         android:layout_gravity="center"
         >
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_confirmProfile"
             android:layout_weight="1"
             android:text="Confirm"
+            android:background="@drawable/rounded_row"
+            android:backgroundTint="@color/lightGreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
         />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_cancelProfile"
             android:layout_weight="1"
             android:text="Cancel"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/rounded_row"
+
+            android:backgroundTint="@color/lightRed"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

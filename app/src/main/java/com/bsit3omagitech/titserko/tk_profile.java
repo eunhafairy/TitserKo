@@ -29,7 +29,7 @@ import java.util.List;
 public class tk_profile extends AppCompatActivity {
 
 
-    ImageView btn_profile_back;
+    ImageView btn_profile_back, iv_profile_badge;
     TextView tv_profile_name, tv_profile_name2, tv_profile_age, tv_profile_birthday;
     String name, dateTime, age;
     Context c;
@@ -56,6 +56,8 @@ public class tk_profile extends AppCompatActivity {
         tv_profile_name2 = findViewById(R.id.tv_profile_name2);
         tv_profile_age = findViewById(R.id.tv_profile_age);
         tv_profile_birthday = findViewById(R.id.tv_profile_birthday);
+        iv_profile_badge  = findViewById(R.id.iv_profile_badge);
+
         flowLayout = findViewById(R.id.fl_profile);
         c = this;
         db = new DataBaseHelper(c);
@@ -72,6 +74,7 @@ public class tk_profile extends AppCompatActivity {
         age = getAge(dateTime) + "";
 
         populateProfileBadge();
+        iv_profile_badge.setImageURI(db.getUserBadge(name));
 
     }
 

@@ -71,7 +71,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/ic_launcher_background"/>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -147,7 +147,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp">
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_landing_study"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -156,10 +156,11 @@
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/finger_paint"
         android:textSize="30sp"
-        android:backgroundTint="@color/darkGreen"
+        android:textColor="@color/darkGreen"
+        android:backgroundTint="@color/lightGreen"
         android:background="@drawable/study_quiz_btn"
         android:text="Study"/>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_landing_quiz"
         android:layout_width="300dp"
         android:layout_height="80dp"
@@ -167,6 +168,7 @@
         android:textSize="30sp"
         android:background="@drawable/study_quiz_btn"
         android:backgroundTint="@color/darkGreen"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:text="Quiz"/>
 

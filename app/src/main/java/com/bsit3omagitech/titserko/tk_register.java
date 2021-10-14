@@ -20,6 +20,7 @@ public class tk_register extends AppCompatActivity {
     EditText et_name, et_date;
     DatePickerDialog datePickerDialog;
     Context c = this;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +69,10 @@ public class tk_register extends AppCompatActivity {
                 //create profile
                 UserModel userModel;
                 try {
-                    userModel = new UserModel(-1, et_name.getText().toString(), et_date.getText().toString());
+
+                    name  =  et_name.getText().toString();
+                    name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+                    userModel = new UserModel(-1,name, et_date.getText().toString());
                     Toast.makeText(tk_register.this, "Customer name: "+ userModel.getName(), Toast.LENGTH_SHORT).show();
 
                 }
@@ -81,8 +85,8 @@ public class tk_register extends AppCompatActivity {
                 DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
                 boolean success = dbHelper.addOne(userModel);
                 if(success){
-                    dbHelper.createAllLessonProgress(et_name.getText().toString());
-                    dbHelper.createAllAchievements(et_name.getText().toString());
+                    dbHelper.createAllLessonProgress(name);
+                    dbHelper.createAllAchievements(name);
                     Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(tk_register.this, MainActivity.class);
                     startActivity(intent);

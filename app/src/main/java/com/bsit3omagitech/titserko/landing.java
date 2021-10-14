@@ -156,6 +156,7 @@ public class landing extends AppCompatActivity {
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("username", username);
                 startActivity(intent);
+                finish();
 
             }
 
@@ -172,6 +173,7 @@ public class landing extends AppCompatActivity {
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("username", username);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -190,6 +192,16 @@ public class landing extends AppCompatActivity {
             return null;
         }
         return json;
+    }
+
+    public void onBackPressed() {
+
+        db.refreshAllStars(username);
+        Intent intent = new Intent(c, TkDashboardActivity.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
+        finish();
+
     }
 
 
