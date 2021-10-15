@@ -1,8 +1,10 @@
 package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -310,6 +312,8 @@ public class LessonProper extends AppCompatActivity {
                 MediaPlayer mp = MediaPlayer.create(this, uri);
                 Button btn_choice = new Button(this);
                 btn_choice.setText(choicesArray.getJSONObject(i).getString("label"));
+                   btn_choice.setBackgroundResource(R.drawable.rounded_row);
+                   btn_choice.setTextColor(ContextCompat.getColor(this, R.color.darkGreen));
                 btn_choice.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

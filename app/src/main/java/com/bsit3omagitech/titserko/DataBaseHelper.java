@@ -67,7 +67,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public static final int DB_VERSION = 39;
+    public static final int DB_VERSION = 40;
     Context context;
 
     public DataBaseHelper(@Nullable Context context) {
@@ -649,6 +649,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         return stars;
+    }
+
+    public boolean checkExisting(String username){
+
+
+        SQLiteDatabase dbRead = this.getReadableDatabase();
+        String checkUsername = "SELECT " + COLUMN_USER_NAME + " FROM " + USER_TABLE;
+        Cursor cursor = dbRead.rawQuery(checkUsername, null);
+        if (cursor.moveToFirst()) {
+            do {
+                if (cursor.getString(0).equals(username)) {
+                    return true;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        return false;
+
     }
 
 

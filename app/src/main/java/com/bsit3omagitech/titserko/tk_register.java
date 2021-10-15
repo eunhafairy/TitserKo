@@ -3,13 +3,19 @@ package com.bsit3omagitech.titserko;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class tk_register extends AppCompatActivity {
@@ -21,6 +27,7 @@ public class tk_register extends AppCompatActivity {
     DatePickerDialog datePickerDialog;
     Context c = this;
     String name = "";
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +48,7 @@ public class tk_register extends AppCompatActivity {
         //buttons
         btn_confirmProfile = findViewById(R.id.btn_confirmProfile);
         btn_cancelProfile = findViewById(R.id.btn_cancelProfile);
-
+        dialog = new Dialog(c);
     }
 
     private void reg(){
@@ -68,33 +75,51 @@ public class tk_register extends AppCompatActivity {
             public void onClick(View v) {
                 //create profile
                 UserModel userModel;
-                try {
-
-                    name  =  et_name.getText().toString();
-                    name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
-                    userModel = new UserModel(-1,name, et_date.getText().toString());
-                    Toast.makeText(tk_register.this, "Customer name: "+ userModel.getName(), Toast.LENGTH_SHORT).show();
-
-                }
-                catch (Exception e){
-
-                    Toast.makeText(tk_register.this, "Error", Toast.LENGTH_SHORT).show();
-                    userModel = new UserModel(-1, "error", "error");
-                }
-
+                int ctr = et_name.getText().length();
+                name  =  et_name.getText().toString();
+                name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
                 DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
-                boolean success = dbHelper.addOne(userModel);
-                if(success){
-                    dbHelper.createAllLessonProgress(name);
-                    dbHelper.createAllAchievements(name);
-                    Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(tk_register.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                if(dbHelper.checkExisting(name)){
+                    openDialog("Error", "The name should be unique.");
+                    et_name.setText("");
+
                 }
+                else if(ctr <= 16){
+
+                    try {
+                        userModel = new UserModel(-1,name, et_date.getText().toString());
+                        Toast.makeText(tk_register.this, "Customer name: "+ userModel.getName(), Toast.LENGTH_SHORT).show();
+
+                    }
+                    catch (Exception e){
+
+                        Toast.makeText(tk_register.this, "Error", Toast.LENGTH_SHORT).show();
+                        userModel = new UserModel(-1, "error", "error");
+                    }
+
+
+                    boolean success = dbHelper.addOne(userModel);
+                    if(success){
+                        dbHelper.createAllLessonProgress(name);
+                        dbHelper.createAllAchievements(name);
+                        Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(tk_register.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(tk_register.this, "Something went wrong. Make sure you choose a unique name.", Toast.LENGTH_LONG).show();
+                    }
+
+
+                }
+
                 else{
-                    Toast.makeText(tk_register.this, "Something went wrong. Make sure you choose a unique name.", Toast.LENGTH_LONG).show();
+                    //show error
+                    openDialog("Error", "The name should be less than 16 characters.");
+                    et_name.setText("");
                 }
+
 
             }
         });
@@ -111,6 +136,27 @@ public class tk_register extends AppCompatActivity {
             }
         });
 
+
+    }
+// ------------------------------------ FOR DIALOG ------------------------------------
+    public void openDialog( String title, String message){
+
+        dialog.setContentView(R.layout.error_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView tv_title_achieve_dialog = dialog.findViewById(R.id.tv_dialog_title);
+        TextView tv_desc_achieve_dialog = dialog.findViewById(R.id.tv_dialog_message);
+        Button btn_confirm_achieve_dialog = dialog.findViewById(R.id.btn_dialog_okay);
+
+        tv_title_achieve_dialog.setText(title);
+        tv_desc_achieve_dialog.setText(message);
+        btn_confirm_achieve_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
 
     }
 }

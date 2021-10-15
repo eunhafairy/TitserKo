@@ -6,6 +6,8 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/back_btn.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/btn_background.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_bg.xml" value="0.3828125" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_correct.xml" value="0.3828125" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_incorrect.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_toggled.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_untoggled.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/customborder.xml" value="0.18888888888888888" />
@@ -25,6 +27,7 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_register.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_settings.xml" value="0.3428442028985507" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_statistics.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/error_dialog.xml" value="0.3428442028985507" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/header.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/header_layout.xml" value="0.2821557971014493" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/my_row.xml" value="0.22" />
