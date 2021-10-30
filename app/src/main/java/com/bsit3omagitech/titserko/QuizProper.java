@@ -1,17 +1,21 @@
 package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.MediaCasException;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -46,6 +50,8 @@ public class QuizProper extends AppCompatActivity {
     Context c;
     ProgressBar quizProgress;
     List<String> userAnswer;
+    GlobalFunctions gf;
+    MediaPlayer mp;
     float progress, maxScore;
     boolean toggle;
     @Override
@@ -63,7 +69,7 @@ public class QuizProper extends AppCompatActivity {
 
         c = this;
         maxScore = 0;
-
+    gf = new GlobalFunctions(c);
         //select toggle
         toggle = false;
         //TextView
@@ -94,6 +100,9 @@ public class QuizProper extends AppCompatActivity {
         lessonTranslated = intent.getStringExtra("lessonTranslated");
         username = intent.getStringExtra("username");
 
+        //media player
+
+        mp = new MediaPlayer();
         //selected answer
         selectedAnswer = "";
         userAnswer = new ArrayList<String>();
@@ -216,7 +225,7 @@ public class QuizProper extends AppCompatActivity {
                             else{
                                 if(((Button)ll_btnParent.getChildAt(i)).getText().equals(correctAnswer)){
                                     ll_btnParent.getChildAt(i).setBackgroundResource(R.drawable.button_correct);
-                                    ((Button) ll_btnParent.getChildAt(i)).setTextColor(Color.RED);
+                                    ((Button) ll_btnParent.getChildAt(i)).setTextColor(ContextCompat.getColor(c, R.color.darkGreen));
                                     ll_btnParent.getChildAt(i).setAlpha(0.8f);
                                 }
                                 else{
@@ -312,26 +321,22 @@ public class QuizProper extends AppCompatActivity {
 
         try{
 
-            choicesArray = quizArray.getJSONObject(index).getJSONArray("choices");
+            choicesArray = shuffleJsonArray(quizArray.getJSONObject(index).getJSONArray("choices"));
             int choiceCount = choicesArray.length();
 
             //audio for instruction
 
             String instruction_url = quizArray.getJSONObject(index).getString("instruction_audio");    //name of file from JSON
-            Uri instruction_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + instruction_url);  //uri of file
-            Log.d(TAG, "URI before checking: " + instruction_uri);
-            //if(!checkURIResource(this,instruction_uri)) instruction_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
-            Log.d(TAG, "URI after checking: " + instruction_uri);
-            MediaPlayer instruction_mp = MediaPlayer.create(this, instruction_uri);
+//            String instruction_path = "lesson"+lessonId+"/"+instruction_url;
 
-            tv_qp_description.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-
-                }
-            });
+//            tv_qp_description.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//         //     gf.playAudio(instruction_mp, instruction_path);
+//
+//                }
+//            });
 
 
 
@@ -340,27 +345,27 @@ public class QuizProper extends AppCompatActivity {
 
                 case "visual":
                     iv_qp.setOnClickListener(null);
-                    String image_url = quizArray.getJSONObject(index).getString("img_src");
-                    Uri image_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + image_url);
-             // if(!checkURIResource(this,image_uri)) image_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/drawable/default_img"); // check if null, if null set default img
-                    iv_qp.setImageURI(image_uri);
+                    iv_qp.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                    String image_name = quizArray.getJSONObject(index).getString("img_src");
+                    String image_path = "lesson" + lessonId + "/"+ image_name + ".png";
+                    gf.setImage(iv_qp,image_path);
+
                     break;
 
                 case "audio":
 
-                    String audio_url = quizArray.getJSONObject(index).getString("question_audio");
-                    Uri audio_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + audio_url);  //uri of file
-                //  if(checkURIResource(this,audio_uri)) audio_uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
-                    MediaPlayer question_mp = MediaPlayer.create(this, audio_uri);
-                    Log.d(TAG, "audio uri: " + audio_uri);
-                    //set desfault image for audio
+                    iv_qp.setScaleType(ImageView.ScaleType.FIT_CENTER);
                     iv_qp.setImageResource(R.drawable.img_audio);
-
+                    //name of file
+                    String audio_url = quizArray.getJSONObject(index).getString("question_audio");
+                    String question_path = "lesson"+lessonId+"/"+audio_url;
+                    gf.playAudio(mp, question_path);
                     //register audio listener
                     iv_qp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            question_mp.start();
+
+                           gf.playAudio(mp, question_path);
                         }
                     });
 
@@ -372,27 +377,20 @@ public class QuizProper extends AppCompatActivity {
             for(int i = 0; i < choiceCount; i++){
 
                 //name of file
-                String url = choicesArray.getJSONObject(i).getString("audio_src"); ;
-
-                Uri uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + url);
-   //    if(!checkURIResource(this,uri)) uri =  Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio"); // check if null, if null set default audio
-                MediaPlayer mp = MediaPlayer.create(this, uri);
+                String url = choicesArray.getJSONObject(i).getString("audio_src");
+                String choice_path = "lesson"+lessonId+"/"+url;
 
                 Button btn_choice = new Button(this);
                 btn_choice.setBackgroundResource(R.drawable.button_untoggled);
                 btn_choice.setTag("untoggled");
+                Typeface face = Typeface.createFromAsset(getAssets(),
+                        "fonts/d_din_bold.otf");
+                btn_choice.setTypeface(face);
                 btn_choice.setText(choicesArray.getJSONObject(i).getString("label"));
                 btn_choice.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-/*
-                        int ll_childCount = ll_btnParent.getChildCount();
-                        for(int i = 0; i < ll_childCount; i++){
 
-                            Button _btn = (Button) ll_btnParent.getChildAt(i);
-                            _btn.setBackgroundResource(R.drawable.button_untoggled);
-                        }
-*/
                         Button thisBtn = (Button) v;
 
                         if(thisBtn.getTag().equals("untoggled")){
@@ -410,7 +408,7 @@ public class QuizProper extends AppCompatActivity {
                             selectedAnswer = thisBtn.getText().toString();
                             btn_lp_confirm.setClickable(true);
                             btn_lp_confirm.setAlpha(1f);
-                            mp.start();
+                            gf.playAudio(mp, choice_path);
                         }
                         else{
                             thisBtn.setTag("untoggled");
@@ -432,9 +430,6 @@ public class QuizProper extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
-
     }
 
 
@@ -454,14 +449,6 @@ public class QuizProper extends AppCompatActivity {
         return json;
     }
 
-    public static boolean checkURIResource(Context context, Uri uri) {
-        Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
-        boolean doesExist= (cursor != null && cursor.moveToFirst());
-        if (cursor != null) {
-            cursor.close();
-        }
-        return doesExist;
-    }
 
     public boolean isLast(int index, JSONArray json){
 
@@ -472,10 +459,7 @@ public class QuizProper extends AppCompatActivity {
         }
         else{
             return true;
-
         }
-
-
     }
 
     //--------------------SHUFFLE QUIZ ARRAY-----------------------
@@ -494,5 +478,7 @@ public class QuizProper extends AppCompatActivity {
         }
         return array;
     }
+
+
 
 }

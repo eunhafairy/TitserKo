@@ -27,7 +27,7 @@ import java.util.List;
 public class landing extends AppCompatActivity {
 
     Button btn_landing_study,btn_landing_quiz;
-    ImageView iv_back;
+    ImageView iv_back, lesson_img;
     TextView tv_landingTitle, tv_landingTitleTranslation;
     Context c = this;
     String lessonName, lessonNameTranslated, lessonId, username;

@@ -4,20 +4,24 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.provider.MediaStore;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.MyViewHolder> {
@@ -65,13 +69,15 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
         //if button is toggled
         if(db.isEquipped(username, achievementId.get(position))){
 
-            holder.btn_achieve.setText("OFF");
+            holder.btn_achieve.setText("Equipped");
             holder.btn_achieve.setClickable(false);
             holder.btn_achieve.setAlpha(0.5f);
+            holder.ll.setBackgroundResource(R.drawable.rounded_row);
 
         }
         else{
-            holder.btn_achieve.setText("ON");
+            holder.ll.setBackgroundResource(R.drawable.rounded_row_white);
+            holder.btn_achieve.setText("Equip");
             holder.btn_achieve.setAlpha(1);
             holder.btn_achieve.setClickable(true);
             holder.btn_achieve.setOnClickListener(new View.OnClickListener() {
@@ -101,12 +107,15 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
 
         if(!isUnlocked.get(holder.getAdapterPosition())){
 
+
             holder.itemView.setAlpha(0.5f);
+            holder.btn_achieve.setAlpha(0f);
             holder.btn_achieve.setClickable(false);
 
         }
         else{
             holder.itemView.setAlpha(1);
+            holder.btn_achieve.setAlpha(1);
             holder.btn_achieve.setClickable(true);
         }
 
@@ -123,9 +132,10 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
         TextView tv_achieve_title;
         ImageView iv_achieve_img;
         Button btn_achieve;
+        LinearLayout ll;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            ll = itemView.findViewById(R.id.ll_achieverow);
             tv_achieve_title = itemView.findViewById(R.id.tv_achieveRow);
             iv_achieve_img = itemView.findViewById(R.id.iv_achieveRow);
             btn_achieve = itemView.findViewById(R.id.btn_achieve);
@@ -148,4 +158,5 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
     public void setIndividualScreenListener(AchievementAdapter.OnIndividualDialog listenerGalingSaIndividualScreen) {
         listenerIndividual = listenerGalingSaIndividualScreen;
     }
+
 }

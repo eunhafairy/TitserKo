@@ -3,81 +3,189 @@
 
     {
         "lesson_id" : "00001",
-        "lesson_name" : "Basic",
-        "lesson_name_translate" : "Pangunahing Pagaaral",
+        "lesson_name" : "People",
+        "lesson_name_translate" : "Mga Tao",
+        "lesson_img" : "g1l1_img",
         "parts" : [
            
                     {
-                        "description" : "Kumusta!",
+                        "description" : "Mga tao",
                         "choices" : [
                             {
-                                "label": "Hello",
-                                "audio_src" : "hello"
+                                "label": "People",
+                                "audio_src" : "people"
 
                             }
                         ],
-                        "image_src" : "lesson1_p1",
-                        "instruction_audio" : "lesson1_p1_i",
-                        "flag" : false
+                        "image_src" : "g1l1_img11",
+                        "instruction_audio" : "mga_tao"
 
                     },
 
             {
-                "description" : "Halika't mag-aral tayo ng wikang Ingles!",
+                "description" : "Lalaki.",
                 "choices" : [
                     {
-                        "label": "Let's study the English language!",
-                        "audio_src" : "lesson1_p2_c1"
+                        "label": "Boy",
+                        "audio_src" : "boy"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p2_i",
-                "flag" : false
+                "image_src" : "lalaki_img1",
+                "instruction_audio" : "lalaki"
+
 
             },
 
             {
-                "description" : "Ang ingles ng kumusta ay \"Hello\"",
+                "description" : "Babae",
+                "instruction_audio" : "babae",
                 "choices" : [
                     {
-                        "label": "Hello",
-                        "audio_src" : "hello"
+                        "label": "Girl",
+                        "audio_src" : "girl"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p3_i",
+                "image_src" : "girl_img",
                 "flag" : false
             },
             {
-                "description" : "Magandang umaga.",
+                "description" : "Mag-aaral",
+                "instruction_audio" : "mag_aaral",
                 "choices" : [
                     {
-                        "label": "Good morning!",
-                        "audio_src" : "good_morning"
+                        "label": "Student",
+                        "audio_src" : "student"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "magandang_umaga",
+                "image_src" : "student_img"
+            },
+            {
+                "description" : "Bumbero",
+                "instruction_audio" : "bumbero",
+                "choices" : [
+                    {
+                        "label": "Fireman",
+                        "audio_src" : "fireman"
+
+                    }
+
+                ],
+                "image_src" : "fireman_img",
                 "flag" : false
             },
             {
-                "description" : "Ang english ng magandang umaga ay \"Good morning!\".",
+                "description" : "Guro",
+                "instruction_audio" : "guro",
                 "choices" : [
                     {
-                        "label": "Good morning!",
-                        "audio_src" : "good_morning"
+                        "label": "Teacher",
+                        "audio_src" : "teacher"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "image_src" : "teacher_img"
+            },
+            {
+                "description" : "Dentista",
+                "instruction_audio" : "dentista1",
+                "choices" : [
+                    {
+                        "label": "Dentist",
+                        "audio_src" : "dentist"
+
+                    }
+
+                ],
+                "image_src" : "dentist1"
+            },
+            {
+                "description" : "Doktor",
+                "instruction_audio" : "doktor",
+                "choices" : [
+                    {
+                        "label": "Doctor",
+                        "audio_src" : "doctor"
+
+                    }
+
+                ],
+                "image_src" : "doctor_img"
+            },
+
+            {
+                "description" : "Nanay",
+                "instruction_audio" : "nanay",
+                "choices" : [
+                    {
+                        "label": "Mother",
+                        "audio_src" : "mother"
+
+                    }
+
+                ],
+                "image_src" : "mother_img"
+            },
+            {
+                "description" : "Tatay",
+                "instruction_audio" : "tatay",
+                "choices" : [
+                    {
+                        "label": "Father",
+                        "audio_src" : "father"
+
+                    }
+
+                ],
+                "image_src" : "father_img"
+            },
+            {
+                "description" : "Sanggol",
+                "instruction_audio" : "sanggol",
+                "choices" : [
+                    {
+                        "label": "Baby",
+                        "audio_src" : "baby"
+
+                    }
+
+                ],
+                "image_src" : "baby_img"
+            },
+
+            {
+                "description" : "Panadero",
+                "instruction_audio" : "panadero",
+                "choices" : [
+                    {
+                        "label": "Baker",
+                        "audio_src" : "baker"
+
+                    }
+
+                ],
+                "image_src" : "baker_img"
+            },
+
+            {
+                "description" : "Pari",
+                "instruction_audio" : "pari",
+                "choices" : [
+                    {
+                        "label": "Priest",
+                        "audio_src" : "priest"
+
+                    }
+
+                ],
+                "image_src" : "priest_img",
+
                 "flag" : false
             }
 
@@ -90,245 +198,414 @@
             {
                 "question" : "Piliin ang katumbas na tunog.",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                "img_src" : "quiz1_img_p1",
+                "img_src" : "student4",
                 "type" : "audio",
-                "question_audio" :  "kumusta",
+                "question_audio" :  "mga_tao",
                 "choices" : [
                     {
-                        "label": "Hello",
-                        "audio_src" : "hello"
+                        "label": "Boy",
+                        "audio_src" : "boy"
 
                     },
                     {
-                        "label": "Goodbye",
-                        "audio_src" : "good_bye"
+                        "label": "Girl",
+                        "audio_src" : "girl"
 
                     },
                     {
-                        "label": "Good morning",
-                        "audio_src" : "good_morning"
+                        "label": "People",
+                        "audio_src" : "people"
 
                     }
 
 
                  ],
-                "correct_answer" : "Hello"
+                "correct_answer" : "People"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "mother",
+                "img_src" : "mother_img",
+                "choices" : [
+                    {
+                        "label": "Nanay",
+                        "audio_src" : "nanay"
+
+                    },
+                    {
+                        "label": "Bumbero",
+                        "audio_src" : "bumbero"
+
+                    },
+                    {
+                        "label": "Doktor",
+                        "audio_src" : "doktor"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Nanay"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "lalaki",
+                "img_src" : "lalaki_img",
+
+                "choices" : [
+                    {
+                        "label": "Student",
+                        "audio_src" : "student"
+
+                    },
+                    {
+                        "label": "Girl",
+                        "audio_src" : "girl"
+
+                    },
+                    {
+                        "label": "Boy",
+                        "audio_src" : "boy"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Boy"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "priest",
+                "img_src" : "priest_img",
+
+                "choices" : [
+                    {
+                        "label": "Pari",
+                        "audio_src" : "pari"
+
+                    },
+                    {
+                        "label": "Dentista",
+                        "audio_src" : "dentista"
+
+                    },
+                    {
+                        "label": "Panadero",
+                        "audio_src" : "panadero"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Pari"
+            },
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "mag_aaral",
+                "img_src" : "student3",
+
+                "choices" : [
+                    {
+                        "label": "Fireman",
+                        "audio_src" : "fireman"
+
+
+                    },
+                    {
+                        "label": "Teacher",
+                        "audio_src" : "teacher"
+
+                    },
+                    {
+                        "label": "Student",
+                        "audio_src" : "student"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Student"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "girl",
+                "img_src" : "girl_img",
+
+                "choices" : [
+                    {
+                        "label": "Babae",
+                        "audio_src" : "babae"
+
+
+                    },
+                    {
+                        "label": "Lalaki",
+                        "audio_src" : "lalaki"
+
+                    },
+                    {
+                        "label": "Mag-aaral",
+                        "audio_src" : "mag_aaral"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Babae"
             },
             {
                 "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
-                "img_src" : "img_hello",
+                "img_src" : "fireman_img",
                 "type" : "visual",
-                "question_audio" :  "hello",
+                "question_audio" :  "fireman",
                 "choices" : [
                     {
-                        "label": "Hanggang sa muli!",
-                        "audio_src" : "hanggang_sa_muli"
+                        "label": "Fireman",
+                        "audio_src" : "fireman"
 
                     },
                     {
-                        "label": "Kumusta",
-                        "audio_src" : "kumusta"
+                        "label": "Baker",
+                        "audio_src" : "baker"
 
                     },
                     {
-                        "label": "Magandang Umaga",
-                        "audio_src" : "magandang_umaga"
+                        "label": "Doctor",
+                        "audio_src" : "doctor"
 
                     }
 
 
                 ],
-                "correct_answer" : "Kumusta"
+                "correct_answer" : "Fireman"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
-                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                "img_src" : "hello",
-                "type" : "audio",
-                "question_audio" :  "good_bye",
+                "question" : "Ano ang ibig sabihin ng sumusunod na larawan?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "type" : "visual",
+
+                "img_src" : "doctor2",
+                "question_audio" :  "doctor",
+
                 "choices" : [
                     {
-                        "label": "Kumusta",
-                        "audio_src" : "kumusta"
+                        "label": "Baker",
+                        "audio_src" : "baker"
 
                     },
                     {
-                        "label": "Magandang umaga",
-                        "audio_src" : "magandang_umaga"
+                        "label": "Doctor",
+                        "audio_src" : "doctor"
 
                     },
                     {
-                        "label": "Hanggang sa muli",
-                        "audio_src" : "hanggang_sa_muli"
+                        "label": "Fireman",
+                        "audio_src" : "fireman"
 
                     }
 
 
                 ],
-                "correct_answer" : "Hanggang sa muli"
+                "correct_answer" : "Doctor"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
-                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                "img_src" : "hello",
-                "type" : "audio",
-                "question_audio" :  "kumusta",
+
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "type" : "visual",
+
+                "img_src" : "girl_img",
+                "question_audio" :  "girl",
                 "choices" : [
                     {
-                        "label": "Hello",
-                        "audio_src" : "hello"
+                        "label": "Teacher",
+                        "audio_src" : "teacher"
 
                     },
                     {
-                        "label": "Goodbye",
-                        "audio_src" : "good_bye"
+                        "label": "Girl",
+                        "audio_src" : "girl"
 
                     },
                     {
-                        "label": "Good morning",
-                        "audio_src" : "good_morning"
+                        "label": "Boy",
+                        "audio_src" : "boy"
 
                     }
 
 
                 ],
-                "correct_answer" : "Hello"
+                "correct_answer" : "Girl"
             },
             {
                 "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
-                "img_src" : "img_hello",
+
+                "img_src" : "teacher_img",
                 "type" : "visual",
-                "question_audio" :  "hello",
+                "question_audio" :  "teacher",
                 "choices" : [
                     {
-                        "label": "Hanggang sa muli!",
-                        "audio_src" : "hanggang_sa_muli"
+                        "label": "Teacher",
+                        "audio_src" : "teacher"
 
                     },
                     {
-                        "label": "Kumusta",
-                        "audio_src" : "kumusta"
+                        "label": "Boy",
+                        "audio_src" : "boy"
 
                     },
                     {
-                        "label": "Magandang Umaga",
-                        "audio_src" : "magandang_umaga"
+                        "label": "Student",
+                        "audio_src" : "student"
 
                     }
 
 
                 ],
-                "correct_answer" : "Kumusta"
+                "correct_answer" : "Teacher"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
-                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                "img_src" : "quiz1_img_p3",
-                "type" : "audio",
-                "question_audio" :  "good_bye",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+
+                "img_src" : "baker_img",
+                "type" : "visual",
+                "question_audio" :  "baker",
                 "choices" : [
                     {
-                        "label": "Kumusta",
-                        "audio_src" : "kumusta"
+                        "label": "Baker",
+                        "audio_src" : "baker"
 
                     },
                     {
-                        "label": "Magandang umaga",
-                        "audio_src" : "magandang_umaga"
+                        "label": "Boy",
+                        "audio_src" : "boy"
 
                     },
                     {
-                        "label": "Hanggang sa muli",
-                        "audio_src" : "hanggang_sa_muli"
+                        "label": "Fireman",
+                        "audio_src" : "fireman"
 
                     }
 
 
                 ],
-                "correct_answer" : "Hanggang sa muli"
+                "correct_answer" : "Baker"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+
+                "img_src" : "priest_img",
+                "type" : "visual",
+                "question_audio" :  "priest",
+                "choices" : [
+                    {
+                        "label": "Baker",
+                        "audio_src" : "baker"
+
+                    },
+                    {
+                        "label": "Teacher",
+                        "audio_src" : "teacher"
+
+                    },
+                    {
+                        "label": "Priest",
+                        "audio_src" : "priest"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Priest"
             }
-
         ]
     },
     {
         "lesson_id" : "00002",
-        "lesson_name" : "Introduction",
-        "lesson_name_translate" : "Pagpapakilala",
+        "lesson_name" : "Animals",
+        "lesson_name_translate" : "Mga hayop",
         "parts" : [
-
             {
-                "description" : "Kumusta!",
+                "description" : "Mga hayop",
+                "instruction_audio" : "mga_hayop",
                 "choices" : [
                     {
-                        "label": "Hello",
-                        "audio_src" : "hello"
+                        "label": "Animals",
+                        "audio_src" : "animals"
 
                     }
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p1_i",
-                "flag" : false
+                "image_src" : "animals_img"
+            },
+
+            {
+                "description" : "Aso",
+                "instruction_audio" : "aso",
+                "choices" : [
+                    {
+                        "label": "Dog",
+                        "audio_src" : "dog"
+
+                    }
+
+                ],
+                "image_src" : "dog_img"
 
             },
 
             {
-                "description" : "Ako si Anna.",
+                "description" : "Tuta",
+                "instruction_audio" : "tuta",
                 "choices" : [
                     {
-                        "label": "I am Anna.",
-                        "audio_src" : "lesson1_p2_c1"
+                        "label": "Puppy",
+                        "audio_src" : "puppy"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p2_i",
-                "flag" : false
-
-            },
-
-            {
-                "description" : "Ano ang pangalan mo?",
-                "choices" : [
-                    {
-                        "label": "What is your name?",
-                        "audio_src" : "hello"
-
-                    }
-
-                ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "lesson1_p3_i",
-                "flag" : false
+                "image_src" : "puppy_img"
             },
             {
-                "description" : "Ang pangalan ko ay Juan.",
+                "description" : "Pusa",
+                "instruction_audio" : "pusa",
                 "choices" : [
                     {
-                        "label": "My name is Juan.",
-                        "audio_src" : "good_morning"
+                        "label": "Cat",
+                        "audio_src" : "cat"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "magandang_umaga",
-                "flag" : false
+                "image_src" : "cat_img"
             },
             {
                 "description" : "Ilang taon ka na?",
                 "choices" : [
                     {
                         "label": "How old are you?",
-                        "audio_src" : "good_morning"
+                        "audio_src" : "mga_hayop"
 
                     }
 
                 ],
                 "image_src" : "lesson1_p1",
-                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
+                "instruction_audio" : "mga_hayop",
                 "flag" : false
             },
             {
@@ -336,28 +613,26 @@
                 "choices" : [
                     {
                         "label": "I am seven years old.",
-                        "audio_src" : "good_morning"
+                        "audio_src" : "mga_hayop"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
-                "flag" : false
+                "image_src" : "mga_hayop",
+                "instruction_audio" : "mga_hayop"
             },
             {
                 "description" : "Saan ka nakatira?",
                 "choices" : [
                     {
                         "label": "Where do you live?",
-                        "audio_src" : "good_morning"
+                        "audio_src" : "mga_hayop"
 
                     }
 
                 ],
-                "image_src" : "lesson1_p1",
-                "instruction_audio" : "ang_english_ng_magandang_umaga_ay_good_morning",
-                "flag" : false
+                "image_src" : "mga_hayop",
+                "instruction_audio" : "v"
             },
             {
                 "description" : "Nakatira ako sa Bulacan.",

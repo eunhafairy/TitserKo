@@ -8,7 +8,7 @@
 
 
         <shape xmlns:android="http://schemas.android.com/apk/res/android">
-            <solid android:color="@color/darkGreen"/>
+            <solid android:color="@color/lightGreen"/>
 
 
             <padding android:left="1dp"
@@ -22,7 +22,7 @@
                 android:topLeftRadius="10dp"
                 android:topRightRadius="10dp"/>
 
-            <stroke android:width="5dp" android:color="@color/customBrown"/>
+
         </shape>
 
     </item>

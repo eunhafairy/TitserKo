@@ -3,11 +3,17 @@ package com.bsit3omagitech.titserko;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.media.MediaCasException;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,19 +22,23 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Console;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.chrono.MinguoDate;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class LessonProper extends AppCompatActivity {
 
+    GlobalFunctions gf;
     DataBaseHelper db;
     LinearLayout ll_parent;
     Button btn_lp_finish;
@@ -39,8 +49,10 @@ public class LessonProper extends AppCompatActivity {
     JSONArray partsArray;
     ProgressBar lessonProgress;
     String TAG = "debug";
+    Context c;
     int index;
     float progress, maxIndex;
+    MediaPlayer instruction_mp = new MediaPlayer(), mp = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +65,10 @@ public class LessonProper extends AppCompatActivity {
 
     private void init(){
 
-        index = 0;
 
+        index = 0;
+        c = this;
+        gf = new GlobalFunctions(c);
         //initalialize button
         btn_lp_finish = (Button) findViewById(R.id.btn_lp_finish);
         btn_lp_finish.setVisibility(View.GONE);
@@ -105,7 +119,7 @@ public class LessonProper extends AppCompatActivity {
             }
 
          //get the parts array
-         partsArray = targetLessonObject.getJSONArray("parts");
+         partsArray = shuffleJsonArray(targetLessonObject.getJSONArray("parts"));
          maxIndex = partsArray.length();
         } catch (JSONException e) {
             e.printStackTrace();
@@ -284,40 +298,41 @@ public class LessonProper extends AppCompatActivity {
             choicesArray = partsArray.getJSONObject(index).getJSONArray("choices");
             int choiceCount = choicesArray.length();
 
-            //audio for instruction
+            //------------------------audio for instruction---------------------------
             //name of file
             String instruction_url = partsArray.getJSONObject(index).getString("instruction_audio");
-            Log.d(TAG, instruction_url);
-            Uri instruction_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + instruction_url);
-            MediaPlayer instruction_mp = MediaPlayer.create(this, instruction_uri);
+            String lesson_path = "lesson"+lessonId+"/"+instruction_url;
+
             tv_lp_description.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    instruction_mp.start();
+                      gf.playAudio(instruction_mp, lesson_path);
                 }
             });
 
-            //show image of part
-            String image_url = partsArray.getJSONObject(index).getString("image_src");
-            Uri image_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + image_url);
-            picture.setImageURI(image_uri);
+            //-------------------------image for imageview-----------------------
+            String image_name = partsArray.getJSONObject(index).getString("image_src");
+            String image_path = "lesson" + lessonId + "/"+image_name + ".png";
+            gf.setImage(picture,image_path);
 
-            //generate button choices
+            //------------------------------generate button choices---------------------------
             for(int i = 0; i < choiceCount; i++){
 
                 //name of file
-                String url = choicesArray.getJSONObject(i).getString("audio_src"); ;
-
-                Uri uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + url);
-                MediaPlayer mp = MediaPlayer.create(this, uri);
+                String url = choicesArray.getJSONObject(i).getString("audio_src");
+                String label_path = "lesson"+lessonId+"/"+url;
                 Button btn_choice = new Button(this);
                 btn_choice.setText(choicesArray.getJSONObject(i).getString("label"));
                    btn_choice.setBackgroundResource(R.drawable.rounded_row);
+                Typeface face = Typeface.createFromAsset(getAssets(),
+                        "fonts/d_din_bold.otf");
+                btn_choice.setTypeface(face);
                    btn_choice.setTextColor(ContextCompat.getColor(this, R.color.darkGreen));
                 btn_choice.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mp.start();
+
+                        gf.playAudio(mp, label_path);
                     }
                 });
                 ll_parent.addView(btn_choice);
@@ -331,6 +346,51 @@ public class LessonProper extends AppCompatActivity {
 
 
     }
+
+
+
+    //--------------------SHUFFLE LESSON ARRAY-----------------------
+
+    public static JSONArray shuffleJsonArray (JSONArray array) throws JSONException {
+        // Implementing Fisher–Yates shuffle
+        Random rnd = new Random();
+        rnd.setSeed(System.currentTimeMillis());
+        for (int i = array.length() - 1; i >= 0; i--)
+        {
+            int j = rnd.nextInt(i + 1);
+            // Simple swap
+            Object object = array.get(j);
+            array.put(j, array.get(i));
+            array.put(i, object);
+        }
+        return array;
+    }
+
+
+//    //------------------SETTING DEFAULT VALUES----------------------
+//    public MediaPlayer defaultMedia(MediaPlayer mediaPlayer){
+//
+//        if(mediaPlayer == null){
+//            Uri default_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio");
+//            mediaPlayer = MediaPlayer.create(this, default_uri);
+//        }
+//    return mediaPlayer;
+//    }
+
+    private void setImageView(Uri image_uri) {
+        Bitmap bitmap = null;
+        try {
+            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), image_uri);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(bitmap != null)
+            picture.setImageBitmap(bitmap);
+        else{
+            picture.setImageResource(R.drawable.default_img);
+        }
+    }
+
 
 
 }
