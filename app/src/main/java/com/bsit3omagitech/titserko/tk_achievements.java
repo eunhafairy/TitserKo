@@ -1,6 +1,11 @@
 package com.bsit3omagitech.titserko;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,11 +16,15 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +35,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class tk_achievements extends AppCompatActivity {
+public class tk_achievements extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener  {
 
     String name;
     RecyclerView achieveRv;
@@ -36,6 +45,9 @@ public class tk_achievements extends AppCompatActivity {
     DataBaseHelper db;
     Dialog dialog;
     ImageView iv_achieve_back;
+    NavigationView achievement_navigationView;
+    DrawerLayout achievement_drawerLayout;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,15 +90,29 @@ public class tk_achievements extends AppCompatActivity {
             }
         });
 
+        //navigation
+
+        achievement_navigationView = findViewById(R.id.achievement_nav_view);
+        achievement_navigationView.setCheckedItem(R.id.nav_achievements);
+        toolbar = findViewById(R.id.achievement_toolbar);
+        achievement_drawerLayout = findViewById(R.id.achievement_drawer_layout);
+        setSupportActionBar(toolbar);
+
+
+        achievement_navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, achievement_drawerLayout, toolbar, R.string.navigation_drawer_open ,R.string.navigation_drawer_close);
+        achievement_drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        achievement_navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) c);
+
+
 
         //-------------------------------------------BACK BUTTON---------------------------------
         iv_achieve_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(tk_achievements.this, TkDashboardActivity.class);
-                intent.putExtra("username", name);
-                startActivity(intent);
-                finish();
+                achievement_drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
 
@@ -185,6 +211,52 @@ public class tk_achievements extends AppCompatActivity {
         finish();
 
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+
+            //---------Home----------
+            case R.id.nav_home:
+                Intent i1 = new Intent(this, TkDashboardActivity.class);
+                i1.putExtra("username", name);
+                startActivity(i1);
+                break;
+
+            //--------Profile------------
+            case R.id.nav_profile:
+                Intent i2 = new Intent(this, tk_profile.class);
+                i2.putExtra("username", name);
+                startActivity(i2);
+                break;
+
+            //--------Achievements----------
+            case R.id.nav_achievements:
+                Intent achievement_intent = new Intent(this, tk_achievements.class);
+                achievement_intent.putExtra("username", name);
+                startActivity(achievement_intent);
+                break;
+
+            case R.id.nav_logout:
+                Intent i3 = new Intent(this, MainActivity.class);
+                startActivity(i3);
+                finish();
+                break;
+
+            case R.id.nav_stats:
+                Intent i4 = new Intent(this, tk_statistics.class);
+                i4.putExtra("username", name);
+                startActivity(i4);
+                finish();
+                break;
+
+
+        }
+        achievement_drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
+
 
 
 }

@@ -1,6 +1,11 @@
 package com.bsit3omagitech.titserko;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,12 +16,15 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.navigation.NavigationView;
 
 import org.apmem.tools.layouts.FlowLayout;
 
@@ -26,7 +34,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class tk_profile extends AppCompatActivity {
+public class tk_profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     ImageView btn_profile_back, iv_profile_badge;
@@ -37,6 +45,9 @@ public class tk_profile extends AppCompatActivity {
     Date bday;
     FlowLayout flowLayout;
     List<String> imagePaths;
+    NavigationView profile_navigationView;
+    DrawerLayout profile_drawerLayout;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +87,27 @@ public class tk_profile extends AppCompatActivity {
         populateProfileBadge();
         iv_profile_badge.setImageURI(db.getUserBadge(name));
 
+        // --------------------------------------------- NAVIGATION ---------------------------------------------
+        profile_navigationView = findViewById(R.id.profile_nav_view);
+        profile_navigationView.setCheckedItem(R.id.nav_profile);
+        toolbar = findViewById(R.id.profile_toolbar);
+        profile_drawerLayout = findViewById(R.id.profile_drawer_layout);
+        setSupportActionBar(toolbar);
+
+        btn_profile_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                profile_drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        profile_navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, profile_drawerLayout, toolbar, R.string.navigation_drawer_open ,R.string.navigation_drawer_close);
+        profile_drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        profile_navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) c);
+
     }
 
     private void reg(){
@@ -89,11 +121,7 @@ public class tk_profile extends AppCompatActivity {
         btn_profile_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //go back to dashboard
-                Intent i = new Intent(c, TkDashboardActivity.class);
-                i.putExtra("username", name);
-                startActivity(i);
-                finish();
+                profile_drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
 
@@ -182,5 +210,50 @@ public class tk_profile extends AppCompatActivity {
 
     }
 
+    // --------------------------------------------- SIDE BAR NAVIGATION FUNCTIONS -----------------------------------
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+
+            //---------Home----------
+            case R.id.nav_home:
+                Intent i1 = new Intent(this, TkDashboardActivity.class);
+                i1.putExtra("username", name);
+                startActivity(i1);
+                break;
+
+            //--------Profile------------
+            case R.id.nav_profile:
+                Intent i2 = new Intent(this, tk_profile.class);
+                i2.putExtra("username", name);
+                startActivity(i2);
+                break;
+
+            //--------Achievements----------
+            case R.id.nav_achievements:
+                Intent achievement_intent = new Intent(this, tk_achievements.class);
+                achievement_intent.putExtra("username", name);
+                startActivity(achievement_intent);
+                break;
+
+            case R.id.nav_logout:
+                Intent i3 = new Intent(this, MainActivity.class);
+                startActivity(i3);
+                finish();
+                break;
+
+            case R.id.nav_stats:
+                Intent i4 = new Intent(this, tk_statistics.class);
+                i4.putExtra("username", name);
+                startActivity(i4);
+                finish();
+                break;
+
+
+        }
+        profile_drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
 
 }
