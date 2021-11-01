@@ -1,26 +1,40 @@
 package com.bsit3omagitech.titserko;
 
 
+import android.app.Dialog;
 import android.content.ContentValues;
 import android.database.SQLException;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Context;
 import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.logging.LogRecord;
+import android.app.Dialog;
 import android.content.Context;
 
 import org.json.JSONArray;
@@ -60,20 +74,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_ID = "achievements_ID"; //ID FROM JSON
     public static final String ACHIEVEMENT_USER = "achievements_user"; //user
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
-
-
-
-
-
-
-
+    public Dialog dialog;
+    LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
     public static final int DB_VERSION = 40;
     Context context;
+    GlobalFunctions gf;
 
     public DataBaseHelper(@Nullable Context context) {
         super(context, "user.db", null, DB_VERSION);
         this.context = context;
     }
+
 
     //create when called for the first time
     @Override
@@ -165,6 +176,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             e.printStackTrace();
         }
+
+
 
     }
 
@@ -1001,9 +1014,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
    }
 
+   public boolean checkAchievement(String username, String achievementId){
 
-    public void refreshAchievements(String username){
+        boolean flag = false;
+       SQLiteDatabase db = this.getReadableDatabase();
+       String selectQuery = "SELECT " + ACHIEVEMENT_FLAG + " FROM " + ACHIEVEMENT_TABLE + " WHERE " + ACHIEVEMENT_USER + " = '" + username + "' AND "+ACHIEVEMENT_ID+" = '"+achievementId+"'";
+       Cursor cursor = db.rawQuery(selectQuery, null);
 
+       if (cursor.moveToFirst()) {
+           do {
+               flag = cursor.getInt(0) > 0;
+           } while (cursor.moveToNext());
+       }
+
+        return flag;
+   }
+
+
+    public List<String> refreshAchievements(String username){
+
+        List<String> updatedAchievements = new ArrayList<>();
 
         //---------------- FOR ACHIEVEMENT A00001---------------------
             /**
@@ -1013,7 +1043,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
              *
              **/
         int a = getLessonStar(username, "00001");
-        if(a > 0){
+        if(a > 0 && !checkAchievement(username, "A00001")){
+            updatedAchievements.add("A00001");
             updateAchievement(username, "A00001");
         }
 
@@ -1025,7 +1056,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = getUserTotalStars(username);
-        if(a >=3 ){
+        if(a >=3 && !checkAchievement(username, "A00002")){
+            updatedAchievements.add("A00002");
             updateAchievement(username, "A00002");
 
         }
@@ -1039,7 +1071,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUserTotalStars(username);
-        if(a >=10){
+        if(a >=10 && !checkAchievement(username, "A00003")){
+            updatedAchievements.add("A00003");
             updateAchievement(username, "A00003");
 
         }
@@ -1053,7 +1086,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUserTotalStars(username);
-        if(a >= 20){
+        if(a >= 20 && !checkAchievement(username, "A00004") ){
+            updatedAchievements.add("A00004");
             updateAchievement(username, "A00004");
 
         }
@@ -1066,7 +1100,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = perfectScoreCounter(username);
-        if(a > 0){
+        if(a > 0 && !checkAchievement(username, "A00005")){
+            updatedAchievements.add("A00005");
             updateAchievement(username, "A00005");
         }
 
@@ -1079,7 +1114,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = perfectScoreCounter(username);
-        if(a >= 3){
+        if(a >= 3 && !checkAchievement(username, "A00006")){
+            updatedAchievements.add("A00006");
             updateAchievement(username, "A00006");
         }
 
@@ -1091,7 +1127,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = getLessonStar(username, "00001");
-        if(a >= 3){
+        if(a >= 3 && !checkAchievement(username, "A00007")){
+            updatedAchievements.add("A00007");
             updateAchievement(username, "A00007");
         }
 
@@ -1104,7 +1141,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonStar(username, "00005");
-        if(a >= 3){
+        if(a >= 3 && !checkAchievement(username, "A00008")){
+            updatedAchievements.add("A00008");
             updateAchievement(username, "A00008");
         }
 
@@ -1119,11 +1157,44 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         a = getUserTotalStars(username);
         int b = getAllLessonId().size();
 
-        if(a >= (b*3)){
+        if(a >= (b*3) && !checkAchievement(username, "A10000")){
+            updatedAchievements.add("A10000");
             updateAchievement(username, "A10000");
         }
 
+
+        return updatedAchievements;
+
+
     }
+
+
+
+    public List<String> getAchievementInfo(String achieve_id){
+        List<String> info = new ArrayList<>();
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset("achievements.json"));
+            JSONArray m_jArry = obj.getJSONArray("achievements");
+
+            for (int j = 0; j < m_jArry.length(); j++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(j);
+                String _id = jo_inside.getString("achieve_id");
+                if(_id.equals(achieve_id)){
+                    info.add(jo_inside.getString("achieve_name"));
+                    info.add(jo_inside.getString("achieve_desc"));
+                    info.add(jo_inside.getString("achieve_img"));
+                    break;
+
+                }
+            }
+        }
+        catch (JSONException e){
+            e.printStackTrace();
+        }
+
+    return info;
+    }
+
 
     public void updateAchievement(String username, String achievementID){
 

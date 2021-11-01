@@ -11,14 +11,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +38,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class TkDashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,7 +46,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
     TextView db_tv_name, tv_headerName;
     String name;
     RecyclerView myRv;
-    List<String> lessonList, lessonTranslated, lessonId;
+    List<String> lessonList, lessonTranslated, lessonId, achieveList;
     List<Integer> stars;
     DataBaseHelper db;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -48,6 +54,10 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ImageView btn_nav, iv_badge, iv_headerBadge;
+    GlobalFunctions gf;
+    Context c;
+    Dialog dialog;
+    public LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +72,8 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
     private void init(){
 
+        c = this;
+        dialog = new Dialog(c);
         // --------------------------------------------- INTENTS ---------------------------------------------
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
@@ -104,8 +116,12 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
             }
         });
+
+        gf = new GlobalFunctions(c);
         db.refreshAllStars(name);
-        db.refreshAchievements(name);
+        achieveList = db.refreshAchievements(name);
+        queueAchievements(achieveList, dialog);
+
 
         // ----------------------------------------- FOR SWIPE REFRESH -----------------------------------------
 
@@ -122,7 +138,6 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 stars.clear();
                 stars = db.getUserStars(name);
                 db.refreshAllStars(name);
-                db.refreshAchievements(name);
                 myAdapter adapter = new myAdapter(TkDashboardActivity.this, lessonList, stars);
                 myRv.setAdapter(adapter);
 
@@ -291,5 +306,58 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
     drawerLayout.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    //------------------- ACHIEVEMENTS ------------------------------
+
+    public void queueAchievements(List<String> achieveList, Dialog dialog) {
+
+
+        db = new DataBaseHelper(c);
+        for (int i = 0; i < achieveList.size(); i++) {
+
+            Dialog dialog2 = new Dialog(c);
+            Log.d("xboxhaha", achieveList.get(i));
+            String id = achieveList.get(i);
+            List<String> info = db.getAchievementInfo(id);
+            final String title = info.get(0), imagePath = info.get(2), desc = info.get(1);
+            dialog2.setContentView(R.layout.achievement_unlocked);
+            dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            Button btn = dialog2.findViewById(R.id.btn_confirm_achieve_unlocked);
+            TextView tv_title_achieve_dialog = dialog2.findViewById(R.id.tv_title_achieve_unlocked);
+            TextView tv_desc_achieve_dialog = dialog2.findViewById(R.id.tv_desc_achieve_unlocked);
+            ImageView iv_achieve_dialog = dialog2.findViewById(R.id.iv_achieve_badge_unlocked);
+            Uri imageUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePath);
+            iv_achieve_dialog.setImageURI(imageUri);
+            tv_title_achieve_dialog.setText(title);
+            tv_desc_achieve_dialog.setText(desc);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                  //  Log.d("xbox", "title: " + title + "id: " + id);
+                    dialog2.dismiss();
+                }
+            });
+
+            dialog2.setCancelable(true);
+            showDialog(dialog2);
+
+
+        }
+    }
+
+    public void showDialog(final Dialog dialog){
+        if(dialogsToShow.isEmpty()){
+            dialog.show();
+        }
+        dialogsToShow.offer(dialog);
+        dialog.setOnDismissListener((d) -> {
+            dialogsToShow.remove(dialog);
+            if(!dialogsToShow.isEmpty()){
+                dialogsToShow.peek().show();
+            }
+        });
+
     }
 }

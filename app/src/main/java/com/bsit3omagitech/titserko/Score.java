@@ -50,6 +50,7 @@ public class Score extends AppCompatActivity {
         score_tv_score.setText(score + "/" + totalScore);
         score_btn = (Button) findViewById(R.id.score_btn);
         db = new DataBaseHelper(this);
+
     }
 
     private void reg(){
@@ -58,7 +59,6 @@ public class Score extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 db.refreshAllStars(username);
-                db.refreshAchievements(username);
                 Intent intent = new Intent(c, TkDashboardActivity.class);
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);

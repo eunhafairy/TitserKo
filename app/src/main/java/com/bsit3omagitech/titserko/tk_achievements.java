@@ -75,7 +75,6 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
         desc = new ArrayList<>();
         unlocked = new ArrayList<>();
         db = new DataBaseHelper(this);
-        db.refreshAchievements(name);
         getAchievementList();
         //-------------------------------------------GET DATA FROM JSON AND DATABASE---------------------------------
         AchievementAdapter adapter = new AchievementAdapter(this, titles, imagePaths, achievementIds, name, unlocked);

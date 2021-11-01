@@ -13,4 +13,5 @@
     <color name="lightBrown">#e0d4c4</color>
     <color name="red">#f44336</color>
     <color name="lightRed">#ffb1b1</color>
+    <color name="lightGray">#AFAFAF</color>
 </resources>

@@ -54,7 +54,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_tk_statistics);
 
         init();
-        reg();
+
 
 
     }
@@ -109,19 +109,16 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
         stats_navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
 
-
-
-    }
-
-    private void reg(){
-        // ------------------------------------------ REGISTER LISTENERS ------------------------------------------
         iv_stat_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stats_drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
+
+
     }
+
 
 
     // -------------------------------------------- JSON PARSER FUNCTION -------------------------------------
@@ -198,10 +195,6 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
                 break;
 
             case R.id.nav_stats:
-                Intent i4 = new Intent(this, tk_statistics.class);
-                i4.putExtra("username", username);
-                startActivity(i4);
-                finish();
                 break;
 
 

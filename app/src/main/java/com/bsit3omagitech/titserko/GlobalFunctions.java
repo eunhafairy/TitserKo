@@ -1,19 +1,27 @@
 package com.bsit3omagitech.titserko;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class GlobalFunctions {
     public Context context;
+
 
     public GlobalFunctions(Context context) {
         this.context = context;
@@ -90,6 +98,10 @@ public class GlobalFunctions {
 
 
     }
+
+
+
+
 
 
 }

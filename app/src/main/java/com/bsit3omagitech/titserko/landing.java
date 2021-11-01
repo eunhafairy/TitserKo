@@ -97,7 +97,6 @@ public class landing extends AppCompatActivity {
 
         //for lesson progress
        db.refreshAllStars(username);
-       db.refreshAchievements(username);
        lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
        float currentProgress = db.getLessonProgress(username, lessonId);
        float c = (currentProgress/(maxLesson-1)) * 100f;
