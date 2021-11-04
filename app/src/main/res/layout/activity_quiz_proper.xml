@@ -54,8 +54,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:progressDrawable="@drawable/custom_progressbar"
-                android:background="@color/black"
-                android:progress="@integer/material_motion_duration_long_1"
+                android:progress="50"
 
                 />
             <TextView
@@ -96,17 +95,19 @@
         </LinearLayout>
 
     </ScrollView>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_lp_confirm"
+        android:clickable="false"
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
         android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/darkGreen"
         android:text="Confirm"
+        android:textColor="@color/white"
         android:layout_weight="1"
         android:padding="2dp"
         android:layout_marginBottom="5dp"
-        android:visibility="visible"
         />
 
 

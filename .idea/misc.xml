@@ -12,9 +12,16 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_toggled.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/button_untoggled.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/customborder.xml" value="0.18888888888888888" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/default_img.xml" value="0.15260416666666668" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/main_okay_btn.xml" value="0.32407407407407407" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/navigation_vector_white.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/next_btn.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/quiz_imgview.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/round_image.xml" value="0.15260416666666668" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/rounded_row.xml" value="0.221875" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/rounded_row_white.xml" value="0.3828125" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/spin_arrow.xml" value="0.15260416666666668" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/spinner_arrow.xml" value="0.15260416666666668" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/spinner_bg.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/study_quiz_btn.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/textview_rounded_bg.xml" value="0.3828125" />
@@ -30,10 +37,11 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_profile.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_register.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_settings.xml" value="0.3428442028985507" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_statistics.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_statistics.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/error_dialog.xml" value="0.3428442028985507" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/header.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/header_layout.xml" value="0.2821557971014493" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/layout_cards.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/my_row.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/score_row.xml" value="0.3428442028985507" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/stat_row.xml" value="0.36666666666666664" />

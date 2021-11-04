@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -102,6 +103,15 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         stats_drawerLayout= findViewById(R.id.stats_drawer_layout);
         setSupportActionBar(toolbar);
 
+        iv_stat_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Here", "Went here");
+                stats_drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+
         stats_navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, stats_drawerLayout, toolbar, R.string.navigation_drawer_open ,R.string.navigation_drawer_close);
         stats_drawerLayout.addDrawerListener(toggle);
@@ -109,12 +119,6 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
         stats_navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
 
-        iv_stat_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stats_drawerLayout.openDrawer(Gravity.LEFT);
-            }
-        });
 
 
     }

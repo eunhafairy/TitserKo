@@ -69,22 +69,18 @@ public class QuizProper extends AppCompatActivity {
 
         c = this;
         maxScore = 0;
-    gf = new GlobalFunctions(c);
+        gf = new GlobalFunctions(c);
         //select toggle
         toggle = false;
         //TextView
         tv_qp_description = (TextView) findViewById(R.id.tv_qp_description);
 
-        //Button
-        btn_lp_confirm = (Button) findViewById(R.id.btn_lp_confirm);
-        btn_lp_confirm.setClickable(false);
-        btn_lp_confirm.setAlpha(0.5f);
 
         //Linear Layout
-        ll_btnParent = (LinearLayout) findViewById(R.id.ll_btnParent);
-
+        ll_btnParent =  findViewById(R.id.ll_btnParent);
+        btn_lp_confirm = findViewById(R.id.btn_lp_confirm);
         //ImageView
-        iv_qp = (ImageView) findViewById(R.id.iv_qp);
+        iv_qp = findViewById(R.id.iv_qp);
 
         //index and score
         index = 0;
@@ -154,9 +150,8 @@ public class QuizProper extends AppCompatActivity {
         progress = (index/(maxScore-1)) * 100;
         quizProgress.setProgress((int)progress);
 
-    }
+        //Button
 
-    private void reg(){
 
         btn_lp_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -306,6 +301,17 @@ public class QuizProper extends AppCompatActivity {
             }
         });
 
+
+        btn_lp_confirm.setClickable(false);
+        btn_lp_confirm.setAlpha(0.5f);
+        Log.d("init", "btn confirm is : " +    btn_lp_confirm.isClickable());
+
+    }
+
+    private void reg(){
+
+
+
     }
 
 
@@ -315,6 +321,7 @@ public class QuizProper extends AppCompatActivity {
         tv_qp_description.setText(quizArray.getJSONObject(index).getString("question"));
         ll_btnParent.removeAllViews();
         btn_lp_confirm.setText("Confirm");
+        btn_lp_confirm.setClickable(false);
         btn_lp_confirm.setAlpha(0.5f);
         selectedAnswer = "";
         String type = quizArray.getJSONObject(index).getString("type");

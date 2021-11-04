@@ -122,6 +122,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         usernameSelected = text;
+    } public void onBackPressed() {
+
+        System.exit(0);
+        finish();
+
     }
 
     @Override
@@ -129,12 +134,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    public void onBackPressed() {
 
-        System.exit(0);
-        finish();
-
-    }
 
 
 }

@@ -71,17 +71,17 @@
     ,
     {
         "achieve_id" : "A00007",
-        "achieve_name" : "EZ!",
-        "achieve_desc" : "Get 100% progress and a perfect score on \"Basics\" lesson",
-        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Favourite.\"",
+        "achieve_name" : "People Everywhere",
+        "achieve_desc" : "Get 100% progress and a perfect score on \"People\" lesson",
+        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Mga tao.\"",
         "achieve_img" : "badge_00002"
 
     },
     {
         "achieve_id" : "A00008",
-        "achieve_name" : "My Favourite!",
-        "achieve_desc" : "Get 100% progress and a perfect score on \"Favourite\" lesson",
-        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Favourite.\"",
+        "achieve_name" : "Animal Lover!",
+        "achieve_desc" : "Get 100% progress and a perfect score on \"Animals\" lesson",
+        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Mga Hayop.\"",
         "achieve_img" : "badge_00001"
 
     }

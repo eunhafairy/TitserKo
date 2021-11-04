@@ -14,4 +14,5 @@
     <color name="red">#f44336</color>
     <color name="lightRed">#ffb1b1</color>
     <color name="lightGray">#AFAFAF</color>
+    <color name="superLightGray">#C2C2C2</color>
 </resources>

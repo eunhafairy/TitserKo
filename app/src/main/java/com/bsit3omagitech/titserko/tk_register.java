@@ -88,7 +88,7 @@ public class tk_register extends AppCompatActivity {
 
                     try {
                         userModel = new UserModel(-1,name, et_date.getText().toString());
-                        Toast.makeText(tk_register.this, "Customer name: "+ userModel.getName(), Toast.LENGTH_SHORT).show();
+
 
                     }
                     catch (Exception e){
@@ -102,13 +102,13 @@ public class tk_register extends AppCompatActivity {
                     if(success){
                         dbHelper.createAllLessonProgress(name);
                         dbHelper.createAllAchievements(name);
-                        Toast.makeText(tk_register.this, "Success is: " + success, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(tk_register.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     }
                     else{
-                        Toast.makeText(tk_register.this, "Something went wrong. Make sure you choose a unique name.", Toast.LENGTH_LONG).show();
+                        openDialog("Error", "Something went wrong. Make sure you choose a unique name.");
+                        et_name.setText("");
                     }
 
 

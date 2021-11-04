@@ -5,24 +5,24 @@
 
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/home_default"
             android:title="Home" />
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/profile_default"
             android:title="Profile" />
         <item
             android:id="@+id/nav_achievements"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/achieve_default"
             android:title="Achievements" />
 
         <item
             android:id="@+id/nav_stats"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/stats_default"
             android:title="Statistics" />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/logout_default"
             android:title="Logout" />
 
     </group>

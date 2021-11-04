@@ -76,7 +76,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
     public Dialog dialog;
     LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
-    public static final int DB_VERSION = 40;
+    public static final int DB_VERSION = 41;
     Context context;
     GlobalFunctions gf;
 
@@ -1122,8 +1122,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //---------------- FOR ACHIEVEMENT A00007---------------------
         /**
          *           "achieve_id" : "A00007",
-         *         "achieve_name" : "EZ!",
-         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Basics\" lesson",
+         *         "achieve_name" : "People Everywhere!",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"People\" lesson",
          *
          **/
         a = getLessonStar(username, "00001");
@@ -1135,12 +1135,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //---------------- FOR ACHIEVEMENT A00008---------------------
         /**
          *         "achieve_id" : "A00008",
-         *         "achieve_name" : "My Favourite!",
-         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Favourite\" lesson",
+         *         "achieve_name" : "Animal Lover!",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Animal\" lesson",
          *
          **/
 
-        a = getLessonStar(username, "00005");
+        a = getLessonStar(username, "00002");
         if(a >= 3 && !checkAchievement(username, "A00008")){
             updatedAchievements.add("A00008");
             updateAchievement(username, "A00008");

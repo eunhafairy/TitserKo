@@ -27,7 +27,7 @@ import java.util.List;
 public class landing extends AppCompatActivity {
 
     Button btn_landing_study,btn_landing_quiz;
-    ImageView iv_back, lesson_img;
+    ImageView iv_back, iv_landing_stars;
     TextView tv_landingTitle, tv_landingTitleTranslation;
     Context c = this;
     String lessonName, lessonNameTranslated, lessonId, username;
@@ -55,7 +55,7 @@ public class landing extends AppCompatActivity {
         iv_back = (ImageView) findViewById(R.id.iv_back);
         tv_landingTitle = (TextView) findViewById(R.id.tv_landingTitle);
         tv_landingTitleTranslation = (TextView) findViewById(R.id.tv_landingTitleTranslation);
-
+        iv_landing_stars = findViewById(R.id.iv_landing_stars);
 
 
         Intent intent = getIntent();
@@ -70,7 +70,21 @@ public class landing extends AppCompatActivity {
         db = new DataBaseHelper(getApplicationContext());
         db.createLessonProgressEntry(username,lessonId);
 
-
+        int stars = db.getLessonStar(username, lessonId);
+        switch (stars){
+            case 0:
+                iv_landing_stars.setImageResource(R.drawable.star0);
+                break;
+            case 1:
+                iv_landing_stars.setImageResource(R.drawable.star1);
+                break;
+            case 2:
+                iv_landing_stars.setImageResource(R.drawable.star2);
+                break;
+            case 3:
+                iv_landing_stars.setImageResource(R.drawable.star3);
+                break;
+        }
 
 
         //parse json object
