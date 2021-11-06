@@ -93,7 +93,8 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
 
         // ------------------------------------------ DATABASE AND RECYCLER VIEW FUNCTIONS ------------------------------------------
-
+        db.updateNewLessons(name);
+        db.updateNewAchievements(name);
         stars = db.getUserStars(name);
         getLessonList();
         myAdapter adapter = new myAdapter(this, lessonList, stars);

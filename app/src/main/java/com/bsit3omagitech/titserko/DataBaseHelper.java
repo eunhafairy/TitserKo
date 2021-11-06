@@ -595,7 +595,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             cv.put(ACHIEVEMENT_USER, username);
             cv.put(ACHIEVEMENT_ID, achievementIds.get(i));
             if(i == 0){
-                cv.put(ACHIEVEMENT_FLAG, 1);
+                    cv.put(ACHIEVEMENT_FLAG, 1);
 
             }
             else{
@@ -1258,6 +1258,86 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         return ctr;
+    }
+
+    public void updateNewAchievements(String username){
+        //first get all achievement id
+        List<String> achieveIds = getAllAchievementId();
+        //check if user's achievement progress of each achievement is existing
+        for(int x = 0; x < achieveIds.size(); x++) {
+            SQLiteDatabase db = this.getReadableDatabase();
+            String selectQuery = "SELECT " + ACHIEVEMENT_PRIMARY +
+                    " FROM "
+                    + ACHIEVEMENT_TABLE +
+                    " WHERE " +
+                    ACHIEVEMENT_USER + " = '" + username + "' AND " +
+                    ACHIEVEMENT_ID + " = '" + achieveIds.get(x) + "'";
+            Cursor cursor = db.rawQuery(selectQuery, null);
+            if(cursor.getCount() == 0) {
+
+                //create entry
+                SQLiteDatabase db2 = this.getWritableDatabase();
+                ContentValues cv = new ContentValues();
+                cv.put(ACHIEVEMENT_USER, username);
+                cv.put(ACHIEVEMENT_ID, achieveIds.get(x));
+                cv.put(ACHIEVEMENT_FLAG, 0);
+                db2.insert(ACHIEVEMENT_TABLE, null, cv);
+
+            }
+        }
+
+    }
+
+
+
+    public void updateNewLessons(String username){
+
+        //first get all lesson id
+        List<String> lessonids = getAllLessonId();
+
+        //check if user's lesson progress of each lessonid is existing
+
+        for(int x = 0; x < lessonids.size(); x++){
+            SQLiteDatabase db = this.getReadableDatabase();
+            String selectQuery = "SELECT " + LP_ID +
+                    " FROM "
+                    + LESSON_PROGRESS_TABLE +
+                    " WHERE " +
+                    LP_USER_NAME + " = '" + username + "' AND "+
+                    LP_LESSON_ID + " = '" + lessonids.get(x) + "'";
+            Cursor cursor = db.rawQuery(selectQuery, null);
+            if(cursor.getCount() == 0){
+                //create entry
+
+                //insert entry
+
+
+                ContentValues cv = new ContentValues();
+
+                cv.put(LP_USER_NAME, username);
+                cv.put(LP_LESSON_ID, lessonids.get(x));
+                cv.put(LP_QUIZ_HIGHSCORE, 0);
+                cv.put(LP_LESSON_PROGRESS, 0);
+                cv.put(LP_LESSON_STARS, 0);
+                cv.put(LP_QUIZ_LOWSWCORE, 0);
+                cv.put(LP_QUIZ_TAKEN, 0);
+                cv.put(LP_LESSON_MAX, getMaxIndex(lessonids.get(x)));
+
+                SQLiteDatabase db2 = this.getWritableDatabase();
+                long insert = db2.insert(LESSON_PROGRESS_TABLE, null, cv);
+                if (insert == -1) {
+                    Log.d(TAG, "not inserted.");
+
+                } else {
+                    Log.d(TAG, "inserted.");
+
+                }
+
+            }
+
+        }
+
+
     }
 
 

@@ -9,8 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -127,6 +129,7 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
         TextView tv_title_achieve_dialog = dialog.findViewById(R.id.tv_title_achieve_dialog);
         TextView tv_desc_achieve_dialog = dialog.findViewById(R.id.tv_desc_achieve_dialog);
         Button btn_confirm_achieve_dialog = dialog.findViewById(R.id.btn_confirm_achieve_dialog);
+        Button btn_confirm_achieve_equip = dialog.findViewById(R.id.btn_confirm_achieve_equip);
         ImageView iv_achieve_dialog = dialog.findViewById(R.id.iv_achieve_dialog);
 
         tv_title_achieve_dialog.setText(titles.get(pos));
@@ -134,6 +137,47 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
 
         Uri imageUri =Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePaths.get(pos));
         iv_achieve_dialog.setImageURI(imageUri);
+
+
+        //check if current achievement is equipped
+        if(db.isEquipped(name, achievementIds.get(pos))){
+            btn_confirm_achieve_equip.setText("Equipped");
+            btn_confirm_achieve_equip.setClickable(false);
+            btn_confirm_achieve_equip.setAlpha(0.5f);
+
+        }
+        else{
+
+            if(!unlocked.get(pos)){
+                iv_achieve_dialog.setImageResource(R.drawable.lock);
+                btn_confirm_achieve_equip.setText("Equip Badge");
+                btn_confirm_achieve_equip.setClickable(false);
+                btn_confirm_achieve_equip.setAlpha(0.5f);
+
+            }
+            else{
+
+                btn_confirm_achieve_equip.setText("Equip Badge");
+                btn_confirm_achieve_equip.setClickable(true);
+                btn_confirm_achieve_equip.setAlpha(1);
+                btn_confirm_achieve_equip.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //equip the badge
+                        db.updateBadge(name, achievementIds.get(pos));
+                        Intent intent = new Intent(c, TkDashboardActivity.class);
+                        intent.putExtra("username", name);
+                        startActivity(intent);
+                        Toast.makeText(c, "Successfully changed badge.", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+            }
+
+
+        }
+
 
         btn_confirm_achieve_dialog.setOnClickListener(new View.OnClickListener() {
             @Override

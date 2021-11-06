@@ -28,7 +28,7 @@ public class landing extends AppCompatActivity {
 
     Button btn_landing_study,btn_landing_quiz;
     ImageView iv_back, iv_landing_stars;
-    TextView tv_landingTitle, tv_landingTitleTranslation;
+    TextView tv_landingTitle;
     Context c = this;
     String lessonName, lessonNameTranslated, lessonId, username;
     DataBaseHelper db;
@@ -54,7 +54,7 @@ public class landing extends AppCompatActivity {
         btn_landing_quiz = (Button) findViewById(R.id.btn_landing_quiz);
         iv_back = (ImageView) findViewById(R.id.iv_back);
         tv_landingTitle = (TextView) findViewById(R.id.tv_landingTitle);
-        tv_landingTitleTranslation = (TextView) findViewById(R.id.tv_landingTitleTranslation);
+        //tv_landingTitleTranslation = (TextView) findViewById(R.id.tv_landingTitleTranslation);
         iv_landing_stars = findViewById(R.id.iv_landing_stars);
 
 
@@ -64,7 +64,7 @@ public class landing extends AppCompatActivity {
         lessonId = intent.getStringExtra("lessonId");
         username = intent.getStringExtra("username");
         tv_landingTitle.setText(lessonName);
-        tv_landingTitleTranslation.setText(lessonNameTranslated);
+        //tv_landingTitleTranslation.setText(lessonNameTranslated);
 
         //database
         db = new DataBaseHelper(getApplicationContext());

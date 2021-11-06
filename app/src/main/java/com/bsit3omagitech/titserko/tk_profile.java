@@ -38,16 +38,18 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
 
     ImageView btn_profile_back, iv_profile_badge;
-    TextView tv_profile_name, tv_profile_name2, tv_profile_age, tv_profile_birthday;
+    TextView tv_profile_name, tv_profile_age;
     String name, dateTime, age;
     Context c;
     DataBaseHelper db;
     Date bday;
-    FlowLayout flowLayout;
+
     List<String> imagePaths;
     NavigationView profile_navigationView;
     DrawerLayout profile_drawerLayout;
     Toolbar toolbar;
+    LinearLayout ll_profile_badge_list;
+    int numOfBadges = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +66,10 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         // --------------------------------------------- INITIALIZE ----------------------------------------------
         btn_profile_back = findViewById(R.id.btn_profile_back);
         tv_profile_name = findViewById(R.id.tv_profile_name);
-        tv_profile_name2 = findViewById(R.id.tv_profile_name2);
         tv_profile_age = findViewById(R.id.tv_profile_age);
-        tv_profile_birthday = findViewById(R.id.tv_profile_birthday);
         iv_profile_badge  = findViewById(R.id.iv_profile_badge);
+        ll_profile_badge_list = findViewById(R.id.ll_profile_badge_list);
 
-        flowLayout = findViewById(R.id.fl_profile);
         c = this;
         db = new DataBaseHelper(c);
 
@@ -114,9 +114,8 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
         // --------------------------------------------- REGISTER LISTENERS AND FUNCTIONS ----------------------------------------------
         tv_profile_name.setText(name);
-        tv_profile_name2.setText(name);
-         tv_profile_birthday.setText(dateTime);
-        tv_profile_age.setText(age);
+        numOfBadges = db.getTotalUserBadge(name);
+        tv_profile_age.setText(age + " years old | " + numOfBadges + " Badges");
 
         btn_profile_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,13 +169,15 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
     }
 
+
+
     private void populateProfileBadge(){
 
         imagePaths = db.getProfileBadges(name);
         int ctr = imagePaths.size();
 
         int sizeInDP = 20;
-        int sizeBadges = 60;
+        int sizeBadges = 80;
 
         int marginInDp = (int) TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP, sizeInDP, getResources()
@@ -203,7 +204,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
                 imageView.setAlpha(0.5f);
             }
-            flowLayout.addView(imageView);
+            ll_profile_badge_list.addView(imageView);
 
         }
 

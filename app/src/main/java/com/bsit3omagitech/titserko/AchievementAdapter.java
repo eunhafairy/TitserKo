@@ -62,61 +62,62 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
 
         //imageResource
         Uri imageUri =Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePath.get(position));
-        holder.iv_achieve_img.setImageURI(imageUri);
 
 
 
-        //if button is toggled
-        if(db.isEquipped(username, achievementId.get(position))){
-
-            holder.btn_achieve.setText("Equipped");
-            holder.btn_achieve.setClickable(false);
-            holder.btn_achieve.setAlpha(0.5f);
-            holder.ll.setBackgroundResource(R.drawable.rounded_row);
-
-        }
-        else{
-            holder.ll.setBackgroundResource(R.drawable.rounded_row_white);
-            holder.btn_achieve.setText("Equip");
-            holder.btn_achieve.setAlpha(1);
-            holder.btn_achieve.setClickable(true);
-            holder.btn_achieve.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AlertDialog.Builder builder =new AlertDialog.Builder(context);
-                    builder.setTitle("Equip badge")
-                            .setMessage("Are you sure you want to equip the badge?")
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //update user table
-                                    db.updateBadge(username, achievementId.get(holder.getAdapterPosition()));
-                                    Intent intent = new Intent(context, TkDashboardActivity.class);
-                                    intent.putExtra("username", username);
-                                    context.startActivity(intent);
-                                    Toast.makeText(context, "Successfully changed badge.", Toast.LENGTH_LONG).show();
-                                }
-                            }).setNegativeButton("No", null)
-                            .setCancelable(true);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-
-                }
-            });
-        }
+//
+//        //if button is toggled
+//        if(db.isEquipped(username, achievementId.get(position))){
+//
+//            holder.btn_achieve.setText("Equipped");
+//            holder.btn_achieve.setClickable(false);
+//            holder.btn_achieve.setAlpha(0.5f);
+//            holder.ll.setBackgroundResource(R.drawable.rounded_row);
+//
+//        }
+//        else{
+//            holder.ll.setBackgroundResource(R.drawable.rounded_row_white);
+//            holder.btn_achieve.setText("Equip");
+//            holder.btn_achieve.setAlpha(1);
+//            holder.btn_achieve.setClickable(true);
+//            holder.btn_achieve.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    AlertDialog.Builder builder =new AlertDialog.Builder(context);
+//                    builder.setTitle("Equip badge")
+//                            .setMessage("Are you sure you want to equip the badge?")
+//                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                                @Override
+//                                public void onClick(DialogInterface dialog, int which) {
+//                                    //update user table
+//                                    db.updateBadge(username, achievementId.get(holder.getAdapterPosition()));
+//                                    Intent intent = new Intent(context, TkDashboardActivity.class);
+//                                    intent.putExtra("username", username);
+//                                    context.startActivity(intent);
+//                                    Toast.makeText(context, "Successfully changed badge.", Toast.LENGTH_LONG).show();
+//                                }
+//                            }).setNegativeButton("No", null)
+//                            .setCancelable(true);
+//                    AlertDialog dialog = builder.create();
+//                    dialog.show();
+//
+//                }
+//            });
+//        }
 
         if(!isUnlocked.get(holder.getAdapterPosition())){
 
-
+            holder.iv_achieve_img.setImageResource(R.drawable.lock);
             holder.itemView.setAlpha(0.5f);
-            holder.btn_achieve.setAlpha(0f);
-            holder.btn_achieve.setClickable(false);
+//            holder.btn_achieve.setAlpha(0f);
+//            holder.btn_achieve.setClickable(false);
 
         }
         else{
+            holder.iv_achieve_img.setImageURI(imageUri);
             holder.itemView.setAlpha(1);
-            holder.btn_achieve.setAlpha(1);
-            holder.btn_achieve.setClickable(true);
+//            holder.btn_achieve.setAlpha(1);
+//            holder.btn_achieve.setClickable(true);
         }
 
     }
@@ -138,7 +139,7 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
             ll = itemView.findViewById(R.id.ll_achieverow);
             tv_achieve_title = itemView.findViewById(R.id.tv_achieveRow);
             iv_achieve_img = itemView.findViewById(R.id.iv_achieveRow);
-            btn_achieve = itemView.findViewById(R.id.btn_achieve);
+//            btn_achieve = itemView.findViewById(R.id.btn_achieve);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

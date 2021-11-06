@@ -94,6 +94,15 @@
         "achieve_desc_tagalog" : "Makakuha ng 100% kaunlaran sa lahat ng mga aralin.",
         "achieve_img" : "badge_00001"
 
+    },
+
+    {
+        "achieve_id" : "A00009",
+        "achieve_name" : "New Achievement",
+        "achieve_desc" : "Sample achievement achievement achievement achievement.",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00001"
+
     }
 
 ]

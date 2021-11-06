@@ -222,6 +222,34 @@
                  ],
                 "correct_answer" : "People"
             },
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "student4",
+                "type" : "audio",
+                "question_audio" :  "people",
+                "choices" : [
+                    {
+                        "label": "Mga tao",
+                        "audio_src" : "mga_tao"
+
+                    },
+                    {
+                        "label": "Lalaki",
+                        "audio_src" : "lalaki"
+
+                    },
+                    {
+                        "label": "Mga gulay",
+                        "audio_src" : "mga_gulay"
+
+                    }
+
+
+                 ],
+                "correct_answer" : "Mga tao"
+            },
             {
                 "question" : "Piliin ang katumbas na tunog.",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
@@ -248,6 +276,32 @@
 
                 ],
                 "correct_answer" : "Nanay"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "nanay",
+                "choices" : [
+                    {
+                        "label": "Mother",
+                        "audio_src" : "mother"
+
+                    },
+                    {
+                        "label": "Father",
+                        "audio_src" : "father"
+
+                    },
+                    {
+                        "label": "Teacher",
+                        "audio_src" : "teacher"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Mother"
             },
             {
                 "question" : "Piliin ang katumbas na tunog.",
@@ -281,6 +335,33 @@
                 "question" : "Piliin ang katumbas na tunog.",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "type" : "audio",
+                "question_audio" :  "boy",
+
+                "choices" : [
+                    {
+                        "label": "Lalaki",
+                        "audio_src" : "lalaki"
+
+                    },
+                    {
+                        "label": "Babae",
+                        "audio_src" : "babae"
+
+                    },
+                    {
+                        "label": "Tatay",
+                        "audio_src" : "tatay"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Lalaki"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
                 "question_audio" :  "priest",
                 "img_src" : "priest_img",
 
@@ -304,6 +385,34 @@
 
                 ],
                 "correct_answer" : "Pari"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "pari",
+    
+
+                "choices" : [
+                    {
+                        "label": "Priest",
+                        "audio_src" : "priest"
+
+                    },
+                    {
+                        "label": "Dentist",
+                        "audio_src" : "dentist"
+
+                    },
+                    {
+                        "label": "Student",
+                        "audio_src" : "student"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Priest"
             },
 
             {
@@ -363,6 +472,36 @@
 
                 ],
                 "correct_answer" : "Babae"
+            },
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "babae",
+                "img_src" : "girl_img",
+
+                "choices" : [
+                    {
+                        "label": "Girl",
+                        "audio_src" : "girl"
+
+
+                    },
+                    {
+                        "label": "Mother",
+                        "audio_src" : "mother"
+
+                    },
+                    {
+                        "label": "Boy",
+                        "audio_src" : "boy"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Girl"
             },
             {
                 "question" : "Ano ang ibig sabihin ng sumusunod?",
@@ -1952,7 +2091,7 @@
                 "correct_answer" : "Spinach"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "cabbage_img",
                 "type" : "visual",
@@ -1978,7 +2117,7 @@
                 "correct_answer" : "Cabbage"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "garlic_img",
                 "type" : "visual",
@@ -2030,7 +2169,7 @@
                 "correct_answer" : "Ginger"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "carrots_img",
                 "type" : "visual",
@@ -2056,7 +2195,7 @@
                 "correct_answer" : "Carrots"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "eggplant_img",
                 "type" : "visual",
@@ -2082,7 +2221,7 @@
                 "correct_answer" : "Eggplant"
             },
             {
-                "question" : "Piliin ang katumbas na tunog.",
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "img_src" : "spinach_img",
                 "type" : "visual",
@@ -2107,6 +2246,1571 @@
                 ],
                 "correct_answer" : "Spinach"
             }
+        ]
+    },
+    {
+        "lesson_id" : "00004",
+        "lesson_name" : "Fruits",
+        "lesson_name_translate" : "Mga prutas",
+        "parts" : [
+
+            {
+                "description" : "Mga prutas",
+                "instruction_audio" : "mga_prutas",
+                "choices" : [
+                    {
+                        "label": "Fruits",
+                        "audio_src" : "fruits"
+
+                    }
+                ],
+                "image_src" : "fruits_img"
+
+
+            },
+
+            {
+                "description" : "Saging",
+                "instruction_audio" : "saging",
+                "choices" : [
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    }
+
+                ],
+                "image_src" : "banana_img"
+
+
+            },
+
+            {
+                "description" : "Ubas",
+                "instruction_audio" : "ubas",
+                "choices" : [
+                    {
+                        "label": "Grapes",
+                        "audio_src" : "grapes"
+
+                    }
+
+                ],
+                "image_src" : "grapes_img"
+
+            },
+            {
+                "description" : "Bayabas",
+                "instruction_audio" : "bayabas",
+                "choices" : [
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    }
+
+                ],
+                "image_src" : "guava_img"
+            },
+            {
+                "description" : "Mansanas",
+                "instruction_audio" : "mansanas",
+                "choices" : [
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    }
+
+                ],
+                "image_src" : "apple_img"
+
+            },
+            {
+                "description" : "Pinya",
+                "instruction_audio" : "pinya",
+                "choices" : [
+                    {
+                        "label": "Pineapple",
+                        "audio_src" : "pineapple"
+
+                    }
+
+                ],
+                "image_src" : "pineapple_img"
+            },
+            {
+                "description" : "Mangga",
+                "instruction_audio" : "mangga",
+                "choices" : [
+                    {
+                        "label": "Mango",
+                        "audio_src" : "mango"
+
+                    }
+
+                ],
+                "image_src" : "mango_img"
+            },
+            {
+                "description" : "Pakwan",
+                "instruction_audio" : "pakwan",
+                "choices" : [
+                    {
+                        "label": "Watermelon",
+                        "audio_src" : "watermelon"
+
+                    }
+
+                ],
+                "image_src" : "watermelon_img"
+            },
+            {
+                "description" : "Abukado",
+                "instruction_audio" : "abukado",
+                "choices" : [
+                    {
+                        "label": "Avocado",
+                        "audio_src" : "avocado"
+
+                    }
+
+                ],
+                "image_src" : "avocado_img"
+            },
+            {
+                "description" : "Peras",
+                "instruction_audio" : "peras",
+                "choices" : [
+                    {
+                        "label": "Pear",
+                        "audio_src" : "pear"
+
+                    }
+
+                ],
+                "image_src" : "pear_img"
+
+
+            },
+            {
+                "description" : "Sampalok",
+                "instruction_audio" : "sampalok",
+                "choices" : [
+                    {
+                        "label": "Tamarind",
+                        "audio_src" : "tamarind"
+
+                    }
+
+                ],
+                "image_src" : "tamarind_img"
+
+
+            },
+            {
+                "description" : "Buko",
+                "instruction_audio" : "buko",
+                "choices" : [
+                    {
+                        "label": "Coconut",
+                        "audio_src" : "coconut"
+
+                    }
+
+                ],
+                "image_src" : "coconut_img"
+
+
+            },
+            {
+                "description" : "Langka",
+                "instruction_audio" : "langka",
+                "choices" : [
+                    {
+                        "label": "Jackfruit",
+                        "audio_src" : "jackfruit"
+
+                    }
+
+                ],
+                "image_src" : "jackfruit_img"
+
+
+            },
+
+            {
+                "description" : "Duhat",
+                "instruction_audio" : "duhat",
+                "choices" : [
+                    {
+                        "label": "Blackberry",
+                        "audio_src" : "blackberry"
+
+                    }
+
+                ],
+                "image_src" : "blackberry_img"
+
+
+            }
+
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "mga_prutas",
+                "choices" : [
+                    {
+                        "label": "Vegetables",
+                        "audio_src" : "vegetables"
+
+                    },
+                    {
+                        "label": "People",
+                        "audio_src" : "people"
+
+                    },
+                    {
+                        "label": "Fruits",
+                        "audio_src" : "fruits"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Fruits"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "jackfruit",
+                "choices" : [
+                    {
+                        "label": "Langka",
+                        "audio_src" : "langka"
+
+                    },
+                    {
+                        "label": "Mansanas",
+                        "audio_src" : "mansanas"
+
+                    },
+                    {
+                        "label": "Duhat",
+                        "audio_src" : "duhat"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Langka"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "langka",
+                "choices" : [
+                    {
+                        "label": "Jackfruit",
+                        "audio_src" : "jackfruit"
+
+                    },
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    },
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Jackfruit"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "duhat",
+                "choices" : [
+                    {
+                        "label": "Blackberry",
+                        "audio_src" : "blackberry"
+
+                    },
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    },
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Blackberry"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "apple",
+                "choices" : [
+                    {
+                        "label": "Mansanas",
+                        "audio_src" : "mansanas"
+
+                    },
+                    {
+                        "label": "Duhat",
+                        "audio_src" : "duhat"
+
+                    },
+                    {
+                        "label": "Bayabas",
+                        "audio_src" : "bayabas"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Mansanas"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "banana",
+                "choices" : [
+                    {
+                        "label": "Saging",
+                        "audio_src" : "saging"
+
+                    },
+                    {
+                        "label": "Mansanas",
+                        "audio_src" : "mansanas"
+
+                    },
+                    {
+                        "label": "Langka",
+                        "audio_src" : "langka"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Saging"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "saging",
+                "choices" : [
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    },
+                    {
+                        "label": "Blackberry",
+                        "audio_src" : "blackberry"
+
+                    },
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Banana"
+            },
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "pear",
+                "choices" : [
+                    {
+                        "label": "Peras",
+                        "audio_src" : "peras"
+
+                    },
+                    {
+                        "label": "Abukado",
+                        "audio_src" : "abukado"
+
+                    },
+                    {
+                        "label": "Sampalok",
+                        "audio_src" : "sampalok"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Peras"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "pakwan",
+                "choices" : [
+                    {
+                        "label": "Watermelon",
+                        "audio_src" : "watermelon"
+
+                    },
+                    {
+                        "label": "Jackfruit",
+                        "audio_src" : "jackfruit"
+
+                    },
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Watermelon"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "buko",
+                "choices" : [
+                    {
+                        "label": "Coconut",
+                        "audio_src" : "coconut"
+
+                    },
+                    {
+                        "label": "Watermelon",
+                        "audio_src" : "watermelon"
+
+                    },
+                    {
+                        "label": "Jackfruit",
+                        "audio_src" : "jackfruit"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Coconut"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "sampalok",
+                "choices" : [
+                    {
+                        "label": "Tamarind",
+                        "audio_src" : "tamarind"
+
+                    },
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    },
+                    {
+                        "label": "Potato",
+                        "audio_src" : "potato"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Tamarind"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "banana_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    },
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    },
+                    {
+                        "label": "Coconut",
+                        "audio_src" : "coconut"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Banana"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "tamarind_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Tamarind",
+                        "audio_src" : "tamarind"
+
+                    },
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    },
+                    {
+                        "label": "Watermelon",
+                        "audio_src" : "watermelon"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Tamarind"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "jackfruit_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Jackfruit",
+                        "audio_src" : "jackfruit"
+
+                    },
+                    {
+                        "label": "Blackberry",
+                        "audio_src" : "blackberry"
+
+                    },
+                    {
+                        "label": "Watermelon",
+                        "audio_src" : "watermelon"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Jackfruit"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "blackberry_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Blackberry",
+                        "audio_src" : "blackberry"
+
+                    },
+                    {
+                        "label": "Tamarind",
+                        "audio_src" : "tamarind"
+
+                    },
+                    {
+                        "label": "Pear",
+                        "audio_src" : "pear"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Blackberry"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "apple_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    },
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    },
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Apple"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "pineapple_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Pineapple",
+                        "audio_src" : "pineapple"
+
+                    },
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    },
+                    {
+                        "label": "Jackfruit",
+                        "audio_src" : "jackfruit"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Pineapple"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "pear_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Pear",
+                        "audio_src" : "pear"
+
+                    },
+                    {
+                        "label": "Apple",
+                        "audio_src" : "apple"
+
+                    },
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Pear"
+            }
+            ,
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "guava_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Guava",
+                        "audio_src" : "guava"
+
+                    },
+                    {
+                        "label": "Banana",
+                        "audio_src" : "banana"
+
+                    },
+                    {
+                        "label": "Pineapple",
+                        "audio_src" : "pineapple"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Guava"
+            }
+        ]
+    },
+
+    {
+        "lesson_id" : "00005",
+        "lesson_name" : "Things",
+        "lesson_name_translate" : "Mga bagay",
+        "parts" : [
+
+            {
+                "description" : "Mga bagay",
+                "instruction_audio" : "mga_bagay",
+                "choices" : [
+                    {
+                        "label": "Things",
+                        "audio_src" : "things"
+
+                    }
+                ],
+                "image_src" : "things_img"
+
+
+            },
+
+            {
+                "description" : "Lapis",
+                "instruction_audio" : "lapis",
+                "choices" : [
+                    {
+                        "label": "Pencil",
+                        "audio_src" : "pencil"
+
+                    }
+
+                ],
+                "image_src" : "pencil_img"
+
+
+            },
+
+            {
+                "description" : "Pambura",
+                "instruction_audio" : "pambura",
+                "choices" : [
+                    {
+                        "label": "Eraser",
+                        "audio_src" : "eraser"
+
+                    }
+
+                ],
+                "image_src" : "eraser_img"
+
+            },
+            {
+                "description" : "Baso",
+                "instruction_audio" : "baso",
+                "choices" : [
+                    {
+                        "label": "Glass",
+                        "audio_src" : "glass"
+
+                    }
+
+                ],
+                "image_src" : "glass_img"
+            },
+            {
+                "description" : "Tubig",
+                "instruction_audio" : "tubig",
+                "choices" : [
+                    {
+                        "label": "Water",
+                        "audio_src" : "water"
+
+                    }
+
+                ],
+                "image_src" : "water_img"
+
+            },
+            {
+                "description" : "Hangin",
+                "instruction_audio" : "hangin",
+                "choices" : [
+                    {
+                        "label": "Wind",
+                        "audio_src" : "wind"
+
+                    }
+
+                ],
+                "image_src" : "wind_img"
+            },
+            {
+                "description" : "Bato",
+                "instruction_audio" : "bato",
+                "choices" : [
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    }
+
+                ],
+                "image_src" : "rock_img"
+            },
+            {
+                "description" : "Puno",
+                "instruction_audio" : "puno",
+                "choices" : [
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    }
+
+                ],
+                "image_src" : "tree_img"
+            },
+            {
+                "description" : "Halaman",
+                "instruction_audio" : "halaman",
+                "choices" : [
+                    {
+                        "label": "Plant",
+                        "audio_src" : "plant"
+
+                    }
+
+                ],
+                "image_src" : "plant_img"
+            },
+            {
+                "description" : "Unan",
+                "instruction_audio" : "unan",
+                "choices" : [
+                    {
+                        "label": "Pillow",
+                        "audio_src" : "pillow"
+
+                    }
+
+                ],
+                "image_src" : "pillow_img"
+
+
+            },
+            {
+                "description" : "Kama",
+                "instruction_audio" : "kama",
+                "choices" : [
+                    {
+                        "label": "Bed",
+                        "audio_src" : "bed"
+
+                    }
+
+                ],
+                "image_src" : "bed_img"
+
+
+            },
+            {
+                "description" : "Pinto",
+                "instruction_audio" : "pinto",
+                "choices" : [
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    }
+
+                ],
+                "image_src" : "door_img"
+
+
+            },
+            {
+                "description" : "Bintana",
+                "instruction_audio" : "bintana",
+                "choices" : [
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    }
+
+                ],
+                "image_src" : "window_img"
+
+
+            },
+
+            {
+                "description" : "Sahig",
+                "instruction_audio" : "sahig",
+                "choices" : [
+                    {
+                        "label": "Floor",
+                        "audio_src" : "floor"
+
+                    }
+
+                ],
+                "image_src" : "floor_img"
+
+
+            }
+            ,
+
+            {
+                "description" : "Ilaw",
+                "instruction_audio" : "ilaw",
+                "choices" : [
+                    {
+                        "label": "Light",
+                        "audio_src" : "light"
+
+                    }
+
+                ],
+                "image_src" : "light_img"
+
+
+            }
+
+            ,
+
+            {
+                "description" : "Upuan",
+                "instruction_audio" : "upuan",
+                "choices" : [
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    }
+
+                ],
+                "image_src" : "chair_img"
+
+
+            }
+
+        
+
+
+
+        ],
+        "quiz" : [
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "mga_bagay",
+                "choices" : [
+                    {
+                        "label": "Vegetables",
+                        "audio_src" : "vegetables"
+
+                    },
+                    {
+                        "label": "People",
+                        "audio_src" : "people"
+
+                    },
+                    {
+                        "label": "Things",
+                        "audio_src" : "things"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Things"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "things",
+                "choices" : [
+                    {
+                        "label": "Mga bagay",
+                        "audio_src" : "mga_bagay"
+
+                    },
+                    {
+                        "label": "Mga tao",
+                        "audio_src" : "mga_tao"
+
+                    },
+                    {
+                        "label": "Mga prutas",
+                        "audio_src" : "mga_prutas"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Mga bagay"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "chair",
+                "choices" : [
+                    {
+                        "label": "Upuan",
+                        "audio_src" : "upuan"
+
+                    },
+                    {
+                        "label": "Kama",
+                        "audio_src" : "kama"
+
+                    },
+                    {
+                        "label": "Bintana",
+                        "audio_src" : "bintana"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Upuan"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "bintana",
+                "choices" : [
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    },
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    },
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Window"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "pinto",
+                "choices" : [
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    },
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    },
+                    {
+                        "label": "Light",
+                        "audio_src" : "light"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Door"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "baso",
+                "choices" : [
+                    {
+                        "label": "Glass",
+                        "audio_src" : "glass"
+
+                    },
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    },
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Glass"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "bed",
+                "choices" : [
+                    {
+                        "label": "Kama",
+                        "audio_src" : "kama"
+
+                    },
+                    {
+                        "label": "Unan",
+                        "audio_src" : "unan"
+
+                    },
+                    {
+                        "label": "Bintana",
+                        "audio_src" : "bintana"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Kama"
+            },
+
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "unan",
+                "choices" : [
+                    {
+                        "label": "Pillow",
+                        "audio_src" : "pillow"
+
+                    },
+                    {
+                        "label": "Bed",
+                        "audio_src" : "bed"
+
+                    },
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Pillow"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "pambura",
+                "choices" : [
+                    {
+                        "label": "Eraser",
+                        "audio_src" : "eraser"
+
+                    },
+                    {
+                        "label": "Pencil",
+                        "audio_src" : "pencil"
+
+                    },
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Eraser"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "pencil",
+                "choices" : [
+                    {
+                        "label": "Lapis",
+                        "audio_src" : "lapis"
+
+                    },
+                    {
+                        "label": "Pambura",
+                        "audio_src" : "pambura"
+
+                    },
+                    {
+                        "label": "Upuan",
+                        "audio_src" : "upuan"
+
+                    }
+
+
+                ],
+                "correct_answer" : "LApis"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "bato",
+                "choices" : [
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    },
+                    {
+                        "label": "Plants",
+                        "audio_src" : "plants"
+
+                    },
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Rock"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "halaman",
+                "choices" : [
+                    {
+                        "label": "Plant",
+                        "audio_src" : "plant"
+
+                    },
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    },
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Plant"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "type" : "audio",
+                "question_audio" :  "puno",
+                "choices" : [
+                    {
+                        "label": "Plant",
+                        "audio_src" : "plant"
+
+                    },
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    },
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Tree"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "tree_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    },
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    },
+                    {
+                        "label": "Plant",
+                        "audio_src" : "plant"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Tree"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "rock_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    },
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    },
+                    {
+                        "label": "Plant",
+                        "audio_src" : "plant"
+
+                    }
+
+
+
+                ],
+                "correct_answer" : "Rock"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "chair_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    },
+                    {
+                        "label": "Bed",
+                        "audio_src" : "bed"
+
+                    },
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Chair"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                "img_src" : "pencil_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Pencil",
+                        "audio_src" : "pencil"
+
+                    },
+                    {
+                        "label": "Eraser",
+                        "audio_src" : "eraser"
+
+                    },
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Pencil"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "light_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Light",
+                        "audio_src" : "light"
+
+                    },
+                    {
+                        "label": "Bed",
+                        "audio_src" : "bed"
+
+                    },
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Light"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "pillow_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Pillow",
+                        "audio_src" : "pillow"
+
+                    },
+                    {
+                        "label": "Bed",
+                        "audio_src" : "bed"
+
+                    },
+                    {
+                        "label": "Chair",
+                        "audio_src" : "chair"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Pillow"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "floor_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Floor",
+                        "audio_src" : "floor"
+
+                    },
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    },
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Floor"
+            }
+            ,
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "door_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Door",
+                        "audio_src" : "door"
+
+                    },
+                    {
+                        "label": "Window",
+                        "audio_src" : "window"
+
+                    },
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Door"
+            },
+             {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "water_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Water",
+                        "audio_src" : "water"
+
+                    },
+                    {
+                        "label": "Rock",
+                        "audio_src" : "rock"
+
+                    },
+                    {
+                        "label": "Plant",
+                        "audio_src" : "plant"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Water"
+            },
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "eraser_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Eraser",
+                        "audio_src" : "eraser"
+
+                    },
+                    {
+                        "label": "Pencil",
+                        "audio_src" : "pencil"
+
+                    },
+                    {
+                        "label": "Tree",
+                        "audio_src" : "tree"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Eraser"
+            }
+
         ]
     }
 
