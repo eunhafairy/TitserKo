@@ -8,13 +8,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Score extends AppCompatActivity {
 
-    TextView score_tv_title, score_tv_score;
-    Button score_btn;
+    TextView score_tv_title, score_tv_score, score_tv_statement;
+    Button score_btn, score_btn_retry;
     Intent intent;
+    ImageView iv_trophy;
     String lessonName, lessonId, lessonTranslated, username;
     DataBaseHelper db;
     int score, totalScore;
@@ -45,11 +47,32 @@ public class Score extends AppCompatActivity {
 
         //views
         score_tv_title = (TextView) findViewById(R.id.score_tv_title);
-        score_tv_title.setText(lessonName + " Quiz");
+        score_tv_title.setText(lessonName);
         score_tv_score = (TextView) findViewById(R.id.score_tv_score);
         score_tv_score.setText(score + "/" + totalScore);
         score_btn = (Button) findViewById(R.id.score_btn);
+        score_tv_statement = findViewById(R.id.score_tv_statement);
+        score_btn_retry = findViewById(R.id.score_btn_retry);
+        iv_trophy = findViewById(R.id.iv_trophy);
         db = new DataBaseHelper(this);
+
+
+
+
+        if (score == totalScore){
+            score_tv_statement.setText("Perfect");
+            iv_trophy.setImageResource(R.drawable.trophy_gold);
+        }
+        else if((score/2) >= (totalScore/2)){
+            score_tv_statement.setText("Very Good!");
+            iv_trophy.setImageResource(R.drawable.trophy_silver);
+        }
+        else{
+            score_tv_statement.setText("You can do better next time!");
+            iv_trophy.setImageResource(R.drawable.trophy_bronze);
+        }
+
+
 
     }
 
@@ -63,6 +86,19 @@ public class Score extends AppCompatActivity {
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("lessonTranslated", lessonTranslated);
+                intent.putExtra("username", username);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        score_btn_retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Score.this, QuizProper.class);
+                intent.putExtra("lessonName", lessonName);
+                intent.putExtra("lessonTranslated", lessonTranslated);
+                intent.putExtra("lessonId", lessonId);
                 intent.putExtra("username", username);
                 startActivity(intent);
                 finish();

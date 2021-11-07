@@ -110,9 +110,9 @@ public class LessonProper extends AppCompatActivity {
 
                 if( jo_inside.getString("lesson_id").equals(lessonId) ){
 
-
                     targetLessonObject = jo_inside;
                     break;
+
                 }
 
 

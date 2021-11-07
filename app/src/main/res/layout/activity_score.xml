@@ -5,27 +5,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
- android:background="@color/white"
-
-
+    android:background="@color/white"
     tools:context=".Score">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:layout_weight="3"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/score_iv_back"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/back_btn_blk"-->
+<!--            />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="0dp"-->
+<!--            android:textColor="@color/darkGreen"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="Score" />-->
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:layout_weight="7">
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_weight="27">
+        <ImageView
+            android:id="@+id/iv_trophy"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/trophy_bronze"/>
         <TextView
-            android:id="@+id/score_tv_title"
-            android:layout_width="wrap_content"
+            android:id="@+id/score_tv_statement"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:fontFamily="@font/roboto_blk"
             android:textColor="@color/darkGreen"
             android:layout_marginTop="30dp"
+            android:text="Congratulations!"
+            />
+        <TextView
+            android:id="@+id/score_tv_title"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/darkGreen"
+            android:layout_marginTop="15dp"
             android:text="Introduction Quiz"
             />
         <TextView
@@ -33,9 +77,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/roboto_blk"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="45sp"
             android:text="10/10"
             />
 
@@ -64,17 +108,35 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
             android:orientation="vertical"
             >
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/score_btn_retry"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/rounded_row"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/roboto_blk"
+                android:textColor="@color/darkGreen"
+                android:text="Retry" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/score_btn"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded_row"
                 android:layout_gravity="center"
-                android:text="Back to menu" />
+                android:fontFamily="@font/roboto_blk"
+                android:textColor="@color/darkGreen"
+                android:text="Main Menu" />
 
 
         </LinearLayout>
