@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView tv_createProfile;
     Button btn_confirm;
     String usernameSelected;
+    DataBaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void init(){
 
+        db = new DataBaseHelper(this);
         usernameSelected = "";
         spnr_profile = (Spinner) findViewById(R.id.spnr_profile);
        /* ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.names, android.R.layout.simple_spinner_item);
@@ -77,8 +79,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         iv_study.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ll_landing.setVisibility(View.GONE);
-                ll_profile.setVisibility(View.VISIBLE);
+
+                if(db.userExists()){
+                    ll_landing.setVisibility(View.GONE);
+                    ll_profile.setVisibility(View.VISIBLE);
+
+                }
+                else{
+                    Intent intent = new Intent(MainActivity.this, tk_register.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         });
 

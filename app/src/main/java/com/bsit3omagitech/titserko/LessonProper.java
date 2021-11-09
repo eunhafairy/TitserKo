@@ -261,7 +261,7 @@ public class LessonProper extends AppCompatActivity {
             public void onClick(View v) {
                 //finish and return to landing page
                 db.refreshAllStars(username);
-                Intent intent = new Intent(LessonProper.this, landing.class);
+                Intent intent = new Intent(LessonProper.this, TkDashboardActivity.class);
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("lessonTranslated", lessonTranslated);
@@ -344,7 +344,6 @@ public class LessonProper extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
     }
 
 
@@ -366,30 +365,6 @@ public class LessonProper extends AppCompatActivity {
         return array;
     }
 
-
-//    //------------------SETTING DEFAULT VALUES----------------------
-//    public MediaPlayer defaultMedia(MediaPlayer mediaPlayer){
-//
-//        if(mediaPlayer == null){
-//            Uri default_uri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/default_audio");
-//            mediaPlayer = MediaPlayer.create(this, default_uri);
-//        }
-//    return mediaPlayer;
-//    }
-
-    private void setImageView(Uri image_uri) {
-        Bitmap bitmap = null;
-        try {
-            bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), image_uri);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if(bitmap != null)
-            picture.setImageBitmap(bitmap);
-        else{
-            picture.setImageResource(R.drawable.default_img);
-        }
-    }
 
 
 

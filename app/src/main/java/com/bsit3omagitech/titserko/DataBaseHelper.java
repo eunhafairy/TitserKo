@@ -76,7 +76,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
     public Dialog dialog;
     LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
-    public static final int DB_VERSION = 42;
+    public static final int DB_VERSION = 43;
     Context context;
     GlobalFunctions gf;
 
@@ -856,6 +856,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Walang na create", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
+    }
+
+    public boolean userExists(){
+        boolean flag = true;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + USER_TABLE;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.getCount() < 1) {
+         flag = false;
+        }
+
+        return flag;
     }
 
     private void loadLessonsFromJSON(SQLiteDatabase db) throws IOException, JSONException {

@@ -50,11 +50,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
        //for lesson titles
-
         holder.myText1.setText(data1.get(position));
-        String path = "lesson" + lessonIds.get(position) + "/"+gf.getLessonImgPath(lessonIds.get(position)) + ".png";
-        gf.setImage(holder.iv_lesson_img, path );
-        // holder.iv_lesson_img.setImage
+
         int _star = stars.get(position);
         String image_path = "";
         switch(_star){
@@ -80,15 +77,30 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         if(position!=0){
 
             if(stars.get(position-1) > 0){
+
+                String path = "lesson" + lessonIds.get(position) + "/"+gf.getLessonImgPath(lessonIds.get(position)) + ".png";
+                gf.setImage(holder.iv_lesson_img, path );
+
                 //lock this
                 holder.itemView.setClickable(true);
                 holder.itemView.setAlpha(1f);
+
+
             }
             else{
                 holder.itemView.setClickable(false);
                 holder.itemView.setAlpha(0.5f);
+                holder.iv_lesson_img.setImageResource(R.drawable.lock_white);
+
 
             }
+
+        }
+        else{
+
+
+            String path = "lesson" + lessonIds.get(position) + "/"+gf.getLessonImgPath(lessonIds.get(position)) + ".png";
+            gf.setImage(holder.iv_lesson_img, path );
 
         }
 
@@ -96,6 +108,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         holder.ll_bg.setBackgroundResource(background.get(index));
         index++;
         if(index > (background.size()-1)) index = 0;
+
+
 
 
     }

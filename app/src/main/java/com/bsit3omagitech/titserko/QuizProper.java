@@ -147,8 +147,9 @@ public class QuizProper extends AppCompatActivity {
 
 
         //progress
-        progress = (index/14) * 100;
+        progress = ((index+1)/(15f)) * 100;
         quizProgress.setProgress((int)progress);
+        Log.d("progress", "progress: " + progress + " | index: "+ index);
 
         //Button
 
@@ -270,8 +271,9 @@ public class QuizProper extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        progress = (float) (index/(maxScore-1)) * 100;
+                        progress = (float) ((index+1)/(15f)) * 100;
                         quizProgress.setProgress((int) progress);
+                        Log.d("progress", "progress: " + progress + " | index: "+ index);
                     }
 
 

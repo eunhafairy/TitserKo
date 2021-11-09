@@ -94,7 +94,7 @@
             },
             {
                 "description" : "Dentista",
-                "instruction_audio" : "dentista1",
+                "instruction_audio" : "dentista",
                 "choices" : [
                     {
                         "label": "Dentist",
@@ -184,9 +184,7 @@
                     }
 
                 ],
-                "image_src" : "priest_img",
-
-                "flag" : false
+                "image_src" : "priest_img"
             }
 
 
@@ -362,8 +360,7 @@
                 "question" : "Piliin ang katumbas na tunog.",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "type" : "audio",
-                "question_audio" :  "priest",
-                "img_src" : "priest_img",
+                "question_audio" :  "priest"
 
                 "choices" : [
                     {
@@ -647,7 +644,6 @@
             {
                 "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
-
                 "img_src" : "priest_img",
                 "type" : "visual",
                 "question_audio" :  "priest",
@@ -1640,7 +1636,7 @@
                     }
 
                 ],
-                "image_src" : "carrot_img"
+                "image_src" : "carrots_img"
 
 
             },
@@ -1912,6 +1908,33 @@
             {
                 "question" : "Piliin ang katumbas na tunog.",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "quiz1_img_p1",
+                "type" : "audio",
+                "question_audio" :  "potato",
+                "choices" : [
+                    {
+                        "label": "Patatas",
+                        "audio_src" : "patatas"
+
+                    },
+                    {
+                        "label": "Karot",
+                        "audio_src" : "karot"
+
+                    },
+                    {
+                        "label": "Sibuyas",
+                        "audio_src" : "sibuyas"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Patatas"
+            },
+            {
+                "question" : "Piliin ang katumbas na tunog.",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "type" : "audio",
                 "question_audio" :  "sibuyas",
                 "choices" : [
@@ -2090,6 +2113,7 @@
 
 
                 ],
+
                 "correct_answer" : "Spinach"
             },
             {
@@ -2117,7 +2141,35 @@
 
                 ],
                 "correct_answer" : "Cabbage"
-            },
+            }
+        ,
+            {
+                "question" : "Ano ang ibig sabihin ng sumusunod?",
+                "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                "img_src" : "carrot_img",
+                "type" : "visual",
+                "choices" : [
+                    {
+                        "label": "Cabbage",
+                        "audio_src" : "cabbage"
+
+                    },
+                    {
+                        "label": "Carrots",
+                        "audio_src" : "carrots"
+
+                    },
+                    {
+                        "label": "Onion",
+                        "audio_src" : "onion"
+
+                    }
+
+
+                ],
+                "correct_answer" : "Carrots"
+            }
+        ,
             {
                 "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
