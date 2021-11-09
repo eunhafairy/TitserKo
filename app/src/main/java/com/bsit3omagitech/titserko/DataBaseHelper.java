@@ -76,7 +76,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
     public Dialog dialog;
     LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
-    public static final int DB_VERSION = 41;
+    public static final int DB_VERSION = 42;
     Context context;
     GlobalFunctions gf;
 
@@ -103,7 +103,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             db.execSQL(createTableStatement);
             i++;
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
 
@@ -112,7 +111,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + LESSON_TABLE + " ("
                 + LESSON_ID + " STRING PRIMARY KEY, "
                 + LESSON_NAME + " TEXT)";
-
         try {
             db.execSQL(createLessonTableStatement);
             i++;
@@ -176,8 +174,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             e.printStackTrace();
         }
-
-
 
     }
 
@@ -948,7 +944,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             int _progress = (int) _cv.get("progress");
             int _highscore = (int) _cv.get("highscore");
             String _lesson = (String)_cv.get("lesson");
-
+            Log.d("stars", _highscore + "");
 
             int currentStar = 0;
             //check for progress first and flag for accomplishments
@@ -961,17 +957,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 }
 
 
-                if(_highscore >= (getMaxScore(_lesson)/2)){
+        if(_highscore >= 8){
 
-                    currentStar++;
-                    Log.d("half", "flagg2!");
-                }
+            currentStar++;
+            Log.d("half", "flagg2!");
+        }
 
 
-                if(_highscore >= getMaxScore(_lesson)){
+        if(_highscore >= 15){
 
-                    currentStar++;
-                }
+            currentStar++;
+        }
 
                 updateStar(lessonProgress_ID.get(i), currentStar);
 

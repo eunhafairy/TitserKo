@@ -119,7 +119,7 @@ public class landing extends AppCompatActivity {
 
        quizProgressBar = (ProgressBar) findViewById(R.id.quizProgressBar);
        float currentQuizProgress = db.getQuizProgress(username, lessonId);
-       float d = (currentQuizProgress/(maxScore)) * 100f;
+       float d = (currentQuizProgress/(15)) * 100f;
        quizProgressBar.setProgress((int) d);
 
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
@@ -133,7 +133,7 @@ public class landing extends AppCompatActivity {
                 lessonProgressBar.setProgress((int) c);
 
                 float currentQuizProgress = db.getQuizProgress(username, lessonId);
-                float d = (currentQuizProgress/(maxScore-1)) * 100f;
+                float d = (currentQuizProgress/(14)) * 100f;
                 quizProgressBar.setProgress((int) d);
                 swipeRefreshLayout.setRefreshing(false);
 

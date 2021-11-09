@@ -43,7 +43,7 @@ public class Score extends AppCompatActivity {
         lessonTranslated = intent.getStringExtra("lessonTranslated");
         username = intent.getStringExtra("username");
         score = intent.getIntExtra("Score", 0);
-        totalScore = intent.getIntExtra("TotalScore", 0);
+        totalScore = 15;
 
         //views
         score_tv_title = (TextView) findViewById(R.id.score_tv_title);

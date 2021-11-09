@@ -97,7 +97,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         db.updateNewAchievements(name);
         stars = db.getUserStars(name);
         getLessonList();
-        myAdapter adapter = new myAdapter(this, lessonList, stars);
+        myAdapter adapter = new myAdapter(this, lessonList, stars, lessonId);
         myRv.setAdapter(adapter);
         myRv.setLayoutManager(new LinearLayoutManager(this));
 
@@ -139,7 +139,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 stars.clear();
                 stars = db.getUserStars(name);
                 db.refreshAllStars(name);
-                myAdapter adapter = new myAdapter(TkDashboardActivity.this, lessonList, stars);
+                myAdapter adapter = new myAdapter(TkDashboardActivity.this, lessonList, stars, lessonId);
                 myRv.setAdapter(adapter);
 
                 adapter.setIndividualScreenListener(new myAdapter.OnIndividualScreen() {

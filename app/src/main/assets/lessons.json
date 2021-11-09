@@ -5,7 +5,7 @@
         "lesson_id" : "00001",
         "lesson_name" : "People",
         "lesson_name_translate" : "Mga Tao",
-        "lesson_img" : "g1l1_img",
+        "lesson_img" : "people_icon",
         "parts" : [
            
                     {
@@ -17,7 +17,7 @@
 
                             }
                         ],
-                        "image_src" : "g1l1_img11",
+                        "image_src" : "people_img",
                         "instruction_audio" : "mga_tao"
 
                     },
@@ -677,6 +677,7 @@
     {
         "lesson_id" : "00002",
         "lesson_name" : "Animals",
+        "lesson_img" :  "animals_icon",
         "lesson_name_translate" : "Mga hayop",
         "parts" : [
             {
@@ -1609,6 +1610,7 @@
     {
         "lesson_id" : "00003",
         "lesson_name" : "Vegetables",
+        "lesson_img" :  "animals_icon",
         "lesson_name_translate" : "Mga Gulay",
         "parts" : [
 
@@ -2251,6 +2253,7 @@
     {
         "lesson_id" : "00004",
         "lesson_name" : "Fruits",
+        "lesson_img" :  "animals_icon",
         "lesson_name_translate" : "Mga prutas",
         "parts" : [
 
@@ -2963,6 +2966,7 @@
     {
         "lesson_id" : "00005",
         "lesson_name" : "Things",
+        "lesson_img" :  "animals_icon",
         "lesson_name_translate" : "Mga bagay",
         "parts" : [
 

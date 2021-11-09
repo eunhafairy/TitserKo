@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TitserKo">
         <activity
-            android:name=".tk_settings"
-            android:exported="true" />
-        <activity
             android:name=".tk_statistics"
             android:exported="true" />
         <activity

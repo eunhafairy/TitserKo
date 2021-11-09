@@ -147,7 +147,7 @@ public class QuizProper extends AppCompatActivity {
 
 
         //progress
-        progress = (index/(maxScore-1)) * 100;
+        progress = (index/14) * 100;
         quizProgress.setProgress((int)progress);
 
         //Button
@@ -459,14 +459,30 @@ public class QuizProper extends AppCompatActivity {
 
     public boolean isLast(int index, JSONArray json){
 
-        if((index+1) < json.length())
-        {
-            return false;
+        if(json.length() < 15){
+
+            if((index+1) < json.length())
+            {
+                return false;
+
+            }
+            else{
+                return true;
+            }
 
         }
         else{
-            return true;
+            if((index+1) < 15)
+            {
+                return false;
+
+            }
+            else{
+                return true;
+            }
+
         }
+
     }
 
     //--------------------SHUFFLE QUIZ ARRAY-----------------------
