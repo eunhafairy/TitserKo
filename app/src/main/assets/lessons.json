@@ -360,7 +360,7 @@
                 "question" : "Piliin ang katumbas na tunog.",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                 "type" : "audio",
-                "question_audio" :  "priest"
+                "question_audio" :  "priest",
 
                 "choices" : [
                     {
@@ -2146,7 +2146,7 @@
             {
                 "question" : "Ano ang ibig sabihin ng sumusunod?",
                 "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                "img_src" : "carrot_img",
+                "img_src" : "carrots_img",
                 "type" : "visual",
                 "choices" : [
                     {
