@@ -43,7 +43,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
     Context c;
     DataBaseHelper db;
     Date bday;
-
+    GlobalFunctions gf;
     List<String> imagePaths;
     NavigationView profile_navigationView;
     DrawerLayout profile_drawerLayout;
@@ -72,7 +72,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
         c = this;
         db = new DataBaseHelper(c);
-
+        gf = new GlobalFunctions(c);
         // --------------------------------------------- INTENTS ---------------------------------------------
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
@@ -82,7 +82,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date = bday;
         dateTime = dateFormat.format(date);
-        age = getAge(dateTime) + "";
+        age = gf.getAge(dateTime) + "";
 
         populateProfileBadge();
         iv_profile_badge.setImageURI(db.getUserBadge(name));
@@ -127,47 +127,8 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
     }
 
-    public int getAge(String dateTime){
-
-        int age = 0;
-
-        Date date = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-        try {
-            date = sdf.parse(dateTime);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        if(date == null){
-        Log.d("dada", "null");
-            return 0;
-        }
-
-        Calendar dob = Calendar.getInstance();
-        Calendar today = Calendar.getInstance();
-
-        dob.setTime(date);
-        int year = dob.get(Calendar.YEAR);
-        int month = dob.get(Calendar.MONTH);
-        int day = dob.get(Calendar.DAY_OF_MONTH);
-
-        dob.set(year, month+1, day);
-
-        age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-
-        if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)){
-            age--;
-        }
 
 
-
-
-        return age;
-
-
-
-    }
 
 
 
@@ -221,6 +182,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
                 Intent i1 = new Intent(this, TkDashboardActivity.class);
                 i1.putExtra("username", name);
                 startActivity(i1);
+                finish();
                 break;
 
             //--------Profile------------
@@ -235,6 +197,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
                 Intent achievement_intent = new Intent(this, tk_achievements.class);
                 achievement_intent.putExtra("username", name);
                 startActivity(achievement_intent);
+                finish();
                 break;
 
             case R.id.nav_logout:

@@ -75,52 +75,61 @@ public class tk_register extends AppCompatActivity {
             public void onClick(View v) {
                 //create profile
                 UserModel userModel;
-                int ctr = et_name.getText().length();
-                name  =  et_name.getText().toString();
-                name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
-                DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
-                if(dbHelper.checkExisting(name)){
-                    openDialog("Error", "The name should be unique.");
-                    et_name.setText("");
 
-                }
-                else if(ctr <= 16){
+                name = et_name.getText().toString();
+                name.trim();
+                if (checkIfEmpty()) {
+                    openDialog("Error", "Please complete all fields.");
 
-                    try {
-                        userModel = new UserModel(-1,name, et_date.getText().toString());
+                } else {
 
-
+                    if (name.length() > 1) {
+                        name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
                     }
-                    catch (Exception e){
+                    DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
+                    int ctr = name.length();
+                    if (dbHelper.checkExisting(name)) {
+                        openDialog("Error", "The name should be unique.");
+                        et_name.setText("");
 
-                        Toast.makeText(tk_register.this, "Error", Toast.LENGTH_SHORT).show();
-                        userModel = new UserModel(-1, "error", "error");
-                    }
+                    } else if (ctr < 1) {
+                        openDialog("Error", "Enter a valid name.");
+                        et_name.setText("");
+
+                    } else if (ctr <= 16) {
+
+                        try {
+                            userModel = new UserModel(-1, name, et_date.getText().toString());
 
 
-                    boolean success = dbHelper.addOne(userModel);
-                    if(success){
-                        dbHelper.createAllLessonProgress(name);
-                        dbHelper.createAllAchievements(name);
-                        Intent intent = new Intent(tk_register.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else{
-                        openDialog("Error", "Something went wrong. Make sure you choose a unique name.");
+                        } catch (Exception e) {
+
+                            Toast.makeText(tk_register.this, "Error", Toast.LENGTH_SHORT).show();
+                            userModel = new UserModel(-1, "error", "error");
+                        }
+
+
+                        boolean success = dbHelper.addOne(userModel);
+                        if (success) {
+                            dbHelper.createAllLessonProgress(name);
+                            dbHelper.createAllAchievements(name);
+                            Intent intent = new Intent(tk_register.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            openDialog("Error", "Something went wrong.");
+                            et_name.setText("");
+                        }
+
+
+                    } else {
+                        //show error
+                        openDialog("Error", "The name should be less than 17 characters.");
                         et_name.setText("");
                     }
 
 
                 }
-
-                else{
-                    //show error
-                    openDialog("Error", "The name should be less than 16 characters.");
-                    et_name.setText("");
-                }
-
-
             }
         });
 
@@ -158,5 +167,18 @@ public class tk_register extends AppCompatActivity {
 
         dialog.show();
 
+    }
+
+    private boolean checkIfEmpty(){
+        String name = et_name.getText().toString().trim();
+        String bday = et_date.getText().toString().trim();
+
+        if(name.length() < 1 || bday.length() < 1){
+            return true;
+
+        }
+        else{
+            return false;
+        }
     }
 }

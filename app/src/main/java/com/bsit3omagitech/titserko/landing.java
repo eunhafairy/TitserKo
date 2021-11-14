@@ -73,16 +73,16 @@ public class landing extends AppCompatActivity {
         int stars = db.getLessonStar(username, lessonId);
         switch (stars){
             case 0:
-                iv_landing_stars.setImageResource(R.drawable.star0);
+                iv_landing_stars.setImageResource(R.drawable.score_star);
                 break;
             case 1:
-                iv_landing_stars.setImageResource(R.drawable.star1);
+                iv_landing_stars.setImageResource(R.drawable.score_star_1);
                 break;
             case 2:
-                iv_landing_stars.setImageResource(R.drawable.star2);
+                iv_landing_stars.setImageResource(R.drawable.score_star_2);
                 break;
             case 3:
-                iv_landing_stars.setImageResource(R.drawable.star3);
+                iv_landing_stars.setImageResource(R.drawable.score_star_3);
                 break;
         }
 

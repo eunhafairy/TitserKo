@@ -280,6 +280,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 Intent i = new Intent(this, tk_profile.class);
                 i.putExtra("username", name);
                 startActivity(i);
+                finish();
                 break;
 
             //--------Achievements----------
@@ -287,6 +288,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 Intent achievement_intent = new Intent(this, tk_achievements.class);
                 achievement_intent.putExtra("username", name);
                 startActivity(achievement_intent);
+                finish();
                 break;
 
             case R.id.nav_logout:

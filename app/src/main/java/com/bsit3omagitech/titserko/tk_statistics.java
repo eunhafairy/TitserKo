@@ -48,6 +48,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
     NavigationView stats_navigationView;
     DrawerLayout stats_drawerLayout;
     Toolbar toolbar;
+    GlobalFunctions gf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         st = new StatisticsHelper(db,ct);
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
-
+        gf = new GlobalFunctions(ct);
         // ------------------------------------------ SETTING TEXT VIEWS ------------------------------------------
         pb_stat_overall.setProgress(st.getOverallProgress(username));
         tv_stat_overall_progress.setText(st.getOverallProgress(username) + "%");
@@ -131,7 +132,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
         //get lesson list
         try {
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONObject obj = new JSONObject(gf.loadJSONFromAsset("lessons.json"));
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
             titles = new ArrayList<String>();
             for (int i = 0; i < m_jArry.length(); i++) {
@@ -176,6 +177,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
                 Intent i1 = new Intent(this, TkDashboardActivity.class);
                 i1.putExtra("username", username);
                 startActivity(i1);
+                finish();
                 break;
 
             //--------Profile------------
@@ -183,6 +185,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
                 Intent i2 = new Intent(this, tk_profile.class);
                 i2.putExtra("username", username);
                 startActivity(i2);
+                finish();
                 break;
 
             //--------Achievements----------
@@ -190,6 +193,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
                 Intent achievement_intent = new Intent(this, tk_achievements.class);
                 achievement_intent.putExtra("username", username);
                 startActivity(achievement_intent);
+                finish();
                 break;
 
             case R.id.nav_logout:

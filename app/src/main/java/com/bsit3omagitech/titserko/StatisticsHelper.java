@@ -45,17 +45,6 @@ public class StatisticsHelper {
 
     }
 
-    // ------------------------------------------ FOR INDIVIDUAL LESSON STATISTICS ------------------------------------------
 
-
-    public List<Integer> getLessonProgress(){
-        List<Integer> lessonProgress = new ArrayList<>();
-
-
-
-        return lessonProgress;
-
-
-    }
 
 }
