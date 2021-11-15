@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/tutorial_gradient"
+    android:padding="15dp"
+    tools:context=".SixthFragment">
+
+    <ImageView
+        android:id="@+id/sixthFrag_iv"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sixth_frag_home"
+        />
+
+    <TextView
+        android:id="@+id/sixthFrag_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_blk"
+        android:textColor="@color/lightGray2"
+        android:text="Achievements"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/sixthFrag_tv_instruction"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:textColor="@color/lightGray2"
+        android:textSize="15sp"
+        android:text="Bisitahin ang Achievements tab upang makita ang mga hinihinging kondisyon upang makuha ang mga Badges. Puwede mo ring suotin ang mga na-unlock mong badges sa tab na ito."/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|start"
+            android:src="@drawable/sixth_frag_nav"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|end"
+            android:gravity="bottom|end"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sixthFrag_tv_next"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|end"
+                android:textSize="15sp"
+                android:background="@drawable/rounded_row"
+                android:textColor="@color/darkGreen"
+                android:fontFamily="@font/roboto_blk"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Next"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

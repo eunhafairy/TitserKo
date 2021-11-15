@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -25,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.internal.ContextUtils;
@@ -57,6 +59,8 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
     GlobalFunctions gf;
     Context c;
     Dialog dialog;
+    ViewPager viewPager;
+    LinearLayout ll_dashboard;
     public LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,9 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
 
+        //for view pager
+
+
         // --------------------------------------------- INITIALIZE ----------------------------------------------
 
         db = new DataBaseHelper(this);
@@ -86,10 +93,29 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         btn_nav = findViewById(R.id.btn_nav);
         db_tv_name.setText(name);
         iv_badge = findViewById(R.id.iv_badge);
-
+        ll_dashboard = findViewById(R.id.ll_dashboard);
+        ll_dashboard.setTag(name);
+        viewPager = findViewById(R.id.main_viewPager);
         //show badge
 
         iv_badge.setImageURI(db.getUserBadge(name));
+
+
+        //show tutorial
+        if(db.isFirstTime(name)){
+            viewPager.setVisibility(View.VISIBLE);
+            ll_dashboard.setVisibility(View.GONE);
+            viewPager = findViewById(R.id.main_viewPager);
+            IntroAdapter introAdapter = new IntroAdapter(getSupportFragmentManager());
+            viewPager.setAdapter(introAdapter);
+
+
+        }
+        else{
+            viewPager.setVisibility(View.GONE);
+            ll_dashboard.setVisibility(View.VISIBLE);
+        }
+
 
 
         // ------------------------------------------ DATABASE AND RECYCLER VIEW FUNCTIONS ------------------------------------------

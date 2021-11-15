@@ -1,6 +1,7 @@
 package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button btn_confirm;
     String usernameSelected;
     DataBaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +42,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         db = new DataBaseHelper(this);
         usernameSelected = "";
         spnr_profile = (Spinner) findViewById(R.id.spnr_profile);
-       /* ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.names, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        */
         spnr_profile.setOnItemSelectedListener(this);
         //load spinner data
         loadSpinnerData();
@@ -53,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ll_profile.setVisibility(View.GONE);
         tv_createProfile = (TextView) findViewById(R.id.tv_createProfile);
         btn_confirm = (Button) findViewById(R.id.btn_confirm);
+
+
 
         //register listeners
         btn_confirm.setOnClickListener(new View.OnClickListener() {

@@ -25,5 +25,7 @@
     <color name="lightYellow">#FFE66B</color>
     <color name="darkBlue">#00105E</color>
     <color name="lightBlue">#81BAFF</color>
+    <color name="lightGray2">#464646</color>
+
 
 </resources>

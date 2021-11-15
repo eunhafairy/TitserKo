@@ -51,6 +51,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_USER_BDAY = "USER_BDAY";
     public static final String COLUMN_ID = "COLUMN_ID";
     public static final String COLUMN_ACHIEVEMENT_ID = "COLUMN_ACHIEVEMENT_ID";
+    public static final String COLUMN_FIRST_TIME = "COLUMN_FIRST_TIME";
 
     //lesson table
     public static final String LESSON_TABLE = "LESSON_TABLE";
@@ -76,7 +77,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
     public Dialog dialog;
     LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
-    public static final int DB_VERSION = 43;
+    public static final int DB_VERSION = 44;
     Context context;
     GlobalFunctions gf;
 
@@ -97,6 +98,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_USER_NAME + " TEXT, "
                 + COLUMN_ACHIEVEMENT_ID + " TEXT, "
+                + COLUMN_FIRST_TIME + " BOOLEAN, "
                 + COLUMN_USER_BDAY + " DATE)";
 
         try {
@@ -177,6 +179,30 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void updateFirstTime(String username){
+        //update the first time user
+        String updateQuery = "UPDATE " + USER_TABLE
+                + " SET " + COLUMN_FIRST_TIME + " = " + 0
+                + " WHERE " + COLUMN_USER_NAME + " = '" + username + "'";
+
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        db1.execSQL(updateQuery);
+    }
+
+    public boolean isFirstTime(String username){
+
+        boolean flag = false;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + COLUMN_FIRST_TIME + " FROM " + USER_TABLE+ " WHERE "+COLUMN_USER_NAME + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                flag = cursor.getInt(0) > 0;
+            } while (cursor.moveToNext());
+        }
+
+        return flag;
+    }
 
 
     public boolean addOne(UserModel userModel) {
@@ -199,6 +225,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_USER_NAME, userModel.getName());
         cv.put(COLUMN_USER_BDAY, userModel.getDate());
         cv.put(COLUMN_ACHIEVEMENT_ID, "A00000");
+        cv.put(COLUMN_FIRST_TIME, 1);
         long insert = db.insert(USER_TABLE, null, cv);
 
         if (insert == -1) {
