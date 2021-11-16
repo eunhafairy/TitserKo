@@ -1,6 +1,7 @@
 package com.bsit3omagitech.titserko;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -22,8 +23,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -134,6 +137,81 @@ public class GlobalFunctions {
         Log.d("paaa", path);
         return path;
 
+
+
+    }
+
+    public HashMap<String,String> getTagalogChoices(String lessonId){
+
+        HashMap<String, String> cv = new HashMap<String, String>();
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset("lessons.json"));
+            JSONArray m_jArry = obj.getJSONArray("lesson_arr");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                String id = jo_inside.getString("lesson_id");
+                if(id.equals(lessonId) ){
+
+                    JSONArray parts = jo_inside.getJSONArray("parts");
+                    for(int x = 0; x < parts.length(); x++){
+
+                        JSONObject partObject = parts.getJSONObject(x);
+                        String label = partObject.getString("description");
+                        String audio = partObject.getString("instruction_audio");
+                        cv.put(label, audio);
+
+
+                    }
+                    break;
+                }
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+
+        return cv;
+
+
+    }
+
+    public HashMap<String, String> getEnglishChoices(String lessonId){
+
+        HashMap<String, String> cv = new HashMap<String, String>();
+        try{
+            JSONObject obj = new JSONObject(loadJSONFromAsset("lessons.json"));
+            JSONArray m_jArry = obj.getJSONArray("lesson_arr");
+
+            for (int i = 0; i < m_jArry.length(); i++) {
+                JSONObject jo_inside = m_jArry.getJSONObject(i);
+                String id = jo_inside.getString("lesson_id");
+                if(id.equals(lessonId) ){
+
+                    JSONArray parts = jo_inside.getJSONArray("parts");
+                    for(int x = 0; x < parts.length(); x++){
+
+                        JSONObject partObject = parts.getJSONObject(x);
+                        JSONArray choices = partObject.getJSONArray("choices");
+                        String label = choices.getJSONObject(0).getString("label");
+                        String audio = choices.getJSONObject(0).getString("audio_src");
+                        cv.put(label, audio);
+
+
+                    }
+                    break;
+                }
+            }
+        }
+        catch (JSONException e){
+
+            e.printStackTrace();
+
+        }
+
+        return cv;
 
 
     }

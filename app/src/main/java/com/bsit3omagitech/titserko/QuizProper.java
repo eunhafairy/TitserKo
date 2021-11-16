@@ -3,19 +3,11 @@ package com.bsit3omagitech.titserko;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.media.MediaCasException;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +23,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class QuizProper extends AppCompatActivity {
@@ -52,6 +46,7 @@ public class QuizProper extends AppCompatActivity {
     List<String> userAnswer;
     GlobalFunctions gf;
     MediaPlayer mp;
+    HashMap<String, String> hash_english, hash_tagalog, choices;
     float progress, maxScore;
     boolean toggle;
     @Override
@@ -97,7 +92,6 @@ public class QuizProper extends AppCompatActivity {
         username = intent.getStringExtra("username");
 
         //media player
-
         mp = new MediaPlayer();
         //selected answer
         selectedAnswer = "";
@@ -120,6 +114,9 @@ public class QuizProper extends AppCompatActivity {
 
             }
 
+        hash_english = gf.getEnglishChoices(lessonId);
+        hash_tagalog = gf.getTagalogChoices(lessonId);
+        Log.d("hash", hash_english.size() + "");
         //get the parts array
         quizArray =  shuffleJsonArray(targetLessonObject.getJSONArray("quiz"));
 
@@ -330,23 +327,14 @@ public class QuizProper extends AppCompatActivity {
 
         try{
 
-            choicesArray = shuffleJsonArray(quizArray.getJSONObject(index).getJSONArray("choices"));
-            int choiceCount = choicesArray.length();
+            // ORIGINAL ALGORITHM FOR CHOICES CREATION
+            //choicesArray = shuffleJsonArray(quizArray.getJSONObject(index).getJSONArray("choices"));
+            //int choiceCount = choicesArray.length();
 
-            //audio for instruction
-
-            String instruction_url = quizArray.getJSONObject(index).getString("instruction_audio");    //name of file from JSON
-//            String instruction_path = "lesson"+lessonId+"/"+instruction_url;
-
-//            tv_qp_description.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//         //     gf.playAudio(instruction_mp, instruction_path);
-//
-//                }
-//            });
-
+            ///new algo for populate choices using hashmap
+            String language = "";
+            if(type.equals("audio")) language = quizArray.getJSONObject(index).getString("choices_language");
+            createRandomChoices(language, type);
 
 
             //show audio button if audio
@@ -383,10 +371,11 @@ public class QuizProper extends AppCompatActivity {
             }
 
             //generate button choices
-            for(int i = 0; i < choiceCount; i++){
+            for(Map.Entry<String, String> entry : choices.entrySet()){
+
 
                 //name of file
-                String url = choicesArray.getJSONObject(i).getString("audio_src");
+                String url = entry.getValue();
                 String choice_path = "lesson"+lessonId+"/"+url;
 
                 Button btn_choice = new Button(this);
@@ -395,7 +384,7 @@ public class QuizProper extends AppCompatActivity {
                 Typeface face = Typeface.createFromAsset(getAssets(),
                         "fonts/d_din_bold.otf");
                 btn_choice.setTypeface(face);
-                btn_choice.setText(choicesArray.getJSONObject(i).getString("label"));
+                btn_choice.setText( entry.getKey());
                 btn_choice.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -504,6 +493,58 @@ public class QuizProper extends AppCompatActivity {
         return array;
     }
 
+    //-------------CREATE CHOICES--------------
+    public void createRandomChoices(String language, String type) throws JSONException{
+
+        Log.d("lang", language);
+        if(language.equals("tagalog") && !type.equals("visual")){
+
+            //tagalog choices
+            choices = new HashMap<String, String>();
+            choices.put(quizArray.getJSONObject(index).getString("correct_answer"), quizArray.getJSONObject(index).getString("correct_audio"));
+            while(true){
+
+                Random generator = new Random();
+                List<String> keys = new ArrayList<>(hash_tagalog.keySet());
+                String randomKey = keys.get(generator.nextInt(keys.size()));
+                if(randomKey.equals(quizArray.getJSONObject(index).getString("correct_answer"))){
+                    continue;
+                }
+                else{
+                    //add to the choices hashmap
+                    choices.put(randomKey, hash_tagalog.get(randomKey));
+                    //Log.d("choices","randomKey: "+ randomKey + ", hash_choices.get(value): " + hash_tagalog.get(randomKey)) ;
+                }
+                if(choices.size() == 3) break;
+            }
+
+        }
+        else{
+            //english choices
+            choices = new HashMap<String, String>();
+            choices.put(quizArray.getJSONObject(index).getString("correct_answer"), quizArray.getJSONObject(index).getString("correct_audio"));
+            while(true){
+
+                Random generator = new Random();
+                List<String> keys = new ArrayList<>(hash_english.keySet());
+                String randomKey = keys.get(generator.nextInt(keys.size()));
+                // String value = hash_choices.get(randomKey);
+                if(randomKey.equals(quizArray.getJSONObject(index).getString("correct_answer"))){
+                    continue;
+                }
+                else{
+                    //add to the choices hashmap
+                    choices.put(randomKey, hash_english.get(randomKey));
+                    //Log.d("choices","randomKey: "+ randomKey + ", hash_choices.get(value): " + hash_english.get(randomKey)) ;
+                }
+                if(choices.size() == 3) break;
+
+
+            }
+
+        }
+
+    }
 
 
 }

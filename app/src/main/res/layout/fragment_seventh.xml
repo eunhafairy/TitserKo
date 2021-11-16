@@ -20,7 +20,7 @@
         android:id="@+id/seventhFrag_tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:fontFamily="@font/roboto_blk"
         android:textColor="@color/lightGray2"
