@@ -16,9 +16,16 @@
         android:id="@+id/stats_nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:paddingRight="50dp"
+        android:paddingLeft="4dp"
+        android:background="@drawable/vector_menu_bg"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu"
         android:layout_gravity="start"
+        app:itemTextColor="@color/brownText"
+        app:itemBackground="@drawable/vector_menuitem_bg2"
+        app:itemHorizontalPadding="40dp"
+        app:itemIconPadding="5dp"
         android:visibility="visible"
         />
     <LinearLayout
@@ -50,7 +57,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_gravity="center"
-                android:src="@drawable/menu"
+                android:src="@drawable/vector_menu_btn"
                 />
             <TextView
                 android:id="@+id/tv_landingTitle"

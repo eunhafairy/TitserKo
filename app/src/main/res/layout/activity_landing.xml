@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
      android:orientation="vertical"
+    android:background="@drawable/vector_landing_bg"
     tools:context=".landing">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/white"
+
         android:layout_weight="2"
         android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/iv_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_gravity="center"
-                android:src="@drawable/previous_btn"
+                android:src="@drawable/vector_arrow"
                 />
             <TextView
                 android:id="@+id/tv_landingTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
-                android:textColor="@color/darkGreen"
+                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:textSize="30sp"
+                android:shadowColor="@color/darkGray"
+                android:shadowDx="1.5"
+                android:shadowDy="1.3"
+                android:shadowRadius="1.6"
                 android:textStyle="bold"
                 android:text="Sample Lesson" />
     </LinearLayout>
@@ -69,8 +74,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:textColor="@color/darkGreen"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
+                        android:shadowColor="@color/darkGray"
+                        android:shadowDx="1.5"
+                        android:shadowDy="1.3"
+                        android:shadowRadius="1.6"
                         android:layout_weight="1"
                         android:text="Study Progress" />
 
@@ -96,9 +105,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
-                        android:textColor="@color/darkGreen"
+                        android:textColor="@color/white"
                         android:textStyle="bold"
                         android:layout_weight="1"
+                        android:shadowColor="@color/darkGray"
+                        android:shadowDx="1.5"
+                        android:shadowDy="1.3"
+                        android:shadowRadius="1.6"
                         android:text="Quiz Highscore" />
 
                     <ProgressBar
@@ -131,9 +144,12 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/finger_paint"
                 android:textSize="30sp"
-                android:textColor="@color/darkGreen"
-                android:backgroundTint="@color/lightGreen"
-                android:background="@drawable/study_quiz_btn"
+                android:shadowColor="@color/darkGray"
+                android:shadowDx="1.5"
+                android:shadowDy="1.3"
+                android:shadowRadius="1.6"
+                android:textColor="@color/brownText"
+                android:background="@drawable/vector_wooden_title1"
                 android:text="Study"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_landing_quiz"
@@ -141,9 +157,12 @@
                 android:layout_height="80dp"
                 android:fontFamily="@font/finger_paint"
                 android:textSize="30sp"
-                android:background="@drawable/study_quiz_btn"
-                android:backgroundTint="@color/darkGreen"
-                android:textColor="@color/white"
+                android:background="@drawable/vector_wooden_title2"
+                android:shadowColor="@color/darkGray"
+                android:shadowDx="1.5"
+                android:shadowDy="1.3"
+                android:shadowRadius="1.6"
+                android:textColor="@color/brownText"
                 android:layout_gravity="center"
                 android:text="Quiz"/>
 

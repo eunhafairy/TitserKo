@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="130dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="10dp"
-    >
+    android:backgroundTint="@android:color/transparent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@null"
+        android:outlineAmbientShadowColor="@null"
+        app:cardElevation="0dp"
+        android:backgroundTint="@android:color/transparent"
+        >
 
         <LinearLayout
             android:id="@+id/ll_row_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:background="@color/darkBlue"
+            android:background="@drawable/vector_wooden_title2"
             android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center"
-            android:layout_weight="6">
-            <ImageView
-                android:id="@+id/iv_lesson_img"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:src="@drawable/animals_icon"
-                />
-        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
+                android:layout_marginLeft="80dp"
                 android:paddingLeft="10dp"
                 android:layout_weight="2">
                 <TextView
                     android:id="@+id/row_lesson_name"
                     android:textStyle="bold"
                     android:textSize="20dp"
-                    android:fontFamily="@font/roboto_light"
+                    android:fontFamily="@font/roboto_blk"
                     android:layout_width="wrap_content"
+                    android:maxWidth="200dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/customBrown"
                     android:layout_gravity="left"
                     android:text="Sample Lesson" />
                 <ImageView
@@ -58,10 +51,6 @@
                     android:src="@drawable/star0"
                     />
             </LinearLayout>
-
-
-
-
 
 
         </LinearLayout>

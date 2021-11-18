@@ -26,6 +26,8 @@
     <color name="darkBlue">#00105E</color>
     <color name="lightBlue">#81BAFF</color>
     <color name="lightGray2">#464646</color>
-
+    <color name="greenBackground">#64945b</color>
+    <color name="brownText">#ffcd92</color>
+    <color name="brownMenuBg">#f9a23f</color>
 
 </resources>

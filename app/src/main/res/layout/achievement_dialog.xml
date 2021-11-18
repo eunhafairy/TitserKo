@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:layout_height="500dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="20dp">
+        android:backgroundTint="@android:color/transparent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:gravity="center"
+            android:background="@drawable/vector_dialog"
             android:padding="15dp"
             android:orientation="vertical">
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:maxWidth="180dp"
+                android:layout_gravity="center"
+                android:textColor="@color/customBrown"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_blk"
+                android:textSize="25sp"
+                android:layout_marginBottom="60dp"
+                android:layout_marginTop="18dp"
+                android:text="Achievement"/>
             <ImageView
                 android:id="@+id/iv_achieve_dialog"
                 android:layout_width="100dp"
+                android:layout_gravity="center"
                 android:layout_height="100dp"
-                android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_launcher_background"
                 />
 
@@ -30,41 +40,51 @@
                 android:id="@+id/tv_title_achieve_dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:maxWidth="250dp"
+                android:maxHeight="50dp"
                 android:textStyle="bold"
-                android:textSize="30sp"
-                android:textColor="@color/darkGreen"
-                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/customBrown"
                 android:text="SampleTitle"
                 />
+
+
 
             <TextView
                 android:id="@+id/tv_desc_achieve_dialog"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:maxWidth="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 android:gravity="center"
-                android:textColor="@color/darkGreen"
-                android:text="Sample description sample description"
-                android:textSize="20sp"
-                android:layout_marginBottom="20dp"
+                android:textColor="@color/customBrown"
+                android:text="Sample description sample description  sample description  sample description  sample description"
+                android:textSize="15sp"
+                android:layout_marginBottom="10dp"
                 />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_confirm_achieve_equip"
                 android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_background"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/vector_wooden_title1"
                 android:backgroundTint="@null"
+                android:textColor="@color/customBrown"
                 android:text="Equip Badge"
-                android:textColor="@color/white"
                 android:layout_marginBottom="5dp"
                 android:textAllCaps="false" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_confirm_achieve_dialog"
                 android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_background"
-                android:backgroundTint="@color/lightGreen"
-                android:textColor="@color/darkGreen"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:textColor="@color/customBrown"
+                android:background="@drawable/vector_wooden_title2"
+
                 android:text="Cancel"
                 android:textAllCaps="false" />
 
