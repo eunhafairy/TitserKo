@@ -91,6 +91,12 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
         }
 
+        else{
+            holder.itemView.setClickable(true);
+            holder.itemView.setAlpha(1f);
+
+        }
+
         holder.ll_bg.setBackgroundResource(background.get(index));
         index++;
         if(index > (background.size()-1)) index = 0;
