@@ -30,8 +30,10 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         stars = star;
         gf = new GlobalFunctions(context);
         background = new ArrayList<>();
-        background.add(R.drawable.vector_wooden_title1);
-        background.add(R.drawable.vector_wooden_title2);
+        background.add(R.drawable.vector_myrow1);
+        background.add(R.drawable.vector_myrow2);
+        background.add(R.drawable.vector_myrow3);
+        background.add(R.drawable.vector_myrow4);
 
     }
 

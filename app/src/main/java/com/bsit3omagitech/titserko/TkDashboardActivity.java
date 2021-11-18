@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -83,7 +84,6 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         name = intent.getStringExtra("username");
 
         //for view pager
-
 
         // --------------------------------------------- INITIALIZE ----------------------------------------------
 
