@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,11 +24,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Spinner spnr_profile;
     ImageView iv_study;
     LinearLayout ll_landing, ll_profile;
-    TextView tv_createProfile;
+    Button tv_createProfile;
     Button btn_confirm;
     String usernameSelected;
     DataBaseHelper db;
-
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +52,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ll_landing.setVisibility(View.VISIBLE);
         ll_profile = (LinearLayout) findViewById(R.id.ll_profile);
         ll_profile.setVisibility(View.GONE);
-        tv_createProfile = (TextView) findViewById(R.id.tv_createProfile);
+        tv_createProfile = findViewById(R.id.tv_createProfile);
         btn_confirm = (Button) findViewById(R.id.btn_confirm);
+        mp = new MediaPlayer();
 
+        Uri mediaPath = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bensound_bgm);
+        try {
+            mp.setDataSource(getApplicationContext(), mediaPath);
+            mp.prepare();
+            mp.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         //register listeners
@@ -67,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
                 else{
 
+                    mp.stop();
                     Intent intent = new Intent(MainActivity.this, TkDashboardActivity.class);
                     intent.putExtra("username", spnr_profile.getSelectedItem().toString());
                     startActivity(intent);
@@ -81,12 +93,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
 
+
                 if(db.userExists()){
                     ll_landing.setVisibility(View.GONE);
                     ll_profile.setVisibility(View.VISIBLE);
 
                 }
                 else{
+                    mp.stop();
                     Intent intent = new Intent(MainActivity.this, tk_register.class);
                     startActivity(intent);
                     finish();
@@ -100,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View v) {
 
                 //create profile
+                mp.stop();
                 Intent intent = new Intent(MainActivity.this, tk_register.class);
                 startActivity(intent);
                 finish();

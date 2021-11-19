@@ -21,14 +21,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class Score extends AppCompatActivity {
 
-    TextView score_tv_title, score_tv_score, score_tv_statement;
+    TextView score_tv_title, score_tv_score, score_high_score;
     Button score_btn, score_btn_retry;
     Intent intent;
     ImageView iv_trophy;
     String lessonName, lessonId, lessonTranslated, username;
     DataBaseHelper db;
     GlobalFunctions gf;
-    int score, totalScore;
+    int score, totalScore, highscore;
     List<String> achieveList;
     Context c;
     Dialog dialog;
@@ -57,38 +57,28 @@ public class Score extends AppCompatActivity {
         username = intent.getStringExtra("username");
         score = intent.getIntExtra("Score", 0);
         totalScore = 15;
+        highscore= 0;
 
         //for achievements
         db = new DataBaseHelper(this);
         dialog = new Dialog(c);
         achieveList = db.refreshAchievements(username);
         queueAchievements(achieveList, dialog);
+
+        //for highscore
+        highscore =  db.getQuizProgress(username, lessonId);
+
         //views
+        score_high_score = findViewById(R.id.score_high_score);
+        score_high_score.setText(highscore + "");
         score_tv_title = (TextView) findViewById(R.id.score_tv_title);
         score_tv_title.setText(lessonName);
         score_tv_score = (TextView) findViewById(R.id.score_tv_score);
         score_tv_score.setText(score + "/" + totalScore);
         score_btn = (Button) findViewById(R.id.score_btn);
-        score_tv_statement = findViewById(R.id.score_tv_statement);
+
         score_btn_retry = findViewById(R.id.score_btn_retry);
         iv_trophy = findViewById(R.id.iv_trophy);
-
-
-
-
-
-        if (score == totalScore){
-            score_tv_statement.setText("Perfect");
-            gf.setImage(iv_trophy,"general_img/trophy_gold.png");
-        }
-        else if((score/2) >= (totalScore/2)){
-            score_tv_statement.setText("Very Good!");
-            gf.setImage(iv_trophy,"general_img/trophy_silver.png");
-        }
-        else{
-            score_tv_statement.setText("You can do better next time!");
-            gf.setImage(iv_trophy,"general_img/trophy_bronze.png");
-        }
 
 
 

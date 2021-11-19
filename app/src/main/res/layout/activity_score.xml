@@ -5,94 +5,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@drawable/vector_dashboard_bg"
     tools:context=".Score">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="500dp"
         android:orientation="vertical"
+        android:background="@drawable/vector_dialog"
         android:padding="10dp"
-        android:layout_weight="27">
+       >
         <TextView
-            android:id="@+id/score_tv_statement"
             android:layout_width="wrap_content"
+            android:maxWidth="150dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center"
             android:textSize="40sp"
             android:fontFamily="@font/roboto_blk"
-            android:textColor="@color/darkGreen"
-            android:layout_marginTop="30dp"
+            android:textColor="@color/brownText"
+            android:shadowColor="@color/customBrown"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="1.6"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="30dp"
-            android:text="Congratulations!"
+            android:text="Result"
             />
         <ImageView
             android:id="@+id/iv_trophy"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:src="@drawable/trophy_bronze"/>
-        <TextView
-            android:id="@+id/score_tv_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/roboto_blk"
-            android:textColor="@color/black"
-            android:textSize="45sp"
-            android:layout_marginTop="20dp"
-            android:text="10/10"
-            />
+
         <TextView
             android:id="@+id/score_tv_title"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:gravity="center"
             android:layout_gravity="center"
             android:textSize="20sp"
-            android:fontFamily="@font/roboto_light"
-            android:textColor="@color/darkGreen"
-
-            android:text="Introduction Quiz"
+            android:fontFamily="@font/roboto_blk"
+            android:textColor="@color/customBrown"
+            android:text="Adjective Phrases II"
             />
-
-
-    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp"
             android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
             >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/customBrown"
+                    android:text="Score"
+                    />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/score_btn_retry"
+                <TextView
+                    android:id="@+id/score_tv_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:layout_gravity="left"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_blk"
+                    android:textColor="@color/customBrown"
+                    android:text="10"
+                    />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/rounded_row"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:textAllCaps="false"
-                android:fontFamily="@font/roboto_blk"
-                android:textColor="@color/darkGreen"
-                android:text="Retry" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/score_btn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:textAllCaps="false"
-                android:background="@drawable/rounded_row"
-                android:layout_gravity="center"
-                android:fontFamily="@font/roboto_blk"
-                android:textColor="@color/darkGreen"
-                android:text="Main Menu" />
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/customBrown"
+                    android:text="HighScore"
+                    />
+
+                <TextView
+                    android:id="@+id/score_high_score"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:layout_gravity="left"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/roboto_blk"
+                    android:textColor="@color/customBrown"
+                    android:text="10"
+                    />
+            </LinearLayout>
 
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/score_btn_retry"
+                    android:layout_width="80dp"
+                    android:layout_gravity="center"
+                    android:layout_height="80dp"
+                    android:background="@drawable/vector_retry_btn"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/score_btn"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/vector_menu_btn"
+                  />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
 
     </LinearLayout>

@@ -5,18 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/customborder"
+    android:background="@drawable/vector_landing_bg"
     tools:context=".tk_register">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/vector_wooden_title2"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
         android:text="Create a Profile"
-        android:fontFamily="@font/finger_paint"
+        android:fontFamily="@font/roboto_blk"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="35sp"
-        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textColor="@color/customBrown"
         android:layout_marginTop="100dp"
         />
 
@@ -25,11 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter your name"
-        android:fontFamily="@font/robotothin"
+        android:fontFamily="@font/roboto_blk"
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/darkYellow"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         />
@@ -48,13 +49,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter your birthday"
-        android:fontFamily="@font/robotothin"
+        android:fontFamily="@font/roboto_blk"
 
 
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textColor="@color/darkYellow"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         />
@@ -82,8 +83,9 @@
             android:layout_weight="1"
             android:text="Confirm"
             android:background="@drawable/rounded_row"
-            android:backgroundTint="@color/lightGreen"
+            android:backgroundTint="@color/customBrown"
             android:layout_width="wrap_content"
+            android:textColor="@color/brownText"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
         />
@@ -92,9 +94,8 @@
             android:layout_weight="1"
             android:text="Cancel"
             android:background="@drawable/rounded_row"
-
-            android:backgroundTint="@color/lightRed"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/brownText"
+            android:textColor="@color/customBrown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            />

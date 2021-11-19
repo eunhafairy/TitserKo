@@ -506,6 +506,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+
     public int getMaxScore(String lessonId){
         int score = 0;
 
@@ -580,6 +582,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return i;
 
     }
+
 
     //create all lesson progress at user registration
     public void createAllLessonProgress(String username){

@@ -16,6 +16,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -49,7 +50,9 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
     ImageView iv_achieve_back;
     NavigationView achievement_navigationView;
     DrawerLayout achievement_drawerLayout;
+    GlobalFunctions gf;
     Toolbar toolbar;
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +73,13 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
         iv_achieve_back = findViewById(R.id.iv_achieve_back);
         achieveRv = findViewById(R.id.rv_achieve);
         c = this;
+        gf = new GlobalFunctions(c);
+        mp = new MediaPlayer();
+        try {
+            gf.playBGM(mp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         dialog = new Dialog(c);
         titles = new ArrayList<>();
         imagePaths = new ArrayList<>();
@@ -261,6 +271,7 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
 
             //---------Home----------
             case R.id.nav_home:
+                mp.stop();
                 Intent i1 = new Intent(this, TkDashboardActivity.class);
                 i1.putExtra("username", name);
                 startActivity(i1);
@@ -268,6 +279,7 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
 
             //--------Profile------------
             case R.id.nav_profile:
+                mp.stop();
                 Intent i2 = new Intent(this, tk_profile.class);
                 i2.putExtra("username", name);
                 startActivity(i2);
@@ -275,18 +287,17 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
 
             //--------Achievements----------
             case R.id.nav_achievements:
-                Intent achievement_intent = new Intent(this, tk_achievements.class);
-                achievement_intent.putExtra("username", name);
-                startActivity(achievement_intent);
                 break;
 
             case R.id.nav_logout:
+                mp.stop();
                 Intent i3 = new Intent(this, MainActivity.class);
                 startActivity(i3);
                 finish();
                 break;
 
             case R.id.nav_stats:
+                mp.stop();
                 Intent i4 = new Intent(this, tk_statistics.class);
                 i4.putExtra("username", name);
                 startActivity(i4);

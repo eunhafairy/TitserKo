@@ -19,6 +19,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -60,6 +61,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
     GlobalFunctions gf;
     Context c;
     Dialog dialog;
+    MediaPlayer mp;
     ViewPager viewPager;
     LinearLayout ll_dashboard;
     public LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
@@ -101,6 +103,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         iv_badge.setImageURI(db.getUserBadge(name));
 
 
+
         //show tutorial
         if(db.isFirstTime(name)){
             viewPager.setVisibility(View.VISIBLE);
@@ -131,6 +134,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         adapter.setIndividualScreenListener(new myAdapter.OnIndividualScreen() {
             @Override
             public void convertViewOnIndividualScreen(int position) {
+                mp.stop();
                 String lesson = lessonList.get(position);
                 String _lessonTranslated = lessonTranslated.get(position);
                 String _lessonId = lessonId.get(position);
@@ -149,6 +153,15 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         achieveList = db.refreshAchievements(name);
         queueAchievements(achieveList, dialog);
 
+        //media
+
+        //media player
+        mp = new MediaPlayer();
+        try {
+            gf.playBGM(mp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // ----------------------------------------- FOR SWIPE REFRESH -----------------------------------------
 
@@ -171,6 +184,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 adapter.setIndividualScreenListener(new myAdapter.OnIndividualScreen() {
                     @Override
                     public void convertViewOnIndividualScreen(int position) {
+                        mp.stop();
                         String lesson = lessonList.get(position);
                         String _lessonTranslated = lessonTranslated.get(position);
                         String _lessonId = lessonId.get(position);
@@ -303,6 +317,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
             //--------Profile------------
             case R.id.nav_profile:
+                mp.stop();
                 Intent i = new Intent(this, tk_profile.class);
                 i.putExtra("username", name);
                 startActivity(i);
@@ -311,6 +326,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
             //--------Achievements----------
             case R.id.nav_achievements:
+                mp.stop();
                 Intent achievement_intent = new Intent(this, tk_achievements.class);
                 achievement_intent.putExtra("username", name);
                 startActivity(achievement_intent);
@@ -318,12 +334,14 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 break;
 
             case R.id.nav_logout:
+                mp.stop();
                 Intent i2 = new Intent(this, MainActivity.class);
                 startActivity(i2);
                 finish();
                 break;
 
             case R.id.nav_stats:
+                mp.stop();
                 Intent i3 = new Intent(this, tk_statistics.class);
                 i3.putExtra("username", name);
                 startActivity(i3);

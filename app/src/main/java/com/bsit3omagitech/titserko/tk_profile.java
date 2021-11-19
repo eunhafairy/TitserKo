@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Layout;
@@ -23,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -43,12 +45,14 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
     Context c;
     DataBaseHelper db;
     Date bday;
+    TextView btn_logout, btn_credits, btn_delete, btn_tutorial;
     GlobalFunctions gf;
     List<String> imagePaths;
     NavigationView profile_navigationView;
     DrawerLayout profile_drawerLayout;
     Toolbar toolbar;
     LinearLayout ll_profile_badge_list;
+    MediaPlayer mp;
     int numOfBadges = 0;
 
     @Override
@@ -70,9 +74,26 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         iv_profile_badge  = findViewById(R.id.iv_profile_badge);
         ll_profile_badge_list = findViewById(R.id.ll_profile_badge_list);
 
+        //buttons
+        btn_logout = findViewById(R.id.prof_btn_logout);
+        btn_credits = findViewById(R.id.prof_btn_credits);
+        btn_delete = findViewById(R.id.prof_btn_delete);
+        btn_tutorial = findViewById(R.id.prof_btn_tutorial);
+
+
         c = this;
         db = new DataBaseHelper(c);
         gf = new GlobalFunctions(c);
+
+        //media player
+        mp = new MediaPlayer();
+        try {
+            gf.playBGM(mp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         // --------------------------------------------- INTENTS ---------------------------------------------
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
@@ -121,6 +142,45 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
             @Override
             public void onClick(View v) {
                 profile_drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        btn_tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //rerun tutorial
+                //first, set user's first time to true
+                //then start intent to dashboard
+                Toast.makeText(c,"Work in progress", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_credits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Create new activity for all the credits
+                Toast.makeText(c,"Work in progress", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //create function to delete all user data
+                //db.deleteUser(String username)
+                //show warning box
+                //if confirm, go to main activity (welcome page)
+                Toast.makeText(c,"Work in progress", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //logout the user
+                mp.stop();
+                Intent i3 = new Intent(c, MainActivity.class);
+                startActivity(i3);
+                finish();
             }
         });
 
@@ -179,6 +239,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
             //---------Home----------
             case R.id.nav_home:
+                mp.stop();
                 Intent i1 = new Intent(this, TkDashboardActivity.class);
                 i1.putExtra("username", name);
                 startActivity(i1);
@@ -187,13 +248,11 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
             //--------Profile------------
             case R.id.nav_profile:
-                Intent i2 = new Intent(this, tk_profile.class);
-                i2.putExtra("username", name);
-                startActivity(i2);
                 break;
 
             //--------Achievements----------
             case R.id.nav_achievements:
+                mp.stop();
                 Intent achievement_intent = new Intent(this, tk_achievements.class);
                 achievement_intent.putExtra("username", name);
                 startActivity(achievement_intent);
@@ -201,12 +260,14 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
                 break;
 
             case R.id.nav_logout:
+                mp.stop();
                 Intent i3 = new Intent(this, MainActivity.class);
                 startActivity(i3);
                 finish();
                 break;
 
             case R.id.nav_stats:
+                mp.stop();
                 Intent i4 = new Intent(this, tk_statistics.class);
                 i4.putExtra("username", name);
                 startActivity(i4);

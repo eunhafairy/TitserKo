@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -49,6 +50,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
     DrawerLayout stats_drawerLayout;
     Toolbar toolbar;
     GlobalFunctions gf;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +79,12 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
         gf = new GlobalFunctions(ct);
+        mp = new MediaPlayer();
+        try {
+            gf.playBGM(mp);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // ------------------------------------------ SETTING TEXT VIEWS ------------------------------------------
         pb_stat_overall.setProgress(st.getOverallProgress(username));
         tv_stat_overall_progress.setText(st.getOverallProgress(username) + "%");
@@ -174,6 +182,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
             //---------Home----------
             case R.id.nav_home:
+                mp.stop();
                 Intent i1 = new Intent(this, TkDashboardActivity.class);
                 i1.putExtra("username", username);
                 startActivity(i1);
@@ -182,6 +191,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
             //--------Profile------------
             case R.id.nav_profile:
+                mp.stop();
                 Intent i2 = new Intent(this, tk_profile.class);
                 i2.putExtra("username", username);
                 startActivity(i2);
@@ -190,6 +200,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
             //--------Achievements----------
             case R.id.nav_achievements:
+                mp.stop();
                 Intent achievement_intent = new Intent(this, tk_achievements.class);
                 achievement_intent.putExtra("username", username);
                 startActivity(achievement_intent);
@@ -197,6 +208,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
                 break;
 
             case R.id.nav_logout:
+                mp.stop();
                 Intent i3 = new Intent(this, MainActivity.class);
                 startActivity(i3);
                 finish();

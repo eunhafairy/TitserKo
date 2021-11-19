@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/vector_dashboard_bg"
     tools:context=".QuizProper">
 
     <LinearLayout
@@ -14,19 +15,23 @@
         android:padding="5dp"
         android:gravity="center"
         android:layout_weight="2"
-        android:background="@color/darkGreen"
         >
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Quiz"
             android:gravity="center"
             android:textStyle="bold"
-            android:textSize="30sp"
+            android:textSize="20sp"
+            android:background="@drawable/vector_wooden_title1"
             android:fontFamily="@font/finger_paint"
-            android:textColor="@color/white"
+            android:textColor="@color/brownText"
+            android:shadowColor="@color/customBrown"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="1.6"
             />
 
     </LinearLayout>
@@ -64,19 +69,20 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight="3"
                 android:fontFamily="@font/finger_paint"
-                android:text="This is a samnple lesson this is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lessonthis is a sample lesson"
+                android:text="Piliin ang katumbas na tunog"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/darkGreen"
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <ImageView
                 android:id="@+id/iv_qp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/img_audio"
+                android:src="@drawable/vector_audio_btn"
                 android:visibility="visible"
                 android:scaleType="centerCrop"
                 android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 />
 
@@ -84,9 +90,30 @@
                 android:id="@+id/ll_btnParent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
                 android:orientation="vertical">
 
 
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/vector_lesson_btn" />.
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/vector_lesson_btn" />
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/vector_lesson_btn" />
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/vector_lesson_btn" />
 
             </LinearLayout>
 
@@ -101,8 +128,7 @@
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:background="@drawable/rounded_row"
-        android:backgroundTint="@color/darkGreen"
+        android:background="@drawable/vector_wooden_title1"
         android:text="Confirm"
         android:textColor="@color/white"
         android:layout_weight="1"

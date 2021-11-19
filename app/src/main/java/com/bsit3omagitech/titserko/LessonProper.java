@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -41,7 +42,7 @@ public class LessonProper extends AppCompatActivity {
     GlobalFunctions gf;
     DataBaseHelper db;
     LinearLayout ll_parent;
-    Button btn_lp_finish;
+    ImageView btn_lp_finish;
     TextView tv_lp_description;
     ImageView btn_lp_previous, btn_lp_next, picture;
     String lessonName, lessonId, lessonTranslated, username;
@@ -50,6 +51,7 @@ public class LessonProper extends AppCompatActivity {
     ProgressBar lessonProgress;
     String TAG = "debug";
     Context c;
+    int sizeWidth, sizeHeight, sizeWidthIndp, sizeHeightIndp;
     int index;
     float progress, maxIndex;
     MediaPlayer instruction_mp = new MediaPlayer(), mp = new MediaPlayer();
@@ -70,8 +72,9 @@ public class LessonProper extends AppCompatActivity {
         c = this;
         gf = new GlobalFunctions(c);
         //initalialize button
-        btn_lp_finish = (Button) findViewById(R.id.btn_lp_finish);
+        btn_lp_finish = findViewById(R.id.btn_lp_finish);
         btn_lp_finish.setVisibility(View.GONE);
+
         //initialize textview
         tv_lp_description = (TextView) findViewById(R.id.tv_lp_description);
         lessonProgress = (ProgressBar) findViewById(R.id.lessonProgress);
@@ -79,6 +82,7 @@ public class LessonProper extends AppCompatActivity {
         //initialize nav and image view
         btn_lp_previous = (ImageView) findViewById(R.id.btn_lp_previous);
         btn_lp_next = (ImageView) findViewById(R.id.btn_lp_next);
+        btn_lp_next.setVisibility(View.VISIBLE);
         picture = (ImageView) findViewById(R.id.iv_imageView);
 
         btn_lp_previous.setVisibility(View.INVISIBLE);
@@ -98,6 +102,11 @@ public class LessonProper extends AppCompatActivity {
         //run the update query at the start to track progress
         db = new DataBaseHelper(getApplicationContext());
         db.updateLessonProgress(index, username, lessonId);
+
+        //size in dp
+        sizeHeight = gf.convertToDp(60);
+        sizeWidth = gf.convertToDp(250);
+
 
         //locate the JSON Object of selected lesson
         try {
@@ -161,7 +170,7 @@ public class LessonProper extends AppCompatActivity {
 
                 //check if index is at last part
                 if((index+1) == partsArray.length()){
-                    btn_lp_next.setVisibility(View.INVISIBLE);
+                    btn_lp_next.setVisibility(View.GONE);
                     btn_lp_finish.setVisibility(View.VISIBLE);
                     btn_lp_previous.setVisibility(View.VISIBLE);
 
@@ -169,12 +178,12 @@ public class LessonProper extends AppCompatActivity {
                 else{
                     index++;
                     btn_lp_next.setVisibility(View.VISIBLE);
-                    btn_lp_finish.setVisibility(View.INVISIBLE);
+                    btn_lp_finish.setVisibility(View.GONE);
                     btn_lp_previous.setVisibility(View.VISIBLE);
 
                     //hide next button if index is last
                     if((index+1) == partsArray.length()) {
-                        btn_lp_next.setVisibility(View.INVISIBLE);
+                        btn_lp_next.setVisibility(View.GONE);
                         btn_lp_finish.setVisibility(View.VISIBLE);
                     }
 
@@ -210,13 +219,13 @@ public class LessonProper extends AppCompatActivity {
 
                 if(index == 0) {
                     btn_lp_previous.setVisibility(View.INVISIBLE);
-                    btn_lp_finish.setVisibility(View.INVISIBLE);
+                    btn_lp_finish.setVisibility(View.GONE);
                     btn_lp_next.setVisibility(View.VISIBLE);
                 }
                 else{
                     index--;
                     btn_lp_previous.setVisibility(View.VISIBLE);
-                    btn_lp_finish.setVisibility(View.INVISIBLE);
+                    btn_lp_finish.setVisibility(View.GONE);
                     btn_lp_next.setVisibility(View.VISIBLE);
 
                     //hide previous button if index is 0
@@ -224,7 +233,7 @@ public class LessonProper extends AppCompatActivity {
 
                     if((index+1) == partsArray.length()){
                         btn_lp_finish.setVisibility(View.VISIBLE);
-                        btn_lp_next.setVisibility(View.INVISIBLE);
+                        btn_lp_next.setVisibility(View.GONE);
 
 
                     }
@@ -323,11 +332,13 @@ public class LessonProper extends AppCompatActivity {
                 String label_path = "lesson"+lessonId+"/"+url;
                 Button btn_choice = new Button(this);
                 btn_choice.setText(choicesArray.getJSONObject(i).getString("label"));
-                   btn_choice.setBackgroundResource(R.drawable.rounded_row);
                 Typeface face = Typeface.createFromAsset(getAssets(),
-                        "fonts/d_din_bold.otf");
+                        "fonts/finger_paint.ttf");
                 btn_choice.setTypeface(face);
-                   btn_choice.setTextColor(ContextCompat.getColor(this, R.color.darkGreen));
+                btn_choice.setLayoutParams(new LinearLayout.LayoutParams(sizeWidth, sizeHeight));
+                btn_choice.setBackgroundResource(R.drawable.vector_lesson_btn);
+                   btn_choice.setTextColor(ContextCompat.getColor(this, R.color.white));
+                   btn_choice.setShadowLayer(1.5f,1.3f,1.6f, R.color.customBrown);
                 btn_choice.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -10,6 +10,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -47,6 +48,7 @@ public class QuizProper extends AppCompatActivity {
     GlobalFunctions gf;
     MediaPlayer mp;
     HashMap<String, String> hash_english, hash_tagalog, choices;
+    int sizeWidth, sizeHeight;
     float progress, maxScore;
     boolean toggle;
     @Override
@@ -70,6 +72,9 @@ public class QuizProper extends AppCompatActivity {
         //TextView
         tv_qp_description = (TextView) findViewById(R.id.tv_qp_description);
 
+        //size of btns
+        sizeWidth = gf.convertToDp(250);
+        sizeHeight = gf.convertToDp(60);
 
         //Linear Layout
         ll_btnParent =  findViewById(R.id.ll_btnParent);
@@ -343,6 +348,8 @@ public class QuizProper extends AppCompatActivity {
                 case "visual":
                     iv_qp.setOnClickListener(null);
                     iv_qp.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                    iv_qp.setLayoutParams(new LinearLayout.LayoutParams(gf.convertToDp(300),gf.convertToDp(300)));
+                    //set size of imaegview as big if visual
                     String image_name = quizArray.getJSONObject(index).getString("img_src");
                     String image_path = "lesson" + lessonId + "/"+ image_name + ".png";
                     gf.setImage(iv_qp,image_path);
@@ -352,7 +359,11 @@ public class QuizProper extends AppCompatActivity {
                 case "audio":
 
                     iv_qp.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    iv_qp.setImageResource(R.drawable.img_audio);
+                    iv_qp.setImageResource(R.drawable.vector_audio_btn);
+
+                    //set size as small of imageview if audio type
+                    iv_qp.setLayoutParams(new LinearLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150) ));
+
                     //name of file
                     String audio_url = quizArray.getJSONObject(index).getString("question_audio");
                     String question_path = "lesson"+lessonId+"/"+audio_url;
@@ -361,7 +372,6 @@ public class QuizProper extends AppCompatActivity {
                     iv_qp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
                            gf.playAudio(mp, question_path);
                         }
                     });
@@ -382,9 +392,14 @@ public class QuizProper extends AppCompatActivity {
                 btn_choice.setBackgroundResource(R.drawable.button_untoggled);
                 btn_choice.setTag("untoggled");
                 Typeface face = Typeface.createFromAsset(getAssets(),
-                        "fonts/d_din_bold.otf");
+                        "fonts/finger_paint.ttf");
                 btn_choice.setTypeface(face);
+                btn_choice.setTextColor(ContextCompat.getColor(this, R.color.white));
+
                 btn_choice.setText( entry.getKey());
+
+                btn_choice.setLayoutParams(new LinearLayout.LayoutParams(sizeWidth, sizeHeight));
+                setMargins(btn_choice,0,0,0,gf.convertToDp(10));
                 btn_choice.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -544,6 +559,15 @@ public class QuizProper extends AppCompatActivity {
 
         }
 
+    }
+
+    //for setting margins
+    private void setMargins (View view, int left, int top, int right, int bottom) {
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            p.setMargins(left, top, right, bottom);
+            view.requestLayout();
+        }
     }
 
 

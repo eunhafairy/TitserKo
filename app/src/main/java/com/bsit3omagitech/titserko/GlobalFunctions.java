@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -70,6 +71,16 @@ public class GlobalFunctions {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void playBGM(MediaPlayer mp) throws Exception{
+
+        Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.ambience);
+        mp.setDataSource(context, mediaPath);
+        mp.setLooping(true);
+        mp.prepare();
+        mp.start();
+
     }
 
     public void setImage(ImageView iv, String fileName){
@@ -216,7 +227,14 @@ public class GlobalFunctions {
 
     }
 
+    //convert size to dp
+    public int convertToDp(int size){
 
+        int sizeWidthIndp =  (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, size, context.getResources()
+                        .getDisplayMetrics());
+        return sizeWidthIndp;
+    }
 
     //get the JSON file of lessons
     public String loadJSONFromAsset(String name) {
