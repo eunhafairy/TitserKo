@@ -35,7 +35,7 @@ public class SeventhFrag extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.updateFirstTime(ll_dashboard.getTag().toString());
+                db.updateFirstTime(ll_dashboard.getTag().toString(), false);
                 viewpager.setVisibility(View.GONE);
                 ll_dashboard.setVisibility(View.VISIBLE);
             }

@@ -174,6 +174,7 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
                     @Override
                     public void onClick(View v) {
                         //equip the badge
+                        mp.stop();
                         db.updateBadge(name, achievementIds.get(pos));
                         Intent intent = new Intent(c, TkDashboardActivity.class);
                         intent.putExtra("username", name);

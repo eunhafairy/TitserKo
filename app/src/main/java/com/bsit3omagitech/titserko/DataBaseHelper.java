@@ -179,11 +179,40 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateFirstTime(String username){
+    public void deleteUserData(String username){
+
+        try {
+            SQLiteDatabase db = getWritableDatabase();
+            //delete from user table
+            db.delete(USER_TABLE, COLUMN_USER_NAME + "=?", new String[]{username});
+            //delete from achievement table
+            db.delete(ACHIEVEMENT_TABLE, ACHIEVEMENT_USER + "=?", new String[]{username});
+            //delete from lesson progress table
+            db.delete(LESSON_PROGRESS_TABLE, LP_USER_NAME + "=?", new String[]{username});
+            db.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public void updateFirstTime(String username, boolean flag){
         //update the first time user
-        String updateQuery = "UPDATE " + USER_TABLE
-                + " SET " + COLUMN_FIRST_TIME + " = " + 0
-                + " WHERE " + COLUMN_USER_NAME + " = '" + username + "'";
+        String updateQuery = "";
+        if(flag){
+            updateQuery  = "UPDATE " + USER_TABLE
+                    + " SET " + COLUMN_FIRST_TIME + " = " + 1
+                    + " WHERE " + COLUMN_USER_NAME + " = '" + username + "'";
+
+
+        }else{
+            updateQuery = "UPDATE " + USER_TABLE
+                    + " SET " + COLUMN_FIRST_TIME + " = " + 0
+                    + " WHERE " + COLUMN_USER_NAME + " = '" + username + "'";
+
+
+        }
 
         SQLiteDatabase db1 = this.getWritableDatabase();
         db1.execSQL(updateQuery);

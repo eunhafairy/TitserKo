@@ -7,8 +7,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -53,6 +56,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
     Toolbar toolbar;
     LinearLayout ll_profile_badge_list;
     MediaPlayer mp;
+    Dialog dialog;
     int numOfBadges = 0;
 
     @Override
@@ -92,6 +96,9 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //dialog
+        dialog = new Dialog(c);
 
 
         // --------------------------------------------- INTENTS ---------------------------------------------
@@ -150,8 +157,14 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
             public void onClick(View v) {
                 //rerun tutorial
                 //first, set user's first time to true
+                db.updateFirstTime(name, true);
                 //then start intent to dashboard
-                Toast.makeText(c,"Work in progress", Toast.LENGTH_SHORT).show();
+                mp.stop();
+                Intent i1 = new Intent(c, TkDashboardActivity.class);
+                i1.putExtra("username", name);
+                startActivity(i1);
+                finish();
+
             }
         });
 
@@ -159,17 +172,20 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
             @Override
             public void onClick(View v) {
                 //Create new activity for all the credits
-                Toast.makeText(c,"Work in progress", Toast.LENGTH_SHORT).show();
+                mp.stop();
+                Intent i1 = new Intent(c, tk_credit.class);
+                i1.putExtra("username", name);
+                startActivity(i1);
+                finish();
             }
         });
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //create function to delete all user data
-                //db.deleteUser(String username)
                 //show warning box
-                //if confirm, go to main activity (welcome page)
-                Toast.makeText(c,"Work in progress", Toast.LENGTH_SHORT).show();
+                openDialog("Confirm", "Are you sure you want to delete? All data will be lost.");
+
+
             }
         });
 
@@ -229,6 +245,42 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
         }
 
+
+    }
+
+    public void openDialog( String title, String message){
+
+        dialog.setContentView(R.layout.confirmation_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView confirm_tv_dialog_title = dialog.findViewById(R.id.confirm_tv_dialog_title);
+        TextView confirm_tv_dialog_message = dialog.findViewById(R.id.confirm_tv_dialog_message);
+        Button confirm_btn_dialog_okay = dialog.findViewById(R.id.confirm_btn_dialog_okay);
+        Button confirm_btn_dialog_cancel = dialog.findViewById(R.id.confirm_btn_dialog_cancel);
+
+        confirm_tv_dialog_title.setText(title);
+        confirm_tv_dialog_message.setText(message);
+
+        confirm_btn_dialog_okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.deleteUserData(name);
+                Toast.makeText(c,"Successfully deleted: "+ name, Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+                Intent intent = new Intent(c, MainActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        confirm_btn_dialog_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
 
     }
 
