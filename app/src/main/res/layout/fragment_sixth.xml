@@ -29,13 +29,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="13"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/sixthFrag_iv"
             android:layout_width="150dp"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/sixth_frag_home"
             />
