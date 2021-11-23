@@ -152,8 +152,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         usernameSelected = text;
     } public void onBackPressed() {
 
-        System.exit(0);
-        finish();
+        if(ll_profile.getVisibility() == View.VISIBLE){
+
+            ll_profile.setVisibility(View.GONE);
+            ll_landing.setVisibility(View.VISIBLE);
+        }
+        else{
+            System.exit(0);
+            finish();
+
+        }
+
+
+
 
     }
 

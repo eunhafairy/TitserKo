@@ -235,13 +235,16 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         else{
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Exit App?")
                     .setMessage("Are you sure you want to quit?")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                          System.exit(0);
+
+                            mp.stop();
+                            System.exit(0);
                         }
                     }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override

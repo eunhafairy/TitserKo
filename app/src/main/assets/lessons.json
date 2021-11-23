@@ -362,7 +362,12 @@
                     "correct_answer" : "Priest",
                     "correct_audio" : "priest"
                 }
-            ]
+            ],
+            "tips" : {
+                "title" : "People",
+                "content" : "People are retarded People are retarded People are retarded People are retarded People are retarded  People are retarded People are retarded People are retarded People are retarded People are retarded People are retarded People are retarded People are retarded"
+
+            }
         },
         {
             "lesson_id" : "00002",

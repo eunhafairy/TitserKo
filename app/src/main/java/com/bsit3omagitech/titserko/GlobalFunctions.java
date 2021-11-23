@@ -78,6 +78,7 @@ public class GlobalFunctions {
         Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.ambience);
         mp.setDataSource(context, mediaPath);
         mp.setLooping(true);
+        mp.setVolume(0.5f, 0.5f);
         mp.prepare();
         mp.start();
 

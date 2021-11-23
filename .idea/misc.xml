@@ -41,10 +41,10 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/textview_rounded_bg.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/tutorial_gradient.xml" value="0.3828125" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/drawable/yellow_gradient.xml" value="0.2265625" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achieve_row.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achieve_row.xml" value="0.67" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achievement_dialog.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achievement_unlocked.xml" value="0.33" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_landing.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_landing.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_lesson_proper.xml" value="0.5" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_quiz_proper.xml" value="0.25" />
@@ -70,6 +70,7 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/my_row.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/score_row.xml" value="0.3428442028985507" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/stat_row.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/tip_dialog.xml" value="0.3491847826086957" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/tk_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/menu/main_menu.xml" value="0.140625" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18518518518518517" />

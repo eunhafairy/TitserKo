@@ -313,7 +313,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
             case R.id.nav_logout:
                 mp.stop();
-                Intent i3 = new Intent(this, MainActivity.class);
+                Intent i3 = new Intent(c, MainActivity.class);
                 startActivity(i3);
                 finish();
                 break;
