@@ -1,8 +1,469 @@
 {
     "lesson_arr" : [
 
+       
+
         {
             "lesson_id" : "00001",
+            "lesson_name" : "Numbers I",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Pagbilang",
+            "parts" : [
+
+                {
+                    "description" : "Isa",
+                    "instruction_audio" : "isa",
+                    "choices" : [
+                        {
+                            "label": "One",
+                            "audio_src" : "one"
+
+                        }
+
+                    ],
+                    "image_src" : "one_img"
+
+
+                },
+                {
+                    "description" : "Dalawa",
+                    "instruction_audio" : "dalawa",
+                    "choices" : [
+                        {
+                            "label": "Two",
+                            "audio_src" : "two"
+
+                        }
+
+                    ],
+                    "image_src" : "two_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Tatlo",
+                    "instruction_audio" : "tatlo",
+                    "choices" : [
+                        {
+                            "label": "Three",
+                            "audio_src" : "three"
+
+                        }
+
+                    ],
+                    "image_src" : "three_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Apat",
+                    "instruction_audio" : "apat",
+                    "choices" : [
+                        {
+                            "label": "Four",
+                            "audio_src" : "four"
+
+                        }
+
+                    ],
+                    "image_src" : "four_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Lima",
+                    "instruction_audio" : "lima",
+                    "choices" : [
+                        {
+                            "label": "Five",
+                            "audio_src" : "five"
+
+                        }
+
+                    ],
+                    "image_src" : "five_img"
+
+
+                },
+
+                {
+                    "description" : "Anim",
+                    "instruction_audio" : "anim",
+                    "choices" : [
+                        {
+                            "label": "Six",
+                            "audio_src" : "six"
+
+                        }
+
+                    ],
+                    "image_src" : "six_img"
+                }
+            ,
+                {
+                    "description" : "Pito",
+                    "instruction_audio" : "pito",
+                    "choices" : [
+                        {
+                            "label": "Seven",
+                            "audio_src" : "seven"
+
+                        }
+
+                    ],
+                    "image_src" : "seven_img"
+                },
+                {
+                    "description" : "Walo",
+                    "instruction_audio" : "walo",
+                    "choices" : [
+                        {
+                            "label": "Eight",
+                            "audio_src" : "eight"
+
+                        }
+
+                    ],
+                    "image_src" : "eight_img"
+                }
+            ,
+                {
+                    "description" : "Siyam",
+                    "instruction_audio" : "siyam",
+                    "choices" : [
+                        {
+                            "label": "Nine",
+                            "audio_src" : "nine"
+
+                        }
+
+                    ],
+                    "image_src" : "nine_img"
+                }
+
+                ,
+                {
+                    "description" : "Sampu",
+                    "instruction_audio" : "ten",
+                    "choices" : [
+                        {
+                            "label": "Ten",
+                            "audio_src" : "ten"
+
+                        }
+
+                    ],
+                    "image_src" : "ten_img"
+                }
+
+            ],
+            "quiz" : [
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "isa",
+                    "correct_answer" : "One",
+                    "choices_language" : "english",
+                    "correct_audio" : "one"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "one",
+                    "correct_answer" : "Isa",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "isa"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "dalawa",
+                    "correct_answer" : "Two",
+                    "choices_language" : "english",
+                    "correct_audio" : "two"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "two",
+                    "correct_answer" : "Dalawa",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "dalawa"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "tatlo",
+                    "correct_answer" : "Three",
+                    "choices_language" : "english",
+                    "correct_audio" : "three"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "three",
+                    "correct_answer" : "Tatlo",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "tatlo"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "apat",
+                    "correct_answer" : "Four",
+                    "choices_language" : "english",
+                    "correct_audio" : "four"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "four",
+                    "correct_answer" : "Apat",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "apat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "lima",
+                    "correct_answer" : "Five",
+                    "choices_language" : "english",
+                    "correct_audio" : "five"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "five",
+                    "correct_answer" : "Lima",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "lima"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "lima",
+                    "correct_answer" : "Five",
+                    "choices_language" : "english",
+                    "correct_audio" : "five"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "anim",
+                    "correct_answer" : "Six",
+                    "choices_language" : "english",
+                    "correct_audio" : "six"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "six",
+                    "correct_answer" : "Anim",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "anim"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "pito",
+                    "correct_answer" : "Seven",
+                    "choices_language" : "english",
+                    "correct_audio" : "seven"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "seven",
+                    "correct_answer" : "Pito",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "pito"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "walo",
+                    "correct_answer" : "Eight",
+                    "choices_language" : "english",
+                    "correct_audio" : "eight"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "eight",
+                    "correct_answer" : "Walo",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "walo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "siyam",
+                    "correct_answer" : "Nine",
+                    "choices_language" : "english",
+                    "correct_audio" : "nine"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nine",
+                    "correct_answer" : "Siyam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "siyam"
+                }
+                ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ten",
+                    "correct_answer" : "Sampu",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "sampu"
+                }
+                ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "sampu",
+                    "correct_answer" : "Ten",
+                    "choices_language" : "english",
+                    "correct_audio" : "ten"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "one_img",
+                    "type" : "visual",
+                    "correct_answer" : "One",
+                    "correct_audio" : "one"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "two_img",
+                    "type" : "visual",
+                    "correct_answer" : "Two",
+                    "correct_audio" : "two"
+                }
+
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "three_img",
+                    "type" : "visual",
+                    "correct_answer" : "Three",
+                    "correct_audio" : "three"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "four_img",
+                    "type" : "visual",
+                    "correct_answer" : "Four",
+                    "correct_audio" : "four"
+                }
+
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "five_img",
+                    "type" : "visual",
+                    "correct_answer" : "Five",
+                    "correct_audio" : "five"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "six_img",
+                    "type" : "visual",
+                    "correct_answer" : "Six",
+                    "correct_audio" : "six"
+                }
+
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "seven_img",
+                    "type" : "visual",
+                    "correct_answer" : "Seven",
+                    "correct_audio" : "seven"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "eight_img",
+                    "type" : "visual",
+                    "correct_answer" : "Eight",
+                    "correct_audio" : "eight"
+                }
+
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "nine_img",
+                    "type" : "visual",
+                    "correct_answer" : "Nine",
+                    "correct_audio" : "nine"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "ten_img",
+                    "type" : "visual",
+                    "correct_answer" : "Ten",
+                    "correct_audio" : "ten"
+                }
+                
+                
+                
+
+            
+            ]
+        },
+
+        {
+            "lesson_id" : "00002",
             "lesson_name" : "People",
             "lesson_name_translate" : "Mga Tao",
             "lesson_img" : "people_icon",
@@ -118,33 +579,6 @@
                     ],
                     "image_src" : "doctor_img"
                 },
-
-                {
-                    "description" : "Nanay",
-                    "instruction_audio" : "nanay",
-                    "choices" : [
-                        {
-                            "label": "Mother",
-                            "audio_src" : "mother"
-
-                        }
-
-                    ],
-                    "image_src" : "mother_img"
-                },
-                {
-                    "description" : "Tatay",
-                    "instruction_audio" : "tatay",
-                    "choices" : [
-                        {
-                            "label": "Father",
-                            "audio_src" : "father"
-
-                        }
-
-                    ],
-                    "image_src" : "father_img"
-                },
                 {
                     "description" : "Sanggol",
                     "instruction_audio" : "sanggol",
@@ -214,25 +648,7 @@
                     "correct_answer" : "Mga tao",
                     "correct_audio" : "mga_tao"
                 },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "mother",
-                    "img_src" : "mother_img",
-                    "choices_language" : "tagalog",
-                    "correct_answer" : "Nanay",
-                    "correct_audio" : "nanay"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "choices_language" : "english",
-                    "question_audio" :  "nanay",
-                    "correct_answer" : "Mother",
-                    "correct_audio" : "mother"
-                },
+                
                 {
                     "question" : "Piliin ang katumbas na tunog.",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
@@ -270,6 +686,15 @@
                     "correct_answer" : "Priest",
                     "correct_audio" : "priest"
                 },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "student",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Mag-aaral",
+                    "correct_audio" : "mag_aaral"
+                },
 
                 {
                     "question" : "Piliin ang katumbas na tunog.",
@@ -291,6 +716,8 @@
                     "correct_audio" : "babae"
                 },
 
+
+
                 {
                     "question" : "Piliin ang katumbas na tunog.",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
@@ -300,6 +727,44 @@
                     "choices_language" : "english",
                     "correct_answer" : "Girl",
                     "correct_audio" : "girl"
+                },
+
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod na larawan?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "audio",
+                    "question_audio" :  "doctor",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Doktor",
+                    "correct_audio" : "doktor"
+                },
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod na larawan?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "audio",
+                    "question_audio" :  "doktor",
+                    "choices_language" : "english",
+                    "correct_answer" : "Doctor",
+                    "correct_audio" : "doctor"
+                },
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "audio",
+                    "choices_language" : "tagalog",
+                    "question_audio" :  "fireman",
+                    "correct_answer" : "Bumbero",
+                    "correct_audio" : "bumbero"
+                },
+
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "audio",
+                    "choices_language" : "english",
+                    "question_audio" :  "bumbero",
+                    "correct_answer" : "Fireman",
+                    "correct_audio" : "fireman"
                 },
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
@@ -363,10 +828,1541 @@
                     "correct_audio" : "priest"
                 }
             ]
-           
+        
         },
+
         {
-            "lesson_id" : "00002",
+            "lesson_id" : "00003",
+            "lesson_name" : "Family",
+            "lesson_name_translate" : "Pamilya",
+            "lesson_img" : "people_icon",
+            "parts" : [
+
+                {
+                    "description" : "Pamilya",
+                    "instruction_audio" : "pamilya",
+                    "choices" : [
+                        {
+                            "label": "Family",
+                            "audio_src" : "family"
+
+                        }
+                    ],
+                    "image_src" : "family_img"
+                },
+
+                {
+                    "description" : "Tatay",
+                    "instruction_audio" : "tatay",
+                    "choices" : [
+                        {
+                            "label": "Father",
+                            "audio_src" : "father"
+
+                        }
+
+                    ],
+                    "image_src" : "father_img"
+
+
+                },
+
+                {
+                    "description" : "Nanay",
+                    "instruction_audio" : "nanay",
+                    "choices" : [
+                        {
+                            "label": "Mother",
+                            "audio_src" : "mother"
+
+                        }
+
+                    ],
+                    "image_src" : "mother_img"
+                
+                },
+                {
+                    "description" : "Lola",
+                    "instruction_audio" : "lola",
+                    "choices" : [
+                        {
+                            "label": "Grandma",
+                            "audio_src" : "grandma"
+
+                        }
+
+                    ],
+                    "image_src" : "grandma_img"
+                },
+                {
+                    "description" : "Lolo",
+                    "instruction_audio" : "lolo",
+                    "choices" : [
+                        {
+                            "label": "Grandpa",
+                            "audio_src" : "grandpa"
+
+                        }
+
+                    ],
+                    "image_src" : "grandpa_img"
+                
+                },
+                {
+                    "description" : "Anak na babae",
+                    "instruction_audio" : "anak_na_babae",
+                    "choices" : [
+                        {
+                            "label": "Daughter",
+                            "audio_src" : "daughter"
+
+                        }
+
+                    ],
+                    "image_src" : "daughter_img"
+                },
+                {
+                    "description" : "Anak na lalaki",
+                    "instruction_audio" : "anak_na_lalaki",
+                    "choices" : [
+                        {
+                            "label": "Son",
+                            "audio_src" : "son"
+
+                        }
+
+                    ],
+                    "image_src" : "son_img"
+                },
+                {
+                    "description" : "Kuya",
+                    "instruction_audio" : "kuya",
+                    "choices" : [
+                        {
+                            "label": "Older brother",
+                            "audio_src" : "older_brother"
+
+                        }
+
+                    ],
+                    "image_src" : "older_brother_img"
+                },
+
+                {
+                    "description" : "Ate",
+                    "instruction_audio" : "ate",
+                    "choices" : [
+                        {
+                            "label": "Older sister",
+                            "audio_src" : "older_sister"
+
+                        }
+
+                    ],
+                    "image_src" : "older_sister_img"
+                },
+                {
+                    "description" : "Asawang lalaki",
+                    "instruction_audio" : "asawang_lalaki",
+                    "choices" : [
+                        {
+                            "label": "Husband",
+                            "audio_src" : "husband"
+
+                        }
+
+                    ],
+                    "image_src" : "husband_img"
+                },
+                {
+                    "description" : "Asawang babae",
+                    "instruction_audio" : "asawang_babae",
+                    "choices" : [
+                        {
+                            "label": "Wife",
+                            "audio_src" : "wife"
+
+                        }
+
+                    ],
+                    "image_src" : "wife_img"
+                },
+
+                {
+                    "description" : "Kaibigan",
+                    "instruction_audio" : "kaibigan",
+                    "choices" : [
+                        {
+                            "label": "Friend",
+                            "audio_src" : "friend"
+
+                        }
+
+                    ],
+                    "image_src" : "friend_img"
+                },
+
+                {
+                    "description" : "Tito",
+                    "instruction_audio" : "tito",
+                    "choices" : [
+                        {
+                            "label": "Uncle",
+                            "audio_src" : "uncle"
+
+                        }
+
+                    ],
+                    "image_src" : "uncle_img"
+                }
+
+                ,
+
+                {
+                    "description" : "Tita",
+                    "instruction_audio" : "tita",
+                    "choices" : [
+                        {
+                            "label": "Aunt",
+                            "audio_src" : "aunt"
+
+                        }
+
+                    ],
+                    "image_src" : "aunt_img"
+                }
+
+                ,
+
+                {
+                    "description" : "Pinsan",
+                    "instruction_audio" : "pinsan",
+                    "choices" : [
+                        {
+                            "label": "Cousin",
+                            "audio_src" : "cousin"
+
+                        }
+
+                    ],
+                    "image_src" : "cousin_img"
+                }
+
+
+            ],
+            "quiz" : [
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "pamilya",
+                    "choices_language" : "english",
+                    "correct_answer" : "Family",
+                    "correct_audio" : "family"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "family",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Pamilya",
+                    "correct_audio" : "pamilya"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "tatay",
+                    "choices_language" : "english",
+                    "correct_answer" : "Father",
+                    "correct_audio" : "father"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "father",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Tatay",
+                    "correct_audio" : "tatay"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nanay",
+                    "choices_language" : "english",
+                    "correct_answer" : "Mother",
+                    "correct_audio" : "mother"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "mother",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Nanay",
+                    "correct_audio" : "nanay"
+                },
+
+                 {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "lola",
+                    "choices_language" : "english",
+                    "correct_answer" : "Grandma",
+                    "correct_audio" : "grandma"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "grandma",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Lola",
+                    "correct_audio" : "lola"
+                },
+                
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "lolo",
+                    "choices_language" : "english",
+                    "correct_answer" : "Grandpa",
+                    "correct_audio" : "grandpa"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "grandpa",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Lolo",
+                    "correct_audio" : "lolo"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "anak_na_babae",
+                    "choices_language" : "english",
+                    "correct_answer" : "Daughter",
+                    "correct_audio" : "daughter"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "daughter",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Anak na babae",
+                    "correct_audio" : "anak_na_babae"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "anak_na_lalaki",
+                    "choices_language" : "english",
+                    "correct_answer" : "Son",
+                    "correct_audio" : "son"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "son",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Anak na lalaki",
+                    "correct_audio" : "anak_na_lalaki"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "kuya",
+                    "choices_language" : "english",
+                    "correct_answer" : "Older brother",
+                    "correct_audio" : "older_brother"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "older_brother",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Kuya",
+                    "correct_audio" : "kuya"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ate",
+                    "choices_language" : "english",
+                    "correct_answer" : "Older sister",
+                    "correct_audio" : "older_sister"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "older_sister",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Ate",
+                    "correct_audio" : "ate"
+                },
+
+                
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "asawang_lalaki",
+                    "choices_language" : "english",
+                    "correct_answer" : "Husband",
+                    "correct_audio" : "husband"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "husband",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Asawang lalaki",
+                    "correct_audio" : "asawang_lalaki"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "asawang_babae",
+                    "choices_language" : "english",
+                    "correct_answer" : "Wife",
+                    "correct_audio" : "wife"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "wife",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Asawang babae",
+                    "correct_audio" : "asawang_babae"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "kaibigan",
+                    "choices_language" : "english",
+                    "correct_answer" : "Friend",
+                    "correct_audio" : "friend"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "friend",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Kaibigan",
+                    "correct_audio" : "kaibigan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "tito",
+                    "choices_language" : "english",
+                    "correct_answer" : "Uncle",
+                    "correct_audio" : "uncle"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "uncle",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Tito",
+                    "correct_audio" : "tito"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "tita",
+                    "choices_language" : "english",
+                    "correct_answer" : "Aunt",
+                    "correct_audio" : "aunt"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "aunt",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Tita",
+                    "correct_audio" : "tita"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "pinsan",
+                    "choices_language" : "english",
+                    "correct_answer" : "Cousin",
+                    "correct_audio" : "cousin"
+                },
+
+                  {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "cousin",
+                    "choices_language" : "tagalog",
+                    "correct_answer" : "Pinsan",
+                    "correct_audio" : "pinsan"
+                },
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Family",
+                    "correct_audio" : "family",
+                    "img_src" : "family_img"
+                }
+                ,
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Father",
+                    "correct_audio" : "father",
+                    "img_src" : "father_img"
+                }
+
+                ,
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Mother",
+                    "correct_audio" : "mother",
+                    "img_src" : "mother_img"
+                }
+
+                ,
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Grandma",
+                    "correct_audio" : "grandma",
+                    "img_src" : "grandma_img"
+                }
+                  ,
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Grandpa",
+                    "correct_audio" : "grandpa",
+                    "img_src" : "grandpa_img"
+                }
+                ,
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Husband",
+                    "correct_audio" : "husband",
+                    "img_src" : "husband_img"
+                }
+
+                   ,
+                
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
+                    "type" : "visual",
+                    "choices_language" : "english",
+                    "correct_answer" : "Wife",
+                    "correct_audio" : "wife",
+                    "img_src" : "wife_img"
+                }
+
+            ]
+        
+        },
+
+        {
+            "lesson_id" : "00004",
+            "lesson_name" : "Numbers II",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Pagbilang II",
+            "parts" : [
+    
+                {
+                    "description" : "Labing-isa",
+                    "instruction_audio" : "labingisa",
+                    "choices" : [
+                        {
+                            "label": "Eleven",
+                            "audio_src" : "eleven"
+    
+                        }
+    
+                    ],
+                    "image_src" : "eleven_img"
+    
+    
+                },
+                {
+                    "description" : "Labing-dalawa",
+                    "instruction_audio" : "labingdalawa",
+                    "choices" : [
+                        {
+                            "label": "Twelve",
+                            "audio_src" : "twelve"
+    
+                        }
+    
+                    ],
+                    "image_src" : "twelve_img"
+    
+    
+                }
+            ,
+                {
+                    "description" : "Labing-tatlo",
+                    "instruction_audio" : "labingtatlo",
+                    "choices" : [
+                        {
+                            "label": "Thirteen",
+                            "audio_src" : "thirteen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "thirteen_img"
+    
+    
+                }
+            ,
+                {
+                    "description" : "Labing-apat",
+                    "instruction_audio" : "labingapat",
+                    "choices" : [
+                        {
+                            "label": "Fourteen",
+                            "audio_src" : "fourteen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "fourteen_img "
+    
+    
+                }
+            ,
+                {
+                    "description" : "Labing-lima",
+                    "instruction_audio" : "labinglima",
+                    "choices" : [
+                        {
+                            "label": "Fifteen",
+                            "audio_src" : "fifteen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "fifteen_img"
+    
+    
+                },
+    
+                {
+                    "description" : "Labing-anim",
+                    "instruction_audio" : "labinganim",
+                    "choices" : [
+                        {
+                            "label": "Sixteen",
+                            "audio_src" : "sixteen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "sixteen_img"
+                }
+            ,
+                {
+                    "description" : "Labing-pito",
+                    "instruction_audio" : "labingpito",
+                    "choices" : [
+                        {
+                            "label": "Seventeen",
+                            "audio_src" : "seventeen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "seventeen_img"
+                },
+                {
+                    "description" : "Labing-walo",
+                    "instruction_audio" : "labingwalo",
+                    "choices" : [
+                        {
+                            "label": "Eighteen",
+                            "audio_src" : "eighteen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "eighteen_img"
+                }
+            ,
+                {
+                    "description" : "Labing-siyam",
+                    "instruction_audio" : "labingsiyam",
+                    "choices" : [
+                        {
+                            "label": "Nineteen",
+                            "audio_src" : "nineteen"
+    
+                        }
+    
+                    ],
+                    "image_src" : "nineteen_img"
+                }
+    
+                ,
+                {
+                    "description" : "Dalawampu",
+                    "instruction_audio" : "dalawampu",
+                    "choices" : [
+                        {
+                            "label": "Twenty",
+                            "audio_src" : "twenty"
+    
+                        }
+    
+                    ],
+                    "image_src" : "twenty_img"
+                }
+    
+            ],
+            "quiz" : [
+    
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingisa",
+                    "correct_answer" : "Eleven",
+                    "choices_language" : "english",
+                    "correct_audio" : "eleven"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "eleven",
+                    "correct_answer" : "Labing-isa",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingisa"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingdalawa",
+                    "correct_answer" : "Twelve",
+                    "choices_language" : "english",
+                    "correct_audio" : "twelve"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "twelve",
+                    "correct_answer" : "Labing-dalawa",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingdalawa"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingtatlo",
+                    "correct_answer" : "Thirteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "thirteen"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "thirteen",
+                    "correct_answer" : "Labing-tatlo",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingtatlo"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingapat",
+                    "correct_answer" : "Fourteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "fourteen"
+                },
+    
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "fourteen",
+                    "correct_answer" : "Labing-apat",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingapat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labinglima",
+                    "correct_answer" : "Fifteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "fifteen"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "fifteen",
+                    "correct_answer" : "Labing-lima",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labinglima"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labinganim",
+                    "correct_answer" : "Sixteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "sixteen"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "sixteen",
+                    "correct_answer" : "Labing-anim",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labinganim"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "seventeen",
+                    "correct_answer" : "Labing-pito",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingpito"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingpito",
+                    "correct_answer" : "Seventeen",
+                    "choices_language" : "english",
+                    "correct_audio" : "seventeen"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "eighteen",
+                    "correct_answer" : "Labing-walo",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingwalo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "labingwalo",
+                    "correct_answer" : "Eighteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "eighteen"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nineteen",
+                    "correct_answer" : "Labing-siyam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingsiyam"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingsiyam",
+                    "correct_answer" : "Nineteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "nineteen"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "twenty",
+                    "correct_answer" : "Dalawampu",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "dalawampu"
+                }
+                ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "dalawampu",
+                    "correct_answer" : "Twenty",
+                    "choices_language" : "english",
+                    "correct_audio" : "twenty"
+                }
+            
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "eleven_img",
+                    "type" : "visual",
+                    "correct_answer" : "Eleven",
+                    "correct_audio" : "eleven"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "twelve_img",
+                    "type" : "visual",
+                    "correct_answer" : "Twelve",
+                    "correct_audio" : "twelve"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "thirteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Thirteen",
+                    "correct_audio" : "thirteen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "fourteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Fourteen",
+                    "correct_audio" : "fourteen"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "fifteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Fifteen",
+                    "correct_audio" : "fifteen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "sixteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Sixteen",
+                    "correct_audio" : "sixteen"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "seventeen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Seventeen",
+                    "correct_audio" : "seventeen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "eighteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Eighteen",
+                    "correct_audio" : "eighteen"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "nineteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Nineteen",
+                    "correct_audio" : "nineteen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "twenty_img",
+                    "type" : "visual",
+                    "correct_answer" : "Twenty",
+                    "correct_audio" : "twenty"
+                }
+                
+                
+                
+    
+            
+            ]
+        },
+    
+        {
+            "lesson_id" : "00005",
+            "lesson_name" : "Month",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Buwan",
+            "parts" : [
+    
+                {
+                    "description" : "Enero",
+                    "instruction_audio" : "enero",
+                    "choices" : [
+                        {
+                            "label": "January",
+                            "audio_src" : "january"
+    
+                        }
+    
+                    ],
+                    "image_src" : "january_img"
+    
+    
+                },
+                {
+                    "description" : "Pebrero",
+                    "instruction_audio" : "pebrero",
+                    "choices" : [
+                        {
+                            "label": "February",
+                            "audio_src" : "february"
+    
+                        }
+    
+                    ],
+                    "image_src" : "february_img"
+    
+    
+                }
+            ,
+                {
+                    "description" : "Marso",
+                    "instruction_audio" : "marso",
+                    "choices" : [
+                        {
+                            "label": "March",
+                            "audio_src" : "march"
+    
+                        }
+    
+                    ],
+                    "image_src" : "march_img"
+    
+    
+                }
+            ,
+                {
+                    "description" : "Abril",
+                    "instruction_audio" : "abril",
+                    "choices" : [
+                        {
+                            "label": "April",
+                            "audio_src" : "april"
+    
+                        }
+    
+                    ],
+                    "image_src" : "april_img"
+    
+    
+                }
+            ,
+                {
+                    "description" : "Mayo",
+                    "instruction_audio" : "mayo",
+                    "choices" : [
+                        {
+                            "label": "May",
+                            "audio_src" : "may"
+    
+                        }
+    
+                    ],
+                    "image_src" : "may_img"
+    
+    
+                },
+    
+                {
+                    "description" : "Hunyo",
+                    "instruction_audio" : "hunyo",
+                    "choices" : [
+                        {
+                            "label": "June",
+                            "audio_src" : "june"
+    
+                        }
+    
+                    ],
+                    "image_src" : "june_img"
+                }
+            ,
+                {
+                    "description" : "Hulyo",
+                    "instruction_audio" : "hulyo",
+                    "choices" : [
+                        {
+                            "label": "July",
+                            "audio_src" : "july"
+    
+                        }
+    
+                    ],
+                    "image_src" : "july_img"
+                },
+                {
+                    "description" : "Agosto",
+                    "instruction_audio" : "agosto",
+                    "choices" : [
+                        {
+                            "label": "August",
+                            "audio_src" : "august"
+    
+                        }
+    
+                    ],
+                    "image_src" : "august_img"
+                }
+            ,
+                {
+                    "description" : "Septyembre",
+                    "instruction_audio" : "septyembre",
+                    "choices" : [
+                        {
+                            "label": "September",
+                            "audio_src" : "september"
+    
+                        }
+    
+                    ],
+                    "image_src" : "september_img"
+                }
+    
+                ,
+                {
+                    "description" : "Oktubre",
+                    "instruction_audio" : "oktubre",
+                    "choices" : [
+                        {
+                            "label": "October",
+                            "audio_src" : "october"
+    
+                        }
+    
+                    ],
+                    "image_src" : "october_img"
+                }
+                ,
+                {
+                    "description" : "Nobyembre",
+                    "instruction_audio" : "nobyembre",
+                    "choices" : [
+                        {
+                            "label": "November",
+                            "audio_src" : "november"
+    
+                        }
+    
+                    ],
+                    "image_src" : "november_img"
+                }
+    
+                ,
+                {
+                    "description" : "Disyembre",
+                    "instruction_audio" : "disyembre",
+                    "choices" : [
+                        {
+                            "label": "December",
+                            "audio_src" : "december"
+    
+                        }
+    
+                    ],
+                    "image_src" : "december_img"
+                }
+    
+    
+    
+            ],
+            "quiz" : [
+    
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingisa",
+                    "correct_answer" : "Eleven",
+                    "choices_language" : "english",
+                    "correct_audio" : "eleven"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "eleven",
+                    "correct_answer" : "Labing-isa",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingisa"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingdalawa",
+                    "correct_answer" : "Twelve",
+                    "choices_language" : "english",
+                    "correct_audio" : "twelve"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "twelve",
+                    "correct_answer" : "Labing-dalawa",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingdalawa"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingtatlo",
+                    "correct_answer" : "Thirteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "thirteen"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "thirteen",
+                    "correct_answer" : "Labing-tatlo",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingtatlo"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingapat",
+                    "correct_answer" : "Fourteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "fourteen"
+                },
+    
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "fourteen",
+                    "correct_answer" : "Labing-apat",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingapat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labinglima",
+                    "correct_answer" : "Fifteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "fifteen"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "fifteen",
+                    "correct_answer" : "Labing-lima",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labinglima"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labinganim",
+                    "correct_answer" : "Sixteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "sixteen"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "sixteen",
+                    "correct_answer" : "Labing-anim",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labinganim"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "seventeen",
+                    "correct_answer" : "Labing-pito",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingpito"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingpito",
+                    "correct_answer" : "Seventeen",
+                    "choices_language" : "english",
+                    "correct_audio" : "seventeen"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "eighteen",
+                    "correct_answer" : "Labing-walo",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingwalo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "labingwalo",
+                    "correct_answer" : "Eighteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "eighteen"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nineteen",
+                    "correct_answer" : "Labing-siyam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "labingsiyam"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "labingsiyam",
+                    "correct_answer" : "Nineteen",
+                    "choices_language" : "english",
+                    "correct_audio" : "nineteen"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "twenty",
+                    "correct_answer" : "Dalawampu",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "dalawampu"
+                }
+                ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "dalawampu",
+                    "correct_answer" : "Twenty",
+                    "choices_language" : "english",
+                    "correct_audio" : "twenty"
+                }
+            
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "eleven_img",
+                    "type" : "visual",
+                    "correct_answer" : "Eleven",
+                    "correct_audio" : "eleven"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "twelve_img",
+                    "type" : "visual",
+                    "correct_answer" : "Twelve",
+                    "correct_audio" : "twelve"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "thirteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Thirteen",
+                    "correct_audio" : "thirteen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "fourteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Fourteen",
+                    "correct_audio" : "fourteen"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "fifteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Fifteen",
+                    "correct_audio" : "fifteen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "sixteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Sixteen",
+                    "correct_audio" : "sixteen"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "seventeen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Seventeen",
+                    "correct_audio" : "seventeen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "eighteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Eighteen",
+                    "correct_audio" : "eighteen"
+                }
+    
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "nineteen_img",
+                    "type" : "visual",
+                    "correct_answer" : "Nineteen",
+                    "correct_audio" : "nineteen"
+                }
+                ,
+                {
+                    "question" : "Ano ang ibig sabihin ng sumusunod?",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "img_src" : "twenty_img",
+                    "type" : "visual",
+                    "correct_answer" : "Twenty",
+                    "correct_audio" : "twenty"
+                }
+                
+                
+                
+    
+            
+            ]
+        },
+
+        {
+            "lesson_id" : "00006",
             "lesson_name" : "Animals",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Mga hayop",
@@ -903,8 +2899,9 @@
 
             ]
         },
+
         {
-            "lesson_id" : "00003",
+            "lesson_id" : "00007",
             "lesson_name" : "Vegetables",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Mga Gulay",
@@ -1260,8 +3257,9 @@
                 }
             ]
         },
+
         {
-            "lesson_id" : "00004",
+            "lesson_id" : "00008",
             "lesson_name" : "Fruits",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Mga prutas",
@@ -1644,7 +3642,7 @@
         },
 
         {
-            "lesson_id" : "00005",
+            "lesson_id" : "00009",
             "lesson_name" : "Things",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Mga bagay",
@@ -2138,9 +4136,8 @@
             ]
         },
 
-
         {
-            "lesson_id" : "00006",
+            "lesson_id" : "00010",
             "lesson_name" : "Place",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Mga bagay",
@@ -2505,11 +4502,10 @@
                 }
 
             ]
-        }
-    ,
+        },
 
         {
-            "lesson_id" : "00007",
+            "lesson_id" : "00011",
             "lesson_name" : "Color",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri",
@@ -2988,8 +4984,9 @@
                 }
             ]
         },
+
         {
-            "lesson_id" : "00008",
+            "lesson_id" : "00012",
             "lesson_name" : "Color Phrases",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri",
@@ -3468,8 +5465,9 @@
                 }
             ]
         },
+
         {
-            "lesson_id" : "00009",
+            "lesson_id" : "00013",
             "lesson_name" : "Adjectives I",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri I",
@@ -4123,8 +6121,9 @@
 
             }
         },
+
         {
-            "lesson_id" : "00010",
+            "lesson_id" : "00014",
             "lesson_name" : "Adjectives II",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri",
@@ -4610,11 +6609,10 @@
                 }
 
             ]
-        }
+        },
 
-    ,
         {
-            "lesson_id" : "00011",
+            "lesson_id" : "00015",
             "lesson_name" : "Adjective Phrases",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri",
@@ -5009,13 +7007,10 @@
                 }
 
             ]
-        }
-
-    ,
-
+        },
 
         {
-            "lesson_id" : "00012",
+            "lesson_id" : "00016",
             "lesson_name" : "Adjective Phrases II",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri",
@@ -5408,473 +7403,10 @@
                     "correct_audio" : "a_hot_coffee"
                 }
             ]
-        }
-
-        ,
+        },
 
         {
-            "lesson_id" : "00013",
-            "lesson_name" : "Numbers I",
-            "lesson_img" :  "animals_icon",
-            "lesson_name_translate" : "Pagbilang",
-            "parts" : [
-
-                {
-                    "description" : "Isa",
-                    "instruction_audio" : "isa",
-                    "choices" : [
-                        {
-                            "label": "One",
-                            "audio_src" : "one"
-
-                        }
-
-                    ],
-                    "image_src" : "one_img"
-
-
-                },
-                {
-                    "description" : "Dalawa",
-                    "instruction_audio" : "dalawa",
-                    "choices" : [
-                        {
-                            "label": "Two",
-                            "audio_src" : "two"
-
-                        }
-
-                    ],
-                    "image_src" : "two_img"
-
-
-                }
-            ,
-                {
-                    "description" : "Tatlo",
-                    "instruction_audio" : "tatlo",
-                    "choices" : [
-                        {
-                            "label": "Three",
-                            "audio_src" : "three"
-
-                        }
-
-                    ],
-                    "image_src" : "three_img"
-
-
-                }
-            ,
-                {
-                    "description" : "Apat",
-                    "instruction_audio" : "apat",
-                    "choices" : [
-                        {
-                            "label": "Four",
-                            "audio_src" : "four"
-
-                        }
-
-                    ],
-                    "image_src" : "four_img"
-
-
-                }
-            ,
-                {
-                    "description" : "Lima",
-                    "instruction_audio" : "lima",
-                    "choices" : [
-                        {
-                            "label": "Five",
-                            "audio_src" : "five"
-
-                        }
-
-                    ],
-                    "image_src" : "five_img"
-
-
-                },
-
-                {
-                    "description" : "Anim",
-                    "instruction_audio" : "anim",
-                    "choices" : [
-                        {
-                            "label": "Six",
-                            "audio_src" : "six"
-
-                        }
-
-                    ],
-                    "image_src" : "six_img"
-                }
-            ,
-                {
-                    "description" : "Pito",
-                    "instruction_audio" : "pito",
-                    "choices" : [
-                        {
-                            "label": "Seven",
-                            "audio_src" : "seven"
-
-                        }
-
-                    ],
-                    "image_src" : "seven_img"
-                },
-                {
-                    "description" : "Walo",
-                    "instruction_audio" : "walo",
-                    "choices" : [
-                        {
-                            "label": "Eight",
-                            "audio_src" : "eight"
-
-                        }
-
-                    ],
-                    "image_src" : "eight_img"
-                }
-            ,
-                {
-                    "description" : "Siyam",
-                    "instruction_audio" : "siyam",
-                    "choices" : [
-                        {
-                            "label": "Nine",
-                            "audio_src" : "nine"
-
-                        }
-
-                    ],
-                    "image_src" : "nine_img"
-                }
-
-                ,
-                {
-                    "description" : "Sampu",
-                    "instruction_audio" : "ten",
-                    "choices" : [
-                        {
-                            "label": "Ten",
-                            "audio_src" : "ten"
-
-                        }
-
-                    ],
-                    "image_src" : "ten_img"
-                }
-
-            ],
-            "quiz" : [
-
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "isa",
-                    "correct_answer" : "One",
-                    "choices_language" : "english",
-                    "correct_audio" : "one"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "one",
-                    "correct_answer" : "Isa",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "isa"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "dalawa",
-                    "correct_answer" : "Two",
-                    "choices_language" : "english",
-                    "correct_audio" : "two"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "two",
-                    "correct_answer" : "Dalawa",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "dalawa"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "tatlo",
-                    "correct_answer" : "Three",
-                    "choices_language" : "english",
-                    "correct_audio" : "three"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "three",
-                    "correct_answer" : "Tatlo",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "tatlo"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "apat",
-                    "correct_answer" : "Four",
-                    "choices_language" : "english",
-                    "correct_audio" : "four"
-                },
-
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "four",
-                    "correct_answer" : "Apat",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "apat"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "lima",
-                    "correct_answer" : "Five",
-                    "choices_language" : "english",
-                    "correct_audio" : "five"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "five",
-                    "correct_answer" : "Lima",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "lima"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "lima",
-                    "correct_answer" : "Five",
-                    "choices_language" : "english",
-                    "correct_audio" : "five"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "anim",
-                    "correct_answer" : "Six",
-                    "choices_language" : "english",
-                    "correct_audio" : "six"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "six",
-                    "correct_answer" : "Anim",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "anim"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "pito",
-                    "correct_answer" : "Seven",
-                    "choices_language" : "english",
-                    "correct_audio" : "seven"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "seven",
-                    "correct_answer" : "Pito",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "pito"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "malamig_na_tubig",
-                    "type" : "audio",
-                    "question_audio" :  "walo",
-                    "correct_answer" : "Eight",
-                    "choices_language" : "english",
-                    "correct_audio" : "eight"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "eight",
-                    "correct_answer" : "Walo",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "walo"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "siyam",
-                    "correct_answer" : "Nine",
-                    "choices_language" : "english",
-                    "correct_audio" : "nine"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "nine",
-                    "correct_answer" : "Siyam",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "siyam"
-                }
-                ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "ten",
-                    "correct_answer" : "Sampu",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "sampu"
-                }
-                ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "sampu",
-                    "correct_answer" : "Ten",
-                    "choices_language" : "english",
-                    "correct_audio" : "ten"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "one_img",
-                    "type" : "visual",
-                    "correct_answer" : "One",
-                    "correct_audio" : "one"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "two_img",
-                    "type" : "visual",
-                    "correct_answer" : "Two",
-                    "correct_audio" : "two"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "three_img",
-                    "type" : "visual",
-                    "correct_answer" : "Three",
-                    "correct_audio" : "three"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "four_img",
-                    "type" : "visual",
-                    "correct_answer" : "Four",
-                    "correct_audio" : "four"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "five_img",
-                    "type" : "visual",
-                    "correct_answer" : "Five",
-                    "correct_audio" : "five"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "six_img",
-                    "type" : "visual",
-                    "correct_answer" : "Six",
-                    "correct_audio" : "six"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "seven_img",
-                    "type" : "visual",
-                    "correct_answer" : "Seven",
-                    "correct_audio" : "seven"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "eight_img",
-                    "type" : "visual",
-                    "correct_answer" : "Eight",
-                    "correct_audio" : "eight"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "nine_img",
-                    "type" : "visual",
-                    "correct_answer" : "Nine",
-                    "correct_audio" : "nine"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "ten_img",
-                    "type" : "visual",
-                    "correct_answer" : "Ten",
-                    "correct_audio" : "ten"
-                }
-                
-                
-                
-
-            
-            ]
-        }
-    ,
-
-
-        {
-            "lesson_id" : "00014",
+            "lesson_id" : "00017",
             "lesson_name" : "Introduction",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pagpapakilala",
@@ -6339,466 +7871,6 @@
             ]
         }
 
-        ,
-
-        {
-            "lesson_id" : "00015",
-            "lesson_name" : "Numbers II",
-            "lesson_img" :  "animals_icon",
-            "lesson_name_translate" : "Pagbilang II",
-            "parts" : [
-
-                {
-                    "description" : "Isa",
-                    "instruction_audio" : "isa",
-                    "choices" : [
-                        {
-                            "label": "One",
-                            "audio_src" : "one"
-
-                        }
-
-                    ],
-                    "image_src" : "one_img"
-
-
-                },
-                {
-                    "description" : "Dalawa",
-                    "instruction_audio" : "dalawa",
-                    "choices" : [
-                        {
-                            "label": "Two",
-                            "audio_src" : "two"
-
-                        }
-
-                    ],
-                    "image_src" : "two_img"
-
-
-                }
-            ,
-                {
-                    "description" : "Tatlo",
-                    "instruction_audio" : "tatlo",
-                    "choices" : [
-                        {
-                            "label": "Three",
-                            "audio_src" : "three"
-
-                        }
-
-                    ],
-                    "image_src" : "three_img"
-
-
-                }
-            ,
-                {
-                    "description" : "Apat",
-                    "instruction_audio" : "apat",
-                    "choices" : [
-                        {
-                            "label": "Four",
-                            "audio_src" : "four"
-
-                        }
-
-                    ],
-                    "image_src" : "four_img"
-
-
-                }
-            ,
-                {
-                    "description" : "Lima",
-                    "instruction_audio" : "lima",
-                    "choices" : [
-                        {
-                            "label": "Five",
-                            "audio_src" : "five"
-
-                        }
-
-                    ],
-                    "image_src" : "five_img"
-
-
-                },
-
-                {
-                    "description" : "Anim",
-                    "instruction_audio" : "anim",
-                    "choices" : [
-                        {
-                            "label": "Six",
-                            "audio_src" : "six"
-
-                        }
-
-                    ],
-                    "image_src" : "six_img"
-                }
-            ,
-                {
-                    "description" : "Pito",
-                    "instruction_audio" : "pito",
-                    "choices" : [
-                        {
-                            "label": "Seven",
-                            "audio_src" : "seven"
-
-                        }
-
-                    ],
-                    "image_src" : "seven_img"
-                },
-                {
-                    "description" : "Walo",
-                    "instruction_audio" : "walo",
-                    "choices" : [
-                        {
-                            "label": "Eight",
-                            "audio_src" : "eight"
-
-                        }
-
-                    ],
-                    "image_src" : "eight_img"
-                }
-            ,
-                {
-                    "description" : "Siyam",
-                    "instruction_audio" : "siyam",
-                    "choices" : [
-                        {
-                            "label": "Nine",
-                            "audio_src" : "nine"
-
-                        }
-
-                    ],
-                    "image_src" : "nine_img"
-                }
-
-                ,
-                {
-                    "description" : "Sampu",
-                    "instruction_audio" : "ten",
-                    "choices" : [
-                        {
-                            "label": "Ten",
-                            "audio_src" : "ten"
-
-                        }
-
-                    ],
-                    "image_src" : "ten_img"
-                }
-
-            ],
-            "quiz" : [
-
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "isa",
-                    "correct_answer" : "One",
-                    "choices_language" : "english",
-                    "correct_audio" : "one"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "one",
-                    "correct_answer" : "Isa",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "isa"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "dalawa",
-                    "correct_answer" : "Two",
-                    "choices_language" : "english",
-                    "correct_audio" : "two"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "two",
-                    "correct_answer" : "Dalawa",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "dalawa"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "tatlo",
-                    "correct_answer" : "Three",
-                    "choices_language" : "english",
-                    "correct_audio" : "three"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "three",
-                    "correct_answer" : "Tatlo",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "tatlo"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "apat",
-                    "correct_answer" : "Four",
-                    "choices_language" : "english",
-                    "correct_audio" : "four"
-                },
-
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "four",
-                    "correct_answer" : "Apat",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "apat"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "lima",
-                    "correct_answer" : "Five",
-                    "choices_language" : "english",
-                    "correct_audio" : "five"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "five",
-                    "correct_answer" : "Lima",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "lima"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "lima",
-                    "correct_answer" : "Five",
-                    "choices_language" : "english",
-                    "correct_audio" : "five"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "anim",
-                    "correct_answer" : "Six",
-                    "choices_language" : "english",
-                    "correct_audio" : "six"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "six",
-                    "correct_answer" : "Anim",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "anim"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "pito",
-                    "correct_answer" : "Seven",
-                    "choices_language" : "english",
-                    "correct_audio" : "seven"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "seven",
-                    "correct_answer" : "Pito",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "pito"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "malamig_na_tubig",
-                    "type" : "audio",
-                    "question_audio" :  "walo",
-                    "correct_answer" : "Eight",
-                    "choices_language" : "english",
-                    "correct_audio" : "eight"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "eight",
-                    "correct_answer" : "Walo",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "walo"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "siyam",
-                    "correct_answer" : "Nine",
-                    "choices_language" : "english",
-                    "correct_audio" : "nine"
-                }
-            ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "nine",
-                    "correct_answer" : "Siyam",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "siyam"
-                }
-                ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "ten",
-                    "correct_answer" : "Sampu",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "sampu"
-                }
-                ,
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "sampu",
-                    "correct_answer" : "Ten",
-                    "choices_language" : "english",
-                    "correct_audio" : "ten"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "one_img",
-                    "type" : "visual",
-                    "correct_answer" : "One",
-                    "correct_audio" : "one"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "two_img",
-                    "type" : "visual",
-                    "correct_answer" : "Two",
-                    "correct_audio" : "two"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "three_img",
-                    "type" : "visual",
-                    "correct_answer" : "Three",
-                    "correct_audio" : "three"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "four_img",
-                    "type" : "visual",
-                    "correct_answer" : "Four",
-                    "correct_audio" : "four"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "five_img",
-                    "type" : "visual",
-                    "correct_answer" : "Five",
-                    "correct_audio" : "five"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "six_img",
-                    "type" : "visual",
-                    "correct_answer" : "Six",
-                    "correct_audio" : "six"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "seven_img",
-                    "type" : "visual",
-                    "correct_answer" : "Seven",
-                    "correct_audio" : "seven"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "eight_img",
-                    "type" : "visual",
-                    "correct_answer" : "Eight",
-                    "correct_audio" : "eight"
-                }
-
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "nine_img",
-                    "type" : "visual",
-                    "correct_answer" : "Nine",
-                    "correct_audio" : "nine"
-                }
-                ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "ten_img",
-                    "type" : "visual",
-                    "correct_answer" : "Ten",
-                    "correct_audio" : "ten"
-                }
-                
-                
-                
-
-            
-            ]
-        }
 
     ]
 
