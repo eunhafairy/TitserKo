@@ -2,6 +2,7 @@ package com.bsit3omagitech.titserko;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -9,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -331,6 +333,17 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         profile_drawerLayout.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        mp.stop();
+        Intent i1 = new Intent(c, TkDashboardActivity.class);
+        i1.putExtra("username", name);
+        startActivity(i1);
+        finish();
+
     }
 
 }

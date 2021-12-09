@@ -77,7 +77,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
     public Dialog dialog;
     LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
-    public static final int DB_VERSION = 44;
+    public static final int DB_VERSION = 45;
     Context context;
     GlobalFunctions gf;
 
@@ -1189,30 +1189,203 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         //---------------- FOR ACHIEVEMENT A00007---------------------
         /**
-         *           "achieve_id" : "A00007",
-         *         "achieve_name" : "People Everywhere!",
-         *         "achieve_desc" : "Get 100% progress and a perfect score on \"People\" lesson",
+         *          "achieve_id" : "A00007",
+         *         "achieve_name" : "Eagle",
+         *         "achieve_desc" : "Get perfect scores on all quizzes.",
          *
          **/
-        a = getLessonStar(username, "00001");
-        if(a >= 3 && !checkAchievement(username, "A00007")){
+        a = perfectScoreCounter(username);
+        if(a >= getAllLessonId().size() && !checkAchievement(username, "A00007")){
             updatedAchievements.add("A00007");
             updateAchievement(username, "A00007");
         }
 
         //---------------- FOR ACHIEVEMENT A00008---------------------
         /**
-         *         "achieve_id" : "A00008",
-         *         "achieve_name" : "Animal Lover!",
-         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Animal\" lesson",
+         *           "achieve_id" : "A00008",
+         *         "achieve_name" : "People Everywhere!",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"People\" lesson",
          *
          **/
-
         a = getLessonStar(username, "00002");
         if(a >= 3 && !checkAchievement(username, "A00008")){
             updatedAchievements.add("A00008");
             updateAchievement(username, "A00008");
         }
+
+        //---------------- FOR ACHIEVEMENT A00009---------------------
+        /**
+         *          "achieve_id" : "A00009",
+         *         "achieve_name" : "Animal Lover!",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Animals\" lesson",
+         *
+         **/
+
+        a = getLessonStar(username, "00006");
+        if(a >= 3 && !checkAchievement(username, "A00009")){
+            updatedAchievements.add("A00009");
+            updateAchievement(username, "A00009");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00010---------------------
+        /**
+         *         "achieve_id" : "A00010",
+         *         "achieve_name" : "Colorful World",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on on \"Colors\" lesson"",
+         *
+         **/
+
+        a = getLessonStar(username, "00011");
+        if(a >= 3 && !checkAchievement(username, "A00010")){
+            updatedAchievements.add("A00010");
+            updateAchievement(username, "A00010");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00011---------------------
+        /**
+         *          "achieve_id" : "A00011",
+         *         "achieve_name" : "Family Forever",
+         *         "achieve_desc" : "Get 100% progress and a perfect score on \"Family\" lesson",
+         *
+         **/
+
+        a = getLessonStar(username, "00003");
+        if(a >= 3 && !checkAchievement(username, "A00011")){
+            updatedAchievements.add("A00011");
+            updateAchievement(username, "A00011");
+        }
+        //---------------- FOR ACHIEVEMENT A00012---------------------
+        /**
+         *          "achieve_id" : "A00012",
+         *         "achieve_name" : "My Family",
+         *         "achieve_desc" : "Achieve 100% Study Progress on \"Family\" lesson",
+         *
+         **/
+
+        a = getLessonProgress(username, "00003");
+        int b = getMaxIndex("00003") + 1;
+        if(a >= b && !checkAchievement(username, "A00012")){
+            updatedAchievements.add("A00012");
+            updateAchievement(username, "A00012");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00013---------------------
+        /**
+         *         "achieve_id" : "A00013",
+         *         "achieve_name" : "Hardworker",
+         *         "achieve_desc" : "Unlock 5 lessons",
+         *
+         **/
+
+        a = getUnlockedLessons(username);
+        if(a >= 5 && !checkAchievement(username, "A00013")){
+            updatedAchievements.add("A00013");
+            updateAchievement(username, "A00013");
+        }
+
+
+        //---------------- FOR ACHIEVEMENT A00014---------------------
+        /**
+         *         "achieve_id" : "A00014",
+         *         "achieve_name" : "Hardworker II",
+         *         "achieve_desc" : "Unlock 15 lessons",
+         *
+         **/
+
+        a = getUnlockedLessons(username);
+        if(a >= 15 && !checkAchievement(username, "A00014")){
+            updatedAchievements.add("A00014");
+            updateAchievement(username, "A00014");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00015---------------------
+        /**
+         *          "achieve_id" : "A00015",
+         *         "achieve_name" : "Hardworker III",
+         *         "achieve_desc" : "Unlock all lessons",
+         *
+         **/
+
+        a = getUnlockedLessons(username);
+        if(a >= getAllLessonId().size() && !checkAchievement(username, "A00015")){
+            updatedAchievements.add("A00015");
+            updateAchievement(username, "A00015");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00016---------------------
+        /**
+         *         "achieve_name" : "Superstar",
+         *         "achieve_desc" : "Acquire all stars.",
+         *           "achieve_id" : "A00016",
+         *
+         **/
+
+        a = getUserTotalStars(username);
+        if(a >= (getAllLessonId().size() * 3) && !checkAchievement(username, "A00016")){
+            updatedAchievements.add("A00016");
+            updateAchievement(username, "A00016");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00017---------------------
+        /**
+         *         "achieve_id" : "A00017",
+         *         "achieve_name" : "Observer",
+         *         "achieve_desc" : "Achieve 100% Study Progress on \"Adjective\" lesson",
+         *
+         **/
+
+        a = getLessonProgress(username, "00013");
+        b = getMaxIndex("00013") + 1;
+        if(a >= b && !checkAchievement(username, "A00017")){
+            updatedAchievements.add("A00017");
+            updateAchievement(username, "A00017");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00018---------------------
+        /**
+         *        "achieve_id" : "A00018",
+         *         "achieve_name" : "The Watcher",
+         *         "achieve_desc" : "Get 3 Stars on all Adjective Lessons",
+         *
+         **/
+
+        a = getLessonStar(username, "00013") + getLessonStar(username, "00014") + getLessonStar(username, "00015") + getLessonStar(username, "00016") ;
+        if(a >= 12 && !checkAchievement(username, "A00018")){
+            updatedAchievements.add("A00018");
+            updateAchievement(username, "A00018");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00019---------------------
+        /**
+         *          "achieve_id" : "A00019",
+         *         "achieve_name" : "Active Player",
+         *         "achieve_desc" : "Get 100% Study Progress on "Verbs I and II" lessons",
+         *
+         **/
+
+        a = getLessonProgress(username, "00018") + getLessonProgress(username, "00019") ;
+        b = (getMaxIndex("00018") + 1) + (getMaxIndex("00019") + 1);
+        if(a >= b && !checkAchievement(username, "A00019")){
+            updatedAchievements.add("A00019");
+            updateAchievement(username, "A00019");
+        }
+
+        //---------------- FOR ACHIEVEMENT A00020---------------------
+        /**
+         *           "achieve_id" : "A00020",
+         *         "achieve_name" : "Olympian",
+         *         "achieve_desc" : "Get 100% Study Progress on \"Verbs\" lesson",
+         *
+         **/
+
+        a = getLessonStar(username, "00018") + getLessonStar(username, "00019") + getLessonStar(username, "00020") + getLessonStar(username, "00021") ;
+
+        if(a >= 12 && !checkAchievement(username, "A00020")){
+            updatedAchievements.add("A00020");
+            updateAchievement(username, "A00020");
+        }
+
+
 
         //---------------- FOR ACHIEVEMENT A10000---------------------
         /**
@@ -1223,7 +1396,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUserTotalStars(username);
-        int b = getAllLessonId().size();
+        b = getAllLessonId().size();
 
         if(a >= (b*3) && !checkAchievement(username, "A10000")){
             updatedAchievements.add("A10000");
@@ -1234,6 +1407,32 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return updatedAchievements;
 
 
+    }
+
+
+    public int getUnlockedLessons(String username){
+        int index = 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + LP_LESSON_STARS + " FROM "
+                + LESSON_PROGRESS_TABLE +
+                " WHERE " +
+                LP_USER_NAME + " = '" + username + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                if(cursor.getInt(0) > 0){
+
+                    index++;
+                }
+
+            } while (cursor.moveToNext());
+        }
+
+
+        index++;
+
+        return index;
     }
 
 

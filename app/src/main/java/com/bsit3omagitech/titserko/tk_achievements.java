@@ -259,9 +259,10 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
     @Override
     public void onBackPressed() {
 
-        Intent intent = new Intent(this, TkDashboardActivity.class);
-        intent.putExtra("username", name);
-        startActivity(intent);
+        mp.stop();
+        Intent i1 = new Intent(c, TkDashboardActivity.class);
+        i1.putExtra("username", name);
+        startActivity(i1);
         finish();
 
     }
@@ -276,6 +277,7 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
                 Intent i1 = new Intent(this, TkDashboardActivity.class);
                 i1.putExtra("username", name);
                 startActivity(i1);
+                finish();
                 break;
 
             //--------Profile------------
@@ -284,6 +286,8 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
                 Intent i2 = new Intent(this, tk_profile.class);
                 i2.putExtra("username", name);
                 startActivity(i2);
+                finish();
+
                 break;
 
             //--------Achievements----------
@@ -311,6 +315,7 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
 
         return true;
     }
+
 
 
 

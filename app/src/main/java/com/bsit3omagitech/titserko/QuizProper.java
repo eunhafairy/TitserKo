@@ -1,9 +1,11 @@
 package com.bsit3omagitech.titserko;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
@@ -568,6 +570,31 @@ public class QuizProper extends AppCompatActivity {
             p.setMargins(left, top, right, bottom);
             view.requestLayout();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Exit Quiz?")
+                .setMessage("Are you sure you want to quit? Your progress will not be saved.")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(c, TkDashboardActivity.class);
+                        i.putExtra("username", username);
+                        startActivity(i);
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do nothing
+            }
+        })
+                .setCancelable(true);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 

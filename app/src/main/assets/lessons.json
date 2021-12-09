@@ -7869,6 +7869,1869 @@
 
             
             ]
+        },
+
+        {
+            "lesson_id" : "00018",
+            "lesson_name" : "Verbs I",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Pagpapakilala",
+            "parts" : [
+
+                {
+                    "description" : "Mabuti naman, salamat.",
+                    "instruction_audio" : "mabuti_naman_salamat",
+                    "choices" : [
+                        {
+                            "label": "I am fine, thank you.",
+                            "audio_src" : "im_fine_thank_you"
+
+                        }
+
+                    ],
+                    "image_src" : "im_fine_thank_you_img"
+
+
+                },
+
+                {
+                    "description" : "Ako ay si Juan.",
+                    "instruction_audio" : "ako_ay_si_juan",
+                    "choices" : [
+                        {
+                            "label": "My name is Juan.",
+                            "audio_src" : "my_name_is_juan"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_juan_img"
+
+
+                },
+                {
+                    "description" : "Ako ay walong taong gulang.",
+                    "instruction_audio" : "ako_ay_walong_taong_gulang",
+                    "choices" : [
+                        {
+                            "label": "I am eight years old.",
+                            "audio_src" : "i_am_eight_years_old"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_eight_years_old_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ang pangalan ko ay Maria.",
+                    "instruction_audio" : "ang_pangalan_ko_ay_maria",
+                    "choices" : [
+                        {
+                            "label": "My name is Maria.",
+                            "audio_src" : "my_name_is_maria"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_maria_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Pilipinas.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_pilipinas",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_the_philippines"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_the_philippines_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Bulacan.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_bulacan",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_bulacan"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_bulacan_img"
+
+
+                },
+
+                {
+                    "description" : "Kumusta",
+                    "instruction_audio" : "kumusta",
+                    "choices" : [
+                        {
+                            "label": "Hello",
+                            "audio_src" : "hello"
+
+                        }
+
+                    ],
+                    "image_src" : "hello_img"
+                }
+            ,
+                {
+                    "description" : "Paalam",
+                    "instruction_audio" : "paalam",
+                    "choices" : [
+                        {
+                            "label": "Goodbye",
+                            "audio_src" : "goodbye"
+
+                        }
+
+                    ],
+                    "image_src" : "goodbye_img"
+                },
+                {
+                    "description" : "Kinagagalak kong makilala ka.",
+                    "instruction_audio" : "kinagagalak_kong_makilala_ka",
+                    "choices" : [
+                        {
+                            "label": "Nice to meet you.",
+                            "audio_src" : "nice_to_meet_you"
+
+                        }
+
+                    ],
+                    "image_src" : "nice_to_meet_you_img"
+                }
+            ,
+                {
+                    "description" : "Ako si Pedro.",
+                    "instruction_audio" : "ako_si_pedro",
+                    "choices" : [
+                        {
+                            "label": "I am pedro.",
+                            "audio_src" : "i_am_pedro"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_pedro_img"
+                }
+
+            ,
+                {
+                    "description" : "Ano ang pangalan mo?",
+                    "instruction_audio" : "ano_ang_pangalan_mo",
+                    "choices" : [
+                        {
+                            "label": "What is your name?",
+                            "audio_src" : "what_is_your_name"
+
+                        }
+
+                    ],
+                    "image_src" : "what_is_your_name_img"
+                }
+
+            ,
+                {
+                    "description" : "Ilang taon ka na?",
+                    "instruction_audio" : "ilang_taon_ka_na",
+                    "choices" : [
+                        {
+                            "label": "How old are you?",
+                            "audio_src" : "how_old_are_you"
+
+                        }
+
+                    ],
+                    "image_src" : "how_old_are_you_img"
+                }
+            ,
+                {
+                    "description" : "Saan ka nakatira?",
+                    "instruction_audio" : "saan_ka_nakatira",
+                    "choices" : [
+                        {
+                            "label": "Where do you live?",
+                            "audio_src" : "where_do_you_live"
+
+                        }
+
+                    ],
+                    "image_src" : "where_do_you_live_img"
+                }
+
+            ],
+            "quiz" : [
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "mabuti_naman_salamat",
+                    "correct_answer" : "I am fine, thank you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "im_fine_thank_you"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "im_fine_thank_you",
+                    "correct_answer" : "Mabuti naman, salamat.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "mabuti_naman_salamat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_si_juan",
+                    "correct_answer" : "My name is Juan.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_juan",
+                    "correct_answer" : "Ako ay si Juan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_si_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_walong_taong_gulang",
+                    "correct_answer" : "I am eight years old.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_eight_years_old"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_eight_years_old",
+                    "correct_answer" : "Ako ay walong taong gulang.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_walong_taong_gulang"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ang_pangalan_ko_ay_maria",
+                    "correct_answer" : "My name is Maria.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_maria",
+                    "correct_answer" : "Ang pangalan ko ay Maria.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ang_pangalan_ko_ay_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_pilipinas",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_the_philippines"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_the_philippines",
+                    "correct_answer" : "Ako ay nakatira sa Pilipinas.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_pilipinas"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_bulacan",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_bulacan",
+                    "correct_answer" : "Ako ay nakatira sa Bulacan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "kumusta",
+                    "correct_answer" : "Hello",
+                    "choices_language" : "english",
+                    "correct_audio" : "hello"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "hello",
+                    "correct_answer" : "Kumusta",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kumusta"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "a_hard_rock",
+                    "correct_answer" : "Matigas na bato",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "matigas_na_bato"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "goodbye",
+                    "correct_answer" : "Paalam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "paalam"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "paalam",
+                    "correct_answer" : "Goodbye",
+                    "choices_language" : "english",
+                    "correct_audio" : "goodbye"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "kinagagalak_kong_makilala_ka",
+                    "correct_answer" : "Nice to meet you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "nice_to_meet_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nice_to_meet_you",
+                    "correct_answer" : "Ikinagagalak kong makilala ka.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kinagagalak_kong_makilala_ka"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_si_pedro",
+                    "correct_answer" : "I am pedro.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_pedro",
+                    "correct_answer" : "Ako si Pedro.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_si_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "what_is_your_name",
+                    "correct_answer" : "Ano ang pangalan mo?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ano_ang_pangalan_mo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ano_ang_pangalan_mo",
+                    "correct_answer" : "What is your name?",
+                    "choices_language" : "english",
+                    "correct_audio" : "what_is_your_name"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ilang_taon_ka_na",
+                    "correct_answer" : "How old are you?",
+                    "choices_language" : "english",
+                    "correct_audio" : "how_old_are_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "how_old_are_you",
+                    "correct_answer" : "Ilang taon ka na?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ilang_taon_ka_na"
+                }
+
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "saan_ka_nakatira",
+                    "correct_answer" : "Where do you live?",
+                    "choices_language" : "english",
+                    "correct_audio" : "where_do_you_live"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "where_do_you_live",
+                    "correct_answer" : "Saan ka nakatira?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "saan_ka_nakatira"
+                }
+
+
+            ]
+        },
+
+        {
+            "lesson_id" : "00019",
+            "lesson_name" : "Verbs II",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Pagpapakilala",
+            "parts" : [
+
+                {
+                    "description" : "Mabuti naman, salamat.",
+                    "instruction_audio" : "mabuti_naman_salamat",
+                    "choices" : [
+                        {
+                            "label": "I am fine, thank you.",
+                            "audio_src" : "im_fine_thank_you"
+
+                        }
+
+                    ],
+                    "image_src" : "im_fine_thank_you_img"
+
+
+                },
+
+                {
+                    "description" : "Ako ay si Juan.",
+                    "instruction_audio" : "ako_ay_si_juan",
+                    "choices" : [
+                        {
+                            "label": "My name is Juan.",
+                            "audio_src" : "my_name_is_juan"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_juan_img"
+
+
+                },
+                {
+                    "description" : "Ako ay walong taong gulang.",
+                    "instruction_audio" : "ako_ay_walong_taong_gulang",
+                    "choices" : [
+                        {
+                            "label": "I am eight years old.",
+                            "audio_src" : "i_am_eight_years_old"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_eight_years_old_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ang pangalan ko ay Maria.",
+                    "instruction_audio" : "ang_pangalan_ko_ay_maria",
+                    "choices" : [
+                        {
+                            "label": "My name is Maria.",
+                            "audio_src" : "my_name_is_maria"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_maria_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Pilipinas.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_pilipinas",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_the_philippines"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_the_philippines_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Bulacan.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_bulacan",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_bulacan"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_bulacan_img"
+
+
+                },
+
+                {
+                    "description" : "Kumusta",
+                    "instruction_audio" : "kumusta",
+                    "choices" : [
+                        {
+                            "label": "Hello",
+                            "audio_src" : "hello"
+
+                        }
+
+                    ],
+                    "image_src" : "hello_img"
+                }
+            ,
+                {
+                    "description" : "Paalam",
+                    "instruction_audio" : "paalam",
+                    "choices" : [
+                        {
+                            "label": "Goodbye",
+                            "audio_src" : "goodbye"
+
+                        }
+
+                    ],
+                    "image_src" : "goodbye_img"
+                },
+                {
+                    "description" : "Kinagagalak kong makilala ka.",
+                    "instruction_audio" : "kinagagalak_kong_makilala_ka",
+                    "choices" : [
+                        {
+                            "label": "Nice to meet you.",
+                            "audio_src" : "nice_to_meet_you"
+
+                        }
+
+                    ],
+                    "image_src" : "nice_to_meet_you_img"
+                }
+            ,
+                {
+                    "description" : "Ako si Pedro.",
+                    "instruction_audio" : "ako_si_pedro",
+                    "choices" : [
+                        {
+                            "label": "I am pedro.",
+                            "audio_src" : "i_am_pedro"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_pedro_img"
+                }
+
+            ,
+                {
+                    "description" : "Ano ang pangalan mo?",
+                    "instruction_audio" : "ano_ang_pangalan_mo",
+                    "choices" : [
+                        {
+                            "label": "What is your name?",
+                            "audio_src" : "what_is_your_name"
+
+                        }
+
+                    ],
+                    "image_src" : "what_is_your_name_img"
+                }
+
+            ,
+                {
+                    "description" : "Ilang taon ka na?",
+                    "instruction_audio" : "ilang_taon_ka_na",
+                    "choices" : [
+                        {
+                            "label": "How old are you?",
+                            "audio_src" : "how_old_are_you"
+
+                        }
+
+                    ],
+                    "image_src" : "how_old_are_you_img"
+                }
+            ,
+                {
+                    "description" : "Saan ka nakatira?",
+                    "instruction_audio" : "saan_ka_nakatira",
+                    "choices" : [
+                        {
+                            "label": "Where do you live?",
+                            "audio_src" : "where_do_you_live"
+
+                        }
+
+                    ],
+                    "image_src" : "where_do_you_live_img"
+                }
+
+            ],
+            "quiz" : [
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "mabuti_naman_salamat",
+                    "correct_answer" : "I am fine, thank you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "im_fine_thank_you"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "im_fine_thank_you",
+                    "correct_answer" : "Mabuti naman, salamat.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "mabuti_naman_salamat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_si_juan",
+                    "correct_answer" : "My name is Juan.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_juan",
+                    "correct_answer" : "Ako ay si Juan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_si_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_walong_taong_gulang",
+                    "correct_answer" : "I am eight years old.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_eight_years_old"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_eight_years_old",
+                    "correct_answer" : "Ako ay walong taong gulang.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_walong_taong_gulang"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ang_pangalan_ko_ay_maria",
+                    "correct_answer" : "My name is Maria.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_maria",
+                    "correct_answer" : "Ang pangalan ko ay Maria.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ang_pangalan_ko_ay_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_pilipinas",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_the_philippines"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_the_philippines",
+                    "correct_answer" : "Ako ay nakatira sa Pilipinas.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_pilipinas"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_bulacan",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_bulacan",
+                    "correct_answer" : "Ako ay nakatira sa Bulacan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "kumusta",
+                    "correct_answer" : "Hello",
+                    "choices_language" : "english",
+                    "correct_audio" : "hello"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "hello",
+                    "correct_answer" : "Kumusta",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kumusta"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "a_hard_rock",
+                    "correct_answer" : "Matigas na bato",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "matigas_na_bato"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "goodbye",
+                    "correct_answer" : "Paalam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "paalam"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "paalam",
+                    "correct_answer" : "Goodbye",
+                    "choices_language" : "english",
+                    "correct_audio" : "goodbye"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "kinagagalak_kong_makilala_ka",
+                    "correct_answer" : "Nice to meet you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "nice_to_meet_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nice_to_meet_you",
+                    "correct_answer" : "Ikinagagalak kong makilala ka.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kinagagalak_kong_makilala_ka"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_si_pedro",
+                    "correct_answer" : "I am pedro.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_pedro",
+                    "correct_answer" : "Ako si Pedro.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_si_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "what_is_your_name",
+                    "correct_answer" : "Ano ang pangalan mo?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ano_ang_pangalan_mo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ano_ang_pangalan_mo",
+                    "correct_answer" : "What is your name?",
+                    "choices_language" : "english",
+                    "correct_audio" : "what_is_your_name"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ilang_taon_ka_na",
+                    "correct_answer" : "How old are you?",
+                    "choices_language" : "english",
+                    "correct_audio" : "how_old_are_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "how_old_are_you",
+                    "correct_answer" : "Ilang taon ka na?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ilang_taon_ka_na"
+                }
+
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "saan_ka_nakatira",
+                    "correct_answer" : "Where do you live?",
+                    "choices_language" : "english",
+                    "correct_audio" : "where_do_you_live"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "where_do_you_live",
+                    "correct_answer" : "Saan ka nakatira?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "saan_ka_nakatira"
+                }
+
+
+            ]
+        },
+        {
+            "lesson_id" : "00020",
+            "lesson_name" : "Verbs Phrases I",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Pagpapakilala",
+            "parts" : [
+
+                {
+                    "description" : "Mabuti naman, salamat.",
+                    "instruction_audio" : "mabuti_naman_salamat",
+                    "choices" : [
+                        {
+                            "label": "I am fine, thank you.",
+                            "audio_src" : "im_fine_thank_you"
+
+                        }
+
+                    ],
+                    "image_src" : "im_fine_thank_you_img"
+
+
+                },
+
+                {
+                    "description" : "Ako ay si Juan.",
+                    "instruction_audio" : "ako_ay_si_juan",
+                    "choices" : [
+                        {
+                            "label": "My name is Juan.",
+                            "audio_src" : "my_name_is_juan"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_juan_img"
+
+
+                },
+                {
+                    "description" : "Ako ay walong taong gulang.",
+                    "instruction_audio" : "ako_ay_walong_taong_gulang",
+                    "choices" : [
+                        {
+                            "label": "I am eight years old.",
+                            "audio_src" : "i_am_eight_years_old"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_eight_years_old_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ang pangalan ko ay Maria.",
+                    "instruction_audio" : "ang_pangalan_ko_ay_maria",
+                    "choices" : [
+                        {
+                            "label": "My name is Maria.",
+                            "audio_src" : "my_name_is_maria"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_maria_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Pilipinas.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_pilipinas",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_the_philippines"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_the_philippines_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Bulacan.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_bulacan",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_bulacan"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_bulacan_img"
+
+
+                },
+
+                {
+                    "description" : "Kumusta",
+                    "instruction_audio" : "kumusta",
+                    "choices" : [
+                        {
+                            "label": "Hello",
+                            "audio_src" : "hello"
+
+                        }
+
+                    ],
+                    "image_src" : "hello_img"
+                }
+            ,
+                {
+                    "description" : "Paalam",
+                    "instruction_audio" : "paalam",
+                    "choices" : [
+                        {
+                            "label": "Goodbye",
+                            "audio_src" : "goodbye"
+
+                        }
+
+                    ],
+                    "image_src" : "goodbye_img"
+                },
+                {
+                    "description" : "Kinagagalak kong makilala ka.",
+                    "instruction_audio" : "kinagagalak_kong_makilala_ka",
+                    "choices" : [
+                        {
+                            "label": "Nice to meet you.",
+                            "audio_src" : "nice_to_meet_you"
+
+                        }
+
+                    ],
+                    "image_src" : "nice_to_meet_you_img"
+                }
+            ,
+                {
+                    "description" : "Ako si Pedro.",
+                    "instruction_audio" : "ako_si_pedro",
+                    "choices" : [
+                        {
+                            "label": "I am pedro.",
+                            "audio_src" : "i_am_pedro"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_pedro_img"
+                }
+
+            ,
+                {
+                    "description" : "Ano ang pangalan mo?",
+                    "instruction_audio" : "ano_ang_pangalan_mo",
+                    "choices" : [
+                        {
+                            "label": "What is your name?",
+                            "audio_src" : "what_is_your_name"
+
+                        }
+
+                    ],
+                    "image_src" : "what_is_your_name_img"
+                }
+
+            ,
+                {
+                    "description" : "Ilang taon ka na?",
+                    "instruction_audio" : "ilang_taon_ka_na",
+                    "choices" : [
+                        {
+                            "label": "How old are you?",
+                            "audio_src" : "how_old_are_you"
+
+                        }
+
+                    ],
+                    "image_src" : "how_old_are_you_img"
+                }
+            ,
+                {
+                    "description" : "Saan ka nakatira?",
+                    "instruction_audio" : "saan_ka_nakatira",
+                    "choices" : [
+                        {
+                            "label": "Where do you live?",
+                            "audio_src" : "where_do_you_live"
+
+                        }
+
+                    ],
+                    "image_src" : "where_do_you_live_img"
+                }
+
+            ],
+            "quiz" : [
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "mabuti_naman_salamat",
+                    "correct_answer" : "I am fine, thank you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "im_fine_thank_you"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "im_fine_thank_you",
+                    "correct_answer" : "Mabuti naman, salamat.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "mabuti_naman_salamat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_si_juan",
+                    "correct_answer" : "My name is Juan.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_juan",
+                    "correct_answer" : "Ako ay si Juan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_si_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_walong_taong_gulang",
+                    "correct_answer" : "I am eight years old.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_eight_years_old"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_eight_years_old",
+                    "correct_answer" : "Ako ay walong taong gulang.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_walong_taong_gulang"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ang_pangalan_ko_ay_maria",
+                    "correct_answer" : "My name is Maria.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_maria",
+                    "correct_answer" : "Ang pangalan ko ay Maria.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ang_pangalan_ko_ay_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_pilipinas",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_the_philippines"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_the_philippines",
+                    "correct_answer" : "Ako ay nakatira sa Pilipinas.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_pilipinas"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_bulacan",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_bulacan",
+                    "correct_answer" : "Ako ay nakatira sa Bulacan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "kumusta",
+                    "correct_answer" : "Hello",
+                    "choices_language" : "english",
+                    "correct_audio" : "hello"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "hello",
+                    "correct_answer" : "Kumusta",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kumusta"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "a_hard_rock",
+                    "correct_answer" : "Matigas na bato",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "matigas_na_bato"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "goodbye",
+                    "correct_answer" : "Paalam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "paalam"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "paalam",
+                    "correct_answer" : "Goodbye",
+                    "choices_language" : "english",
+                    "correct_audio" : "goodbye"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "kinagagalak_kong_makilala_ka",
+                    "correct_answer" : "Nice to meet you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "nice_to_meet_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nice_to_meet_you",
+                    "correct_answer" : "Ikinagagalak kong makilala ka.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kinagagalak_kong_makilala_ka"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_si_pedro",
+                    "correct_answer" : "I am pedro.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_pedro",
+                    "correct_answer" : "Ako si Pedro.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_si_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "what_is_your_name",
+                    "correct_answer" : "Ano ang pangalan mo?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ano_ang_pangalan_mo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ano_ang_pangalan_mo",
+                    "correct_answer" : "What is your name?",
+                    "choices_language" : "english",
+                    "correct_audio" : "what_is_your_name"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ilang_taon_ka_na",
+                    "correct_answer" : "How old are you?",
+                    "choices_language" : "english",
+                    "correct_audio" : "how_old_are_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "how_old_are_you",
+                    "correct_answer" : "Ilang taon ka na?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ilang_taon_ka_na"
+                }
+
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "saan_ka_nakatira",
+                    "correct_answer" : "Where do you live?",
+                    "choices_language" : "english",
+                    "correct_audio" : "where_do_you_live"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "where_do_you_live",
+                    "correct_answer" : "Saan ka nakatira?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "saan_ka_nakatira"
+                }
+
+
+            ]
+        },
+
+        {
+            "lesson_id" : "00021",
+            "lesson_name" : "Verbs Phrases II",
+            "lesson_img" :  "animals_icon",
+            "lesson_name_translate" : "Pagpapakilala",
+            "parts" : [
+
+                {
+                    "description" : "Mabuti naman, salamat.",
+                    "instruction_audio" : "mabuti_naman_salamat",
+                    "choices" : [
+                        {
+                            "label": "I am fine, thank you.",
+                            "audio_src" : "im_fine_thank_you"
+
+                        }
+
+                    ],
+                    "image_src" : "im_fine_thank_you_img"
+
+
+                },
+
+                {
+                    "description" : "Ako ay si Juan.",
+                    "instruction_audio" : "ako_ay_si_juan",
+                    "choices" : [
+                        {
+                            "label": "My name is Juan.",
+                            "audio_src" : "my_name_is_juan"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_juan_img"
+
+
+                },
+                {
+                    "description" : "Ako ay walong taong gulang.",
+                    "instruction_audio" : "ako_ay_walong_taong_gulang",
+                    "choices" : [
+                        {
+                            "label": "I am eight years old.",
+                            "audio_src" : "i_am_eight_years_old"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_eight_years_old_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ang pangalan ko ay Maria.",
+                    "instruction_audio" : "ang_pangalan_ko_ay_maria",
+                    "choices" : [
+                        {
+                            "label": "My name is Maria.",
+                            "audio_src" : "my_name_is_maria"
+
+                        }
+
+                    ],
+                    "image_src" : "my_name_is_maria_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Pilipinas.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_pilipinas",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_the_philippines"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_the_philippines_img"
+
+
+                }
+            ,
+                {
+                    "description" : "Ako ay nakatira sa Bulacan.",
+                    "instruction_audio" : "ako_ay_nakatira_sa_bulacan",
+                    "choices" : [
+                        {
+                            "label": "I live in the Philippines.",
+                            "audio_src" : "i_live_in_bulacan"
+
+                        }
+
+                    ],
+                    "image_src" : "i_live_in_bulacan_img"
+
+
+                },
+
+                {
+                    "description" : "Kumusta",
+                    "instruction_audio" : "kumusta",
+                    "choices" : [
+                        {
+                            "label": "Hello",
+                            "audio_src" : "hello"
+
+                        }
+
+                    ],
+                    "image_src" : "hello_img"
+                }
+            ,
+                {
+                    "description" : "Paalam",
+                    "instruction_audio" : "paalam",
+                    "choices" : [
+                        {
+                            "label": "Goodbye",
+                            "audio_src" : "goodbye"
+
+                        }
+
+                    ],
+                    "image_src" : "goodbye_img"
+                },
+                {
+                    "description" : "Kinagagalak kong makilala ka.",
+                    "instruction_audio" : "kinagagalak_kong_makilala_ka",
+                    "choices" : [
+                        {
+                            "label": "Nice to meet you.",
+                            "audio_src" : "nice_to_meet_you"
+
+                        }
+
+                    ],
+                    "image_src" : "nice_to_meet_you_img"
+                }
+            ,
+                {
+                    "description" : "Ako si Pedro.",
+                    "instruction_audio" : "ako_si_pedro",
+                    "choices" : [
+                        {
+                            "label": "I am pedro.",
+                            "audio_src" : "i_am_pedro"
+
+                        }
+
+                    ],
+                    "image_src" : "i_am_pedro_img"
+                }
+
+            ,
+                {
+                    "description" : "Ano ang pangalan mo?",
+                    "instruction_audio" : "ano_ang_pangalan_mo",
+                    "choices" : [
+                        {
+                            "label": "What is your name?",
+                            "audio_src" : "what_is_your_name"
+
+                        }
+
+                    ],
+                    "image_src" : "what_is_your_name_img"
+                }
+
+            ,
+                {
+                    "description" : "Ilang taon ka na?",
+                    "instruction_audio" : "ilang_taon_ka_na",
+                    "choices" : [
+                        {
+                            "label": "How old are you?",
+                            "audio_src" : "how_old_are_you"
+
+                        }
+
+                    ],
+                    "image_src" : "how_old_are_you_img"
+                }
+            ,
+                {
+                    "description" : "Saan ka nakatira?",
+                    "instruction_audio" : "saan_ka_nakatira",
+                    "choices" : [
+                        {
+                            "label": "Where do you live?",
+                            "audio_src" : "where_do_you_live"
+
+                        }
+
+                    ],
+                    "image_src" : "where_do_you_live_img"
+                }
+
+            ],
+            "quiz" : [
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "mabuti_naman_salamat",
+                    "correct_answer" : "I am fine, thank you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "im_fine_thank_you"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "im_fine_thank_you",
+                    "correct_answer" : "Mabuti naman, salamat.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "mabuti_naman_salamat"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_si_juan",
+                    "correct_answer" : "My name is Juan.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_juan",
+                    "correct_answer" : "Ako ay si Juan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_si_juan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_walong_taong_gulang",
+                    "correct_answer" : "I am eight years old.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_eight_years_old"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_eight_years_old",
+                    "correct_answer" : "Ako ay walong taong gulang.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_walong_taong_gulang"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ang_pangalan_ko_ay_maria",
+                    "correct_answer" : "My name is Maria.",
+                    "choices_language" : "english",
+                    "correct_audio" : "my_name_is_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "my_name_is_maria",
+                    "correct_answer" : "Ang pangalan ko ay Maria.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ang_pangalan_ko_ay_maria"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_pilipinas",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_the_philippines"
+                },
+
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_the_philippines",
+                    "correct_answer" : "Ako ay nakatira sa Pilipinas.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_pilipinas"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_ay_nakatira_sa_bulacan",
+                    "correct_answer" : "I live in the Philippines.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_live_in_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_live_in_bulacan",
+                    "correct_answer" : "Ako ay nakatira sa Bulacan.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_ay_nakatira_sa_bulacan"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "kumusta",
+                    "correct_answer" : "Hello",
+                    "choices_language" : "english",
+                    "correct_audio" : "hello"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "hello",
+                    "correct_answer" : "Kumusta",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kumusta"
+                },
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "a_hard_rock",
+                    "correct_answer" : "Matigas na bato",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "matigas_na_bato"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "goodbye",
+                    "correct_answer" : "Paalam",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "paalam"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "paalam",
+                    "correct_answer" : "Goodbye",
+                    "choices_language" : "english",
+                    "correct_audio" : "goodbye"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "malamig_na_tubig",
+                    "type" : "audio",
+                    "question_audio" :  "kinagagalak_kong_makilala_ka",
+                    "correct_answer" : "Nice to meet you.",
+                    "choices_language" : "english",
+                    "correct_audio" : "nice_to_meet_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "nice_to_meet_you",
+                    "correct_answer" : "Ikinagagalak kong makilala ka.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "kinagagalak_kong_makilala_ka"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ako_si_pedro",
+                    "correct_answer" : "I am pedro.",
+                    "choices_language" : "english",
+                    "correct_audio" : "i_am_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "i_am_pedro",
+                    "correct_answer" : "Ako si Pedro.",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ako_si_pedro"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "what_is_your_name",
+                    "correct_answer" : "Ano ang pangalan mo?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ano_ang_pangalan_mo"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ano_ang_pangalan_mo",
+                    "correct_answer" : "What is your name?",
+                    "choices_language" : "english",
+                    "correct_audio" : "what_is_your_name"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "ilang_taon_ka_na",
+                    "correct_answer" : "How old are you?",
+                    "choices_language" : "english",
+                    "correct_audio" : "how_old_are_you"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "how_old_are_you",
+                    "correct_answer" : "Ilang taon ka na?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "ilang_taon_ka_na"
+                }
+
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "saan_ka_nakatira",
+                    "correct_answer" : "Where do you live?",
+                    "choices_language" : "english",
+                    "correct_audio" : "where_do_you_live"
+                }
+            ,
+                {
+                    "question" : "Piliin ang katumbas na tunog.",
+                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
+                    "type" : "audio",
+                    "question_audio" :  "where_do_you_live",
+                    "correct_answer" : "Saan ka nakatira?",
+                    "choices_language" : "tagalog",
+                    "correct_audio" : "saan_ka_nakatira"
+                }
+
+
+            ]
         }
 
 

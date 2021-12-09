@@ -18,8 +18,8 @@
 
         <LinearLayout
             android:id="@+id/ll_achieverow"
-            android:background="@drawable/vector_achievement_row_bg"
-            android:layout_width="350dp"
+            android:background="@drawable/vector_achieve_cloeanrow"
+            android:layout_width="match_parent"
             android:layout_gravity="center"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -56,11 +56,7 @@
                     android:layout_marginLeft="5dp"
                     android:fontFamily="@font/roboto_blk"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/brownText"
-                    android:shadowColor="@color/customBrown"
-                    android:shadowDx="1.5"
-                    android:shadowDy="1.3"
-                    android:shadowRadius="1.6"
+                    android:textColor="@color/customBrown"
                     android:layout_height="wrap_content"
                     android:text="Sample Lesson" />
             </LinearLayout>

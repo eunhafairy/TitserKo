@@ -15,7 +15,7 @@
         "achieve_name" : "First Steps!",
         "achieve_desc" : "Start your first lesson.",
         "achieve_desc_tagalog" : "Simulan ang iyong unang aralin.",
-        "achieve_img" : "badge_00001"
+        "achieve_img" : "badge_00002"
 
     },
 
@@ -24,7 +24,7 @@
         "achieve_name" : "Born A Star I",
         "achieve_desc" : "Acquire a total of three stars.",
         "achieve_desc_tagalog" : "Makakuha ng total na tatlong bituin.",
-        "achieve_img" : "badge_00002"
+        "achieve_img" : "badge_00003"
 
     },
 
@@ -33,7 +33,7 @@
         "achieve_name" : "Born A Star II",
         "achieve_desc" : "Acquire a total of ten stars.",
         "achieve_desc_tagalog" : "Makakuha ng total na sampung bituin.",
-        "achieve_img" : "badge_00003"
+        "achieve_img" : "badge_00004"
 
     }
     ,
@@ -43,18 +43,19 @@
         "achieve_name" : "Born A Star III",
         "achieve_desc" : "Acquire a total of twenty stars.",
         "achieve_desc_tagalog" : "Makakuha ng total na dalawampung bituin.",
-        "achieve_img" : "badge_00001"
+        "achieve_img" : "badge_00005"
 
     }
 
     ,
+   
 
     {
         "achieve_id" : "A00005",
         "achieve_name" : "Ace!",
         "achieve_desc" : "Get a perfect score on a quiz.",
         "achieve_desc_tagalog" : "Makakuha ng perpektong marka sa isang pagsusulit.",
-        "achieve_img" : "badge_00001"
+        "achieve_img" : "badge_00006"
 
     }
 
@@ -65,43 +66,162 @@
         "achieve_name" : "Fly high!",
         "achieve_desc" : "Get three perfect score on quizzes.",
         "achieve_desc_tagalog" : "Makakuha ng perpektong marka sa tatlong pagsusulit.",
-        "achieve_img" : "badge_00001"
+        "achieve_img" : "badge_00007"
 
     }
     ,
     {
         "achieve_id" : "A00007",
-        "achieve_name" : "People Everywhere",
-        "achieve_desc" : "Get 100% progress and a perfect score on \"People\" lesson",
-        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Mga tao.\"",
-        "achieve_img" : "badge_00002"
-
-    },
-    {
-        "achieve_id" : "A00008",
-        "achieve_name" : "Animal Lover!",
-        "achieve_desc" : "Get 100% progress and a perfect score on \"Animals\" lesson",
-        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Mga Hayop.\"",
-        "achieve_img" : "badge_00001"
+        "achieve_name" : "Eagle",
+        "achieve_desc" : "Get perfect scores on all quizzes.",
+        "achieve_desc_tagalog" : "Makakuha ng perpektong marka sa tatlong pagsusulit.",
+        "achieve_img" : "badge_00008"
 
     }
     ,
+    {
+        "achieve_id" : "A00008",
+        "achieve_name" : "People Everywhere",
+        "achieve_desc" : "Get 100% progress and a perfect score on \"People\" lesson",
+        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Mga tao.\"",
+        "achieve_img" : "badge_00009"
+
+    },
+    {
+        "achieve_id" : "A00009",
+        "achieve_name" : "Animal Lover!",
+        "achieve_desc" : "Get 100% progress and a perfect score on \"Animals\" lesson",
+        "achieve_desc_tagalog" : "Matapos ng buo at makakuha ng perpektong marka sa araling \"Mga Hayop.\"",
+        "achieve_img" : "badge_00010"
+
+    }
+    ,
+
+    {
+        "achieve_id" : "A00010",
+        "achieve_name" : "Colorful World",
+        "achieve_desc" : "Get 100% progress and a perfect score on on \"Colors\" lesson",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00011"
+
+    }
+    ,
+
+
+
+    {
+        "achieve_id" : "A00011",
+        "achieve_name" : "Family Forever",
+        "achieve_desc" : "Get 100% progress and a perfect score on \"Family\" lesson",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00012"
+
+    }
+    ,
+
+    
+    {
+        "achieve_id" : "A00012",
+        "achieve_name" : "My Family",
+        "achieve_desc" : "Achieve 100% Study Progress on \"Family\" lesson",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00013"
+
+    }
+    ,
+
+    {
+        "achieve_id" : "A00013",
+        "achieve_name" : "Hardworker",
+        "achieve_desc" : "Unlock 5 lessons",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00014"
+
+    }
+    ,
+
+    {
+        "achieve_id" : "A00014",
+        "achieve_name" : "Hardworker II",
+        "achieve_desc" : "Unlock 15 lessons",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00015"
+
+    }
+    ,
+    {
+        "achieve_id" : "A00015",
+        "achieve_name" : "Hardworker III",
+        "achieve_desc" : "Unlock all lessons",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00016"
+
+    }
+    ,
+
+    
+    {
+        "achieve_id" : "A00016",
+        "achieve_name" : "Superstar",
+        "achieve_desc" : "Acquire all stars.",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00017"
+
+    }
+
+    ,
+
+    {
+        "achieve_id" : "A00017",
+        "achieve_name" : "Observer",
+        "achieve_desc" : "Achieve 100% Study Progress on \"Adjectives I\" lesson",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00018"
+
+    }
+
+    ,
+
+      {
+        "achieve_id" : "A00018",
+        "achieve_name" : "The Watcher",
+        "achieve_desc" : "Get 3 Stars on all Adjective Lessons",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00019"
+
+    }
+
+    ,
+
+    
+      {
+        "achieve_id" : "A00019",
+        "achieve_name" : "Active Player",
+        "achieve_desc" : "Get 100% Study Progress on \"Verbs I and II\" lessons",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00020"
+
+    }
+
+    ,
+    {
+        "achieve_id" : "A00020",
+        "achieve_name" : "Olympian",
+        "achieve_desc" : "Get 3 stars on all \"Verbs\" lesson",
+        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
+        "achieve_img" : "badge_00021"
+
+    }
+
+    ,
+
 
     {
         "achieve_id" : "A10000",
         "achieve_name" : "Master",
         "achieve_desc" : "Get 100% progress on all lessons.",
         "achieve_desc_tagalog" : "Makakuha ng 100% kaunlaran sa lahat ng mga aralin.",
-        "achieve_img" : "badge_00001"
-
-    },
-
-    {
-        "achieve_id" : "A00009",
-        "achieve_name" : "New Achievement",
-        "achieve_desc" : "Sample achievement achievement achievement achievement.",
-        "achieve_desc_tagalog" : "achievement achievement achievement achievement.",
-        "achieve_img" : "badge_00001"
+        "achieve_img" : "badge_00022"
 
     }
 

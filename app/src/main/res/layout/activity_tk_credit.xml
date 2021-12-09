@@ -314,6 +314,27 @@
                     android:text="https://www.freepik.com/vectors/baby"/>
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Achievement Unlocked sound effect from mixit.co"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://mixkit.co/free-sound-effects/game/"/>
+
+
 
 
             </LinearLayout>

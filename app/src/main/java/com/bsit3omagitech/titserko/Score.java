@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -149,7 +150,11 @@ public class Score extends AppCompatActivity {
 
             dialog2.setCancelable(true);
             showDialog(dialog2);
-
+            //sound
+            MediaPlayer sfx = new MediaPlayer();
+            String audio_url = "achievement_unlocked_sound";
+            String audio_path = "general_audio/"+audio_url;
+            gf.playAudio(sfx, audio_path);
 
         }
     }

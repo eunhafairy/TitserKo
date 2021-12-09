@@ -144,6 +144,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 i.putExtra("lessonId", _lessonId);
                 i.putExtra("username", name);
                 startActivity(i);
+                finish();
 
             }
         });
@@ -194,6 +195,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                         i.putExtra("lessonId", _lessonId);
                         i.putExtra("username", name);
                         startActivity(i);
+                        finish();
 
                     }
                 });
@@ -244,6 +246,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                         public void onClick(DialogInterface dialog, int which) {
 
                             mp.stop();
+                            finish();
                             System.exit(0);
                         }
                     }).setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -392,6 +395,11 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
             dialog2.setCancelable(true);
             showDialog(dialog2);
+            //name of file
+            MediaPlayer sfx = new MediaPlayer();
+            String audio_url = "achievement_unlocked_sound";
+            String audio_path = "general_audio/"+audio_url;
+            gf.playAudio(sfx, audio_path);
 
 
         }

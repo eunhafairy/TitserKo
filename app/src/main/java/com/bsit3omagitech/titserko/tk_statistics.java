@@ -224,6 +224,17 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+
+        mp.stop();
+        Intent i1 = new Intent(ct, TkDashboardActivity.class);
+        i1.putExtra("username", username);
+        startActivity(i1);
+        finish();
+
+    }
+
 
 
 }

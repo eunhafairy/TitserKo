@@ -1,9 +1,11 @@
 package com.bsit3omagitech.titserko;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -376,7 +378,28 @@ public class LessonProper extends AppCompatActivity {
         return array;
     }
 
+    @Override
+    public void onBackPressed() {
 
-
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Quit Study?")
+                .setMessage("Are you sure you want to quit? Your progress will not be saved.")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(c, TkDashboardActivity.class);
+                        i.putExtra("username", username);
+                        startActivity(i);
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do nothing
+            }
+        })
+                .setCancelable(true);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }
