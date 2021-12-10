@@ -8,6 +8,7 @@
             "lesson_name" : "Numbers I",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pagbilang",
+            "ordered": "true",
             "parts" : [
 
                 {
@@ -1435,6 +1436,7 @@
             "lesson_name" : "Numbers II",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pagbilang II",
+            "ordered": "true",
             "parts" : [
     
                 {
@@ -1885,6 +1887,7 @@
             "lesson_name" : "Month",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Buwan",
+            "ordered": "true",
             "parts" : [
     
                 {

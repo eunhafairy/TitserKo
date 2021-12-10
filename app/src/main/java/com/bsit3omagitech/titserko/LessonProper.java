@@ -53,6 +53,7 @@ public class LessonProper extends AppCompatActivity {
     ProgressBar lessonProgress;
     String TAG = "debug";
     Context c;
+    boolean isOrdered = false;
     int sizeWidth, sizeHeight, sizeWidthIndp, sizeHeightIndp;
     int index;
     float progress, maxIndex;
@@ -122,6 +123,7 @@ public class LessonProper extends AppCompatActivity {
                 if( jo_inside.getString("lesson_id").equals(lessonId) ){
 
                     targetLessonObject = jo_inside;
+                    if (jo_inside.has("ordered")) isOrdered = true;
                     break;
 
                 }
@@ -130,7 +132,15 @@ public class LessonProper extends AppCompatActivity {
             }
 
          //get the parts array
-         partsArray = shuffleJsonArray(targetLessonObject.getJSONArray("parts"));
+            if(isOrdered){
+                //shuffle
+                partsArray = targetLessonObject.getJSONArray("parts");
+            }
+            else{
+
+                partsArray = shuffleJsonArray(targetLessonObject.getJSONArray("parts"));
+            }
+
          maxIndex = partsArray.length();
         } catch (JSONException e) {
             e.printStackTrace();

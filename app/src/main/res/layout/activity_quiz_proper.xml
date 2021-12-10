@@ -124,8 +124,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_lp_confirm"
         android:clickable="false"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
         android:background="@drawable/vector_wooden_title1"
         android:text="Confirm"
