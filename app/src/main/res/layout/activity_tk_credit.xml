@@ -334,6 +334,128 @@
                     android:textSize="12sp"
                     android:text="https://mixkit.co/free-sound-effects/game/"/>
 
+                     <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Dentist vector from Freepik"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://www.freepik.com/free-vector/flat-dental-care-concept-illustration_14592246.htm"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Cliparts from Public Domain Vectors (Free Use)"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://publicdomainvectors.org/"/>
+
+                      <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Food photo created by Racool_studio - www.freepik.com"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://www.freepik.com/free-photo/bittersweet-ginger_6480206.htm"/>
+
+                        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Food photo created by dashu83 - www.freepik.com"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://www.freepik.com/free-photo/tamarind-tamarindus-indica-fruit-isolated-white_13219586.htm"/>
+
+        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Things clipart from Clipart Library"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="http://clipart-library.com/clipart/ziXo9nGBT.htm"/>
+
+
+ <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:autoLink="web"
+                    android:text="Pillow Vectors by Vecteezy"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://www.vecteezy.com/free-vector/pillow"/>
+
 
 
 
