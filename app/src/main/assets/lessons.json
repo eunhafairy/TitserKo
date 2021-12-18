@@ -6151,7 +6151,7 @@
             ,
                 {
                     "description" : "Kulot",
-                    "instruction_audio" : "Kulot",
+                    "instruction_audio" : "kulot",
                     "choices" : [
                         {
                             "label": "Curly",
@@ -6160,7 +6160,7 @@
                         }
 
                     ],
-                    "image_src" : "fresh_img"
+                    "image_src" : "curly_img"
 
 
                 }
@@ -6994,13 +6994,13 @@
                     "instruction_audio" : "magaspang_na_sahig",
                     "choices" : [
                         {
-                            "label": "A coarse floor",
-                            "audio_src" : "a_course_floor"
+                            "label": "A rough floor",
+                            "audio_src" : "a_rough_floor"
 
                         }
 
                     ],
-                    "image_src" : "a_course_floor_img"
+                    "image_src" : "a_rough_floor_img"
 
 
                 },
@@ -7469,7 +7469,7 @@
                     "instruction_audio" : "ako_ay_nakatira_sa_bulacan",
                     "choices" : [
                         {
-                            "label": "I live in the Philippines.",
+                            "label": "I live in the Bulacan.",
                             "audio_src" : "i_live_in_bulacan"
 
                         }
@@ -7526,7 +7526,7 @@
                     "instruction_audio" : "ako_si_pedro",
                     "choices" : [
                         {
-                            "label": "I am pedro.",
+                            "label": "I am Pedro.",
                             "audio_src" : "i_am_pedro"
 
                         }
@@ -9322,7 +9322,7 @@
                     "choices" : [
                         {
                             "label": "Crawl slowly",
-                            "audio_src" : "crawl_slowly"
+                            "audio_src" : "a"
 
                         }
 
