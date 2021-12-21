@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,9 +30,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class landing extends AppCompatActivity {
 
+    GlobalFunctions gf;
+    public LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
     Button btn_landing_study,btn_landing_quiz;
     ImageView iv_back, iv_landing_stars, iv_tips;
     TextView tv_landingTitle;
@@ -42,6 +46,7 @@ public class landing extends AppCompatActivity {
     JSONObject tipsObject;
     float maxLesson, maxScore ;
     List<Integer> animals;
+    List<String> achieveList = new ArrayList<>();
     Dialog dialog;
     SwipeRefreshLayout swipeRefreshLayout;
     @Override
@@ -87,6 +92,7 @@ public class landing extends AppCompatActivity {
         db = new DataBaseHelper(getApplicationContext());
         db.createLessonProgressEntry(username,lessonId);
 
+        gf = new GlobalFunctions(this);
         int stars = db.getLessonStar(username, lessonId);
         switch (stars){
             case 0:
@@ -102,6 +108,10 @@ public class landing extends AppCompatActivity {
                 iv_landing_stars.setImageResource(R.drawable.score_star_3);
                 break;
         }
+
+        //refresh achievements
+        achieveList = db.refreshAchievements(username);
+        queueAchievements(achieveList, dialog);
 
 
         //parse json object
@@ -299,6 +309,61 @@ public class landing extends AppCompatActivity {
         });
 
         dialog.show();
+
+    }
+    public void queueAchievements(List<String> achieveList, Dialog dialog) {
+
+
+        db = new DataBaseHelper(c);
+        for (int i = 0; i < achieveList.size(); i++) {
+
+            Dialog dialog2 = new Dialog(c);
+            Log.d("xboxhaha", achieveList.get(i));
+            String id = achieveList.get(i);
+            List<String> info = db.getAchievementInfo(id);
+            final String title = info.get(0), imagePath = info.get(2), desc = info.get(1);
+            dialog2.setContentView(R.layout.achievement_unlocked);
+            dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            Button btn = dialog2.findViewById(R.id.btn_confirm_achieve_unlocked);
+            TextView tv_title_achieve_dialog = dialog2.findViewById(R.id.tv_title_achieve_unlocked);
+            TextView tv_desc_achieve_dialog = dialog2.findViewById(R.id.tv_desc_achieve_unlocked);
+            ImageView iv_achieve_dialog = dialog2.findViewById(R.id.iv_achieve_badge_unlocked);
+            Uri imageUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePath);
+            iv_achieve_dialog.setImageURI(imageUri);
+            tv_title_achieve_dialog.setText(title);
+            tv_desc_achieve_dialog.setText(desc);
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //  Log.d("xbox", "title: " + title + "id: " + id);
+                    dialog2.dismiss();
+                }
+            });
+
+            dialog2.setCancelable(true);
+            showDialog(dialog2);
+            //name of file
+            MediaPlayer sfx = new MediaPlayer();
+            String audio_url = "achievement_unlocked_sound";
+            String audio_path = "general_audio/"+audio_url;
+            gf.playAudio(sfx, audio_path);
+
+
+        }
+    }
+
+    public void showDialog(final Dialog dialog){
+        if(dialogsToShow.isEmpty()){
+            dialog.show();
+        }
+        dialogsToShow.offer(dialog);
+        dialog.setOnDismissListener((d) -> {
+            dialogsToShow.remove(dialog);
+            if(!dialogsToShow.isEmpty()){
+                dialogsToShow.peek().show();
+            }
+        });
 
     }
 

@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:fontFamily="@font/roboto_light"
-                    android:layout_marginLeft="10dp"
+
                     android:textColor="@color/customBrown"
                     android:text="10 years old | 6 Badges"/>
 

@@ -105,7 +105,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
 
 
-        //show tutorial
+        //show tutorial if first  time
         if(db.isFirstTime(name)){
             viewPager.setVisibility(View.VISIBLE);
             ll_dashboard.setVisibility(View.GONE);
