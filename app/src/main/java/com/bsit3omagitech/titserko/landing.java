@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -191,6 +192,10 @@ public class landing extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("actName", "dashboard");
                 startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }
                 finish();
 
 
@@ -209,6 +214,10 @@ public class landing extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("actName", "study");
                 startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }
                 finish();
 
             }
@@ -227,6 +236,10 @@ public class landing extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("actName", "quiz");
                 startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }
                 finish();
             }
         });

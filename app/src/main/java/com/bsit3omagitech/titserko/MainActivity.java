@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -78,13 +79,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
                 else{
 
+
                     mp.stop();
                     Intent intent = new Intent(MainActivity.this, tk_loading.class);
                     intent.putExtra("username", spnr_profile.getSelectedItem().toString());
                     intent.putExtra("actName", "dashboard");
                     startActivity(intent);
-                    finish();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        // Apply activity transition
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    }
 
+                    finish();
                 }
 
             }
@@ -103,6 +109,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     mp.stop();
                     Intent intent = new Intent(MainActivity.this, tk_register.class);
                     startActivity(intent);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        // Apply activity transition
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    }
                     finish();
                 }
 
@@ -117,6 +127,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 mp.stop();
                 Intent intent = new Intent(MainActivity.this, tk_register.class);
                 startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }
                 finish();
 
             }
@@ -182,6 +196,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
 
 
 

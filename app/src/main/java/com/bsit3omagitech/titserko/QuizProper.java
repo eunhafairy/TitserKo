@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -302,6 +303,10 @@ public class QuizProper extends AppCompatActivity {
                     i.putStringArrayListExtra("selectedAnswers", (ArrayList<String>) userAnswer);
                     i.putExtra("actName", "score");
                     startActivity(i);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        // Apply activity transition
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                    }
                     finish();
                 }
 

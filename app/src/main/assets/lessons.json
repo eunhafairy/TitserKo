@@ -148,7 +148,7 @@
                 ,
                 {
                     "description" : "Sampu",
-                    "instruction_audio" : "ten",
+                    "instruction_audio" : "sampu",
                     "choices" : [
                         {
                             "label": "Ten",

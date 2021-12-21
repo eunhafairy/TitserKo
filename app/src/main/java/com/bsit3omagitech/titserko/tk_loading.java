@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -28,7 +29,6 @@ public class tk_loading extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tk_loading);
-
         init();
     }
 
@@ -42,10 +42,13 @@ public class tk_loading extends AppCompatActivity {
         gifList.add(R.drawable.loadinggif1);
         gifList.add(R.drawable.loading_gif2);
         gifList.add(R.drawable.loading_gif3);
+        gifList.add(R.drawable.loading_gif4);
+        gifList.add(R.drawable.loading_gif5);
+        gifList.add(R.drawable.loading_gif6);
         gif_loading = findViewById(R.id.gif_loading);
 
         Random rand = new Random();
-        int a = rand.nextInt(3);
+        int a = rand.nextInt(6);
         gif_loading.setImageResource(gifList.get(a));
         Log.d("random imageresource", a+ "");
 
@@ -64,7 +67,7 @@ public class tk_loading extends AppCompatActivity {
 
     private void goToNextActivity(String activityName){
 
-        Intent gotoNext;
+        Intent gotoNext = new Intent();
         switch(activityName){
 
             case "quiz":
@@ -73,9 +76,7 @@ public class tk_loading extends AppCompatActivity {
                 gotoNext.putExtra("lessonId", intent.getStringExtra("lessonId"));
                 gotoNext.putExtra("lessonTranslated", intent.getStringExtra("lessonTranslated"));
                 gotoNext.putExtra("username", intent.getStringExtra("username"));
-                startActivity(gotoNext);
-                finish();
-                break;
+               break;
 
             case "study":
                 gotoNext   = new Intent(context, LessonProper.class);
@@ -83,8 +84,6 @@ public class tk_loading extends AppCompatActivity {
                 gotoNext.putExtra("lessonId", intent.getStringExtra("lessonId"));
                 gotoNext.putExtra("lessonTranslated", intent.getStringExtra("lessonTranslated"));
                 gotoNext.putExtra("username", intent.getStringExtra("username"));
-                startActivity(gotoNext);
-                finish();
                 break;
 
             case "score":
@@ -95,15 +94,11 @@ public class tk_loading extends AppCompatActivity {
                 gotoNext.putExtra("lesson", intent.getStringExtra("lesson"));
                 gotoNext.putExtra("lessonId", intent.getStringExtra("lessonId"));
                 gotoNext.putExtra("username",  intent.getStringExtra("username"));
-                startActivity(gotoNext);
-                finish();
                 break;
 
             case "dashboard":
                 gotoNext   = new Intent(context, TkDashboardActivity.class);
                 gotoNext.putExtra("username", intent.getStringExtra("username"));
-                startActivity(gotoNext);
-                finish();
                 break;
 
             case "landing":
@@ -112,13 +107,19 @@ public class tk_loading extends AppCompatActivity {
                 gotoNext.putExtra("lessonTranslated", intent.getStringExtra("lessonTranslated"));
                 gotoNext.putExtra("lessonId", intent.getStringExtra("lessonId"));
                 gotoNext.putExtra("username", intent.getStringExtra("username"));
-                startActivity(gotoNext);
-                finish();
                 break;
 
             default:
                 break;
         }
+
+        startActivity(gotoNext);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Apply activity transition
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
+        finish();
+
 
 
     }

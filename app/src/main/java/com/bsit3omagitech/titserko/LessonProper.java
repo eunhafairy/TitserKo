@@ -14,6 +14,7 @@ import android.graphics.Typeface;
 import android.media.MediaCasException;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -289,6 +290,10 @@ public class LessonProper extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("actName", "landing");
                 startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                }
                 finish();
             }
         });
@@ -398,9 +403,14 @@ public class LessonProper extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent i = new Intent(c, TkDashboardActivity.class);
+                        Intent i = new Intent(c, tk_loading.class);
                         i.putExtra("username", username);
+                        i.putExtra("actName1", "dashboard");
                         startActivity(i);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            // Apply activity transition
+                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                        }
                         finish();
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {

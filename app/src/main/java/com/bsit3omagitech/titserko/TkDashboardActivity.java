@@ -21,6 +21,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -144,6 +145,10 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 i.putExtra("lessonId", _lessonId);
                 i.putExtra("username", name);
                 startActivity(i);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    // Apply activity transition
+                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                }
                 finish();
 
             }
@@ -195,6 +200,10 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                         i.putExtra("lessonId", _lessonId);
                         i.putExtra("username", name);
                         startActivity(i);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            // Apply activity transition
+                            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                        }
                         finish();
 
                     }
