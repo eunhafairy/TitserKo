@@ -38,7 +38,6 @@ public class landing extends AppCompatActivity {
     String lessonName, lessonNameTranslated, lessonId, username;
     DataBaseHelper db;
     ProgressBar lessonProgressBar, quizProgressBar;
-    List<String> lessonTranslated;
     JSONObject tipsObject;
     float maxLesson, maxScore ;
     List<Integer> animals;

@@ -159,7 +159,9 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
         else{
 
             if(!unlocked.get(pos)){
-                iv_achieve_dialog.setImageResource(R.drawable.lock);
+
+                Uri lockUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/lockedbadge");
+                iv_achieve_dialog.setImageURI(lockUri);
                 btn_confirm_achieve_equip.setText("Equip Badge");
                 btn_confirm_achieve_equip.setClickable(false);
                 btn_confirm_achieve_equip.setAlpha(0.5f);

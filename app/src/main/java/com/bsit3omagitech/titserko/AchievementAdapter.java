@@ -106,18 +106,13 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
 //        }
 
         if(!isUnlocked.get(holder.getAdapterPosition())){
-
-            holder.iv_achieve_img.setImageResource(R.drawable.lock);
-            holder.itemView.setAlpha(0.5f);
-//            holder.btn_achieve.setAlpha(0f);
-//            holder.btn_achieve.setClickable(false);
-
+            Uri lockUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/lockedbadge");
+            holder.iv_achieve_img.setImageURI(lockUri);
         }
         else{
             holder.iv_achieve_img.setImageURI(imageUri);
             holder.itemView.setAlpha(1);
-//            holder.btn_achieve.setAlpha(1);
-//            holder.btn_achieve.setClickable(true);
+
         }
 
     }
