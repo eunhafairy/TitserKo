@@ -65,7 +65,7 @@ public class GlobalFunctions {
 
             }
             m.prepare();
-            m.setVolume(1f, 1f);
+            m.setVolume(0.5f, 0.5f);
             m.start();
 
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class GlobalFunctions {
         Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.ambience);
         mp.setDataSource(context, mediaPath);
         mp.setLooping(true);
-        mp.setVolume(0.5f, 0.5f);
+        mp.setVolume(0.3f, 0.3f);
         mp.prepare();
         mp.start();
 

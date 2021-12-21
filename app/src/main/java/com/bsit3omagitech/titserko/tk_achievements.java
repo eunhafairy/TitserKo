@@ -176,19 +176,17 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
                         //equip the badge
                         mp.stop();
                         db.updateBadge(name, achievementIds.get(pos));
-                        Intent intent = new Intent(c, TkDashboardActivity.class);
+                        Intent intent = new Intent(c, tk_loading.class);
                         intent.putExtra("username", name);
+                        intent.putExtra("actName", "dashboard");
                         startActivity(intent);
+                        finish();
                         Toast.makeText(c, "Successfully changed badge.", Toast.LENGTH_LONG).show();
                     }
                 });
 
-
             }
-
-
         }
-
 
         btn_confirm_achieve_dialog.setOnClickListener(new View.OnClickListener() {
             @Override

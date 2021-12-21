@@ -79,8 +79,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 else{
 
                     mp.stop();
-                    Intent intent = new Intent(MainActivity.this, TkDashboardActivity.class);
+                    Intent intent = new Intent(MainActivity.this, tk_loading.class);
                     intent.putExtra("username", spnr_profile.getSelectedItem().toString());
+                    intent.putExtra("actName", "dashboard");
                     startActivity(intent);
                     finish();
 
@@ -92,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         iv_study.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 if(db.userExists()){
                     ll_landing.setVisibility(View.GONE);
@@ -124,7 +124,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
 
     private void loadSpinnerData(){
 

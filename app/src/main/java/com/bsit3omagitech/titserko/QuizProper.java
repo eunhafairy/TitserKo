@@ -291,7 +291,7 @@ public class QuizProper extends AppCompatActivity {
                     db.saveHighscore(username, lessonId, score);
                     db.refreshAllStars(username);
                     //go to score activity
-                    Intent i = new Intent(c, Score.class);
+                    Intent i = new Intent(c, tk_loading.class);
                     i.putExtra("Score", score);
                     i.putExtra("TotalScore", quizArray.length());
                     i.putExtra("lesson", lessonName);
@@ -300,6 +300,7 @@ public class QuizProper extends AppCompatActivity {
                     i.putExtra("username", username);
                     i.putExtra("quizArr", quizArray.toString());
                     i.putStringArrayListExtra("selectedAnswers", (ArrayList<String>) userAnswer);
+                    i.putExtra("actName", "score");
                     startActivity(i);
                     finish();
                 }

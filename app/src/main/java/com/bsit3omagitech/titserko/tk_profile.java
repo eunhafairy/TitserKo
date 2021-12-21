@@ -162,8 +162,9 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
                 db.updateFirstTime(name, true);
                 //then start intent to dashboard
                 mp.stop();
-                Intent i1 = new Intent(c, TkDashboardActivity.class);
+                Intent i1 = new Intent(c, tk_loading.class);
                 i1.putExtra("username", name);
+                i1.putExtra("actName", "dashboard");
                 startActivity(i1);
                 finish();
 

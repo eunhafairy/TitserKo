@@ -188,8 +188,9 @@ public class landing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 db.refreshAllStars(username);
-                Intent intent = new Intent(c, TkDashboardActivity.class);
+                Intent intent = new Intent(c, tk_loading.class);
                 intent.putExtra("username", username);
+                intent.putExtra("actName", "dashboard");
                 startActivity(intent);
                 finish();
 
@@ -202,11 +203,12 @@ public class landing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //go to study
-                Intent intent = new Intent(landing.this, LessonProper.class);
+                Intent intent = new Intent(landing.this, tk_loading.class);
                 intent.putExtra("lessonName", lessonName);
                 intent.putExtra("lessonTranslated", lessonNameTranslated);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("username", username);
+                intent.putExtra("actName", "study");
                 startActivity(intent);
                 finish();
 
@@ -219,11 +221,12 @@ public class landing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //go to quiz
-                Intent intent = new Intent(landing.this, QuizProper.class);
+                Intent intent = new Intent(landing.this, tk_loading.class);
                 intent.putExtra("lessonName", lessonName);
                 intent.putExtra("lessonTranslated", lessonNameTranslated);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("username", username);
+                intent.putExtra("actName", "quiz");
                 startActivity(intent);
                 finish();
             }

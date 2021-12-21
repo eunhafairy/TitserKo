@@ -282,11 +282,12 @@ public class LessonProper extends AppCompatActivity {
             public void onClick(View v) {
                 //finish and return to landing page
                 db.refreshAllStars(username);
-                Intent intent = new Intent(LessonProper.this, TkDashboardActivity.class);
+                Intent intent = new Intent(LessonProper.this, tk_loading.class);
                 intent.putExtra("lesson", lessonName);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("lessonTranslated", lessonTranslated);
                 intent.putExtra("username", username);
+                intent.putExtra("actName", "landing");
                 startActivity(intent);
                 finish();
             }

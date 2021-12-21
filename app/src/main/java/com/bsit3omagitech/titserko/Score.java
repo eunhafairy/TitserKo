@@ -91,11 +91,9 @@ public class Score extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 db.refreshAllStars(username);
-                Intent intent = new Intent(c, TkDashboardActivity.class);
-                intent.putExtra("lesson", lessonName);
-                intent.putExtra("lessonId", lessonId);
-                intent.putExtra("lessonTranslated", lessonTranslated);
+                Intent intent = new Intent(c, tk_loading.class);
                 intent.putExtra("username", username);
+                intent.putExtra("actName","dashboard");
                 startActivity(intent);
                 finish();
             }
@@ -104,11 +102,12 @@ public class Score extends AppCompatActivity {
         score_btn_retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Score.this, QuizProper.class);
+                Intent intent = new Intent(Score.this, tk_loading.class);
                 intent.putExtra("lessonName", lessonName);
                 intent.putExtra("lessonTranslated", lessonTranslated);
                 intent.putExtra("lessonId", lessonId);
                 intent.putExtra("username", username);
+                intent.putExtra("actName","quiz");
                 startActivity(intent);
                 finish();
             }
