@@ -9,13 +9,18 @@ import android.os.Handler;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import pl.droidsonroids.gif.GifImageButton;
+import pl.droidsonroids.gif.GifImageView;
 
 public class tk_loading extends AppCompatActivity {
 
 
-
+    List<Integer> gifList;
     Context context;
+    GifImageView gif_loading;
     Intent intent;
     String actName;
     int _seconds;
@@ -32,9 +37,20 @@ public class tk_loading extends AppCompatActivity {
         intent = getIntent();
         actName = intent.getStringExtra("actName");
 
+        //add gif ids to gifList
+        gifList = new ArrayList<>();
+        gifList.add(R.drawable.loadinggif1);
+        gifList.add(R.drawable.loading_gif2);
+        gifList.add(R.drawable.loading_gif3);
+        gif_loading = findViewById(R.id.gif_loading);
+
+        Random rand = new Random();
+        int a = rand.nextInt(3);
+        gif_loading.setImageResource(gifList.get(a));
+        Log.d("random imageresource", a+ "");
 
         //generate number for loading time
-       Random rand = new Random();
+        rand = new Random();
         _seconds = (int) rand.nextInt(2000);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
