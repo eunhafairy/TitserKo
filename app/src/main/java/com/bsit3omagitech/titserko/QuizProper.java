@@ -355,8 +355,7 @@ public class QuizProper extends AppCompatActivity {
 
                 case "visual":
                     iv_qp.setOnClickListener(null);
-                    iv_qp.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                    iv_qp.setLayoutParams(new LinearLayout.LayoutParams(gf.convertToDp(300),gf.convertToDp(300)));
+                    iv_qp.setLayoutParams(new LinearLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150)));
                     //set size of imaegview as big if visual
                     String image_name = quizArray.getJSONObject(index).getString("img_src");
                     String image_path = "lesson" + lessonId + "/"+ image_name + ".png";
@@ -366,7 +365,7 @@ public class QuizProper extends AppCompatActivity {
 
                 case "audio":
 
-                    iv_qp.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
                     iv_qp.setImageResource(R.drawable.vector_audio_btn);
 
                     //set size as small of imageview if audio type

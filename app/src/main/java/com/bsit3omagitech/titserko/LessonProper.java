@@ -405,7 +405,7 @@ public class LessonProper extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent i = new Intent(c, tk_loading.class);
                         i.putExtra("username", username);
-                        i.putExtra("actName1", "dashboard");
+                        i.putExtra("actName", "dashboard");
                         startActivity(i);
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                             // Apply activity transition

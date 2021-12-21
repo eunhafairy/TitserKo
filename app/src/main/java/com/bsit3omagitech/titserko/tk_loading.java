@@ -24,6 +24,7 @@ public class tk_loading extends AppCompatActivity {
     GifImageView gif_loading;
     Intent intent;
     String actName;
+    boolean allowBlock = false;
     int _seconds;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +125,13 @@ public class tk_loading extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if (allowBlock) {
+            super.onBackPressed();
+        } else {
+            // do nothing
+        }
 
-
+    }
 }

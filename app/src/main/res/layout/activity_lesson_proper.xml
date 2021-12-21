@@ -95,6 +95,9 @@
                         android:layout_marginTop="30dp"
                         android:fontFamily="@font/finger_paint"
                         android:layout_gravity="center"
+
+                        android:drawablePadding="10dp"
+                        android:drawableEnd="@drawable/vector_sound"
                         android:text="Sample Word"
                         android:textAlignment="center"
                         android:textColor="@color/customBrown"

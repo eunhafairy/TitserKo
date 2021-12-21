@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         usernameSelected = "";
         spnr_profile = (Spinner) findViewById(R.id.spnr_profile);
         spnr_profile.setOnItemSelectedListener(this);
+
         //load spinner data
         loadSpinnerData();
         iv_study = (ImageView) findViewById(R.id.iv_study);
