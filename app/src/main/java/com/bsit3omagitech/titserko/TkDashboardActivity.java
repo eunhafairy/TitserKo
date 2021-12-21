@@ -228,6 +228,17 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
+    }
 
     //----------------------------- BACK BUTTON PRESS FUNCTION -----------------------------------
     @Override

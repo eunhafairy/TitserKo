@@ -40,14 +40,14 @@
     android:orientation="vertical"
     android:paddingBottom="20dp"
     android:paddingTop="20dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     android:layout_weight="19">
 
         <ScrollView
             android:layout_width="match_parent"
             android:background="@drawable/vector_stat_row"
-            android:padding="60dp"
+            android:padding="55dp"
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -180,6 +180,60 @@
                         android:text="Mam Elaine Regalado"/>
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/d_din_condensed_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="30sp"
+                    android:textColor="@color/darkYellow"
+                    android:shadowColor="@color/customBrown"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.3"
+                    android:shadowRadius="1.6"
+                    android:text="Lesson Source"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:text="Learn English for free on Kids Worlds Fun!"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://www.kidsworldfun.com/learn-english/"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:text="Learn Tagalog for free on L-Lingo!"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:autoLink="web"
+                    android:textSize="12sp"
+                    android:text="https://l-lingo.com/free-lessons/en/learn-tagalog-filipino"/>
 
 
                 <TextView

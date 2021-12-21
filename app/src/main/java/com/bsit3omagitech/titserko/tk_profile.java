@@ -207,7 +207,17 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
     }
 
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
 
 
 

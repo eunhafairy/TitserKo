@@ -198,7 +198,17 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
         dialog.show();
 
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
 
 
     // ----------------------------------------------- FOR DATA LIST OF RECYCLER VIEW ------------------------------------------

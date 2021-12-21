@@ -172,7 +172,17 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         }
         return json;
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
 
 
 
