@@ -1,105 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/vector_landing_bg"
     tools:context=".tk_register">
 
     <TextView
+        android:id="@+id/tv_title_create_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/vector_wooden_title2"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:text="Create a Profile"
         android:fontFamily="@font/roboto_blk"
-        android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="20sp"
+        android:text="Create a Profile"
         android:textColor="@color/customBrown"
-        android:layout_marginTop="100dp"
-        />
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <TextView
 
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter your name"
         android:fontFamily="@font/roboto_blk"
-        android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="20sp"
+        android:text="Enter your name"
         android:textColor="@color/darkYellow"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/et_name"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/guideline13" />
+
     <EditText
         android:id="@+id/et_name"
-        android:layout_width="250dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:inputType="text"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/rounded_row"
         android:backgroundTint="@color/white"
-        />
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:inputType="text"
+        app:layout_constraintDimensionRatio="6:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@id/guideline10"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter your birthday"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/roboto_blk"
-
-
-        android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="20sp"
+        android:text="Enter your birthday"
         android:textColor="@color/darkYellow"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_date"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+
     <EditText
         android:id="@+id/et_date"
-        android:layout_width="250dp"
-        android:inputType="date"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/rounded_row"
         android:backgroundTint="@color/white"
         android:focusable="false"
+        android:inputType="date"
 
-        android:layout_marginBottom="20dp"
+        app:layout_constraintDimensionRatio="6:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_confirmProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/customBrown"
+        android:text="Confirm"
+        android:layout_marginTop="10dp"
+        app:layout_constraintDimensionRatio="3:1"
+        android:textColor="@color/brownText"
+        app:layout_constraintTop_toBottomOf="@id/et_date"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintEnd_toStartOf="@id/btn_cancelProfile"
         />
-    <LinearLayout
-        android:layout_width="260dp"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancelProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/brownText"
+        android:text="Cancel"
+        android:textColor="@color/customBrown"
+        android:layout_marginTop="10dp"
+      android:layout_marginLeft="5dp"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toEndOf="@+id/btn_confirmProfile"
+        app:layout_constraintTop_toBottomOf="@+id/et_date" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
+        app:layout_constraintGuide_percent="0.15"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_confirmProfile"
-            android:layout_weight="1"
-            android:text="Confirm"
-            android:background="@drawable/rounded_row"
-            android:backgroundTint="@color/customBrown"
-            android:layout_width="wrap_content"
-            android:textColor="@color/brownText"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-        />
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_cancelProfile"
-            android:layout_weight="1"
-            android:text="Cancel"
-            android:background="@drawable/rounded_row"
-            android:backgroundTint="@color/brownText"
-            android:textColor="@color/customBrown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           />
 
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
