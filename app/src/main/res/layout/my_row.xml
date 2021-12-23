@@ -21,7 +21,7 @@
             android:id="@+id/row_lesson_name"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:gravity="center"
+            android:gravity="center_vertical"
 
             android:autoSizeMaxTextSize="80sp"
             android:autoSizeMinTextSize="12sp"

@@ -1,9 +1,15 @@
 package com.bsit3omagitech.titserko;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.os.Build;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,7 +23,6 @@ import java.util.List;
 
 public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
-    int index = 0;
     List<String> data1, lessonIds;
     List<Integer> stars, background;
     Context context;
@@ -53,6 +58,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
        //for lesson titles
         holder.myText1.setText(data1.get(position));
+
+
 
         int _star = stars.get(position);
         String image_path = "";
@@ -98,9 +105,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
         }
 
-        holder.ll_bg.setBackgroundResource(background.get(index));
-        index++;
-        if(index > (background.size()-1)) index = 0;
+        holder.ll_bg.setBackgroundResource(background.get(position % 4));
+
 
     }
 
@@ -112,12 +118,34 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView myText1, myText2;
+        TextView myText1;
         ImageView iv_star;
         ConstraintLayout ll_bg;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             myText1 = itemView.findViewById(R.id.row_lesson_name);
+
+            //auto size textSize if version is equal or greater than api 26 (autoSize already defined in xml) here manually add textSize based on screen width
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O){
+
+                WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+                Display display = wm.getDefaultDisplay();
+                Point size = new Point();
+                display.getSize(size);
+                int width = size.x;
+                int height = size.y;
+
+                if(1080 <= width) {
+                    Log.d("size", "went here 1080");
+                    myText1.setTextSize(getSizeInDp(8));
+                }
+                else if (720 <= width){
+                    Log.d("size", "went here 720");
+                    myText1.setTextSize(getSizeInDp(8));
+
+                }
+            }
+
             iv_star = itemView.findViewById(R.id.iv_star);
             ll_bg = itemView.findViewById(R.id.ll_row_bg);
 
@@ -140,6 +168,11 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         listenerIndividual = listenerGalingSaIndividualScreen;
     }
 
+    private int getSizeInDp(int sizeInPx){
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, sizeInPx, context.getResources()
+                        .getDisplayMetrics());
+    }
 
 
 }
