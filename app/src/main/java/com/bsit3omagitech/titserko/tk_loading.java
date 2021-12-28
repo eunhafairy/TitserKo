@@ -79,6 +79,10 @@ public class tk_loading extends AppCompatActivity {
                 gotoNext.putExtra("username", intent.getStringExtra("username"));
                break;
 
+            case "main":
+                gotoNext   = new Intent(context, MainActivity.class);
+                break;
+
             case "study":
                 gotoNext   = new Intent(context, LessonProper.class);
                 gotoNext.putExtra("lessonName", intent.getStringExtra("lessonName"));

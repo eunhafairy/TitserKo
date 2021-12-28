@@ -1,104 +1,115 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/vector_tutorial_bg"
-    android:padding="15dp"
     tools:context=".SixthFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/sixthFrag_tv_title"
-            android:background="@drawable/vector_wooden_title2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:fontFamily="@font/roboto_blk"
-            android:textColor="@color/customBrown"
-            android:textSize="20sp"
-            android:text="Achievements"/>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/sixthFrag_tv_title"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="13"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/sixthFrag_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/sixth_frag_home"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
-        android:orientation="vertical">
+        android:layout_marginEnd="12dp"
+        android:autoSizeMaxTextSize="70sp"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/chalk_board"
+        android:gravity="center"
+        android:textColor="@color/customBrown"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/sixthFrag_iv"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Achievements"
+       />
+
+
+    <ImageView
+        android:id="@+id/sixthFrag_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sixth_frag_home"
+        app:layout_constraintDimensionRatio="1:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sixthFrag_tv_title" />
+
+
     <TextView
         android:id="@+id/sixthFrag_tv_instruction"
-        android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/customBrown"
-        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
         android:shadowColor="@color/black"
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
-        android:text="Bisitahin ang Achievements tab upang makita ang mga hinihinging kondisyon upang makuha ang mga Badges. Puwede mo ring suotin ang mga na-unlock mong badges sa tab na ito."/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:text="Bisitahin ang Achievements tab upang makita ang mga hinihinging kondisyon upang makuha ang mga Badges. Puwede mo ring suotin ang mga na-unlock mong badges sa tab na ito."
+        android:textColor="@color/customBrown"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sixthFrag_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sixthFrag_iv" />
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_gravity="bottom|start"
-            android:src="@drawable/sixth_frag_nav"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom|end"
-            android:gravity="bottom|end"
-            android:orientation="horizontal">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/sixthFrag_tv_next"
-                android:layout_width="90dp"
-                android:layout_height="35dp"
-                android:paddingBottom="3dp"
-                android:paddingLeft="3dp"
-                android:shadowColor="@color/darkGray"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.6"
-                android:textSize="15sp"
-                android:background="@drawable/vector_wooden_title1"
-                android:textColor="@color/brownText"
-                android:fontFamily="@font/roboto_blk"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="Next"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toStartOf="@+id/sixthFrag_tv_next"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sixthFrag_guideline"
+        android:src="@drawable/sixth_frag_nav"
+      />
 
-        </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sixthFrag_tv_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/vector_wooden_title1"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_blk"
+        android:paddingLeft="3dp"
+        android:paddingBottom="3dp"
+        android:shadowColor="@color/darkGray"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/brownText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/sixthFrag_guideline" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sixthFrag_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".90" />
 
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
