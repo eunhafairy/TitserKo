@@ -1,148 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout11"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_gravity="center"
-    android:layout_marginBottom="20dp"
-    android:paddingLeft="55dp"
-    android:paddingRight="55dp"
-    android:paddingTop="15dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
     android:background="@drawable/vector_stat_row"
-    android:orientation="vertical">
+>
 
 
-    <TextView
-        android:id="@+id/stat_row_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:fontFamily="@font/roboto_blk"
-        android:textColor="@color/customBrown"
-        android:layout_gravity="center"
-        android:text="Overall Progress"/>
-
-    <View
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/customBrown"/>
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+
         <TextView
+            android:id="@+id/stat_row_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_blk"
+            android:text="Overall Progress"
+            android:textColor="@color/customBrown"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="70dp"
+            android:background="@color/customBrown"
+            app:layout_constraintDimensionRatio="1:0.01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stat_row_title" />
+
+
+        <TextView
+            android:id="@+id/stat_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="13dp"
             android:fontFamily="@font/roboto_bold"
+            android:text="Study Progress"
             android:textColor="@color/darkYellow"
-            android:layout_weight="1"
-            android:text="Study Progress"/>
+            app:layout_constraintEnd_toStartOf="@+id/stat_row_study_progress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <TextView
             android:id="@+id/stat_row_study_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="right"
-            android:gravity="right"
-            android:layout_weight="1"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="70dp"
             android:fontFamily="@font/roboto_light"
+            android:gravity="right"
+            android:text="10%"
             android:textColor="@color/customBrown"
-            android:text="10%"/>
+            app:layout_constraintBottom_toTopOf="@+id/stat_row_highscore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
 
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="left"
+            android:layout_marginStart="70dp"
             android:fontFamily="@font/roboto_bold"
+            android:text="Quiz Highscore"
             android:textColor="@color/darkYellow"
-            android:layout_weight="1"
-            android:text="Quiz Highscore"/>
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toStartOf="@+id/stat_row_highscore"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stat_textView2" />
 
         <TextView
             android:id="@+id/stat_row_highscore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="right"
-            android:gravity="right"
-            android:layout_weight="1"
+            android:layout_marginEnd="70dp"
             android:fontFamily="@font/roboto_light"
+            android:gravity="right"
+            android:text="3"
             android:textColor="@color/customBrown"
-            android:text="3"/>
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/stat_row_lowscore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stat_row_study_progress" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="left"
+            android:layout_marginStart="70dp"
             android:fontFamily="@font/roboto_bold"
+            android:text="Lowest Score"
             android:textColor="@color/darkYellow"
-            android:layout_weight="1"
-            android:text="Lowest Score"/>
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintEnd_toStartOf="@+id/stat_row_lowscore"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/stat_row_lowscore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="right"
-            android:gravity="right"
-            android:layout_weight="1"
+            android:layout_marginEnd="70dp"
             android:fontFamily="@font/roboto_light"
+
+            android:gravity="right"
+            android:text="5"
             android:textColor="@color/customBrown"
-            android:text="5"/>
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/stat_row_quiz_taken"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stat_row_highscore" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="left"
+            android:layout_marginStart="70dp"
+            android:layout_marginBottom="40dp"
             android:fontFamily="@font/roboto_bold"
+            android:text="Quiz taken"
             android:textColor="@color/darkYellow"
-            android:layout_weight="1"
-            android:text="Quiz taken"/>
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/stat_row_quiz_taken"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <TextView
             android:id="@+id/stat_row_quiz_taken"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_gravity="right"
-            android:gravity="right"
-            android:layout_weight="1"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="40dp"
             android:fontFamily="@font/roboto_light"
+            android:gravity="right"
+            android:text="5"
             android:textColor="@color/customBrown"
-            android:text="5"/>
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stat_row_lowscore" />
 
-    </LinearLayout>
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
