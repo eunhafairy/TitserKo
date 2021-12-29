@@ -5,6 +5,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -56,7 +58,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
     NavigationView profile_navigationView;
     DrawerLayout profile_drawerLayout;
     Toolbar toolbar;
-    LinearLayout ll_profile_badge_list;
+    ConstraintLayout ll_profile_badge_list;
     MediaPlayer mp;
     Dialog dialog;
     int numOfBadges = 0;
@@ -114,7 +116,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         dateTime = dateFormat.format(date);
         age = gf.getAge(dateTime) + "";
 
-        populateProfileBadge();
+        //populateProfileBadge();
         iv_profile_badge.setImageURI(db.getUserBadge(name));
 
         // --------------------------------------------- NAVIGATION ---------------------------------------------
@@ -221,43 +223,46 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
 
 
-    private void populateProfileBadge(){
+//    private void populateProfileBadge(){
+//
+//        imagePaths = db.getProfileBadges(name);
+//        int ctr = imagePaths.size();
+//
+//        for(int i = 0; i < ctr; i++){
+//
+//            ConstraintSet constraintSet = new ConstraintSet();
+//            constraintSet.clone(ll_profile_badge_list);
+//
+//
+//
+//            ImageView imageView = new ImageView(c);
+//            imageView.setId(i);
+//            imageView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
+//            constraintSet.connect(imageView, ConstraintSet.TOP, ll_profile_badge_list, sizeInDp(85));
+//            LinearLayout.LayoutParams layoutParams = ( LinearLayout.LayoutParams) imageView.getLayoutParams();
+//           layoutParams.setMargins(marginInDp, marginInDp, marginInDp, marginInDp);
+//           imageView.setLayoutParams(layoutParams);
+//
+//            Uri imageUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePaths.get(i));
+//            imageView.setImageURI(imageUri);
+//
+//            if(imagePaths.get(i).equals("lockedbadge")){
+//
+//                imageView.setAlpha(0.5f);
+//            }
+//            ll_profile_badge_list.addView(imageView);
+//
+//        }
+//
+//
+//    }
 
-        imagePaths = db.getProfileBadges(name);
-        int ctr = imagePaths.size();
 
-        int sizeInDP = 20;
-        int sizeBadges = 80;
 
-        int marginInDp = (int) TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, sizeInDP, getResources()
+    private int sizeInDp(int index){
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, index, getResources()
                         .getDisplayMetrics());
-        int sizeBadgeIndp =  (int) TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, sizeBadges, getResources()
-                        .getDisplayMetrics());
-
-
-
-        for(int i = 0; i < ctr; i++){
-
-            ImageView imageView = new ImageView(c);
-            imageView.setLayoutParams(new LinearLayout.LayoutParams(sizeBadgeIndp,sizeBadgeIndp));
-
-           LinearLayout.LayoutParams layoutParams = ( LinearLayout.LayoutParams) imageView.getLayoutParams();
-           layoutParams.setMargins(marginInDp, marginInDp, marginInDp, marginInDp);
-           imageView.setLayoutParams(layoutParams);
-
-            Uri imageUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePaths.get(i));
-            imageView.setImageURI(imageUri);
-
-            if(imagePaths.get(i).equals("lockedbadge")){
-
-                imageView.setAlpha(0.5f);
-            }
-            ll_profile_badge_list.addView(imageView);
-
-        }
-
 
     }
 
