@@ -14,6 +14,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
@@ -42,6 +44,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class tk_profile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -116,7 +119,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         dateTime = dateFormat.format(date);
         age = gf.getAge(dateTime) + "";
 
-        //populateProfileBadge();
+        populateProfileBadge();
         iv_profile_badge.setImageURI(db.getUserBadge(name));
 
         // --------------------------------------------- NAVIGATION ---------------------------------------------
@@ -223,40 +226,107 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
 
 
 
-//    private void populateProfileBadge(){
-//
-//        imagePaths = db.getProfileBadges(name);
-//        int ctr = imagePaths.size();
-//
-//        for(int i = 0; i < ctr; i++){
-//
-//            ConstraintSet constraintSet = new ConstraintSet();
-//            constraintSet.clone(ll_profile_badge_list);
-//
-//
-//
-//            ImageView imageView = new ImageView(c);
-//            imageView.setId(i);
-//            imageView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
-//            constraintSet.connect(imageView, ConstraintSet.TOP, ll_profile_badge_list, sizeInDp(85));
-//            LinearLayout.LayoutParams layoutParams = ( LinearLayout.LayoutParams) imageView.getLayoutParams();
-//           layoutParams.setMargins(marginInDp, marginInDp, marginInDp, marginInDp);
-//           imageView.setLayoutParams(layoutParams);
-//
-//            Uri imageUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePaths.get(i));
-//            imageView.setImageURI(imageUri);
-//
-//            if(imagePaths.get(i).equals("lockedbadge")){
-//
-//                imageView.setAlpha(0.5f);
-//            }
-//            ll_profile_badge_list.addView(imageView);
-//
-//        }
-//
-//
-//    }
+    private void populateProfileBadge(){
 
+        imagePaths = db.getProfileBadges(name);
+        int ctr = imagePaths.size();
+
+        for(int i = 0; i < ctr; i++){
+
+
+            //constraints layout
+            ConstraintSet constraintSet = new ConstraintSet();
+            constraintSet.clone(ll_profile_badge_list);
+
+
+            //random number for id
+            int randNum;
+            Random rand = new Random();
+            while(true){
+                randNum = rand.nextInt(10000);
+                if(!isResourceIdInPackage("com.bsit3omagitech.titserko",randNum)){
+                    break;
+                }
+            }
+
+            //CREATE IMAGE VIEW
+            ImageView imageView = new ImageView(c);
+            imageView.setId(randNum);
+            ll_profile_badge_list.addView(imageView);
+            imageView.setLayoutParams(new ConstraintLayout.LayoutParams(0,0));
+            Uri imageUri = Uri.parse("android.resource://com.bsit3omagitech.titserko/raw/" + imagePaths.get(i));
+            imageView.setImageURI(imageUri);
+
+            if(imagePaths.get(i).equals("lockedbadge")){
+                imageView.setAlpha(0.5f);
+            }
+
+
+            if(i == 0)
+            {
+                constraintSet.connect(imageView.getId(), ConstraintSet.START, ll_profile_badge_list.getId(), ConstraintSet.START);
+            }
+            else{
+                constraintSet.connect(imageView.getId(), ConstraintSet.START, ll_profile_badge_list.getChildAt(i-1).getId(), ConstraintSet.END);
+            constraintSet.setMargin(imageView.getId(),ConstraintSet.START, sizeInDp(20));
+            }
+
+            constraintSet.connect(imageView.getId(), ConstraintSet.TOP, ll_profile_badge_list.getId(), ConstraintSet.TOP);
+            constraintSet.connect(imageView.getId(), ConstraintSet.BOTTOM, ll_profile_badge_list.getId(), ConstraintSet.BOTTOM);
+
+            constraintSet.setDimensionRatio(imageView.getId(),"1:1");
+//            constraintSet.setMargin(imageView.getId(),ConstraintSet.START, sizeInDp(20));
+//            constraintSet.setMargin(imageView.getId(),ConstraintSet.TOP, sizeInDp(85));
+//            constraintSet.setMargin(imageView.getId(),ConstraintSet.BOTTOM, sizeInDp(30));
+
+
+
+
+            constraintSet.applyTo(ll_profile_badge_list);
+
+        }
+
+
+    }
+
+
+
+    //checker if id exists. credits from Chris Sprague of StackOverFlow
+    private boolean isResourceIdInPackage(String packageName, int resId){
+        if(packageName == null || resId == 0){
+            return false;
+        }
+
+        Resources res = null;
+        if(packageName.equals(getPackageName())){
+            res = getResources();
+        }else{
+            try{
+                res = getPackageManager().getResourcesForApplication(packageName);
+            }catch(PackageManager.NameNotFoundException e){
+                Log.w("isExisting", packageName + "does not contain " + resId + " ... " + e.getMessage());
+            }
+        }
+
+        if(res == null){
+            return false;
+        }
+
+        return isResourceIdInResources(res, resId);
+    }
+
+    private boolean isResourceIdInResources(Resources res, int resId) {
+
+        try {
+            getResources().getResourceName(resId);
+
+            //Didn't catch so id is in res
+            return true;
+
+        } catch (Resources.NotFoundException e) {
+            return false;
+        }
+    }
 
 
     private int sizeInDp(int index){
