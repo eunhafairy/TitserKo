@@ -2,6 +2,8 @@ package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
@@ -20,6 +22,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,6 +45,9 @@ import java.util.Random;
 
 public class LessonProper extends AppCompatActivity {
 
+
+    ConstraintLayout parent;
+    TextView tv_lp_study;
     GlobalFunctions gf;
     DataBaseHelper db;
     LinearLayout ll_parent;
@@ -80,6 +86,7 @@ public class LessonProper extends AppCompatActivity {
         btn_lp_finish.setVisibility(View.GONE);
 
         //initialize textview
+        tv_lp_study = findViewById(R.id.tv_lp_study);
         tv_lp_description = (TextView) findViewById(R.id.tv_lp_description);
         lessonProgress = (ProgressBar) findViewById(R.id.lessonProgress);
         lessonProgress.setProgress(index);
@@ -92,9 +99,9 @@ public class LessonProper extends AppCompatActivity {
         btn_lp_previous.setVisibility(View.INVISIBLE);
         btn_lp_next.setClickable(true);
 
-        //initialize linearlayout
+        //initialize layout
         ll_parent = (LinearLayout) findViewById(R.id.ll_btnParent);
-
+        parent = findViewById(R.id.linearLayout13);
 
         //Intent
         Intent intent = getIntent();
@@ -186,6 +193,10 @@ public class LessonProper extends AppCompatActivity {
                     btn_lp_next.setVisibility(View.GONE);
                     btn_lp_finish.setVisibility(View.VISIBLE);
                     btn_lp_previous.setVisibility(View.VISIBLE);
+                    ConstraintSet constraintSet = new ConstraintSet();
+                    constraintSet.clone(parent);
+                    constraintSet.connect(tv_lp_study.getId(), ConstraintSet.END, btn_lp_finish.getId(), ConstraintSet.START);
+                    constraintSet.applyTo(parent);
 
                 }
                 else{
@@ -194,10 +205,19 @@ public class LessonProper extends AppCompatActivity {
                     btn_lp_finish.setVisibility(View.GONE);
                     btn_lp_previous.setVisibility(View.VISIBLE);
 
+                    ConstraintSet constraintSet = new ConstraintSet();
+                    constraintSet.clone(parent);
+                    constraintSet.connect(tv_lp_study.getId(), ConstraintSet.END, btn_lp_next.getId(), ConstraintSet.START);
+                    constraintSet.applyTo(parent);
+
                     //hide next button if index is last
                     if((index+1) == partsArray.length()) {
                         btn_lp_next.setVisibility(View.GONE);
                         btn_lp_finish.setVisibility(View.VISIBLE);
+                        ConstraintSet constraintSet1 = new ConstraintSet();
+                        constraintSet1.clone(parent);
+                        constraintSet1.connect(tv_lp_study.getId(), ConstraintSet.END, btn_lp_finish.getId(), ConstraintSet.START);
+                        constraintSet1.applyTo(parent);
                     }
 
                     try {
@@ -229,11 +249,15 @@ public class LessonProper extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //previous part
-
+                ConstraintSet constraintSet1 = new ConstraintSet();
+                constraintSet1.clone(parent);
+                constraintSet1.connect(tv_lp_study.getId(), ConstraintSet.END, btn_lp_next.getId(), ConstraintSet.START);
+                constraintSet1.applyTo(parent);
                 if(index == 0) {
                     btn_lp_previous.setVisibility(View.INVISIBLE);
                     btn_lp_finish.setVisibility(View.GONE);
                     btn_lp_next.setVisibility(View.VISIBLE);
+
                 }
                 else{
                     index--;
@@ -353,7 +377,7 @@ public class LessonProper extends AppCompatActivity {
                 Typeface face = Typeface.createFromAsset(getAssets(),
                         "fonts/finger_paint.ttf");
                 btn_choice.setTypeface(face);
-                btn_choice.setLayoutParams(new LinearLayout.LayoutParams(sizeWidth, sizeHeight));
+                btn_choice.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
                 btn_choice.setBackgroundResource(R.drawable.vector_lesson_btn);
                    btn_choice.setTextColor(ContextCompat.getColor(this, R.color.white));
                    btn_choice.setShadowLayer(1.5f,1.3f,1.6f, R.color.customBrown);
