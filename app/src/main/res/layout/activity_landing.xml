@@ -1,187 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout12"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:orientation="vertical"
     android:background="@drawable/vector_dashboard_bg"
+    android:orientation="vertical"
     tools:context=".landing">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/landing_guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1" />
+
+
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/landing_guideline2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintGuide_percent=".5" />-->
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/vector_arrow"
+        app:layout_constraintBottom_toTopOf="@id/landing_guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_landingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:shadowColor="@color/lightGreen"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Sample Lesson"
+        android:textColor="@color/darkGreen"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/landing_guideline1"
+        app:layout_constraintEnd_toStartOf="@id/iv_tips"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_tips"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/vector_tips_img"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/landing_guideline1"
+        app:layout_constraintStart_toEndOf="@id/tv_landingTitle"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_landing_stars"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/score_star"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/landing_guideline1"
 
-        android:layout_weight="2"
-        android:orientation="horizontal">
+        />
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_gravity="center"
-                android:src="@drawable/vector_arrow"
-                />
-            <TextView
-                android:id="@+id/tv_landingTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:textColor="@color/darkGreen"
-                android:layout_gravity="center"
-                android:textSize="30sp"
-                android:shadowColor="@color/lightGreen"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.6"
-                android:textStyle="bold"
-                android:text="Sample Lesson" />
-        <ImageView
-            android:id="@+id/iv_tips"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center"
-            android:visibility="visible"
-            android:src="@drawable/vector_tips_img"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/landing_tv_study_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:shadowColor="@color/lightGreen"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Study Progress"
+        android:textColor="@color/darkGreen"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/lessonProgressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_landing_stars" />
+
+    <ProgressBar
+        android:id="@+id/lessonProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="19"
-        android:orientation="vertical">
-        <ImageView
-            android:id="@+id/iv_landing_stars"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/score_star"/>
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/swipeRefresh"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:textColor="@color/darkGreen"
-                        android:textStyle="bold"
-                        android:shadowColor="@color/lightGreen"
-                        android:shadowDx="1.5"
-                        android:shadowDy="1.3"
-                        android:shadowRadius="1.6"
-                        android:layout_weight="1"
-                        android:text="Study Progress" />
-
-                    <ProgressBar
-                        android:id="@+id/lessonProgressBar"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="wrap_content"
-                        android:progressDrawable="@drawable/custom_progressbar"
-                        android:layout_height="20dp"
-                        android:progress="50"
-                        android:layout_weight="2"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/custom_progressbar"
+        app:layout_constraintBottom_toBottomOf="@+id/landing_tv_study_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/landing_tv_study_progress"
+        app:layout_constraintTop_toTopOf="@+id/landing_tv_study_progress" />
 
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:textColor="@color/darkGreen"
-                        android:textStyle="bold"
-                        android:layout_weight="1"
-                        android:shadowColor="@color/lightGreen"
-                        android:shadowDx="1.5"
-                        android:shadowDy="1.3"
-                        android:shadowRadius="1.6"
-                        android:text="Quiz Highscore" />
+    <TextView
+        android:id="@+id/landing_tv_quiz_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:shadowColor="@color/lightGreen"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Quiz Highscore"
 
-                    <ProgressBar
-                        android:id="@+id/quizProgressBar"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:progressDrawable="@drawable/custom_progressbar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:progress="@integer/material_motion_duration_long_1"
-                        android:layout_weight="2"/>
+        android:textColor="@color/darkGreen"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/quizProgressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/landing_tv_study_progress" />
 
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="20dp">
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_landing_study"
-                android:layout_width="300dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/finger_paint"
-                android:textSize="30sp"
-                android:shadowColor="@color/darkGray"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.6"
-                android:textColor="@color/brownText"
-                android:background="@drawable/vector_wooden_title1"
-                android:text="Study"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_landing_quiz"
-                android:layout_width="300dp"
-                android:layout_height="80dp"
-                android:fontFamily="@font/finger_paint"
-                android:textSize="30sp"
-                android:background="@drawable/vector_wooden_title2"
-                android:shadowColor="@color/darkGray"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.6"
-                android:textColor="@color/brownText"
-                android:layout_gravity="center"
-                android:text="Quiz"/>
+    <ProgressBar
+        android:id="@+id/quizProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/custom_progressbar"
+        app:layout_constraintBottom_toBottomOf="@+id/landing_tv_quiz_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/landing_tv_quiz_progress"
+        app:layout_constraintTop_toTopOf="@+id/landing_tv_quiz_progress" />
 
 
-        </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_landing_study"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/vector_wooden_title1"
+        android:fontFamily="@font/finger_paint"
+        android:shadowColor="@color/darkGray"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Study"
+        android:textColor="@color/brownText"
+        android:textSize="30sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_landing_quiz"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/landing_guideline2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_landing_quiz"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/vector_wooden_title2"
+        android:fontFamily="@font/finger_paint"
+        android:shadowColor="@color/darkGray"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Quiz"
+        android:textColor="@color/brownText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_landing_study" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/landing_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 
-    </LinearLayout>
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

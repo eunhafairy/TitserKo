@@ -48,7 +48,7 @@ public class landing extends AppCompatActivity {
     List<Integer> animals;
     List<String> achieveList = new ArrayList<>();
     Dialog dialog;
-    SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -169,26 +169,6 @@ public class landing extends AppCompatActivity {
        float currentQuizProgress = db.getQuizProgress(username, lessonId);
        float d = (currentQuizProgress/(15)) * 100f;
        quizProgressBar.setProgress((int) d);
-
-        swipeRefreshLayout = findViewById(R.id.swipeRefresh);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-
-                float currentProgress = db.getLessonProgress(username, lessonId);
-                float c = (currentProgress/(maxLesson-1)) * 100f;
-                Log.d(" percentage",  "Current Progress: "+currentProgress + ", Max Lesson: " +maxLesson + ", Percent: " + c);
-                lessonProgressBar.setProgress((int) c);
-
-                float currentQuizProgress = db.getQuizProgress(username, lessonId);
-                float d = (currentQuizProgress/(14)) * 100f;
-                quizProgressBar.setProgress((int) d);
-                swipeRefreshLayout.setRefreshing(false);
-
-            }
-        });
-
-
     }
 
     private void reg(){
