@@ -2,6 +2,8 @@ package com.bsit3omagitech.titserko;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
@@ -49,6 +51,7 @@ public class QuizProper extends AppCompatActivity {
     ProgressBar quizProgress;
     List<String> userAnswer;
     GlobalFunctions gf;
+    ConstraintLayout parent;
     MediaPlayer mp;
     HashMap<String, String> hash_english, hash_tagalog, choices;
     int sizeWidth, sizeHeight;
@@ -82,6 +85,7 @@ public class QuizProper extends AppCompatActivity {
         //Linear Layout
         ll_btnParent =  findViewById(R.id.ll_btnParent);
         btn_lp_confirm = findViewById(R.id.btn_lp_confirm);
+        parent = findViewById(R.id.linearLayout14);
         //ImageView
         iv_qp = findViewById(R.id.iv_qp);
 
@@ -353,9 +357,12 @@ public class QuizProper extends AppCompatActivity {
             //show audio button if audio
             switch(type){
 
+//                ConstraintSet constraintSet = new ConstraintSet();
+//                constraintSet.clone(parent);
                 case "visual":
                     iv_qp.setOnClickListener(null);
-                    iv_qp.setLayoutParams(new LinearLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150)));
+//                    iv_qp.setLayoutParams(new ConstraintLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150)));
+//                    constraintSet.connect
                     //set size of imaegview as big if visual
                     String image_name = quizArray.getJSONObject(index).getString("img_src");
                     String image_path = "lesson" + lessonId + "/"+ image_name + ".png";
@@ -369,7 +376,7 @@ public class QuizProper extends AppCompatActivity {
                     iv_qp.setImageResource(R.drawable.vector_audio_btn);
 
                     //set size as small of imageview if audio type
-                    iv_qp.setLayoutParams(new LinearLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150) ));
+//                    iv_qp.setLayoutParams(new ConstraintLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150) ));
 
                     //name of file
                     String audio_url = quizArray.getJSONObject(index).getString("question_audio");
