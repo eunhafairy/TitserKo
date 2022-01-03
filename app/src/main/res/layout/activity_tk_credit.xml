@@ -1,87 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout17"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/vector_dashboard_bg"
-    android:orientation="vertical"
     tools:context=".tk_credit">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/credit_guideline1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent=".1" />
+
         <ImageView
             android:id="@+id/btn_credit_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:src="@drawable/vector_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/credit_guideline1"
+
             />
+
         <TextView
             android:id="@+id/tv_landingTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:textColor="@color/customBrown"
             android:layout_gravity="center"
+            android:text="Credits"
+            android:textColor="@color/customBrown"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="Credits" />
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/btn_credit_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/credit_guideline1"
+            />
 
-    </LinearLayout>
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:orientation="vertical"
-    android:paddingBottom="20dp"
-    android:paddingTop="20dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:layout_weight="19">
 
         <ScrollView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:background="@drawable/vector_stat_row"
-            android:padding="55dp"
-            android:layout_height="match_parent">
+            app:layout_constraintTop_toBottomOf="@id/credit_guideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="55dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/d_din_condensed_bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textSize="30sp"
-                    android:textColor="@color/darkYellow"
+                    android:fontFamily="@font/d_din_condensed_bold"
                     android:shadowColor="@color/customBrown"
                     android:shadowDx="1.5"
                     android:shadowDy="1.3"
                     android:shadowRadius="1.6"
-                    android:text="Team Members"/>
+                    android:text="Team Members"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="30sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Developer/Leader"/>
+                        android:text="Developer/Leader" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_blk"
                         android:gravity="right"
-                        android:text="Iverson Pesigan"/>
+                        android:text="Iverson Pesigan" />
 
                 </LinearLayout>
 
@@ -91,17 +102,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Graphics"/>
+                        android:text="Graphics" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_blk"
                         android:gravity="right"
-                        android:text="Mark Lester Ranes"/>
+                        android:text="Mark Lester Ranes" />
 
                 </LinearLayout>
 
@@ -111,17 +124,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Content"/>
+                        android:text="Content" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_blk"
                         android:gravity="right"
-                        android:text="Analyn Mae Cifra"/>
+                        android:text="Analyn Mae Cifra" />
 
                 </LinearLayout>
 
@@ -130,35 +145,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:text="Content"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_blk"
-                        android:gravity="right"
-                        android:text="Reynante Gigante"/>
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Content"/>
+                        android:text="Content" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_blk"
                         android:gravity="right"
-                        android:text="Gian Paulo Mendiola"/>
+                        android:text="Reynante Gigante" />
 
                 </LinearLayout>
 
@@ -167,358 +166,391 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="Adviser"/>
+                        android:text="Content" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_blk"
                         android:gravity="right"
-                        android:text="Mam Elaine Regalado"/>
+                        android:text="Gian Paulo Mendiola" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="Adviser" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_blk"
+                        android:gravity="right"
+                        android:text="Mam Elaine Regalado" />
 
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/d_din_condensed_bold"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="15dp"
-                    android:textSize="30sp"
-                    android:textColor="@color/darkYellow"
-                    android:shadowColor="@color/customBrown"
-                    android:shadowDx="1.5"
-                    android:shadowDy="1.3"
-                    android:shadowRadius="1.6"
-                    android:text="Lesson Source"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="Learn English for free on Kids Worlds Fun!"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.kidsworldfun.com/learn-english/"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="Learn Tagalog for free on L-Lingo!"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://l-lingo.com/free-lessons/en/learn-tagalog-filipino"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:fontFamily="@font/d_din_condensed_bold"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="15dp"
-                    android:textSize="30sp"
-                    android:textColor="@color/darkYellow"
                     android:shadowColor="@color/customBrown"
                     android:shadowDx="1.5"
                     android:shadowDy="1.3"
                     android:shadowRadius="1.6"
-                    android:text="Resources"/>
+                    android:text="Lesson Source"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
+                    android:text="Learn English for free on Kids Worlds Fun!"
                     android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="English audio resources from"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://ttsmp3.com/"/>
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="Tagalog audio resources from"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.googletexttospeech.com/p/filipino-text-to-speech-mp3-downloader.html"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="Frame vector created by macrovector"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/vectors/frame"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="Tree vector created by 0melapics "/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
                     android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.kidsworldfun.com/learn-english/"
                     android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/vectors/tree"/>
+                    android:textSize="12sp" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Learn Tagalog for free on L-Lingo!"
                     android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:text="Floral vector created by macrovector "/>
+                    android:textSize="12sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/vectors/floral"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://l-lingo.com/free-lessons/en/learn-tagalog-filipino"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
                     android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Baby vector created by pch.vector "/>
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/d_din_condensed_bold"
+                    android:shadowColor="@color/customBrown"
+                    android:shadowDx="1.5"
+                    android:shadowDy="1.3"
+                    android:shadowRadius="1.6"
+                    android:text="Resources"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="30sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="English audio resources from"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/vectors/baby"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Achievement Unlocked sound effect from mixit.co"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
+                    android:text="https://ttsmp3.com/"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Tagalog audio resources from"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://mixkit.co/free-sound-effects/game/"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.googletexttospeech.com/p/filipino-text-to-speech-mp3-downloader.html"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
 
-                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Dentist vector from Freepik"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Frame vector created by macrovector"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/free-vector/flat-dental-care-concept-illustration_14592246.htm"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Cliparts from Public Domain Vectors (Free Use)"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/vectors/frame"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Tree vector created by 0melapics "
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://publicdomainvectors.org/"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/vectors/tree"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
 
-                      <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Food photo created by Racool_studio - www.freepik.com"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/free-photo/bittersweet-ginger_6480206.htm"/>
-
-                        <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
+                    android:text="Floral vector created by macrovector "
                     android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Food photo created by dashu83 - www.freepik.com"/>
+                    android:textSize="12sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.freepik.com/free-photo/tamarind-tamarindus-indica-fruit-isolated-white_13219586.htm"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/vectors/floral"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
 
-        <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Things clipart from Clipart Library"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="http://clipart-library.com/clipart/ziXo9nGBT.htm"/>
-
-
- <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
-                    android:layout_gravity="center"
+                    android:text="Baby vector created by pch.vector "
                     android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:autoLink="web"
-                    android:text="Pillow Vectors by Vecteezy"/>
+                    android:textSize="12sp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
                     android:autoLink="web"
-                    android:textSize="12sp"
-                    android:text="https://www.vecteezy.com/free-vector/pillow"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/vectors/baby"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Achievement Unlocked sound effect from mixit.co"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://mixkit.co/free-sound-effects/game/"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Dentist vector from Freepik"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/free-vector/flat-dental-care-concept-illustration_14592246.htm"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Cliparts from Public Domain Vectors (Free Use)"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://publicdomainvectors.org/"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Food photo created by Racool_studio - www.freepik.com"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/free-photo/bittersweet-ginger_6480206.htm"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Food photo created by dashu83 - www.freepik.com"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.freepik.com/free-photo/tamarind-tamarindus-indica-fruit-isolated-white_13219586.htm"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Things clipart from Clipart Library"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="http://clipart-library.com/clipart/ziXo9nGBT.htm"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Pillow Vectors by Vecteezy"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="web"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="https://www.vecteezy.com/free-vector/pillow"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
 
 
             </LinearLayout>
 
         </ScrollView>
-
-
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
