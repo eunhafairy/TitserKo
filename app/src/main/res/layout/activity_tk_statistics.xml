@@ -29,109 +29,119 @@
         app:itemIconPadding="5dp"
         android:visibility="visible"
         />
-    <LinearLayout
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stat_constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         >
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stat_guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".1" />
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/stats_toolbar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iv_stat_back"
+            app:layout_constraintTop_toTopOf="parent"/>
             <ImageView
                 android:id="@+id/iv_stat_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:src="@drawable/vector_menu_btn"
+                app:layout_constraintBottom_toBottomOf="@+id/stat_guideline1"
+                app:layout_constraintEnd_toStartOf="@+id/tv_landingTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 />
             <TextView
                 android:id="@+id/tv_landingTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="0dp"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/customBrown"
-                android:layout_gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/stat_guideline1"
+                app:layout_constraintStart_toEndOf="@+id/iv_stat_back"
+                app:layout_constraintTop_toTopOf="parent"
                 android:text="Statistics" />
-
-        </LinearLayout>
-
-
-
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="19"
-            android:padding="15dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stat_guideline1">
 
             <ProgressBar
-            android:id="@+id/pb_stat_overall"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="280dp"
-            android:progressDrawable="@drawable/custom_progressbar"
-            android:layout_height="20dp"
-            android:progress="@integer/material_motion_duration_long_1"/>
+                android:id="@+id/pb_stat_overall"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="280dp"
+                android:layout_height="20dp"
+                android:progress="@integer/material_motion_duration_long_1"
+                android:progressDrawable="@drawable/custom_progressbar" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="28sp"
                 android:fontFamily="@font/roboto_blk"
+                android:text="Overall Progress"
                 android:textColor="@color/customBrown"
 
-                android:text="Overall Progress"/>
+                android:textSize="28sp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
-                android:background="@color/customBrown"/>
+                android:background="@color/customBrown" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
-                    <TextView
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="left"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/darkYellow"
                     android:layout_weight="1"
-                    android:text="Overall Lesson Progress"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Overall Lesson Progress"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/tv_stat_overall_progress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_gravity="right"
-                        android:gravity="right"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/roboto_light"
-                        android:textColor="@color/customBrown"
-                        android:text="10%"/>
+                <TextView
+                    android:id="@+id/tv_stat_overall_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="right"
+                    android:text="10%"
+                    android:textColor="@color/customBrown"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -143,24 +153,24 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="left"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/darkYellow"
                     android:layout_weight="1"
-                    android:text="Total Badges"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Total Badges"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/tv_stat_overall_badges"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="right"
-                    android:gravity="right"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
+                    android:gravity="right"
+                    android:text="3"
                     android:textColor="@color/customBrown"
-                    android:text="3"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -172,55 +182,54 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="left"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/darkYellow"
                     android:layout_weight="1"
-                    android:text="Total Stars"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Total Stars"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/tv_stat_overall_stars"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="right"
-                    android:gravity="right"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
+                    android:gravity="right"
+                    android:text="5"
                     android:textColor="@color/customBrown"
-                    android:text="5"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="10dp"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="left"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textColor="@color/darkYellow"
                     android:layout_weight="1"
-                    android:text="Lessons Finished"/>
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Lessons Finished"
+                    android:textColor="@color/darkYellow"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/tv_stat_overall_finished"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
                     android:layout_gravity="right"
-                    android:gravity="right"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
+                    android:gravity="right"
+                    android:text="5"
                     android:textColor="@color/customBrown"
-                    android:text="5"/>
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -235,14 +244,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical" />
 
 
             </LinearLayout>
 
         </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-</LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
