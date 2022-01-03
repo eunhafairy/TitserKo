@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class tk_register extends AppCompatActivity {
     Context c = this;
     String name = "";
     Dialog dialog;
+    ProgressBar register_progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class tk_register extends AppCompatActivity {
         btn_confirmProfile = findViewById(R.id.btn_confirmProfile);
         btn_cancelProfile = findViewById(R.id.btn_cancelProfile);
         dialog = new Dialog(c);
+
+        //progress bar
+        register_progressBar = findViewById(R.id.register_progressBar);
+        register_progressBar.setVisibility(View.GONE);
     }
 
     private void reg(){
@@ -76,6 +82,10 @@ public class tk_register extends AppCompatActivity {
                 //create profile
                 UserModel userModel;
 
+                //disable button
+                btn_confirmProfile.setClickable(false);
+                register_progressBar.setVisibility(View.VISIBLE);
+
                 name = et_name.getText().toString();
                 name.trim();
                 if (checkIfEmpty()) {
@@ -83,20 +93,34 @@ public class tk_register extends AppCompatActivity {
 
                 } else {
 
+
+                    //check length
                     if (name.length() > 1) {
                         name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
                     }
                     DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
+
                     int ctr = name.length();
+
+                    //check if unique
                     if (dbHelper.checkExisting(name)) {
                         openDialog("Error", "The name should be unique.");
+                        btn_confirmProfile.setClickable(true);
+                        register_progressBar.setVisibility(View.GONE);
                         et_name.setText("");
 
-                    } else if (ctr < 1) {
+                    }
+
+                    //check if name length is less than one
+                    if (ctr < 1) {
                         openDialog("Error", "Enter a valid name.");
                         et_name.setText("");
+                        btn_confirmProfile.setClickable(true);
+                        register_progressBar.setVisibility(View.GONE);
+                    }
 
-                    } else if (ctr <= 16) {
+                    //valid
+                    if (ctr <= 16) {
 
                         try {
                             userModel = new UserModel(-1, name, et_date.getText().toString());
@@ -106,6 +130,8 @@ public class tk_register extends AppCompatActivity {
 
                             Toast.makeText(tk_register.this, "Error", Toast.LENGTH_SHORT).show();
                             userModel = new UserModel(-1, "error", "error");
+                            btn_confirmProfile.setClickable(true);
+                            register_progressBar.setVisibility(View.GONE);
                         }
 
 
@@ -113,12 +139,15 @@ public class tk_register extends AppCompatActivity {
                         if (success) {
                             dbHelper.createAllLessonProgress(name);
                             dbHelper.createAllAchievements(name);
-                            Intent intent = new Intent(tk_register.this, MainActivity.class);
+                            Intent intent = new Intent(tk_register.this, tk_loading.class);
+                            intent.putExtra("actName", "main");
                             startActivity(intent);
                             finish();
                         } else {
                             openDialog("Error", "Something went wrong.");
                             et_name.setText("");
+                            btn_confirmProfile.setClickable(true);
+                            register_progressBar.setVisibility(View.GONE);
                         }
 
 
@@ -126,6 +155,8 @@ public class tk_register extends AppCompatActivity {
                         //show error
                         openDialog("Error", "The name should be less than 17 characters.");
                         et_name.setText("");
+                        btn_confirmProfile.setClickable(true);
+                        register_progressBar.setVisibility(View.GONE);
                     }
 
 
@@ -161,6 +192,9 @@ public class tk_register extends AppCompatActivity {
         btn_confirm_achieve_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+               btn_confirmProfile.setClickable(true);
+                register_progressBar.setVisibility(View.GONE);
                 dialog.dismiss();
             }
         });

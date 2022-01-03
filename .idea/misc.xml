@@ -50,18 +50,18 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achieve_row.xml" value="0.5" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achievement_dialog.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/achievement_unlocked.xml" value="0.33" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_landing.xml" value="0.25" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_lesson_proper.xml" value="0.5" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_landing.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_lesson_proper.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_quiz_proper.xml" value="0.25" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_score.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_score.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_achievements.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_credit.xml" value="0.75" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_loading.xml" value="0.2" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_profile.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_credit.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_loading.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_profile.xml" value="0.3080568720379147" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_register.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_settings.xml" value="0.3428442028985507" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_statistics.xml" value="0.415625" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/activity_tk_statistics.xml" value="0.5" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/confirmation_dialog.xml" value="0.3491847826086957" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/custom_spnr.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/error_dialog.xml" value="0.3428442028985507" />
@@ -77,9 +77,9 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/layout_cards.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/my_row.xml" value="0.33" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/score_row.xml" value="0.3428442028985507" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/stat_row.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/stat_row.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/tip_dialog.xml" value="0.3491847826086957" />
-        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/tk_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/layout/tk_dashboard.xml" value="0.30416666666666664" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/menu/main_menu.xml" value="0.140625" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/TitserKo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18518518518518517" />
       </map>

@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -64,7 +65,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
     Dialog dialog;
     MediaPlayer mp;
     ViewPager viewPager;
-    LinearLayout ll_dashboard;
+    ConstraintLayout ll_dashboard;
     public LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

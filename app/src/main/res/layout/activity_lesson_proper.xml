@@ -1,141 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout13"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/vector_dashboard_bg"
-    android:orientation="vertical"
     tools:context=".LessonProper">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:gravity="center"
-        android:layout_weight="2"
-        >
 
-        <ImageView
-            android:id="@+id/btn_lp_previous"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:src="@drawable/vector_arrow"
-           />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Study"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:background="@drawable/vector_wooden_title1"
-            android:fontFamily="@font/finger_paint"
-            android:textColor="@color/brownText"
-            android:shadowColor="@color/customBrown"
-            android:shadowDx="1.5"
-            android:shadowDy="1.3"
-            android:shadowRadius="1.6"
-            />
-        <ImageView
-            android:id="@+id/btn_lp_next"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:src="@drawable/vector_next_btn"
-            android:visibility="visible"
-            />
-        <ImageView
-            android:id="@+id/btn_lp_finish"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:src="@drawable/vector_finish_btn"
-            android:visibility="gone"
-            />
+    <ImageView
+        android:id="@+id/btn_lp_previous"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:src="@drawable/vector_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lp_study"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintEnd_toStartOf="@+id/tv_lp_study"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_lp_study" />
+
+    <TextView
+        android:id="@+id/tv_lp_study"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/vector_wooden_title1"
+        android:fontFamily="@font/finger_paint"
+        android:gravity="center"
+        android:shadowColor="@color/customBrown"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Study"
+        android:textColor="@color/brownText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_lp_next"
+        app:layout_constraintStart_toEndOf="@+id/btn_lp_previous"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_lp_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vector_next_btn"
+        android:visibility="visible"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lp_study"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_lp_study"
+        app:layout_constraintTop_toTopOf="@+id/tv_lp_study" />
+
+    <ImageView
+        android:id="@+id/btn_lp_finish"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vector_finish_btn"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lp_study"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_lp_study"
+        app:layout_constraintTop_toTopOf="@+id/tv_lp_study" />
+
+
+    <ProgressBar
+        android:id="@+id/lessonProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="10dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/custom_progressbar"
+        app:layout_constraintDimensionRatio="10:0.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lp_study" />
+
+    <TextView
+        android:id="@+id/tv_lp_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/vector_sound"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/finger_paint"
+        android:shadowColor="@color/brownText"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="Sample Word"
+        android:textAlignment="center"
+        android:textColor="@color/customBrown"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lessonProgress" />
+
+    <ImageView
+        android:id="@+id/iv_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:src="@drawable/default_img"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lp_description" />
+
+    <LinearLayout
+        android:id="@+id/ll_btnParent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintDimensionRatio="4:1"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_imageView">
+
 
     </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="10dp"
-            android:layout_weight="8"
-            android:paddingRight="10dp"
-            android:orientation="vertical"
-            >
 
-                <LinearLayout
-                    android:id="@+id/ll_parent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="10"
-                    android:orientation="vertical">
-                    <ProgressBar
-                        android:id="@+id/lessonProgress"
-                        android:layout_marginTop="10dp"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="300dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:progressDrawable="@drawable/custom_progressbar"
-                        android:progress="50"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_lp_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:fontFamily="@font/finger_paint"
-                        android:layout_gravity="center"
-
-                        android:drawablePadding="10dp"
-                        android:drawableEnd="@drawable/vector_sound"
-                        android:text="Sample Word"
-                        android:textAlignment="center"
-                        android:textColor="@color/customBrown"
-                        android:shadowColor="@color/brownText"
-                        android:shadowDx="1.5"
-                        android:shadowDy="1.3"
-                        android:shadowRadius="1.6"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/iv_imageView"
-                        android:layout_width="250dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_height="250dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="20dp"
-                        android:src="@drawable/default_img"
-                        />
-
-                </LinearLayout>
-            <LinearLayout
-                android:id="@+id/ll_btnParent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="bottom|center"
-                android:paddingBottom="40dp"
-                android:layout_weight="1"
-                android:padding="10dp">
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

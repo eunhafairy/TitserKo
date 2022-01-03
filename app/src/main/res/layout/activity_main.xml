@@ -1,107 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/vector_main_bg"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/ll_landing"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="60dp"
-        android:orientation="vertical"
-        android:paddingBottom="50dp"
-        android:visibility="visible">
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/vector_title"
 
-            />
-        <ImageView
-            android:id="@+id/iv_study"
-            android:src="@drawable/vector_play_btn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"/>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_gravity="center"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:id="@+id/ll_profile"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:src="@drawable/vector_title"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@id/guideline5" />
+
+    <ImageView
+        android:id="@+id/iv_study"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vector_play_btn"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/vector_wooden_title2"
+        android:fontFamily="@font/roboto_blk"
+        android:gravity="center"
+        android:text="Choose a profile"
+        android:textColor="@color/customBrown"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintTop_toBottomOf="@id/guideline7"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+     />
+
+
+    <Spinner
+        android:id="@+id/spnr_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/custom_spnr"
+        android:visibility="visible"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintDimensionRatio="7:1"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/guideline8"
+
+      />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_confirm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/customBrown"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:text="Okay"
+        android:textAllCaps="false"
+        android:textColor="@color/brownText"
+        android:layout_marginTop="10dp"
+
+        android:visibility="visible"
+        app:layout_constraintDimensionRatio="3:0.3"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/spnr_profile" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tv_createProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_row"
+        android:backgroundTint="@color/brownText"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="@color/customBrown"
+       android:visibility="visible"
+        android:layout_marginTop="5dp"
+        app:layout_constraintDimensionRatio="3:0.3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_confirm" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="40dp"
-        android:visibility="gone">
+        app:layout_constraintGuide_percent="0.15" />
 
-        <TextView
-            android:background="@drawable/vector_wooden_title2"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/roboto_blk"
-            android:gravity="center"
-            android:text="Choose a profile"
-            android:textColor="@color/customBrown"
-            android:textSize="20sp"
-            android:layout_marginBottom="30dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
 
-            />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40" />
 
-            <Spinner
-                android:id="@+id/spnr_profile"
-                android:background="@drawable/custom_spnr"
-                android:layout_width="250dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_confirm"
-                android:text="Okay"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:background="@drawable/rounded_row"
-                android:backgroundTint="@color/customBrown"
-                android:textColor="@color/brownText"
-                android:textSize="25sp"
-                android:fontFamily="@font/roboto_light"
-                android:layout_width="250dp"
-                android:textAllCaps="false"
-                android:layout_height="40dp"
-                android:layout_marginBottom="5dp"
-                              />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/tv_createProfile"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:background="@drawable/rounded_row"
-            android:backgroundTint="@color/brownText"
-            android:textColor="@color/customBrown"
-            android:textSize="25sp"
-            android:fontFamily="@font/roboto_light"
-            android:layout_width="250dp"
-            android:textAllCaps="false"
-            android:layout_height="40dp"
-            android:text="Sign Up"
-            />
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
