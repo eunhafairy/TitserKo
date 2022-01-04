@@ -411,7 +411,7 @@ public class QuizProper extends AppCompatActivity {
                 btn_choice.setTextColor(ContextCompat.getColor(this, R.color.white));
 
                 btn_choice.setText( entry.getKey());
-
+                btn_choice.setAllCaps(false);
                 btn_choice.setLayoutParams(new LinearLayout.LayoutParams(sizeWidth, sizeHeight));
                 setMargins(btn_choice,0,0,0,gf.convertToDp(10));
                 btn_choice.setOnClickListener(new View.OnClickListener() {
