@@ -6,7 +6,7 @@
     android:id="@+id/ll_row_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
     android:background="@drawable/vector_myrow1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
