@@ -81,6 +81,19 @@ public class Score extends AppCompatActivity {
         score_btn_retry = findViewById(R.id.score_btn_retry);
         iv_trophy = findViewById(R.id.iv_trophy);
 
+        if(score < 7){
+            //bronze
+            iv_trophy.setImageResource(R.drawable.trophy_bronze);
+        }
+        else if(score < 15){
+            iv_trophy.setImageResource(R.drawable.trophy_silver);
+            //silver
+        }
+        else if (score == 15){
+            //gold
+            iv_trophy.setImageResource(R.drawable.trophy_gold);
+        }
+
 
 
     }

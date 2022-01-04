@@ -6384,7 +6384,7 @@
                     "question_audio" :  "sweet",
                     "correct_answer" : "Matamis",
                     "choices_language" : "tagalog",
-                    "correct_audio" : "matapos"
+                    "correct_audio" : "matamis"
                 },
                 {
                     "question" : "Piliin ang katumbas na tunog.",
@@ -7469,7 +7469,7 @@
                     "instruction_audio" : "ako_ay_nakatira_sa_bulacan",
                     "choices" : [
                         {
-                            "label": "I live in the Bulacan.",
+                            "label": "I live in Bulacan.",
                             "audio_src" : "i_live_in_bulacan"
 
                         }
@@ -7678,7 +7678,7 @@
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "type" : "audio",
                     "question_audio" :  "ako_ay_nakatira_sa_bulacan",
-                    "correct_answer" : "I live in the Philippines.",
+                    "correct_answer" : "I live in Bulacan.",
                     "choices_language" : "english",
                     "correct_audio" : "i_live_in_bulacan"
                 },
