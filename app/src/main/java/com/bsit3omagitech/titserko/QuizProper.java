@@ -79,7 +79,7 @@ public class QuizProper extends AppCompatActivity {
         tv_qp_description = (TextView) findViewById(R.id.tv_qp_description);
 
         //size of btns
-        sizeWidth = gf.convertToDp(250);
+        sizeWidth = gf.convertToDp(300);
         sizeHeight = gf.convertToDp(60);
 
         //Linear Layout
@@ -126,11 +126,11 @@ public class QuizProper extends AppCompatActivity {
 
             }
 
-        hash_english = gf.getEnglishChoices(lessonId);
-        hash_tagalog = gf.getTagalogChoices(lessonId);
-        Log.d("hash", hash_english.size() + "");
-        //get the parts array
-        quizArray =  shuffleJsonArray(targetLessonObject.getJSONArray("quiz"));
+            hash_english = gf.getEnglishChoices(lessonId);
+            hash_tagalog = gf.getTagalogChoices(lessonId);
+            Log.d("hash", hash_english.size() + "");
+            //get the parts array
+            quizArray =  shuffleJsonArray(targetLessonObject.getJSONArray("quiz"));
 
         }
         catch (JSONException e) {
@@ -386,7 +386,7 @@ public class QuizProper extends AppCompatActivity {
                     iv_qp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           gf.playAudio(mp, question_path);
+                            gf.playAudio(mp, question_path);
                         }
                     });
 
@@ -448,7 +448,7 @@ public class QuizProper extends AppCompatActivity {
                     }
                 });
 
-            ll_btnParent.addView(btn_choice);
+                ll_btnParent.addView(btn_choice);
 
             }
 

@@ -47,9 +47,11 @@ android:layout_marginTop="10dp"
 
     <TextView
         android:id="@+id/tv_qp_description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:layout_weight="3"
         android:fontFamily="@font/finger_paint"
         android:text="Piliin ang katumbas na tunog"
@@ -77,37 +79,28 @@ android:layout_marginTop="10dp"
 
     <LinearLayout
         android:id="@+id/ll_btnParent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/btn_lp_confirm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_qp">
 
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity=""
+    android:paddingLeft="100dp"
+    android:text="hello"
+    android:background="@drawable/button_untoggled"
 
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:background="@drawable/vector_lesson_btn" />.
-
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:background="@drawable/vector_lesson_btn" />
-
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:background="@drawable/vector_lesson_btn" />
-
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-            android:background="@drawable/vector_lesson_btn" />
+    />
 
     </LinearLayout>
 
