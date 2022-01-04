@@ -3,6 +3,7 @@ package com.bsit3omagitech.titserko;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -18,7 +19,7 @@ public class SeventhFrag extends Fragment {
 
     AppCompatButton next;
     ViewPager viewpager;
-    LinearLayout ll_dashboard;
+    ConstraintLayout ll_dashboard;
     DataBaseHelper db;
     public SeventhFrag() {
         // Required empty public constructor
