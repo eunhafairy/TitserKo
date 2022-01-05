@@ -37,7 +37,7 @@
         android:shadowRadius="1.6"
         android:text="Study"
         android:textColor="@color/brownText"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/lp_guideline"
         app:layout_constraintEnd_toStartOf="@+id/btn_lp_next"
@@ -88,10 +88,11 @@
 
     <TextView
         android:id="@+id/tv_lp_description"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:drawableEnd="@drawable/vector_sound"
+        android:layout_marginEnd="10dp"
         android:drawablePadding="10dp"
         android:fontFamily="@font/finger_paint"
         android:shadowColor="@color/brownText"

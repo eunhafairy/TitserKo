@@ -68,10 +68,10 @@
         android:layout_marginBottom="2dp"
         android:src="@drawable/vector_tips_img"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_landingTitle"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toEndOf="@id/tv_landingTitle"
-        app:layout_constraintTop_toTopOf="@+id/iv_back" />
+        app:layout_constraintTop_toTopOf="@+id/tv_landingTitle" />
 
 
     <ImageView
