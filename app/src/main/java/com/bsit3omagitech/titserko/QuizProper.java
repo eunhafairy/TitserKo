@@ -43,7 +43,7 @@ public class QuizProper extends AppCompatActivity {
     ImageView iv_qp;
     TextView tv_qp_description;
     Button btn_lp_confirm;
-    LinearLayout ll_btnParent;
+    //LinearLayout ll_btnParent;
     ImageView picture;
     JSONObject targetLessonObject;
     JSONArray quizArray;
@@ -57,6 +57,8 @@ public class QuizProper extends AppCompatActivity {
     int sizeWidth, sizeHeight;
     float progress, maxScore;
     boolean toggle;
+    Button btn_first, btn_second, btn_third;
+    List<Button> btns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,11 +85,22 @@ public class QuizProper extends AppCompatActivity {
         sizeHeight = gf.convertToDp(60);
 
         //Linear Layout
-        ll_btnParent =  findViewById(R.id.ll_btnParent);
+        //ll_btnParent =  findViewById(R.id.ll_btnParent);
         btn_lp_confirm = findViewById(R.id.btn_lp_confirm);
+
+        btn_first = findViewById(R.id.firstChoice);
+        btn_second = findViewById(R.id.secondChoice);
+        btn_third = findViewById(R.id.thirdChoice);
+        btns = new ArrayList<>();
+        btns.add(btn_first);
+        btns.add(btn_second);
+        btns.add(btn_third);
+
         parent = findViewById(R.id.linearLayout14);
         //ImageView
         iv_qp = findViewById(R.id.iv_qp);
+
+
 
         //index and score
         index = 0;
@@ -187,17 +200,17 @@ public class QuizProper extends AppCompatActivity {
 
                         //get the toggled button and change colour
                         Button _toggled = (Button) v;
-                        int ctr = ll_btnParent.getChildCount();
-                        for(int i = 0; i < ctr; i++){
+                        //int ctr = ll_btnParent.getChildCount();
+                        for(int i = 0; i < 3; i++){
 
-                            if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
-                                _toggled = (Button) ll_btnParent.getChildAt(i);
+                            if(btns.get(i).getTag().equals("toggled")) {
+                                _toggled = (Button) btns.get(i);
                             }
                             else{
 
-                                ll_btnParent.getChildAt(i).setAlpha(0.5f);
+                                btns.get(i).setAlpha(0.5f);
                             }
-                            ll_btnParent.getChildAt(i).setClickable(false);
+                            btns.get(i).setClickable(false);
                         }
 
 
@@ -219,23 +232,23 @@ public class QuizProper extends AppCompatActivity {
 
                         //get the toggled button and change colour
                         Button _toggled = (Button) v;
-                        int ctr = ll_btnParent.getChildCount();
+                        int ctr = btns.size();
                         for(int i = 0; i < ctr; i++){
 
-                            ll_btnParent.getChildAt(i).setClickable(false);
+                            btns.get(i).setClickable(false);
 
-                            if(ll_btnParent.getChildAt(i).getTag().equals("toggled")) {
-                                _toggled = (Button) ll_btnParent.getChildAt(i);
+                            if(btns.get(i).getTag().equals("toggled")) {
+                                _toggled = (Button) btns.get(i);
                             }
                             else{
-                                if(((Button)ll_btnParent.getChildAt(i)).getText().equals(correctAnswer)){
-                                    ll_btnParent.getChildAt(i).setBackgroundResource(R.drawable.button_correct);
-                                    ((Button) ll_btnParent.getChildAt(i)).setTextColor(ContextCompat.getColor(c, R.color.darkGreen));
-                                    ll_btnParent.getChildAt(i).setAlpha(0.8f);
+                                if(((Button)btns.get(i)).getText().equals(correctAnswer)){
+                                    btns.get(i).setBackgroundResource(R.drawable.button_correct);
+                                    ((Button) btns.get(i)).setTextColor(ContextCompat.getColor(c, R.color.darkGreen));
+                                    btns.get(i).setAlpha(0.8f);
                                 }
                                 else{
 
-                                    ll_btnParent.getChildAt(i).setAlpha(0.5f);
+                                    btns.get(i).setAlpha(0.5f);
                                 }
 
 
@@ -320,8 +333,6 @@ public class QuizProper extends AppCompatActivity {
 
         btn_lp_confirm.setClickable(false);
         btn_lp_confirm.setAlpha(0.5f);
-        Log.d("init", "btn confirm is : " +    btn_lp_confirm.isClickable());
-
     }
 
     private void reg(){
@@ -335,7 +346,9 @@ public class QuizProper extends AppCompatActivity {
 
 
         tv_qp_description.setText(quizArray.getJSONObject(index).getString("question"));
-        ll_btnParent.removeAllViews();
+        //ll_btnParent.removeAllViews();
+
+
         btn_lp_confirm.setText("Confirm");
         btn_lp_confirm.setClickable(false);
         btn_lp_confirm.setAlpha(0.5f);
@@ -344,9 +357,7 @@ public class QuizProper extends AppCompatActivity {
 
         try{
 
-            // ORIGINAL ALGORITHM FOR CHOICES CREATION
-            //choicesArray = shuffleJsonArray(quizArray.getJSONObject(index).getJSONArray("choices"));
-            //int choiceCount = choicesArray.length();
+
 
             ///new algo for populate choices using hashmap
             String language = "";
@@ -357,12 +368,9 @@ public class QuizProper extends AppCompatActivity {
             //show audio button if audio
             switch(type){
 
-//                ConstraintSet constraintSet = new ConstraintSet();
-//                constraintSet.clone(parent);
+
                 case "visual":
                     iv_qp.setOnClickListener(null);
-//                    iv_qp.setLayoutParams(new ConstraintLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150)));
-//                    constraintSet.connect
                     //set size of imaegview as big if visual
                     String image_name = quizArray.getJSONObject(index).getString("img_src");
                     String image_path = "lesson" + lessonId + "/"+ image_name + ".png";
@@ -375,13 +383,11 @@ public class QuizProper extends AppCompatActivity {
 
                     iv_qp.setImageResource(R.drawable.vector_audio_btn);
 
-                    //set size as small of imageview if audio type
-//                    iv_qp.setLayoutParams(new ConstraintLayout.LayoutParams(gf.convertToDp(150),gf.convertToDp(150) ));
-
                     //name of file
                     String audio_url = quizArray.getJSONObject(index).getString("question_audio");
                     String question_path = "lesson"+lessonId+"/"+audio_url;
                     gf.playAudio(mp, question_path);
+
                     //register audio listener
                     iv_qp.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -394,27 +400,30 @@ public class QuizProper extends AppCompatActivity {
 
             }
 
+
+            //reset buttons
+            for(int i = 0; i < btns.size(); i++){
+                btns.get(i).setTag("untoggled");
+                btns.get(i).setBackgroundResource(R.drawable.button_untoggled);
+                btns.get(i).setAlpha(1f);
+                Typeface face = Typeface.createFromAsset(getAssets(),
+                        "fonts/finger_paint.ttf");
+                btns.get(i).setTypeface(face);
+                btns.get(i).setTextColor(ContextCompat.getColor(this, R.color.white));
+                btns.get(i).setAllCaps(false);
+            }
+
+            //counter for the map loop
+            int counter = 0;
+
             //generate button choices
             for(Map.Entry<String, String> entry : choices.entrySet()){
-
 
                 //name of file
                 String url = entry.getValue();
                 String choice_path = "lesson"+lessonId+"/"+url;
-
-                Button btn_choice = new Button(this);
-                btn_choice.setBackgroundResource(R.drawable.button_untoggled);
-                btn_choice.setTag("untoggled");
-                Typeface face = Typeface.createFromAsset(getAssets(),
-                        "fonts/finger_paint.ttf");
-                btn_choice.setTypeface(face);
-                btn_choice.setTextColor(ContextCompat.getColor(this, R.color.white));
-
-                btn_choice.setText( entry.getKey());
-                btn_choice.setAllCaps(false);
-                btn_choice.setLayoutParams(new LinearLayout.LayoutParams(sizeWidth, sizeHeight));
-                setMargins(btn_choice,0,0,0,gf.convertToDp(10));
-                btn_choice.setOnClickListener(new View.OnClickListener() {
+                btns.get(counter).setText( entry.getKey());
+                btns.get(counter).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
@@ -422,10 +431,10 @@ public class QuizProper extends AppCompatActivity {
 
                         if(thisBtn.getTag().equals("untoggled")){
 
-                            int ll_childCount = ll_btnParent.getChildCount();
+                            int ll_childCount = btns.size();
                             for(int i = 0; i < ll_childCount; i++){
 
-                                Button _btn = (Button) ll_btnParent.getChildAt(i);
+                                Button _btn = (Button) btns.get(i);
                                 _btn.setBackgroundResource(R.drawable.button_untoggled);
                                 _btn.setTag("untoggled");
                             }
@@ -447,8 +456,7 @@ public class QuizProper extends AppCompatActivity {
 
                     }
                 });
-
-                ll_btnParent.addView(btn_choice);
+                counter++;
 
             }
 
