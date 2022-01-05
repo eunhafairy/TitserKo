@@ -13,19 +13,21 @@
         android:id="@+id/btn_lp_previous"
         android:layout_width="0dp"
         android:layout_height="0dp"
-
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/vector_arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_lp_study"
+        app:layout_constraintBottom_toTopOf="@+id/lp_guideline"
         app:layout_constraintDimensionRatio="3:1"
         app:layout_constraintEnd_toStartOf="@+id/tv_lp_study"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_lp_study" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_lp_study"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/vector_wooden_title1"
         android:fontFamily="@font/finger_paint"
         android:gravity="center"
@@ -37,6 +39,7 @@
         android:textColor="@color/brownText"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lp_guideline"
         app:layout_constraintEnd_toStartOf="@+id/btn_lp_next"
         app:layout_constraintStart_toEndOf="@+id/btn_lp_previous"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,13 +48,15 @@
         android:id="@+id/btn_lp_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/vector_next_btn"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/lp_guideline"
         app:layout_constraintDimensionRatio="3:1"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_lp_study"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_lp_study"
-        app:layout_constraintTop_toTopOf="@+id/tv_lp_study" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/btn_lp_finish"
@@ -59,8 +64,8 @@
         android:layout_height="0dp"
         android:src="@drawable/vector_finish_btn"
         android:visibility="gone"
-        app:layout_constraintDimensionRatio="3:1"
         app:layout_constraintBottom_toBottomOf="@+id/tv_lp_study"
+        app:layout_constraintDimensionRatio="3:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_lp_study"
         app:layout_constraintTop_toTopOf="@+id/tv_lp_study" />
@@ -72,14 +77,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:progress="50"
         android:progressDrawable="@drawable/custom_progressbar"
         app:layout_constraintDimensionRatio="10:0.8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_lp_study" />
+        app:layout_constraintTop_toBottomOf="@+id/lp_guideline" />
 
     <TextView
         android:id="@+id/tv_lp_description"
@@ -121,15 +126,22 @@
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintDimensionRatio="4:1"
-
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="4:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_imageView">
 
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lp_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       app:layout_constraintGuide_percent=".1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
