@@ -24,7 +24,7 @@
         android:text="Home"
         android:textColor="@color/customBrown"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/secondFrag_iv"
+        app:layout_constraintBottom_toTopOf="@id/secondFrag_guideline1"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,14 +33,15 @@
 
     <ImageView
         android:id="@+id/secondFrag_iv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/second_frag_home"
+        app:layout_constraintBottom_toTopOf="@+id/secondFrag_guideline2"
         app:layout_constraintDimensionRatio="1:2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/secondFrag_tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/secondFrag_guideline1" />
 
 
     <TextView
@@ -107,11 +108,27 @@
 
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/secondFrag_guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/secondFrag_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".60" />
+
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/secondFrag_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".90" />
+
 
 
 

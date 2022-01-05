@@ -22,7 +22,7 @@
         android:gravity="center"
         android:textColor="@color/customBrown"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@id/sixthFrag_iv"
+        app:layout_constraintBottom_toTopOf="@id/sixthFrag_guideline1"
         app:layout_constraintDimensionRatio="5:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,14 +33,15 @@
 
     <ImageView
         android:id="@+id/sixthFrag_iv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/sixth_frag_home"
+        app:layout_constraintBottom_toTopOf="@+id/sixthFrag_guideline2"
         app:layout_constraintDimensionRatio="1:2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sixthFrag_tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/sixthFrag_guideline1" />
 
 
     <TextView
@@ -48,7 +49,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
         android:shadowColor="@color/black"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sixthFrag_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sixthFrag_iv" />
+        app:layout_constraintTop_toTopOf="@+id/sixthFrag_guideline2" />
 
 
     <ImageView
@@ -111,5 +111,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sixthFrag_guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sixthFrag_guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".60" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
