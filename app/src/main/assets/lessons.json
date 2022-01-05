@@ -6,9 +6,13 @@
         {
             "lesson_id" : "00001",
             "lesson_name" : "Numbers I",
-            "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pagbilang",
             "ordered": "true",
+            "tips" : {
+                "title" : "Numbers",
+                "content" : "Magbilang tayo mula isa hanggang sampu sa wikang Ingles!"
+
+            },
             "parts" : [
 
                 {
