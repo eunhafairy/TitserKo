@@ -32,6 +32,7 @@
             android:text="Overall Progress"
             android:textColor="@color/customBrown"
             android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
             android:layout_marginStart="70dp"
             android:layout_marginEnd="70dp"
             android:background="@color/customBrown"
-            app:layout_constraintDimensionRatio="1:0.01"
+            app:layout_constraintDimensionRatio="1:0.02"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/stat_row_title" />
@@ -54,12 +55,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="3dp"
             android:fontFamily="@font/roboto_bold"
             android:text="Study Progress"
             android:textColor="@color/darkYellow"
-            app:layout_constraintEnd_toStartOf="@+id/stat_row_study_progress"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -67,7 +67,6 @@
             android:id="@+id/stat_row_study_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
             android:layout_marginEnd="70dp"
             android:fontFamily="@font/roboto_light"
             android:gravity="right"
@@ -75,7 +74,7 @@
             android:textColor="@color/customBrown"
             app:layout_constraintBottom_toTopOf="@+id/stat_row_highscore"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view" />
+            app:layout_constraintTop_toTopOf="@+id/stat_textView2" />
 
 
         <TextView
@@ -87,8 +86,6 @@
             android:text="Quiz Highscore"
             android:textColor="@color/darkYellow"
             app:layout_constraintBottom_toTopOf="@+id/textView6"
-            app:layout_constraintEnd_toStartOf="@+id/stat_row_highscore"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stat_textView2" />
 
@@ -117,8 +114,6 @@
             android:textColor="@color/darkYellow"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/textView7"
-            app:layout_constraintEnd_toStartOf="@+id/stat_row_lowscore"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -127,8 +122,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="70dp"
-            android:fontFamily="@font/roboto_light"
 
+            android:fontFamily="@font/roboto_light"
             android:gravity="right"
             android:text="5"
             android:textColor="@color/customBrown"
@@ -143,14 +138,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="15dp"
             android:fontFamily="@font/roboto_bold"
             android:text="Quiz taken"
             android:textColor="@color/darkYellow"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/stat_row_quiz_taken"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -159,13 +152,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="70dp"
-            android:layout_marginBottom="40dp"
             android:fontFamily="@font/roboto_light"
             android:gravity="right"
             android:text="5"
             android:textColor="@color/customBrown"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stat_row_lowscore" />
 
