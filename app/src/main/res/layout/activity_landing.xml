@@ -18,21 +18,25 @@
         app:layout_constraintGuide_percent=".1" />
 
 
-    <!--    <androidx.constraintlayout.widget.Guideline-->
-    <!--        android:id="@+id/landing_guideline2"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:orientation="vertical"-->
-    <!--        app:layout_constraintGuide_percent=".5" />-->
+<!--        <androidx.constraintlayout.widget.Guideline-->
+<!--            android:id="@+id/landing_guideline2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintGuide_percent=".5" />-->
 
     <ImageView
         android:id="@+id/iv_back"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:src="@drawable/vector_arrow"
         app:layout_constraintBottom_toTopOf="@id/landing_guideline1"
+        app:layout_constraintDimensionRatio="2:1"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -40,13 +44,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:shadowColor="@color/lightGreen"
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
         android:text="Sample Lesson"
         android:textColor="@color/darkGreen"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/landing_guideline1"
         app:layout_constraintEnd_toStartOf="@id/iv_tips"
@@ -55,16 +61,17 @@
 
     <ImageView
         android:id="@+id/iv_tips"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:src="@drawable/vector_tips_img"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/landing_guideline1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toEndOf="@id/tv_landingTitle"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="@+id/iv_back" />
 
 
     <ImageView
