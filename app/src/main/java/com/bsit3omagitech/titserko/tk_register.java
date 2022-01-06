@@ -79,6 +79,7 @@ public class tk_register extends AppCompatActivity {
         btn_confirmProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //create profile
                 UserModel userModel;
 
@@ -95,7 +96,11 @@ public class tk_register extends AppCompatActivity {
 
 
                     //check length
-                    if (name.length() > 1) {
+                    if(name.length() == 1){
+
+                        name = name.toUpperCase();
+                    }
+                    else if (name.length() > 1) {
                         name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
                     }
                     DataBaseHelper dbHelper = new DataBaseHelper(tk_register.this);
@@ -112,7 +117,7 @@ public class tk_register extends AppCompatActivity {
                     }
 
                     //check if name length is less than one
-                    if (ctr < 1) {
+                    else if (ctr < 1) {
                         openDialog("Error", "Enter a valid name.");
                         et_name.setText("");
                         btn_confirmProfile.setClickable(true);
@@ -120,7 +125,7 @@ public class tk_register extends AppCompatActivity {
                     }
 
                     //valid
-                    if (ctr <= 16) {
+                    else if (ctr <= 16) {
 
                         try {
                             userModel = new UserModel(-1, name, et_date.getText().toString());
