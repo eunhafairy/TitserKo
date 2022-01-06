@@ -4324,7 +4324,7 @@
                     "type" : "audio",
                     "question_audio" :  "office",
                     "correct_answer" : "Opisina",
-                    "choices_language" : "english",
+                    "choices_language" : "tagalog",
                     "correct_audio" : "opisina"
                 },
                 {
@@ -4432,7 +4432,8 @@
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "img_src" : "park_img",
                     "type" : "visual",
-                    "correct_answer" : "park"
+                    "correct_answer" : "Park",
+                    "correct_audio" : "park"
                 }
 
             ]
@@ -5405,6 +5406,11 @@
             "lesson_name" : "Adjectives I",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri I",
+            "tips" : {
+                "title" : "Adjectives",
+                "content" : "Ang \"Adjectives\" o Pang-uri ay salitang naglalarawan sa pangalan ng tao, hayop, bagay, pook o pangyayari."
+
+            },
             "parts" : [
 
 
@@ -5668,15 +5674,7 @@
                     "choices_language" : "tagalog",
                     "correct_audio" : "pogi"
                 },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "palaruan",
-                    "correct_answer" : "Playground",
-                    "choices_language" : "english",
-                    "correct_audio" : "playground"
-                },
+
                 {
                     "question" : "Piliin ang katumbas na tunog.",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
@@ -5851,16 +5849,16 @@
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "type" : "audio",
                     "question_audio" :  "magaspang",
-                    "correct_answer" : "Coarse",
+                    "correct_answer" : "Rough",
                     "choices_language" : "english",
-                    "correct_audio" : "coarse"
+                    "correct_audio" : "rough"
                 }
             ,
                 {
                     "question" : "Piliin ang katumbas na tunog.",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "type" : "audio",
-                    "question_audio" :  "coarse",
+                    "question_audio" :  "rough",
                     "correct_answer" : "Magaspang",
                     "choices_language" : "tagalog",
                     "correct_audio" : "magaspang"
@@ -5925,15 +5923,7 @@
                     "choices_language" : "english",
                     "correct_audio" : "few"
                 }
-            ,
-                {
-                    "question" : "Ano ang ibig sabihin ng sumusunod?",
-                    "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
-                    "img_src" : "house_img",
-                    "type" : "visual",
-                    "correct_answer" : "House",
-                    "correct_audio" : "house"
-                }
+
             ,
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
@@ -5950,7 +5940,7 @@
                     "img_src" : "handsome_img",
                     "type" : "visual",
                     "correct_answer" : "Handsome",
-                    "correct_audio" : "church"
+                    "correct_audio" : "handsome"
                 },
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
@@ -6021,10 +6011,10 @@
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "coarse_img",
+                    "img_src" : "rough_img",
                     "type" : "visual",
-                    "correct_answer" : "Coarse",
-                    "correct_audio" : "coarse"
+                    "correct_answer" : "Rough",
+                    "correct_audio" : "rough"
                 }
             ,
                 {
@@ -6534,7 +6524,7 @@
 
         {
             "lesson_id" : "00015",
-            "lesson_name" : "Adjective Phrases",
+            "lesson_name" : "Adjective Phrases I",
             "lesson_img" :  "animals_icon",
             "lesson_name_translate" : "Pang-uri",
             "parts" : [
@@ -6695,7 +6685,7 @@
                     "question_audio" :  "a_fast_horse",
                     "correct_answer" : "Mabilis na kabayo",
                     "choices_language" : "tagalog",
-                    "correct_audio" : "malambot"
+                    "correct_audio" : "mabilis_na_kabayo"
                 },
                 {
                     "question" : "Piliin ang katumbas na tunog.",
@@ -9148,7 +9138,7 @@
                     "type" : "visual",
                     "correct_answer" : "Punch",
                     "correct_audio" : "punch",
-                    "img_src" : "wash_img"
+                    "img_src" : "punch_img"
                 }
                 ,
 
@@ -9158,7 +9148,7 @@
                     "type" : "visual",
                     "correct_answer" : "Sleep",
                     "correct_audio" : "sleep",
-                    "img_src" : "punch_img"
+                    "img_src" : "sleep_img"
                 }
 
                  ,
