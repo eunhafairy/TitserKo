@@ -41,7 +41,7 @@
     {
         "achieve_id" : "A00004",
         "achieve_name" : "Born A Star III",
-        "achieve_desc" : "Acquire a total of twenty stars.",
+        "achieve_desc" : "Acquire a total of thirty stars.",
         "achieve_desc_tagalog" : "Makakuha ng total na dalawampung bituin.",
         "achieve_img" : "badge_00005"
 
@@ -64,7 +64,7 @@
     {
         "achieve_id" : "A00006",
         "achieve_name" : "Fly high!",
-        "achieve_desc" : "Get three perfect score on quizzes.",
+        "achieve_desc" : "Get ten perfect score on quizzes.",
         "achieve_desc_tagalog" : "Makakuha ng perpektong marka sa tatlong pagsusulit.",
         "achieve_img" : "badge_00007"
 

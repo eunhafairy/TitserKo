@@ -1143,12 +1143,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         /**
          *         "achieve_id" : "A00004",
          *         "achieve_name" : "Born A Star III",
-         *         "achieve_desc" : "Acquire a total of twenty stars.",
+         *         "achieve_desc" : "Acquire a total of thirty stars.",
          *
          **/
 
         a = getUserTotalStars(username);
-        if(a >= 20 &&  checkAchievement(username, "A00004") == false){
+        if(a >= 30 &&  checkAchievement(username, "A00004") == false){
             updatedAchievements.add("A00004");
             updateAchievement(username, "A00004");
 
@@ -1172,11 +1172,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         /**
          *          "achieve_id" : "A00006",
          *         "achieve_name" : "Fly high!",
-         *         "achieve_desc" : "Get three perfect score on quizzes.",
+         *         "achieve_desc" : "Get ten perfect score on quizzes.",
          *
          **/
         a = perfectScoreCounter(username);
-        if(a >= 3 &&  checkAchievement(username, "A00006") == false){
+        if(a >= 10 &&  checkAchievement(username, "A00006") == false){
             updatedAchievements.add("A00006");
             updateAchievement(username, "A00006");
         }

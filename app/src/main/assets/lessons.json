@@ -785,7 +785,7 @@
                     "question" : "Ano ang ibig sabihin ng sumusunod na larawan?",
                     "instruction_audio" : "ano_ang_ibig_sabihin_ng_sumusunod",
                     "type" : "visual",
-                    "img_src" : "doctor2",
+                    "img_src" : "doctor_img",
                     "question_audio" :  "doctor",
                     "choices_language" : "english",
                     "correct_answer" : "Doctor",
@@ -2877,7 +2877,7 @@
 
                 {
                     "description" : "Patatas",
-                    "instruction_audio" : "potato",
+                    "instruction_audio" : "patatas",
                     "choices" : [
                         {
                             "label": "Potato",
@@ -4849,7 +4849,7 @@
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "few_vegetables_img",
+                    "img_src" : "yellow_img",
                     "type" : "visual",
                     "correct_answer" : "Yellow",
                     "correct_audio" : "yellow"
@@ -5124,9 +5124,9 @@
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "type" : "audio",
                     "question_audio" :  "a_blue_sky",
-                    "correct_answer" : "Asul",
+                    "correct_answer" : "Asul na langit",
                     "choices_language" : "tagalog",
-                    "correct_audio" : "asul"
+                    "correct_audio" : "asul_na_langit"
                 },
                 {
                     "question" : "Piliin ang katumbas na tunog.",
@@ -6740,7 +6740,7 @@
                     "question_audio" :  "a_handsome_boy",
                     "correct_answer" : "Poging lalaki",
                     "choices_language" : "tagalog",
-                    "correct_audio" : "Poging lalaki"
+                    "correct_audio" : "poging_lalaki"
                 },
                 {
                     "question" : "Piliin ang katumbas na tunog.",
@@ -7069,15 +7069,15 @@
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "type" : "audio",
                     "question_audio" :  "magaspang_na_sahig",
-                    "correct_answer" : "A coarse floor",
+                    "correct_answer" : "A rough floor",
                     "choices_language" : "english",
-                    "correct_audio" : "a_course_floor"
+                    "correct_audio" : "a_rough_floor"
                 },
                 {
                     "question" : "Piliin ang katumbas na tunog.",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
                     "type" : "audio",
-                    "question_audio" :  "a_course_floor",
+                    "question_audio" :  "a_rough_floor",
                     "correct_answer" : "Magaspang na sahig",
                     "choices_language" : "tagalog",
                     "correct_audio" : "magaspang_na_sahig"
@@ -7255,10 +7255,10 @@
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
                     "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "img_src" : "a_course_floor_img",
+                    "img_src" : "a_rough_floor_img",
                     "type" : "visual",
-                    "correct_answer" : "A coarse floor",
-                    "correct_audio" : "a_course_floor"
+                    "correct_answer" : "A rough floor",
+                    "correct_audio" : "a_rough_floor"
                 },
                 {
                     "question" : "Ano ang ibig sabihin ng sumusunod?",
@@ -7646,15 +7646,6 @@
                     "correct_answer" : "Kumusta",
                     "choices_language" : "tagalog",
                     "correct_audio" : "kumusta"
-                },
-                {
-                    "question" : "Piliin ang katumbas na tunog.",
-                    "instruction_audio" : "piliin_ang_katumbas_na_tunog",
-                    "type" : "audio",
-                    "question_audio" :  "a_hard_rock",
-                    "correct_answer" : "Matigas na bato",
-                    "choices_language" : "tagalog",
-                    "correct_audio" : "matigas_na_bato"
                 }
             ,
                 {
@@ -9260,7 +9251,7 @@
                     "choices" : [
                         {
                             "label": "Crawl slowly",
-                            "audio_src" : "a"
+                            "audio_src" : "crawl_slowly"
 
                         }
 
