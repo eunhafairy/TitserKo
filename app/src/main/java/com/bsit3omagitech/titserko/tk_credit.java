@@ -34,4 +34,15 @@ public class tk_credit extends AppCompatActivity {
     }
 
 
+     @Override
+        public void onBackPressed() {
+
+
+        Intent i1 = new Intent(this, tk_profile.class);
+        i1.putExtra("username", username);
+        startActivity(i1);
+        finish();
+
+        }
+
 }

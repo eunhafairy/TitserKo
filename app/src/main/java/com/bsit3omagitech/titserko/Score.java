@@ -184,4 +184,18 @@ public class Score extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+
+        db.refreshAllStars(username);
+        Intent intent = new Intent(c, tk_loading.class);
+        intent.putExtra("username", username);
+        intent.putExtra("actName","dashboard");
+        startActivity(intent);
+        finish();
+
+    }
+
 }

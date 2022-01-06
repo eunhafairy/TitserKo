@@ -159,12 +159,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
 
-        if (i >= 4){
-         Toast.makeText(context, "Table created", Toast.LENGTH_SHORT).show();
-
-        }
-        Log.d("what is i", "i is: "+i);
-        Log.d("progress", createProgressTableStatement);
         //insert values from JSON to LESSON_TABLE
         try {
             loadLessonsFromJSON(db);
