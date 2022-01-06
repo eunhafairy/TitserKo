@@ -40,6 +40,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         background.add(R.drawable.vector_myrow2);
         background.add(R.drawable.vector_myrow3);
         background.add(R.drawable.vector_myrow4);
+        background.add(R.drawable.vector_myrow5);
 
     }
 
@@ -105,7 +106,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
         }
 
-        holder.ll_bg.setBackgroundResource(background.get(position % 4));
+        holder.ll_bg.setBackgroundResource(background.get(position % 5));
 
 
     }

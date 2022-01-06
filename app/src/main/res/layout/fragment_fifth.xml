@@ -55,7 +55,7 @@
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
-        android:text="Maaari kang makakuha ng mga Badges kung makakamtam mo ang mga hinihinging kondisyon. Makikita mo ang mga Badges na naipon mo sa Profile tab. Ipunin ito at ipakita sa iba!"
+        android:text="Maaari kang makakuha ng mga BADGES kung makakamtam mo ang mga hinihinging kondisyon. Makikita mo ang mga BADGES na naipon mo sa PROFILE tab. Ipunin ito at ipakita sa iba!"
         android:textColor="@color/customBrown"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/fifthFrag_guideline"

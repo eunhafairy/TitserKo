@@ -55,7 +55,7 @@
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
-        android:text="Bisitahin ang Achievements tab upang makita ang mga hinihinging kondisyon upang makuha ang mga Badges. Puwede mo ring suotin ang mga na-unlock mong badges sa tab na ito."
+        android:text="Bisitahin ang ACHIEVEMENTS tab upang makita ang mga hinihinging kondisyon upang makuha ang mga BADGES. Sa tab na ito, puwede mong suotin ang mga BADGES na iyong nakamtan upang ipagmalaki sa iba."
         android:textColor="@color/customBrown"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/sixthFrag_guideline"

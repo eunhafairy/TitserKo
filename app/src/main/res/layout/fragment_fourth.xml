@@ -55,7 +55,7 @@
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="1.6"
-        android:text="Kumuha ng mga stars sa bawat lessons. Isang star para pagbasa ng buong aralin. Isang star kung nakapasa ka sa pagsusulit. At isang star kung makakuha ng perpektong marka."
+        android:text="Kumuha ng STARS para maka-unlock ng lessons. Ikaw ay bibiyayaan ng isang star para sa pagbasa ng buong aralin, isang star kung pumasa ka sa pagsusulit, at isa pang star kung makakuha ka ng perpektong marka."
         android:textColor="@color/customBrown"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/fourthFrag_guideline"
