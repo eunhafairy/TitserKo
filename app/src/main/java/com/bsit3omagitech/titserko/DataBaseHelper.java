@@ -551,7 +551,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 id = jo_inside.getString("lesson_id");
                 if(id.equals(lessonId))
                 {
-
                     score = jo_inside.getJSONArray("quiz").length();
                     break;
                 }
@@ -1085,17 +1084,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
    public boolean checkAchievement(String username, String achievementId){
 
         boolean flag = false;
+        int i = 0;
        SQLiteDatabase db = this.getReadableDatabase();
        String selectQuery = "SELECT " + ACHIEVEMENT_FLAG + " FROM " + ACHIEVEMENT_TABLE + " WHERE " + ACHIEVEMENT_USER + " = '" + username + "' AND "+ACHIEVEMENT_ID+" = '"+achievementId+"'";
        Cursor cursor = db.rawQuery(selectQuery, null);
 
        if (cursor.moveToFirst()) {
            do {
-               flag = cursor.getInt(0) > 0;
+               i = cursor.getInt(0);
            } while (cursor.moveToNext());
        }
-
-        return flag;
+       if(i>0) flag = true;
+       return flag;
    }
 
 
@@ -1111,7 +1111,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
              *
              **/
         int a = getLessonStar(username, "00001");
-        if(a > 0 && !checkAchievement(username, "A00001")){
+        if(a > 0 && checkAchievement(username, "A00001") == false){
             updatedAchievements.add("A00001");
             updateAchievement(username, "A00001");
         }
@@ -1124,7 +1124,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = getUserTotalStars(username);
-        if(a >=3 && !checkAchievement(username, "A00002")){
+        if(a >=3 &&  checkAchievement(username, "A00002") == false){
             updatedAchievements.add("A00002");
             updateAchievement(username, "A00002");
 
@@ -1139,7 +1139,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUserTotalStars(username);
-        if(a >=10 && !checkAchievement(username, "A00003")){
+        if(a >=10 &&  checkAchievement(username, "A00003") == false){
             updatedAchievements.add("A00003");
             updateAchievement(username, "A00003");
 
@@ -1154,7 +1154,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUserTotalStars(username);
-        if(a >= 20 && !checkAchievement(username, "A00004") ){
+        if(a >= 20 &&  checkAchievement(username, "A00004") == false){
             updatedAchievements.add("A00004");
             updateAchievement(username, "A00004");
 
@@ -1168,7 +1168,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = perfectScoreCounter(username);
-        if(a > 0 && !checkAchievement(username, "A00005")){
+        if(a > 0 &&  checkAchievement(username, "A00005") == false){
             updatedAchievements.add("A00005");
             updateAchievement(username, "A00005");
         }
@@ -1182,7 +1182,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = perfectScoreCounter(username);
-        if(a >= 3 && !checkAchievement(username, "A00006")){
+        if(a >= 3 &&  checkAchievement(username, "A00006") == false){
             updatedAchievements.add("A00006");
             updateAchievement(username, "A00006");
         }
@@ -1195,7 +1195,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = perfectScoreCounter(username);
-        if(a >= getAllLessonId().size() && !checkAchievement(username, "A00007")){
+        if(a >= getAllLessonId().size() &&  checkAchievement(username, "A00007") == false){
             updatedAchievements.add("A00007");
             updateAchievement(username, "A00007");
         }
@@ -1208,7 +1208,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          *
          **/
         a = getLessonStar(username, "00002");
-        if(a >= 3 && !checkAchievement(username, "A00008")){
+        if(a >= 3 &&  checkAchievement(username, "A00008") == false){
             updatedAchievements.add("A00008");
             updateAchievement(username, "A00008");
         }
@@ -1222,7 +1222,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonStar(username, "00006");
-        if(a >= 3 && !checkAchievement(username, "A00009")){
+        if(a >= 3 && checkAchievement(username, "A00009") == false){
             updatedAchievements.add("A00009");
             updateAchievement(username, "A00009");
         }
@@ -1236,7 +1236,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonStar(username, "00011");
-        if(a >= 3 && !checkAchievement(username, "A00010")){
+        if(a >= 3 && checkAchievement(username, "A00010") == false){
             updatedAchievements.add("A00010");
             updateAchievement(username, "A00010");
         }
@@ -1250,7 +1250,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonStar(username, "00003");
-        if(a >= 3 && !checkAchievement(username, "A00011")){
+        if(a >= 3 && checkAchievement(username, "A00011") == false){
             updatedAchievements.add("A00011");
             updateAchievement(username, "A00011");
         }
@@ -1263,8 +1263,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonProgress(username, "00003");
-        int b = getMaxIndex("00003") + 1;
-        if(a >= b && !checkAchievement(username, "A00012")){
+        int b = getMaxIndex("00003");
+
+        Log.d("check","a is: "+a + " and b is : "+b);
+
+        if(a >= b && checkAchievement(username, "A00012") == false){
             updatedAchievements.add("A00012");
             updateAchievement(username, "A00012");
         }
@@ -1278,7 +1281,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUnlockedLessons(username);
-        if(a >= 5 && !checkAchievement(username, "A00013")){
+        if(a >= 5 && checkAchievement(username, "A00013") == false){
             updatedAchievements.add("A00013");
             updateAchievement(username, "A00013");
         }
@@ -1293,7 +1296,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUnlockedLessons(username);
-        if(a >= 15 && !checkAchievement(username, "A00014")){
+        if(a >= 15 && checkAchievement(username, "A00014") == false){
             updatedAchievements.add("A00014");
             updateAchievement(username, "A00014");
         }
@@ -1307,7 +1310,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUnlockedLessons(username);
-        if(a >= getAllLessonId().size() && !checkAchievement(username, "A00015")){
+        if(a >= getAllLessonId().size() && checkAchievement(username, "A00015") == false){
             updatedAchievements.add("A00015");
             updateAchievement(username, "A00015");
         }
@@ -1321,7 +1324,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getUserTotalStars(username);
-        if(a >= (getAllLessonId().size() * 3) && !checkAchievement(username, "A00016")){
+        if(a >= (getAllLessonId().size() * 3) && checkAchievement(username, "A00016") == false){
             updatedAchievements.add("A00016");
             updateAchievement(username, "A00016");
         }
@@ -1335,8 +1338,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonProgress(username, "00013");
-        b = getMaxIndex("00013") + 1;
-        if(a >= b && !checkAchievement(username, "A00017")){
+        b = getMaxIndex("00013");
+        if(a >= b && checkAchievement(username, "A00017") == false){
             updatedAchievements.add("A00017");
             updateAchievement(username, "A00017");
         }
@@ -1350,7 +1353,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonStar(username, "00013") + getLessonStar(username, "00014") + getLessonStar(username, "00015") + getLessonStar(username, "00016") ;
-        if(a >= 12 && !checkAchievement(username, "A00018")){
+        if(a >= 12 && checkAchievement(username, "A00018") == false){
             updatedAchievements.add("A00018");
             updateAchievement(username, "A00018");
         }
@@ -1364,8 +1367,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
          **/
 
         a = getLessonProgress(username, "00018") + getLessonProgress(username, "00019") ;
-        b = (getMaxIndex("00018") + 1) + (getMaxIndex("00019") + 1);
-        if(a >= b && !checkAchievement(username, "A00019")){
+        b = (getMaxIndex("00018")) + (getMaxIndex("00019"));
+        if(a >= b && checkAchievement(username, "A00019") == false){
             updatedAchievements.add("A00019");
             updateAchievement(username, "A00019");
         }
@@ -1380,7 +1383,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         a = getLessonStar(username, "00018") + getLessonStar(username, "00019") + getLessonStar(username, "00020") + getLessonStar(username, "00021") ;
 
-        if(a >= 12 && !checkAchievement(username, "A00020")){
+        if(a >= 12 && checkAchievement(username, "A00020") == false){
             updatedAchievements.add("A00020");
             updateAchievement(username, "A00020");
         }
@@ -1398,7 +1401,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         a = getUserTotalStars(username);
         b = getAllLessonId().size();
 
-        if(a >= (b*3) && !checkAchievement(username, "A10000")){
+        if(a >= (b*3) && checkAchievement(username, "A10000") == false){
             updatedAchievements.add("A10000");
             updateAchievement(username, "A10000");
         }
@@ -1516,8 +1519,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                int maxScore = getMaxScore(cursor.getString(1));
-                if(cursor.getInt(0) >= maxScore){
+                //int maxScore = getMaxScore(cursor.getString(1));
+                if(cursor.getInt(0) >= 15){
                     ctr++;
                 }
 
