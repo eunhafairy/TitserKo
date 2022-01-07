@@ -111,9 +111,7 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         // --------------------------------------------- INTENTS ---------------------------------------------
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
-
         bday = db.getUserBirthday(name);
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date = bday;
         dateTime = dateFormat.format(date);
