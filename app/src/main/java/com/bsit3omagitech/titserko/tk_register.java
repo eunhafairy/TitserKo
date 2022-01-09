@@ -19,6 +19,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 public class tk_register extends AppCompatActivity {
 
 
@@ -30,7 +32,7 @@ public class tk_register extends AppCompatActivity {
     String name = "";
     Dialog dialog;
     ProgressBar register_progressBar;
-
+    int _year;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class tk_register extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 et_date.setText((month+1)+"/"+(dayOfMonth)+"/"+(year));
+                _year = year;
             }
         },1990,1,1);
 
@@ -114,6 +117,14 @@ public class tk_register extends AppCompatActivity {
                         register_progressBar.setVisibility(View.GONE);
                         et_name.setText("");
 
+                    }
+                    else if(testIfThisYear()){
+
+                        openDialog("Error", "Birth year shouldn't be equals to this year.");
+                        et_name.setText("");
+                        et_date.setText("");
+                        btn_confirmProfile.setClickable(true);
+                        register_progressBar.setVisibility(View.GONE);
                     }
 
                     //check if name length is less than one
@@ -220,4 +231,21 @@ public class tk_register extends AppCompatActivity {
             return false;
         }
     }
+
+    private boolean testIfThisYear(){
+        int year = _year;
+        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+        if(year >= thisYear){
+
+            return true;
+
+        }
+        else{
+            return false;
+
+        }
+
+
+    }
+
 }
