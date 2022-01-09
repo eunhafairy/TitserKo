@@ -157,6 +157,7 @@ public class landing extends AppCompatActivity {
 
 
 
+
         //for lesson progress
        db.refreshAllStars(username);
        lessonProgressBar = (ProgressBar) findViewById(R.id.lessonProgressBar);
@@ -233,6 +234,13 @@ public class landing extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
+
     }
 
     public String loadJSONFromAsset() {

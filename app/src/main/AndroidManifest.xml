@@ -3,6 +3,7 @@
     package="com.bsit3omagitech.titserko">
 
     <application
+        android:screenOrientation="portrait"
         android:allowBackup="true"
         android:icon="@drawable/titserko_ico"
         android:roundIcon="@drawable/titserko_round"
@@ -11,26 +12,40 @@
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
             android:name=".tk_loading"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            >
         </activity>
         <activity
             android:name=".tk_credit"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".tk_statistics"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tk_achievements"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".tk_profile"
-            android:exported="true" />
-        <activity android:name=".Score" />
-        <activity android:name=".QuizProper" />
-        <activity android:name=".LessonProper" />
-        <activity android:name=".landing" />
-        <activity android:name=".TkDashboardActivity" />
-        <activity android:name=".tk_register" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Score"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizProper"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LessonProper"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".landing"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TkDashboardActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".tk_register"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
