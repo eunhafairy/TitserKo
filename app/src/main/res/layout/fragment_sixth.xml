@@ -57,7 +57,6 @@
         android:shadowRadius="1.6"
         android:text="Bisitahin ang ACHIEVEMENTS tab upang makita ang mga hinihinging kondisyon upang makuha ang mga BADGES. Sa tab na ito, puwede mong suotin ang mga BADGES na iyong nakamtan upang ipagmalaki sa iba."
         android:textColor="@color/customBrown"
-        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/sixthFrag_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

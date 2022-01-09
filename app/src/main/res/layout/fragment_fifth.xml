@@ -57,7 +57,6 @@
         android:shadowRadius="1.6"
         android:text="Maaari kang makakuha ng mga BADGES kung makakamtam mo ang mga hinihinging kondisyon. Makikita mo ang mga BADGES na naipon mo sa PROFILE tab. Ipunin ito at ipakita sa iba!"
         android:textColor="@color/customBrown"
-        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/fifthFrag_guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
