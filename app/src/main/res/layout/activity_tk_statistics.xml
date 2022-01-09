@@ -44,6 +44,19 @@
         >
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stat_nav_guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/stat_nav_guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".03" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/stat_guideline1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,25 +76,26 @@
             android:id="@+id/iv_stat_back"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginStart="10dp"
+android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:src="@drawable/vector_menu_btn"
             app:layout_constraintBottom_toBottomOf="@+id/stat_guideline1"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/stat_nav_guideline1"
             app:layout_constraintTop_toTopOf="parent" />
-            <TextView
-                android:id="@+id/tv_landingTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/customBrown"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/stat_guideline1"
-                app:layout_constraintStart_toEndOf="@+id/iv_stat_back"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="Statistics" />
+
+        <TextView
+            android:id="@+id/tv_landingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statistics"
+            android:textSize="20sp"
+            android:textColor="@color/customBrown"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/stat_guideline1"
+            app:layout_constraintEnd_toStartOf="@+id/stat_nav_guideline2"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toEndOf="@+id/iv_stat_back"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <LinearLayout
