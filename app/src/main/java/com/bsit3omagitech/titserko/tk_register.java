@@ -62,17 +62,23 @@ public class tk_register extends AppCompatActivity {
     private void reg(){
 
         //for date picker
+
+
         datePickerDialog = new DatePickerDialog(c, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 et_date.setText((month+1)+"/"+(dayOfMonth)+"/"+(year));
                 _year = year;
             }
-        },1990,1,1);
+        },2010,1,1);
 
         et_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
                 datePickerDialog.show();
             }
         });
