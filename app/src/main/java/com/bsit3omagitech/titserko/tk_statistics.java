@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -51,6 +52,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
     NavigationView stats_navigationView;
     DrawerLayout stats_drawerLayout;
     Toolbar toolbar;
+
     GlobalFunctions gf;
     MediaPlayer mp;
 
@@ -67,6 +69,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
 
     private void init(){
 
+
         // ------------------------------------------ INITIALIZE VARIABLES ------------------------------------------
         pb_stat_overall = findViewById(R.id.pb_stat_overall);
         tv_stat_overall_progress = findViewById(R.id.tv_stat_overall_progress);
@@ -82,8 +85,9 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         username = intent.getStringExtra("username");
         gf = new GlobalFunctions(ct);
         mp = new MediaPlayer();
+        Uri mediaPath = Uri.parse("android.resource://" + ct.getPackageName() + "/" + R.raw.bgm_stats_1);
         try {
-            gf.playBGM(mp);
+            gf.playBGM(mp, mediaPath, username);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -127,10 +131,7 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, stats_drawerLayout, toolbar, R.string.navigation_drawer_open ,R.string.navigation_drawer_close);
         stats_drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
         stats_navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
-
-
     }
 
 
@@ -224,7 +225,13 @@ public class tk_statistics extends AppCompatActivity implements NavigationView.O
                 startActivity(i3);
                 finish();
                 break;
-
+            case R.id.nav_settings:
+                mp.stop();
+                Intent i5 = new Intent(this, tk_settings.class);
+                i5.putExtra("username", username);
+                startActivity(i5);
+                finish();
+                break;
             case R.id.nav_stats:
                 break;
 

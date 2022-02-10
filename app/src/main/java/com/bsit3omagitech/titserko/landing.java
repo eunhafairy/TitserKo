@@ -48,7 +48,8 @@ public class landing extends AppCompatActivity {
     List<Integer> animals;
     List<String> achieveList = new ArrayList<>();
     Dialog dialog;
-
+    List<Integer> landing_bgms;
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +61,9 @@ public class landing extends AppCompatActivity {
     }
 
     private void init(){
-
+        landing_bgms = new ArrayList<>();
+        landing_bgms.add(R.raw.bgm_landing_1);
+        landing_bgms.add(R.raw.bgm_landing_2);
         maxLesson = 0;
         btn_landing_study = (Button) findViewById(R.id.btn_landing_study);
         btn_landing_quiz = (Button) findViewById(R.id.btn_landing_quiz);
@@ -107,6 +110,17 @@ public class landing extends AppCompatActivity {
             case 3:
                 iv_landing_stars.setImageResource(R.drawable.score_star_3);
                 break;
+        }
+
+        Random random = new Random();
+        int randomNum = random.nextInt(2);
+        gf = new GlobalFunctions(c);
+        mp = new MediaPlayer();
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + landing_bgms.get(randomNum));
+        try {
+            gf.playBGM(mp, mediaPath, username);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         //refresh achievements
@@ -187,6 +201,7 @@ public class landing extends AppCompatActivity {
                     // Apply activity transition
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
+                mp.stop();
                 finish();
 
 
@@ -209,6 +224,7 @@ public class landing extends AppCompatActivity {
                     // Apply activity transition
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
+                mp.stop();
                 finish();
 
             }
@@ -231,6 +247,7 @@ public class landing extends AppCompatActivity {
                     // Apply activity transition
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
+                mp.stop();
                 finish();
             }
         });
@@ -239,6 +256,7 @@ public class landing extends AppCompatActivity {
     @Override
     protected void onDestroy() {
 
+        mp.stop();
         super.onDestroy();
 
     }
@@ -260,7 +278,7 @@ public class landing extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-
+        mp.stop();
         db.refreshAllStars(username);
         Intent intent = new Intent(c, TkDashboardActivity.class);
         intent.putExtra("username", username);
@@ -335,7 +353,7 @@ public class landing extends AppCompatActivity {
             MediaPlayer sfx = new MediaPlayer();
             String audio_url = "achievement_unlocked_sound";
             String audio_path = "general_audio/"+audio_url;
-            gf.playAudio(sfx, audio_path);
+            gf.playAudio(sfx, audio_path, username);
 
 
         }

@@ -33,13 +33,19 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class GlobalFunctions {
     public Context context;
-
-
+    public float bgm_volume, sfx_volume;
+    private DataBaseHelper dbHelper;
     public GlobalFunctions(Context context) {
+
+
         this.context = context;
+        dbHelper = new DataBaseHelper(context);
+        bgm_volume = 1f;
+        sfx_volume =1f;
+
     }
 
-    public void playAudio(MediaPlayer m, String fileName) {
+    public void playAudio(MediaPlayer m, String fileName, String username) {
         try {
             if (m.isPlaying()) {
                 m.stop();
@@ -65,7 +71,7 @@ public class GlobalFunctions {
 
             }
             m.prepare();
-            m.setVolume(0.5f, 0.5f);
+            m.setVolume(dbHelper.getSFX(username), dbHelper.getSFX(username));
             m.start();
 
         } catch (Exception e) {
@@ -73,16 +79,37 @@ public class GlobalFunctions {
         }
     }
 
-    public void playBGM(MediaPlayer mp) throws Exception{
+    public void playBGM(MediaPlayer mp, Uri mediaPath, String username) throws Exception{
 
-        Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.ambience);
-        mp.setDataSource(context, mediaPath);
-        mp.setLooping(true);
-        mp.setVolume(0.3f, 0.3f);
-        mp.prepare();
-        mp.start();
+
+            mp.stop();
+
+            mp.setDataSource(context, mediaPath);
+            mp.setLooping(true);
+            if(username.equals("0")){
+
+                mp.setVolume(1f, 1f);
+            }
+            else{
+                Log.d("taaag", "dbHelper.getBGM(username) is: " + dbHelper.getBGM(username));
+                mp.setVolume(dbHelper.getBGM(username), dbHelper.getBGM(username));
+
+            }
+
+            mp.prepare();
+            mp.start();
+
+
 
     }
+
+    public void setVolumes(float _bgm, float _sfx){
+        bgm_volume = _bgm;
+        sfx_volume = _sfx;
+
+    }
+
+
 
     public void setImage(ImageView iv, String fileName){
         // load image

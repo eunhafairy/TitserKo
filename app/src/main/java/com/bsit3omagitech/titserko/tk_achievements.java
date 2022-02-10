@@ -75,8 +75,9 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
         c = this;
         gf = new GlobalFunctions(c);
         mp = new MediaPlayer();
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + R.raw.bgm_achieve_1);
         try {
-            gf.playBGM(mp);
+            gf.playBGM(mp, mediaPath, name);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -298,6 +299,14 @@ public class tk_achievements extends AppCompatActivity  implements NavigationVie
                 startActivity(i2);
                 finish();
 
+                break;
+
+            case R.id.nav_settings:
+                mp.stop();
+                Intent i5 = new Intent(this, tk_settings.class);
+                i5.putExtra("username", name);
+                startActivity(i5);
+                finish();
                 break;
 
             //--------Achievements----------

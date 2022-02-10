@@ -77,7 +77,9 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
     }
 
     private  void init(){
-
+        c = this;
+        db = new DataBaseHelper(c);
+        gf = new GlobalFunctions(c);
         // --------------------------------------------- INITIALIZE ----------------------------------------------
         btn_profile_back = findViewById(R.id.btn_profile_back);
         tv_profile_name = findViewById(R.id.tv_profile_name);
@@ -90,24 +92,6 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         btn_credits = findViewById(R.id.prof_btn_credits);
         btn_delete = findViewById(R.id.prof_btn_delete);
         btn_tutorial = findViewById(R.id.prof_btn_tutorial);
-
-
-        c = this;
-        db = new DataBaseHelper(c);
-        gf = new GlobalFunctions(c);
-
-        //media player
-        mp = new MediaPlayer();
-        try {
-            gf.playBGM(mp);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //dialog
-        dialog = new Dialog(c);
-
-
         // --------------------------------------------- INTENTS ---------------------------------------------
         Intent intent = getIntent();
         name = intent.getStringExtra("username");
@@ -116,6 +100,23 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
         Date date = bday;
         dateTime = dateFormat.format(date);
         age = gf.getAge(dateTime) + "";
+
+
+
+        //media player
+        mp = new MediaPlayer();
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + R.raw.bgm_achieve_1);
+        try {
+            gf.playBGM(mp, mediaPath, name);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //dialog
+        dialog = new Dialog(c);
+
+
+
 
         populateProfileBadge();
         iv_profile_badge.setImageURI(db.getUserBadge(name));
@@ -409,6 +410,13 @@ public class tk_profile extends AppCompatActivity implements NavigationView.OnNa
                 Intent i4 = new Intent(this, tk_statistics.class);
                 i4.putExtra("username", name);
                 startActivity(i4);
+                finish();
+                break;
+            case R.id.nav_settings:
+                mp.stop();
+                Intent i5 = new Intent(this, tk_settings.class);
+                i5.putExtra("username", name);
+                startActivity(i5);
                 finish();
                 break;
 

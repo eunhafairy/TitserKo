@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,13 +53,14 @@ public class QuizProper extends AppCompatActivity {
     List<String> userAnswer;
     GlobalFunctions gf;
     ConstraintLayout parent;
-    MediaPlayer mp;
+    MediaPlayer mp, bgmMp;
     HashMap<String, String> hash_english, hash_tagalog, choices;
     int sizeWidth, sizeHeight;
     float progress, maxScore;
     boolean toggle;
     Button btn_first, btn_second, btn_third;
     List<Button> btns;
+    List<Integer> quizBgms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +73,13 @@ public class QuizProper extends AppCompatActivity {
     }
 
     private void init() {
-
+        bgmMp = new MediaPlayer();
         c = this;
+        quizBgms = new ArrayList<>();
+        quizBgms.add(R.raw.bgm_quiz_1);
+        quizBgms.add(R.raw.bgm_quiz_2);
+
+
         maxScore = 0;
         gf = new GlobalFunctions(c);
         //select toggle
@@ -102,6 +109,7 @@ public class QuizProper extends AppCompatActivity {
 
 
 
+
         //index and score
         index = 0;
         score = 0;
@@ -118,6 +126,18 @@ public class QuizProper extends AppCompatActivity {
 
         //media player
         mp = new MediaPlayer();
+        //======================================bgms===================================
+        Random random = new Random();
+        int randomNum = random.nextInt(2);
+        gf = new GlobalFunctions(c);
+        bgmMp = new MediaPlayer();
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + quizBgms.get(randomNum));
+        try {
+            gf.playBGM(bgmMp, mediaPath, username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         //selected answer
         selectedAnswer = "";
         userAnswer = new ArrayList<String>();
@@ -302,7 +322,7 @@ public class QuizProper extends AppCompatActivity {
                 }
                 //go to score page
                 else{
-
+                    bgmMp.stop();
                     //save user highscore
                     //run the update query at the start to track progress
                     db = new DataBaseHelper(getApplicationContext());
@@ -324,6 +344,7 @@ public class QuizProper extends AppCompatActivity {
                         // Apply activity transition
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     }
+
                     finish();
                 }
 
@@ -386,13 +407,13 @@ public class QuizProper extends AppCompatActivity {
                     //name of file
                     String audio_url = quizArray.getJSONObject(index).getString("question_audio");
                     String question_path = "lesson"+lessonId+"/"+audio_url;
-                    gf.playAudio(mp, question_path);
+                    gf.playAudio(mp, question_path, username);
 
                     //register audio listener
                     iv_qp.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            gf.playAudio(mp, question_path);
+                            gf.playAudio(mp, question_path, username);
                         }
                     });
 
@@ -444,7 +465,7 @@ public class QuizProper extends AppCompatActivity {
                             selectedAnswer = thisBtn.getText().toString();
                             btn_lp_confirm.setClickable(true);
                             btn_lp_confirm.setAlpha(1f);
-                            gf.playAudio(mp, choice_path);
+                            gf.playAudio(mp, choice_path, username);
                         }
                         else{
                             thisBtn.setTag("untoggled");
@@ -583,17 +604,10 @@ public class QuizProper extends AppCompatActivity {
 
     }
 
-    //for setting margins
-    private void setMargins (View view, int left, int top, int right, int bottom) {
-        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            p.setMargins(left, top, right, bottom);
-            view.requestLayout();
-        }
-    }
 
     @Override
     public void onBackPressed() {
+
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Exit Quiz?")
@@ -601,6 +615,7 @@ public class QuizProper extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        mp.stop();
                         Intent i = new Intent(c, TkDashboardActivity.class);
                         i.putExtra("username", username);
                         startActivity(i);

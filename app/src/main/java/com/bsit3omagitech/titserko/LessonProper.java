@@ -41,6 +41,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.chrono.MinguoDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class LessonProper extends AppCompatActivity {
@@ -60,6 +61,8 @@ public class LessonProper extends AppCompatActivity {
     ProgressBar lessonProgress;
     String TAG = "debug";
     Context c;
+    MediaPlayer bgmMp;
+    List<Integer> lessonBgms;
     boolean isOrdered = false;
     int sizeWidth, sizeHeight, sizeWidthIndp, sizeHeightIndp;
     int index;
@@ -77,7 +80,11 @@ public class LessonProper extends AppCompatActivity {
 
     private void init(){
 
-
+        bgmMp = new MediaPlayer();
+        lessonBgms = new ArrayList<>();
+        lessonBgms.add(R.raw.bgm_lesson_1);
+        lessonBgms.add(R.raw.bgm_lesson_2);
+        lessonBgms.add(R.raw.bgm_lesson_3);
         index = 0;
         c = this;
         gf = new GlobalFunctions(c);
@@ -110,16 +117,27 @@ public class LessonProper extends AppCompatActivity {
         lessonTranslated = intent.getStringExtra("lessonTranslated");
         username = intent.getStringExtra("username");
 
-        //run the update query at the start to track progress
+        //=========================================run the update query at the start to track progress===================================
         db = new DataBaseHelper(getApplicationContext());
         db.updateLessonProgress(index, username, lessonId);
 
-        //size in dp
+        //=======================================size in dp==========================================
         sizeHeight = gf.convertToDp(60);
         sizeWidth = gf.convertToDp(250);
 
+        //=======================bgm=============================
+        Random random = new Random();
+        int randomNum = random.nextInt(3);
+        gf = new GlobalFunctions(c);
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + lessonBgms.get(randomNum));
+        try {
+            gf.playBGM(bgmMp, mediaPath, username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        //locate the JSON Object of selected lesson
+
+        //================================locate the JSON Object of selected lesson================================
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray m_jArry = obj.getJSONArray("lesson_arr");
@@ -357,7 +375,7 @@ public class LessonProper extends AppCompatActivity {
             tv_lp_description.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                      gf.playAudio(instruction_mp, lesson_path);
+                      gf.playAudio(instruction_mp, lesson_path, username);
                 }
             });
 
@@ -385,7 +403,7 @@ public class LessonProper extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        gf.playAudio(mp, label_path);
+                        gf.playAudio(mp, label_path, username);
                     }
                 });
                 ll_parent.addView(btn_choice);

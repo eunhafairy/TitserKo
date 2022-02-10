@@ -165,7 +165,8 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         //media player
         mp = new MediaPlayer();
         try {
-            gf.playBGM(mp);
+            Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + R.raw.ambience);
+            gf.playBGM(mp, mediaPath,name);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -359,14 +360,19 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
                 startActivity(achievement_intent);
                 finish();
                 break;
-
             case R.id.nav_logout:
                 mp.stop();
                 Intent i2 = new Intent(this, MainActivity.class);
                 startActivity(i2);
                 finish();
                 break;
-
+            case R.id.nav_settings:
+                mp.stop();
+                Intent i4 = new Intent(this, tk_settings.class);
+                i4.putExtra("username", name);
+                startActivity(i4);
+                finish();
+                break;
             case R.id.nav_stats:
                 mp.stop();
                 Intent i3 = new Intent(this, tk_statistics.class);
@@ -420,7 +426,7 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
             MediaPlayer sfx = new MediaPlayer();
             String audio_url = "achievement_unlocked_sound";
             String audio_path = "general_audio/"+audio_url;
-            gf.playAudio(sfx, audio_path);
+            gf.playAudio(sfx, audio_path, name);
 
 
         }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -20,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.spec.ECField;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView textView;
     DataBaseHelper db;
     MediaPlayer mp;
+    Context context;
+    GlobalFunctions gf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +46,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    private void init(){
+    private void init() {
 
-        db = new DataBaseHelper(this);
+        context = this;
+        db = new DataBaseHelper(context);
         usernameSelected = "";
 
 
@@ -76,19 +81,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
+        //======================= FOR BGM ===========================
+        gf = new GlobalFunctions(this);
         mp = new MediaPlayer();
-
-        Uri mediaPath = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bensound_bgm);
-        try {
-            mp.setDataSource(getApplicationContext(), mediaPath);
-            mp.prepare();
-            mp.start();
-        } catch (Exception e) {
+        Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.bensound_bgm);
+        try{
+            gf.playBGM(mp, mediaPath, "0");
+        }
+        catch (Exception e){
             e.printStackTrace();
+
         }
 
 
-        //register listeners
+
+
+
+        //=================================register listeners ====================================
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

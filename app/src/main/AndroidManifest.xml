@@ -21,6 +21,10 @@
             android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".tk_settings"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".tk_statistics"
             android:exported="true"
             android:screenOrientation="portrait" />

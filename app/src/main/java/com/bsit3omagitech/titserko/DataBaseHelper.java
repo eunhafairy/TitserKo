@@ -53,6 +53,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ACHIEVEMENT_ID = "COLUMN_ACHIEVEMENT_ID";
     public static final String COLUMN_FIRST_TIME = "COLUMN_FIRST_TIME";
 
+    //user table
+    public static final String SETTINGS_DB = "SETTINGS_DB";
+    public static final String SETTINGS_ID = "SETTINGS_ID";
+    public static final String SETTINGS_BGM = "SETTINGS_BGM";
+    public static final String SETTINGS_SFX = "SETTINGS_SFX";
+    public static final String SETTINGS_USER = "COLUMN_ID"; //foreign key
+
+
     //lesson table
     public static final String LESSON_TABLE = "LESSON_TABLE";
     public static final String LESSON_ID = "LESSON_ID";
@@ -77,7 +85,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ACHIEVEMENT_FLAG = "achievements_flag"; // boolean
     public Dialog dialog;
     LinkedBlockingQueue<Dialog> dialogsToShow = new LinkedBlockingQueue<>();
-    public static final int DB_VERSION = 45;
+    public static final int DB_VERSION = 46;
     Context context;
     GlobalFunctions gf;
 
@@ -152,6 +160,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         try {
             db.execSQL(createAchievementTableStatement);
+            i++;
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        //FOR SETTINGS_DB
+        String settingsTableStatement = "CREATE TABLE "
+                + SETTINGS_DB + " ("
+                + SETTINGS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + SETTINGS_USER + " TEXT, "
+                + SETTINGS_BGM + " FLOAT, "
+                + SETTINGS_SFX + " FLOAT)";
+
+        try {
+            db.execSQL(settingsTableStatement);
             i++;
         } catch (SQLException e) {
 
@@ -251,7 +275,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_FIRST_TIME, 1);
         long insert = db.insert(USER_TABLE, null, cv);
 
-        if (insert == -1) {
+        //insert user-settings to settings table
+        ContentValues cv1 = new ContentValues();
+        cv1.put(SETTINGS_USER, userModel.getName());
+        cv1.put(SETTINGS_SFX, 1f);
+        cv1.put(SETTINGS_BGM, 0.2f);
+        long insert2 = db.insert(SETTINGS_DB, null, cv1);
+
+        if (insert == -1 || insert2 == -1) {
             return false;
 
         } else {
@@ -260,6 +291,47 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
         }
+
+
+    }
+
+    public float getBGM(String username){
+        float _bgm = 1f;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + SETTINGS_BGM + " FROM " + SETTINGS_DB+ " WHERE "+SETTINGS_USER + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                _bgm = cursor.getFloat(0);
+            } while (cursor.moveToNext());
+        }
+
+        return _bgm;
+
+    }
+    public float getSFX(String username){
+        float _sfx = 0f;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + SETTINGS_SFX + " FROM " + SETTINGS_DB+ " WHERE "+SETTINGS_USER + " = '" + username+"'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                _sfx = cursor.getFloat(0);
+            } while (cursor.moveToNext());
+        }
+
+        return _sfx;
+
+    }
+    public void setVolumes(String username, float _bgm, float _sfx){
+
+        String updateQuery = "UPDATE " + SETTINGS_DB
+                + " SET " + SETTINGS_BGM + " = " + _bgm + ","
+                + SETTINGS_SFX + " = " + _sfx
+                + " WHERE " + SETTINGS_USER + " = '" + username + "'";
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        db1.execSQL(updateQuery);
+
     }
 
     public int getTotalUserBadge(String username){

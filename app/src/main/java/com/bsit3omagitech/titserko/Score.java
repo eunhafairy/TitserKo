@@ -166,7 +166,7 @@ public class Score extends AppCompatActivity {
             MediaPlayer sfx = new MediaPlayer();
             String audio_url = "achievement_unlocked_sound";
             String audio_path = "general_audio/"+audio_url;
-            gf.playAudio(sfx, audio_path);
+            gf.playAudio(sfx, audio_path, username);
 
         }
     }
