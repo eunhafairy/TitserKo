@@ -162,7 +162,7 @@ public class tk_settings extends AppCompatActivity implements OnNavigationItemSe
 
 
                 }
-                mp.setVolume((((float)sfx_seekbar.getProgress() ) / 100),(((float)sfx_seekbar.getProgress() ) / 100));
+
 
             }
 
