@@ -61,7 +61,7 @@ public class tk_settings extends AppCompatActivity implements OnNavigationItemSe
 
         //-----------------PLAY MUSIC------------------
         mp = new MediaPlayer();
-        Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.bgm_stats_1);
+        Uri mediaPath = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.bgm_settings_1);
         try {
             gf.playBGM(mp, mediaPath, username);
         } catch (Exception e) {

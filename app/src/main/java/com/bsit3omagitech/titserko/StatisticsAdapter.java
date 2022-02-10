@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.My
     List<String> titles;
     List<Integer> studyProgress, quizHighscore, quizLowscore, quizTaken;
     Context context;
+
     DataBaseHelper db;
 
     public StatisticsAdapter(List<String> titles, List<Integer> studyProgress, List<Integer> quizHighscore, List<Integer> quizLowscore, List<Integer> quizTaken, Context context) {
@@ -47,6 +49,12 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.My
         holder.stat_row_lowscore.setText(quizLowscore.get(position) + "");
         holder.stat_row_quiz_taken.setText(quizTaken.get(position) + "");
 
+        float a = studyProgress.get(position);
+        float b= (quizHighscore.get(position)/15) * 100;
+        int c = (int) (a + b);
+        holder.progressBar.setMax(200);
+        holder.progressBar.setProgress(c);
+
 
     }
 
@@ -59,7 +67,7 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.My
 
         TextView stat_row_study_progress, stat_row_highscore, stat_row_lowscore, stat_row_quiz_taken, stat_row_title;
 
-
+         ProgressBar progressBar;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             stat_row_title = itemView.findViewById(R.id.stat_row_title);
@@ -67,6 +75,7 @@ public class StatisticsAdapter extends RecyclerView.Adapter<StatisticsAdapter.My
             stat_row_highscore = itemView.findViewById(R.id.stat_row_highscore);
             stat_row_lowscore = itemView.findViewById(R.id.stat_row_lowscore);
             stat_row_quiz_taken = itemView.findViewById(R.id.stat_row_quiz_taken);
+            progressBar = itemView.findViewById(R.id.view);
 
 
         }

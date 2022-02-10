@@ -453,6 +453,7 @@ public class LessonProper extends AppCompatActivity {
                             // Apply activity transition
                             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                         }
+                        mp.stop();
                         finish();
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {

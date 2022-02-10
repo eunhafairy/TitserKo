@@ -84,6 +84,18 @@
         app:layout_constraintStart_toStartOf="@+id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/spnr_profile" />
 
+    <ImageView
+        android:id="@+id/main_iv_info"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="visible"
+        android:src="@drawable/vector_tips_img"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tv_createProfile"
         android:layout_width="0dp"

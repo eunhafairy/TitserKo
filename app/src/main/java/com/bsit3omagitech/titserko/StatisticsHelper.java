@@ -29,6 +29,21 @@ public class StatisticsHelper {
 
     }
 
+    public int getSpecificLessonProgress(String username, String lessonId){
+        float percent = 0;
+        float a = db.getLessonProgress(username, lessonId);
+        float b = (a/db.getMaxIndex(lessonId)) * 100;
+
+
+        float c = db.getQuizProgress(username, lessonId);
+        float d = (c/15) * 100;
+
+
+        return (int) (d+b);
+
+    }
+
+
     public int userTotalStars(String username){
         return db.getUserTotalStars(username);
     }

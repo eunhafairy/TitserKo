@@ -4,9 +4,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -27,7 +30,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner spnr_profile;
-    ImageView iv_study,imageView;
+    ImageView iv_study,imageView, main_iv_info;
     Button tv_createProfile;
     Button btn_confirm;
     String usernameSelected;
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     MediaPlayer mp;
     Context context;
     GlobalFunctions gf;
+    Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +64,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //show the group of views for welcome
         imageView = findViewById(R.id.imageView);
         iv_study = (ImageView) findViewById(R.id.iv_study);
-
+        main_iv_info= findViewById(R.id.main_iv_info);
         imageView.setVisibility(View.VISIBLE);
         iv_study.setVisibility(View.VISIBLE);
-
+        main_iv_info.setVisibility(View.VISIBLE);
         //show the group of views for signing in
         spnr_profile = (Spinner) findViewById(R.id.spnr_profile);
         textView = findViewById(R.id.textView);
@@ -98,6 +102,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         //=================================register listeners ====================================
+
+        main_iv_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //show dialog box
+                openDialog();
+            }
+        });
+
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     imageView.setVisibility(View.GONE);
                     iv_study.setVisibility(View.GONE);
+                    main_iv_info.setVisibility(View.GONE);
 
 
 
@@ -229,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
             imageView.setVisibility(View.VISIBLE);
             iv_study.setVisibility(View.VISIBLE);
+            main_iv_info.setVisibility(View.VISIBLE);
 
         }
         else{
@@ -258,6 +273,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     }
+
+    //-----------------------------------------OPEN CUSTOM DIALOG--------------------------------------
+    private void openDialog(){
+
+        dialog = new Dialog(context);
+        dialog.setContentView(R.layout.tip_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView tip_dialog_title = dialog.findViewById(R.id.tip_dialog_title);
+        tip_dialog_title.setText("Titser.ko");
+        ImageView tip_iv_animal_pic = dialog.findViewById(R.id.tip_iv_animal_pic);
+        tip_iv_animal_pic.setImageResource(R.drawable.vector_animal_1);
+        TextView tip_tv_title = dialog.findViewById(R.id.tip_tv_title);
+        tip_tv_title.setText("Handa ka na ba matuto mag-Ingles?");
+        TextView tip_tv_desc = dialog.findViewById(R.id.tip_tv_desc);
+        tip_tv_desc.setText("Ang \"Titser.ko\" ay isang OFFLINE na application na dinevelop upang maturuan ang mga bata ng mga simpleng bokubolaryo ng wikang Ingles. Mangolekta ng mga badge at mag-unlock ng mga Achievements upang maipagmalaki sa iyong mga magulang at mga kaibigan. Matuto habang naglalaro gamit ang Titser.ko!");
+        Button tip_btn_cancel = dialog.findViewById(R.id.tip_btn_cancel);
+        tip_btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
+    }
+
+
 
 
 

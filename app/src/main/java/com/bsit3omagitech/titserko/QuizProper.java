@@ -619,6 +619,7 @@ public class QuizProper extends AppCompatActivity {
                         Intent i = new Intent(c, TkDashboardActivity.class);
                         i.putExtra("username", username);
                         startActivity(i);
+                        mp.stop();
                         finish();
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {
