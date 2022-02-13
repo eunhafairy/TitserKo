@@ -611,7 +611,7 @@ public class QuizProper extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Exit Quiz?")
-                .setMessage("Are you sure you want to quit? Your progress will not be saved.")
+                .setMessage("Are you sure you want to quit this quiz? Your progress will not be saved.")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

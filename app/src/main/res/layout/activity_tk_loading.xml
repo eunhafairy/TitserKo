@@ -18,6 +18,7 @@
         android:layout_marginLeft="55dp"
         android:layout_marginEnd="55dp"
         android:layout_marginRight="55dp"
+        android:visibility="gone"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,5 +27,30 @@
         android:src="@drawable/loading_gif2"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_load"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/lottie_text"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/bear" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie_load"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/loading" />
 </androidx.constraintlayout.widget.ConstraintLayout>

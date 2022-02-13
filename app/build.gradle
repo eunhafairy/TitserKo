@@ -42,4 +42,6 @@ dependencies {
     implementation 'org.apmem.tools:layouts:1.10@aar'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    implementation 'com.airbnb.android:lottie:4.2.2'
+
 }

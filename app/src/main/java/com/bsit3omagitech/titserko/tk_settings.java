@@ -229,4 +229,14 @@ public class tk_settings extends AppCompatActivity implements OnNavigationItemSe
         settings_drawer_layout.closeDrawer(GravityCompat.START);
         return true;
     }
+    @Override
+    public void onBackPressed() {
+
+        mp.stop();
+        Intent i1 = new Intent(context, TkDashboardActivity.class);
+        i1.putExtra("username", username);
+        startActivity(i1);
+        finish();
+
+    }
 }
