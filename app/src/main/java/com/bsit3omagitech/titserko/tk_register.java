@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,8 @@ public class tk_register extends AppCompatActivity {
     String name = "";
     Dialog dialog;
     ProgressBar register_progressBar;
+    MediaPlayer mp;
+    GlobalFunctions gf;
     int _year;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,17 @@ public class tk_register extends AppCompatActivity {
         //progress bar
         register_progressBar = findViewById(R.id.register_progressBar);
         register_progressBar.setVisibility(View.GONE);
+
+
+        //mediaplayer
+        mp = new MediaPlayer();
+        gf = new GlobalFunctions(c);
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + R.raw.bgm_stats_1);
+        try {
+            gf.playBGM(mp, mediaPath, "0");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void reg(){
@@ -164,6 +178,7 @@ public class tk_register extends AppCompatActivity {
                             Intent intent = new Intent(tk_register.this, tk_loading.class);
                             intent.putExtra("actName", "main");
                             startActivity(intent);
+                            mp.stop();
                             finish();
                         } else {
                             openDialog("Error", "Something went wrong.");
@@ -224,6 +239,18 @@ public class tk_register extends AppCompatActivity {
         dialog.show();
 
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mp.start();
+    }
+
 
     private boolean checkIfEmpty(){
         String name = et_name.getText().toString().trim();

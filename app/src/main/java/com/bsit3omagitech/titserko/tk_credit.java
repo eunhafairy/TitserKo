@@ -51,7 +51,17 @@ public class tk_credit extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
+    }
      @Override
         public void onBackPressed() {
 

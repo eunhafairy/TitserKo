@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -21,7 +23,8 @@ public class tk_loading extends AppCompatActivity {
 
     List<Integer> gifList;
     Context context;
-    GifImageView gif_loading;
+
+    LottieAnimationView lottie_load;
     Intent intent;
     String actName;
     boolean allowBlock = false;
@@ -40,29 +43,29 @@ public class tk_loading extends AppCompatActivity {
 
         //add gif ids to gifList
         gifList = new ArrayList<>();
-        gifList.add(R.drawable.loadinggif1);
-        gifList.add(R.drawable.loading_gif2);
-        gifList.add(R.drawable.loading_gif3);
-        gifList.add(R.drawable.loading_gif4);
-        gifList.add(R.drawable.loading_gif5);
-        gifList.add(R.drawable.loading_gif6);
-        gif_loading = findViewById(R.id.gif_loading);
+        gifList.add(R.raw.bear);
+        gifList.add(R.raw.penguin);
+        gifList.add(R.raw.bunny);
+        gifList.add(R.raw.dear);
+        gifList.add(R.raw.elephant);
+        gifList.add(R.raw.fox);
+        gifList.add(R.raw.hippo);
+
+        lottie_load = findViewById(R.id.lottie_load);
 
         Random rand = new Random();
-        int a = rand.nextInt(6);
-        gif_loading.setImageResource(gifList.get(a));
-        Log.d("random imageresource", a+ "");
+        int a = rand.nextInt(7);
+        lottie_load.setAnimation(gifList.get(a));
 
         //generate number for loading time
         rand = new Random();
-        _seconds = (int) rand.nextInt(2000);
+        _seconds = (int) rand.nextInt(3000);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
                 goToNextActivity(actName);
             }
         }, _seconds + 500);
-        Log.d("rand", _seconds + "");
         context = this;
     }
 

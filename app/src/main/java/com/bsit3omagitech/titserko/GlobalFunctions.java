@@ -34,6 +34,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class GlobalFunctions {
     public Context context;
     public float bgm_volume, sfx_volume;
+    MediaPlayer _mp;
     private DataBaseHelper dbHelper;
     public GlobalFunctions(Context context) {
 
@@ -42,6 +43,7 @@ public class GlobalFunctions {
         dbHelper = new DataBaseHelper(context);
         bgm_volume = 1f;
         sfx_volume =1f;
+       // _mp = new MediaPlayer();
 
     }
 
@@ -77,6 +79,28 @@ public class GlobalFunctions {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void playTutorial(int id, boolean stop){
+        if (stop){
+            _mp.stop();
+            _mp.release();
+            _mp = null;
+
+        }
+        else{
+            if (_mp != null && _mp.isPlaying()) {
+                _mp.stop();
+                _mp.release();
+                _mp = null;
+            }
+            _mp = MediaPlayer.create(context, id);
+            _mp.start();
+
+        }
+
+
+
     }
 
     public void playBGM(MediaPlayer mp, Uri mediaPath, String username) throws Exception{

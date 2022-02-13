@@ -29,6 +29,7 @@ public class Score extends AppCompatActivity {
     String lessonName, lessonId, lessonTranslated, username;
     DataBaseHelper db;
     GlobalFunctions gf;
+    MediaPlayer mp;
     int score, totalScore, highscore;
     List<String> achieveList;
     Context c;
@@ -94,6 +95,16 @@ public class Score extends AppCompatActivity {
             iv_trophy.setImageResource(R.drawable.trophy_gold);
         }
 
+        //mediaplayer
+        mp= new MediaPlayer();
+        Uri mediaPath = Uri.parse("android.resource://" + c.getPackageName() + "/" + R.raw.bgm_stats_1);
+        try {
+            gf.playBGM(mp, mediaPath, username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 
 
     }
@@ -108,6 +119,7 @@ public class Score extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("actName","dashboard");
                 startActivity(intent);
+                mp.stop();
                 finish();
             }
         });
@@ -122,6 +134,7 @@ public class Score extends AppCompatActivity {
                 intent.putExtra("username", username);
                 intent.putExtra("actName","quiz");
                 startActivity(intent);
+                mp.stop();
                 finish();
             }
         });
@@ -170,7 +183,17 @@ public class Score extends AppCompatActivity {
 
         }
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
+    }
     public void showDialog(final Dialog dialog){
         if(dialogsToShow.isEmpty()){
             dialog.show();
@@ -195,6 +218,7 @@ public class Score extends AppCompatActivity {
         intent.putExtra("actName","dashboard");
         startActivity(intent);
         finish();
+        mp.stop();
 
     }
 

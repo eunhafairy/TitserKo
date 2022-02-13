@@ -286,7 +286,17 @@ public class landing extends AppCompatActivity {
         finish();
 
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
+    }
     private void openDialog(String title, String content){
 
         dialog.setContentView(R.layout.tip_dialog);

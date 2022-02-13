@@ -1,5 +1,7 @@
 package com.bsit3omagitech.titserko;
 
+import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,6 +19,7 @@ public class FourthFragment extends Fragment {
 
     Button next;
     ViewPager viewpager;
+    Context c;
 
     public FourthFragment() {
         // Required empty public constructor
@@ -26,6 +29,8 @@ public class FourthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fourth, container, false);
+        //play audio
+        c = getContext();
 
         //initialize view pager
         viewpager = getActivity().findViewById(R.id.main_viewPager);
@@ -33,6 +38,9 @@ public class FourthFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                ((TkDashboardActivity)getActivity()).playVoice(5);
                 viewpager.setCurrentItem(4);
             }
         });

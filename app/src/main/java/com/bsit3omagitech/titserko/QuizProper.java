@@ -603,7 +603,17 @@ public class QuizProper extends AppCompatActivity {
         }
 
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        bgmMp.pause();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bgmMp.start();
+    }
 
     @Override
     public void onBackPressed() {

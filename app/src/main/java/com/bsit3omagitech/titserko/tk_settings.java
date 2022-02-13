@@ -180,6 +180,17 @@ public class tk_settings extends AppCompatActivity implements OnNavigationItemSe
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        mp.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mp.start();
+    }
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             //---------Home----------

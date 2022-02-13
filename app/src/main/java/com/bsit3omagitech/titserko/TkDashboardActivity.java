@@ -388,6 +388,37 @@ public class TkDashboardActivity extends AppCompatActivity implements Navigation
         return true;
     }
 
+    public void playVoice(int pos){
+
+        switch (pos){
+            case 1:
+                gf.playTutorial(R.raw.tutorial_1, false);
+                break;
+            case 2:
+                gf.playTutorial(R.raw.tutorial_2, false);
+                break;
+            case 3:
+                gf.playTutorial(R.raw.tutorial_3, false);
+                break;
+            case 4:
+                gf.playTutorial(R.raw.tutorial_4, false);
+                break;
+            case 5:
+                gf.playTutorial(R.raw.tutorial_5, false);
+                break;
+            case 6:
+                gf.playTutorial(R.raw.tutorial_6, false);
+                break;
+            case 7:
+                gf.playTutorial(R.raw.tutorial_7, false);
+                break;
+            case 8:
+                gf.playTutorial(0, true);
+            break;
+
+        }
+    }
+
     //------------------- ACHIEVEMENTS ------------------------------
 
     public void queueAchievements(List<String> achieveList, Dialog dialog) {

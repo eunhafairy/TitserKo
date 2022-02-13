@@ -3,27 +3,37 @@
     package="com.bsit3omagitech.titserko">
 
     <application
-        android:screenOrientation="portrait"
         android:allowBackup="true"
         android:icon="@drawable/titserko_ico"
-        android:roundIcon="@drawable/titserko_round"
         android:label="@string/app_name"
+        android:roundIcon="@drawable/titserko_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
-            android:name=".tk_loading"
+            android:name=".tk_splash"
             android:exported="true"
             android:screenOrientation="portrait"
             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
+        <activity
+            android:name=".tk_loading"
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".tk_credit"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tk_settings"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tk_statistics"
             android:exported="true"
@@ -31,33 +41,32 @@
         <activity
             android:name=".tk_achievements"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tk_profile"
             android:exported="true"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Score"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".QuizProper"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LessonProper"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".landing"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TkDashboardActivity"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".tk_register"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Score"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizProper"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LessonProper"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".landing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TkDashboardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tk_register"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
     </application>
